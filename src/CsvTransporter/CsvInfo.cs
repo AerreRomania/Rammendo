@@ -7,7 +7,7 @@ namespace CsvTransporter
     public static class CsvInfo
     {
         public const string CSV_PATH = "D:\\RammendoImport";
-        public const string CONNECTION_STRING = "Data Source=192.168.96.37;Initial Catalog=Sinotico;Integrated Security=SSPI";
+        public const string CONNECTION_STRING = "data source=192.168.96.37;initial catalog=ONLYOU; User ID=nicu; password=onlyouolimpias;";
         public static string LastCsvFile { get; set; }
         public static int MaxIdentity { get; set; } = 0;
     }
