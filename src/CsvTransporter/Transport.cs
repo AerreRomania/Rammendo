@@ -10,59 +10,46 @@ namespace CsvTransporter
         private readonly Log log = new Log();
         private DataTable _dataTable = new DataTable();
 
-        public void TransportCsv() {            
+        public void TransportCsv() {
             try {
                 var executionTime = DateTime.Now; // start time of exporting 
 
-                var strNameByDate = DateTime.Now.ToString("dd-MM-yyyy"); // converted datetime dedicated to the file bellow
+                //exact converted datetime dedicated to the file bellow
+                var strNameByDate = DateTime.Now.ToString("dd-MM-yyyy");
 
                 foreach (var file in Directory.GetFiles(CsvInfo.CSV_PATH)) {
-                    var fileName = Path.GetFileNameWithoutExtension(file);
-                    if (fileName != strNameByDate) continue;
 
-                    if (CsvInfo.LastCsvFile != fileName) CsvInfo.MaxIdentity = 0; //reset ID when new file appear [1]
+                    var fileNameInDirectory = Path.GetFileNameWithoutExtension(file);
 
-                    using (StreamReader sr = new StreamReader(new FileStream(file, FileMode.Open, FileAccess.Read))) {
-                        
+                    if (fileNameInDirectory != strNameByDate) continue;
+
+                    //reset ID when new file appear [1]
+                    if (CsvInfo.LastCsvFile != fileNameInDirectory) CsvInfo.MaxIdentity = 0;
+
+                    using (StreamReader streamReader = new StreamReader(new FileStream(file, FileMode.Open, FileAccess.Read))) {
+
                         _dataTable = new DataTable();
-                        _dataTable.Columns.Add("Commessa");
-                        _dataTable.Columns.Add("Article");
-                        _dataTable.Columns.Add("Color");
-                        _dataTable.Columns.Add("Gradient");
-                        _dataTable.Columns.Add("Size");
-                        _dataTable.Columns.Add("Component");
-                        _dataTable.Columns.Add("QtyPack");
-                        _dataTable.Columns.Add("Barcode");
-                        _dataTable.Columns.Add("Good");
-                        _dataTable.Columns.Add("Bad");
+                        CreateDedicatedColumns(_dataTable);
 
-                        while (!sr.EndOfStream) {
-                            string[] rows = sr.ReadLine().Split(';');
-                            int.TryParse(rows[0].ToString(), out var maxIdentity); //check new ID
-                            if (maxIdentity < CsvInfo.MaxIdentity) continue; //read rows which contains ID greater last stored ID
-
-                            //import into datatable
+                        while (!streamReader.EndOfStream) {
+                            string[] rows = streamReader.ReadLine().Split(';'); //check new ID
+                            int.TryParse(rows[0].ToString(), out var maxIdentity); //read rows which contains ID greater last stored ID
+                            if (maxIdentity < CsvInfo.MaxIdentity) continue;
+                            
                             var newRow = _dataTable.NewRow();
-                            for (var i = 1; i <= rows.Length - 1; i++) {
-                                newRow[i - 1] = rows[i];
-                            }
+                            for (var i = 1; i <= rows.Length - 1; i++) { newRow[i - 1] = rows[i]; }
                             _dataTable.Rows.Add(newRow);
-
-                            // store last ID in runtime (reset -> [1])
-                            CsvInfo.MaxIdentity = maxIdentity;
+                            
+                            CsvInfo.MaxIdentity = maxIdentity; // store last ID in runtime (reset -> [1])
                         }
-
                         //always check for last opened file !
-                        CsvInfo.LastCsvFile = fileName;
+                        CsvInfo.LastCsvFile = fileNameInDirectory;
                     }
                 }
 
-                /*
-                 insert data view bulk copy from datatable
-                 */
                 if (_dataTable.Rows.Count != 0) {
                     var connection = new SqlConnection(CsvInfo.CONNECTION_STRING);
-
+                    //insert data via bulk copy from datatable
                     using (var sbc = new SqlBulkCopy(connection)) {
                         sbc.DestinationTableName = "RammendoImport";
                         connection.Open();
@@ -87,6 +74,19 @@ namespace CsvTransporter
             catch (Exception ex) {
                 log.WriteLog(message: "! Deny " + ex.Message);
             }
+        }
+
+        private void CreateDedicatedColumns(DataTable dataTable) {
+            dataTable.Columns.Add("Commessa");
+            dataTable.Columns.Add("Article");
+            dataTable.Columns.Add("Color");
+            dataTable.Columns.Add("Gradient");
+            dataTable.Columns.Add("Size");
+            dataTable.Columns.Add("Component");
+            dataTable.Columns.Add("QtyPack");
+            dataTable.Columns.Add("Barcode");
+            dataTable.Columns.Add("Good");
+            dataTable.Columns.Add("Bad");
         }
     }
 }
