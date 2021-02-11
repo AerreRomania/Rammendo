@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RammendoCsvService", "RammendoCsvService\RammendoCsvService.csproj", "{17E4C6B9-925F-4430-B81C-C4D495A20D85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvTransporter", "CsvTransporter\CsvTransporter.csproj", "{C26BEAE8-E17B-4E7D-A4F1-11B06924B8F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E4C6B9-925F-4430-B81C-C4D495A20D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E4C6B9-925F-4430-B81C-C4D495A20D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E4C6B9-925F-4430-B81C-C4D495A20D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E4C6B9-925F-4430-B81C-C4D495A20D85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26BEAE8-E17B-4E7D-A4F1-11B06924B8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26BEAE8-E17B-4E7D-A4F1-11B06924B8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26BEAE8-E17B-4E7D-A4F1-11B06924B8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26BEAE8-E17B-4E7D-A4F1-11B06924B8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EB02711-57E9-49FF-B68D-533BDCF53AA9}
+	EndGlobalSection
+EndGlobal

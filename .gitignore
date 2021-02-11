@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TruckManagement/src/TruckManagement/Properties/PublishProfiles
+/TruckManagement/src/TruckManagement/.config
+/.vs/Rammendo/v16/.suo
+/.vs
+/src/CsvTransporter/bin/Debug/netstandard2.0
+/src/CsvTransporter/obj
+/src/RammendoCsvService/bin/Debug
+/src/RammendoCsvService/obj/Debug
