@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CsvTransporter
+namespace CsvImporter
 {
     public class Log
     {

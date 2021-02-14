@@ -1,18 +1,19 @@
 ﻿using System.ServiceProcess;
 using System.Timers;
-using CsvTransporter;
+using CsvImporter;
 
 namespace RammendoCsvService
 {
     public partial class Service1 : ServiceBase
     {
-        private readonly Transport _transport = new Transport();
+        private readonly Importer _importer = new Importer();
         private readonly Log Log = new Log();
 
         private Timer _timer = new Timer();
 
         public Service1() {
             InitializeComponent();
+            _importer = new Importer();
         }
 
         protected override void OnStart(string[] args) {
@@ -32,12 +33,13 @@ namespace RammendoCsvService
 
             _timer = new Timer();
             _timer.Elapsed += new ElapsedEventHandler(_timer_Tick);
-            _timer.Interval = 1.5e+6;   //25min check
+            _timer.Interval = 300000; //5min   //1.2e+6 20min check
             _timer.Enabled = true;
             _timer.Start();
         }
+
         private void _timer_Tick(object sender, ElapsedEventArgs elapsed) {
-            _transport.TransportCsv();
+            _importer.Import();
         }
     }
 }
