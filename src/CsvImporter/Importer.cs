@@ -19,8 +19,6 @@ namespace CsvImporter
                     var fileName = Path.GetFileNameWithoutExtension(file);
                     if (fileName != strNameByDate) continue;
 
-                    _log.WriteLog("[ACCESS] Trying to access and read " + fileName + ".csv " + Path.GetFullPath(file));
-
                     _dataTable = new DataTable();
                     CreateDedicatedColumns(_dataTable);
 
@@ -42,22 +40,18 @@ namespace CsvImporter
                     }
                 }
 
-                if (_dataTable.Rows.Count == 0) {
-                    _log.WriteLog(message: "[EMPTY] File " + strNameByDate + ".csv has been opened correctly but no new records were loaded.");
-                    return;
-                }
-                
-                using (var sbc = new SqlBulkCopy(CsvInfo.CONNECTION_STRING, SqlBulkCopyOptions.Default)) {
-                    sbc.DestinationTableName = "RammendoImport";
-                    sbc.WriteToServer(_dataTable, DataRowState.Added);
-                }
+                if (_dataTable.Rows.Count != 0) {
+                    using (var sbc = new SqlBulkCopy(CsvInfo.CONNECTION_STRING, SqlBulkCopyOptions.Default)) {
+                        sbc.DestinationTableName = "RammendoImport";
+                        sbc.WriteToServer(_dataTable, DataRowState.Added);
+                    }
 
-                var ms = DateTime.Now.Subtract(startImportTime).TotalMilliseconds;
-                _log.WriteLog(message:
-                      $"CSV FILE {strNameByDate}.csv WITH {_dataTable.Rows.Count} rows loaded " +
-                      $"with status [OK]; " +
-                      $"Estimated time: {ms}ms");
-
+                    var ms = DateTime.Now.Subtract(startImportTime).TotalMilliseconds;
+                    _log.WriteLog(message:
+                          $"CSV FILE {strNameByDate}.csv WITH {_dataTable.Rows.Count} rows loaded " +
+                          $"with status [OK]; " +
+                          $"Estimated time: {ms}ms");
+                }
             }
             catch (UnauthorizedAccessException uex) {
                 _log.WriteLog(message: "! Deny " + uex.Message);
@@ -66,7 +60,7 @@ namespace CsvImporter
                 _log.WriteLog(message: "! Deny " + ex.Message);
             }
         }
-        /*14/02/2021 16:29:17: ! Deny Input string was not in a correct format.Couldn't store <14-02-2021> in LastKey Column.  Expected type is Int32.*/
+
         private void CreateDedicatedColumns(DataTable dataTable) {
             dataTable.Columns.Add("Id", typeof(int));
             dataTable.Columns.Add("Commessa");
