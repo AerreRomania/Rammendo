@@ -28,6 +28,7 @@ namespace Rammendo.Behaviors
             TopLevel = false;
             Visible = true;
             Location = new Point(0, 0);
+            BackColor = Color.WhiteSmoke;
             Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             ParentPanel.Controls.Add(this);
             Show();
@@ -99,7 +100,7 @@ namespace Rammendo.Behaviors
             // 
             // CWindow
             // 
-            this.ClientSize = new System.Drawing.Size(1240, 721);
+            this.ClientSize = new System.Drawing.Size(120, 0);
             this.Name = "CWindow";
             this.ResumeLayout(false);
 

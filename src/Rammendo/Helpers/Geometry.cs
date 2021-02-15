@@ -6,12 +6,6 @@ namespace Rammendo.Helpers
     {
     class Geometry
         {
-        /// <summary>
-        /// Function that controls bounds of geometric figures in a plane.
-        /// </summary>
-        /// <param name="bounds"></param>
-        /// <param name="rad"></param>
-        /// <returns></returns>
         public GraphicsPath RoundedRectanglePath(Rectangle bounds, int rad)
             {
             var diameter = rad * 2;
@@ -37,7 +31,5 @@ namespace Rammendo.Helpers
 
             return path;
             }
-
-
         }
     }
