@@ -17,3 +17,7 @@
 /src/Rammendo.Data/bin/Debug/netstandard2.0
 /src/Rammendo.Data/obj/Debug/netstandard2.0
 /src/Rammendo.Data/obj
+/src/packages/Dapper.2.0.78
+/src/Rammendo.Dom/bin/Debug
+/src/Rammendo.Dom/obj/Debug
+/src/Rammendo/bin/Debug

@@ -63,6 +63,7 @@
     <Compile Include="Helpers\Resizer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\TelliProdotiViewModel.cs" />
     <Compile Include="Views\Reports\TelliProdoti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rammendo.Dom\Rammendo.Dom.csproj">
+      <Project>{bfb2c1d5-ec67-478e-9201-cae88f9d152c}</Project>
+      <Name>Rammendo.Dom</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

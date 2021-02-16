@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvImporter", "CsvImporter\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rammendo", "Rammendo\Rammendo.csproj", "{D97D19F3-012A-4E52-8A6B-AC43BE6E6D9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rammendo.Data", "Rammendo.Data\Rammendo.Data.csproj", "{0A59717B-56BA-4975-92EA-653C778AC216}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rammendo.Dom", "Rammendo.Dom\Rammendo.Dom.csproj", "{BFB2C1D5-EC67-478E-9201-CAE88F9D152C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{D97D19F3-012A-4E52-8A6B-AC43BE6E6D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D97D19F3-012A-4E52-8A6B-AC43BE6E6D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D97D19F3-012A-4E52-8A6B-AC43BE6E6D9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A59717B-56BA-4975-92EA-653C778AC216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A59717B-56BA-4975-92EA-653C778AC216}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A59717B-56BA-4975-92EA-653C778AC216}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A59717B-56BA-4975-92EA-653C778AC216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB2C1D5-EC67-478E-9201-CAE88F9D152C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB2C1D5-EC67-478E-9201-CAE88F9D152C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB2C1D5-EC67-478E-9201-CAE88F9D152C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB2C1D5-EC67-478E-9201-CAE88F9D152C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
