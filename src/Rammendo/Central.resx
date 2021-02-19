@@ -132,7 +132,15 @@
         Ar5MR5tpIdqsAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGant.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAFhJREFUWEftkMEJACAMxDpiR3Az3VRP8OVDQREFEzhoabFBA1jB3ZOSu8Q2Po+O
+        IYAAAmcF9NjwgGoEEHhbQHWofZfQxnO0vCuw90NaRgABBBC4KwAfYVYAzvMnwV8MF0UAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAOtJREFUWEftk+0NwjAMRDNCN6CjdIQoEzACG5UNGKGjMAqcpQsfqaMQJwIh5Unv
@@ -142,20 +150,7 @@
         0BoZMxhkcO4O8KlM1TO0Z1kAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAYlJREFUWEfNlVFxAkEQRE8CEiIBCUg4CThIHAQH4AAcRAISkICESEimt3qoZavn
-        uN3MR7rqVcEyPd0cB0yt5nm+Gz+D7LlmXGJpDwdjb3xyXb+qZSN4ATweK0HzKHUBcOTa9arMI7QFwJmr
-        16kx96IKgPUlhLmHqABYV0IYezhxx06wLQGvZINqcQ/XBV7flDaklqbBmFjKlAljYgnTzTiTL8N/qnFJ
-        /bz++caMn7evDRXAnb0xcHdvjTfjm8/xeKbvZGC+3HAGXgco+thXQpZUDxMUQJA/R5mL4QE4u9KLYigA
-        j88/UUKWJEx+BXA5D5zBu6oL3KtzFEBh//r9/SPgOZYhEEVwXhe4ccYLQH4P4Ko89mFuUfUwaT8CB+EQ
-        3iEe+wwKpH4ERwNL2/N3A6F+uf1Soww87XyBMbGUKRPGxFKmTBgTS5kyYUwsZcqEMbGUKRPGxFKmTBgT
-        S5kyYUwsZcqEMbGUKRPGxFKmTBgTS5kyYUwsZcqEMbFsCP9k/leazQdj/oum6ReGXhFh/IyjVgAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAaFJREFUWEftV4FtwjAQzAiMwAiMwAgZgQ3aDWAD2AA2oBswAiMwQkdo76ozcj8X
@@ -168,15 +163,20 @@
         akI56/81+2Nomk8rUjsy8C/VVQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAFhJREFUWEftkMEJACAMxDpiR3Az3VRP8OVDQREFEzhoabFBA1jB3ZOSu8Q2Po+O
-        IYAAAmcF9NjwgGoEEHhbQHWofZfQxnO0vCuw90NaRgABBBC4KwAfYVYAzvMnwV8MF0UAAAAASUVORK5C
-        YII=
+        EwAACxMBAJqcGAAAAYlJREFUWEfNlVFxAkEQRE8CEiIBCUg4CThIHAQH4AAcRAISkICESEimt3qoZavn
+        uN3MR7rqVcEyPd0cB0yt5nm+Gz+D7LlmXGJpDwdjb3xyXb+qZSN4ATweK0HzKHUBcOTa9arMI7QFwJmr
+        16kx96IKgPUlhLmHqABYV0IYezhxx06wLQGvZINqcQ/XBV7flDaklqbBmFjKlAljYgnTzTiTL8N/qnFJ
+        /bz++caMn7evDRXAnb0xcHdvjTfjm8/xeKbvZGC+3HAGXgco+thXQpZUDxMUQJA/R5mL4QE4u9KLYigA
+        j88/UUKWJEx+BXA5D5zBu6oL3KtzFEBh//r9/SPgOZYhEEVwXhe4ccYLQH4P4Ko89mFuUfUwaT8CB+EQ
+        3iEe+wwKpH4ERwNL2/N3A6F+uf1Soww87XyBMbGUKRPGxFKmTBgTS5kyYUwsZcqEMbGUKRPGxFKmTBgT
+        S5kyYUwsZcqEMbGUKRPGxFKmTBgTS5kyYUwsZcqEMbFsCP9k/leazQdj/oum6ReGXhFh/IyjVgAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
-  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGYAAAAoCAYAAAAMjY9+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAEEJJREFUeF7tmglUVVUXx2UwcUpKFFBEcJ4CUTOHTE1LTSXN6kObbDBL83MoG51T

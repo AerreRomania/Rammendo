@@ -43,19 +43,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnNavi = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnExoport = new System.Windows.Forms.Panel();
+            this.btnGant = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.pnData = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.cbMostra = new System.Windows.Forms.CheckBox();
+            this.flPannel_Orange = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnTPGiornaliero = new System.Windows.Forms.Button();
+            this.btnTPArticolo = new System.Windows.Forms.Button();
+            this.btnRammendoPersona = new System.Windows.Forms.Button();
             this.PbNavBarSplit = new System.Windows.Forms.PictureBox();
             this.pnChecks = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -69,8 +72,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pnTitlebar = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -83,9 +85,13 @@
             this.pnDockBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnNavi.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.pnExoport.SuspendLayout();
+            this.pnData.SuspendLayout();
+            this.flPannel_Orange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).BeginInit();
             this.pnTitlebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottombnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
@@ -115,9 +121,13 @@
             // 
             // pnDockBar
             // 
+            this.pnDockBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnDockBar.AutoScroll = true;
             this.pnDockBar.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.pnDockBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pnDockBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnDockBar.Controls.Add(this.pictureBox2);
             this.pnDockBar.Controls.Add(this.btnProduzione);
             this.pnDockBar.Controls.Add(this.btnProduzioneGantt);
@@ -125,10 +135,10 @@
             this.pnDockBar.Controls.Add(this.btnProgram);
             this.pnDockBar.Controls.Add(this.treeMenu);
             this.pnDockBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnDockBar.Location = new System.Drawing.Point(0, 185);
+            this.pnDockBar.Location = new System.Drawing.Point(0, 181);
             this.pnDockBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnDockBar.Name = "pnDockBar";
-            this.pnDockBar.Size = new System.Drawing.Size(228, 542);
+            this.pnDockBar.Size = new System.Drawing.Size(228, 546);
             this.pnDockBar.TabIndex = 13;
             // 
             // pictureBox2
@@ -136,9 +146,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Silver;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(227, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(225, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 542);
+            this.pictureBox2.Size = new System.Drawing.Size(1, 544);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -235,7 +245,7 @@
             this.treeMenu.Margin = new System.Windows.Forms.Padding(2);
             this.treeMenu.Name = "treeMenu";
             this.treeMenu.ShowLines = false;
-            this.treeMenu.Size = new System.Drawing.Size(1, 542);
+            this.treeMenu.Size = new System.Drawing.Size(1, 544);
             this.treeMenu.TabIndex = 4;
             // 
             // dtpTo
@@ -245,7 +255,7 @@
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
             this.dtpTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(60, 84);
+            this.dtpTo.Location = new System.Drawing.Point(42, 38);
             this.dtpTo.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(103, 23);
@@ -259,7 +269,7 @@
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(60, 56);
+            this.dtpFrom.Location = new System.Drawing.Point(42, 10);
             this.dtpFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(103, 23);
@@ -293,155 +303,134 @@
             // pnNavi
             // 
             this.pnNavi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.pnNavi.Controls.Add(this.button11);
-            this.pnNavi.Controls.Add(this.button10);
-            this.pnNavi.Controls.Add(this.button9);
-            this.pnNavi.Controls.Add(this.button8);
-            this.pnNavi.Controls.Add(this.flowLayoutPanel1);
-            this.pnNavi.Controls.Add(this.checkBox1);
-            this.pnNavi.Controls.Add(this.btnBack);
-            this.pnNavi.Controls.Add(this.label14);
-            this.pnNavi.Controls.Add(this.label13);
-            this.pnNavi.Controls.Add(this.dtpTo);
-            this.pnNavi.Controls.Add(this.dtpFrom);
+            this.pnNavi.Controls.Add(this.panel3);
+            this.pnNavi.Controls.Add(this.flPannel_Orange);
             this.pnNavi.Controls.Add(this.PbNavBarSplit);
             this.pnNavi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnNavi.Location = new System.Drawing.Point(0, 65);
+            this.pnNavi.Location = new System.Drawing.Point(0, 63);
             this.pnNavi.Margin = new System.Windows.Forms.Padding(2);
             this.pnNavi.Name = "pnNavi";
-            this.pnNavi.Size = new System.Drawing.Size(1311, 120);
+            this.pnNavi.Size = new System.Drawing.Size(1311, 119);
             this.pnNavi.TabIndex = 15;
             // 
-            // button11
+            // panel3
             // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(1233, 54);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 56);
-            this.button11.TabIndex = 57;
-            this.button11.Text = "Print";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = true;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.pnExoport);
+            this.panel3.Controls.Add(this.pnData);
+            this.panel3.Location = new System.Drawing.Point(0, 44);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1311, 74);
+            this.panel3.TabIndex = 60;
             // 
-            // button10
+            // pnExoport
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(1152, 56);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 56);
-            this.button10.TabIndex = 56;
-            this.button10.Text = "Export";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = true;
+            this.pnExoport.Controls.Add(this.btnGant);
+            this.pnExoport.Controls.Add(this.btnPrint);
+            this.pnExoport.Controls.Add(this.btnSettings);
+            this.pnExoport.Controls.Add(this.btnExport);
+            this.pnExoport.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnExoport.Location = new System.Drawing.Point(848, 0);
+            this.pnExoport.Name = "pnExoport";
+            this.pnExoport.Size = new System.Drawing.Size(463, 74);
+            this.pnExoport.TabIndex = 59;
             // 
-            // button9
+            // btnGant
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(1071, 56);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 55);
-            this.button9.TabIndex = 55;
-            this.button9.Text = "Settings";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnGant.FlatAppearance.BorderSize = 0;
+            this.btnGant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGant.Image = ((System.Drawing.Image)(resources.GetObject("btnGant.Image")));
+            this.btnGant.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGant.Location = new System.Drawing.Point(134, 10);
+            this.btnGant.Name = "btnGant";
+            this.btnGant.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGant.Size = new System.Drawing.Size(75, 56);
+            this.btnGant.TabIndex = 54;
+            this.btnGant.Text = "Gant";
+            this.btnGant.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGant.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnPrint
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(990, 54);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 56);
-            this.button8.TabIndex = 54;
-            this.button8.Text = "Gant";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrint.Location = new System.Drawing.Point(377, 10);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 56);
+            this.btnPrint.TabIndex = 57;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // btnSettings
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Coral;
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1311, 47);
-            this.flowLayoutPanel1.TabIndex = 53;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSettings.Location = new System.Drawing.Point(215, 10);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(75, 55);
+            this.btnSettings.TabIndex = 55;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSettings.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnExport
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 41);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Home";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExport.Location = new System.Drawing.Point(296, 10);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 56);
+            this.btnExport.TabIndex = 56;
+            this.btnExport.Text = "Export";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // pnData
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(84, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 41);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Telli Prodotti Giornaliero";
-            this.button4.UseVisualStyleBackColor = true;
+            this.pnData.Controls.Add(this.dtpFrom);
+            this.pnData.Controls.Add(this.dtpTo);
+            this.pnData.Controls.Add(this.label13);
+            this.pnData.Controls.Add(this.label14);
+            this.pnData.Controls.Add(this.btnBack);
+            this.pnData.Controls.Add(this.cbMostra);
+            this.pnData.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnData.Location = new System.Drawing.Point(0, 0);
+            this.pnData.Name = "pnData";
+            this.pnData.Size = new System.Drawing.Size(309, 74);
+            this.pnData.TabIndex = 58;
             // 
-            // button5
+            // label13
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(268, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(179, 41);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Telli Prodotii per Articolo";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label13.Location = new System.Drawing.Point(17, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 16);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Da";
             // 
-            // button6
+            // label14
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(453, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(179, 41);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Rammendo per Persona";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(168, 54);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 20);
-            this.checkBox1.TabIndex = 52;
-            this.checkBox1.Text = "Mostra attuale";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label14.Location = new System.Drawing.Point(17, 43);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 16);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "A";
             // 
             // btnBack
             // 
@@ -453,7 +442,7 @@
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBack.Location = new System.Drawing.Point(227, 86);
+            this.btnBack.Location = new System.Drawing.Point(218, 47);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(68, 24);
@@ -463,36 +452,94 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
-            // label14
+            // cbMostra
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(39, 89);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 16);
-            this.label14.TabIndex = 49;
-            this.label14.Text = "A";
+            this.cbMostra.AutoSize = true;
+            this.cbMostra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMostra.Location = new System.Drawing.Point(151, 11);
+            this.cbMostra.Name = "cbMostra";
+            this.cbMostra.Size = new System.Drawing.Size(111, 20);
+            this.cbMostra.TabIndex = 52;
+            this.cbMostra.Text = "Mostra attuale";
+            this.cbMostra.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // flPannel_Orange
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(31, 61);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 16);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "Da";
+            this.flPannel_Orange.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flPannel_Orange.BackColor = System.Drawing.Color.Coral;
+            this.flPannel_Orange.Controls.Add(this.btnHome);
+            this.flPannel_Orange.Controls.Add(this.btnTPGiornaliero);
+            this.flPannel_Orange.Controls.Add(this.btnTPArticolo);
+            this.flPannel_Orange.Controls.Add(this.btnRammendoPersona);
+            this.flPannel_Orange.Location = new System.Drawing.Point(0, 0);
+            this.flPannel_Orange.Name = "flPannel_Orange";
+            this.flPannel_Orange.Size = new System.Drawing.Size(1311, 44);
+            this.flPannel_Orange.TabIndex = 53;
+            // 
+            // btnHome
+            // 
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Location = new System.Drawing.Point(3, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnHome.Size = new System.Drawing.Size(75, 40);
+            this.btnHome.TabIndex = 0;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            // 
+            // btnTPGiornaliero
+            // 
+            this.btnTPGiornaliero.FlatAppearance.BorderSize = 0;
+            this.btnTPGiornaliero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTPGiornaliero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTPGiornaliero.ForeColor = System.Drawing.Color.White;
+            this.btnTPGiornaliero.Location = new System.Drawing.Point(84, 3);
+            this.btnTPGiornaliero.Name = "btnTPGiornaliero";
+            this.btnTPGiornaliero.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnTPGiornaliero.Size = new System.Drawing.Size(178, 40);
+            this.btnTPGiornaliero.TabIndex = 1;
+            this.btnTPGiornaliero.Text = "Telli Prodotti Giornaliero";
+            this.btnTPGiornaliero.UseVisualStyleBackColor = true;
+            // 
+            // btnTPArticolo
+            // 
+            this.btnTPArticolo.FlatAppearance.BorderSize = 0;
+            this.btnTPArticolo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTPArticolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTPArticolo.ForeColor = System.Drawing.Color.White;
+            this.btnTPArticolo.Location = new System.Drawing.Point(268, 3);
+            this.btnTPArticolo.Name = "btnTPArticolo";
+            this.btnTPArticolo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnTPArticolo.Size = new System.Drawing.Size(179, 40);
+            this.btnTPArticolo.TabIndex = 2;
+            this.btnTPArticolo.Text = "Telli Prodotii per Articolo";
+            this.btnTPArticolo.UseVisualStyleBackColor = true;
+            // 
+            // btnRammendoPersona
+            // 
+            this.btnRammendoPersona.FlatAppearance.BorderSize = 0;
+            this.btnRammendoPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRammendoPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRammendoPersona.ForeColor = System.Drawing.Color.White;
+            this.btnRammendoPersona.Location = new System.Drawing.Point(453, 3);
+            this.btnRammendoPersona.Name = "btnRammendoPersona";
+            this.btnRammendoPersona.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnRammendoPersona.Size = new System.Drawing.Size(179, 40);
+            this.btnRammendoPersona.TabIndex = 3;
+            this.btnRammendoPersona.Text = "Rammendo per Persona";
+            this.btnRammendoPersona.UseVisualStyleBackColor = true;
             // 
             // PbNavBarSplit
             // 
             this.PbNavBarSplit.BackColor = System.Drawing.Color.Silver;
             this.PbNavBarSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PbNavBarSplit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.PbNavBarSplit.Location = new System.Drawing.Point(0, 119);
+            this.PbNavBarSplit.Location = new System.Drawing.Point(0, 118);
             this.PbNavBarSplit.Name = "PbNavBarSplit";
             this.PbNavBarSplit.Size = new System.Drawing.Size(1311, 1);
             this.PbNavBarSplit.TabIndex = 0;
@@ -619,49 +666,33 @@
             // 
             // pnTitlebar
             // 
-            this.pnTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(23)))));
-            this.pnTitlebar.Controls.Add(this.button7);
-            this.pnTitlebar.Controls.Add(this.label11);
+            this.pnTitlebar.BackColor = System.Drawing.Color.Black;
+            this.pnTitlebar.Controls.Add(this.pictureBox3);
             this.pnTitlebar.Controls.Add(this.button2);
             this.pnTitlebar.Controls.Add(this.button1);
             this.pnTitlebar.Controls.Add(this.btnClose);
             this.pnTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnTitlebar.Name = "pnTitlebar";
-            this.pnTitlebar.Size = new System.Drawing.Size(1311, 65);
+            this.pnTitlebar.Size = new System.Drawing.Size(1311, 63);
             this.pnTitlebar.TabIndex = 16;
             this.pnTitlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnTitleBar_Paint);
             this.pnTitlebar.DoubleClick += new System.EventHandler(this.PnTitlebar_DoubleClick);
             // 
-            // button7
+            // pictureBox3
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(126, 65);
-            this.button7.TabIndex = 27;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(529, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(237, 25);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Programma Rammendo";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(119, 63);
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(23)))));
+            this.button2.BackColor = System.Drawing.Color.Black;
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
@@ -671,7 +702,7 @@
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button2.Location = new System.Drawing.Point(1173, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 65);
+            this.button2.Size = new System.Drawing.Size(46, 63);
             this.button2.TabIndex = 25;
             this.button2.Tag = "1";
             this.button2.Text = "-";
@@ -680,7 +711,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(23)))));
+            this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
@@ -690,7 +721,7 @@
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button1.Location = new System.Drawing.Point(1219, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 65);
+            this.button1.Size = new System.Drawing.Size(46, 63);
             this.button1.TabIndex = 24;
             this.button1.Tag = "1";
             this.button1.Text = "□";
@@ -699,7 +730,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(23)))));
+            this.btnClose.BackColor = System.Drawing.Color.Black;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -710,7 +741,7 @@
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnClose.Location = new System.Drawing.Point(1265, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 65);
+            this.btnClose.Size = new System.Drawing.Size(46, 63);
             this.btnClose.TabIndex = 21;
             this.btnClose.Tag = "1";
             this.btnClose.Text = "X";
@@ -719,11 +750,14 @@
             // 
             // pnForms
             // 
+            this.pnForms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnForms.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnForms.Location = new System.Drawing.Point(228, 185);
+            this.pnForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnForms.Location = new System.Drawing.Point(228, 181);
             this.pnForms.Name = "pnForms";
-            this.pnForms.Size = new System.Drawing.Size(1083, 542);
+            this.pnForms.Size = new System.Drawing.Size(1083, 546);
             this.pnForms.TabIndex = 1;
             // 
             // pbBottombnd
@@ -790,11 +824,14 @@
             this.pnDockBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnNavi.ResumeLayout(false);
-            this.pnNavi.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.pnExoport.ResumeLayout(false);
+            this.pnData.ResumeLayout(false);
+            this.pnData.PerformLayout();
+            this.flPannel_Orange.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).EndInit();
             this.pnTitlebar.ResumeLayout(false);
-            this.pnTitlebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottombnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
@@ -844,17 +881,19 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pbBottombnd;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.FlowLayoutPanel flPannel_Orange;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnTPGiornaliero;
+        private System.Windows.Forms.Button btnTPArticolo;
+        private System.Windows.Forms.CheckBox cbMostra;
+        private System.Windows.Forms.Button btnRammendoPersona;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnGant;
+        private System.Windows.Forms.Panel pnData;
+        private System.Windows.Forms.Panel pnExoport;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
     }

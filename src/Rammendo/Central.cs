@@ -290,9 +290,9 @@ namespace Rammendo
 
         private void PnTitleBar_Paint(object sender, PaintEventArgs e) {
             var pn = (Panel)sender;
-            var fnt = new Font("Segoe UI", 12);
+            var fnt = new Font("Segoe UI", 16);
             var logoRect = new Rectangle(10, 5, 102, 40);
-            var refreshTitle = "Rammendo  ";
+            var refreshTitle = "Programma Rammendo";
             var refreshTitleSize = e.Graphics.MeasureString(refreshTitle, fnt);
             var posX = pn.Width / 2 - refreshTitleSize.Width / 2;
             var posY = pn.Height / 2 - refreshTitleSize.Height / 2;
@@ -332,5 +332,6 @@ namespace Rammendo
         private void BtnClose_Click(object sender, EventArgs e) {
             Application.Exit();
         }
+
     }
 }
