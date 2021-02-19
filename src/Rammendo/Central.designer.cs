@@ -43,6 +43,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnNavi = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -65,6 +69,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pnTitlebar = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -75,11 +80,6 @@
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.btnFilters = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.pnDockBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnNavi.SuspendLayout();
@@ -125,11 +125,10 @@
             this.pnDockBar.Controls.Add(this.btnProgram);
             this.pnDockBar.Controls.Add(this.treeMenu);
             this.pnDockBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnDockBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnDockBar.Location = new System.Drawing.Point(0, 185);
             this.pnDockBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnDockBar.Name = "pnDockBar";
-            this.pnDockBar.Size = new System.Drawing.Size(237, 542);
+            this.pnDockBar.Size = new System.Drawing.Size(228, 542);
             this.pnDockBar.TabIndex = 13;
             // 
             // pictureBox2
@@ -137,7 +136,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Silver;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(236, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(227, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 542);
             this.pictureBox2.TabIndex = 11;
@@ -153,9 +152,9 @@
             this.btnProduzione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.btnProduzione.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProduzione.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProduzione.Location = new System.Drawing.Point(26, 151);
+            this.btnProduzione.Location = new System.Drawing.Point(20, 151);
             this.btnProduzione.Name = "btnProduzione";
-            this.btnProduzione.Size = new System.Drawing.Size(187, 39);
+            this.btnProduzione.Size = new System.Drawing.Size(188, 39);
             this.btnProduzione.TabIndex = 9;
             this.btnProduzione.Tag = "1";
             this.btnProduzione.UseVisualStyleBackColor = false;
@@ -172,10 +171,10 @@
             this.btnProduzioneGantt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.btnProduzioneGantt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProduzioneGantt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProduzioneGantt.Location = new System.Drawing.Point(26, 107);
+            this.btnProduzioneGantt.Location = new System.Drawing.Point(20, 107);
             this.btnProduzioneGantt.Margin = new System.Windows.Forms.Padding(2);
             this.btnProduzioneGantt.Name = "btnProduzioneGantt";
-            this.btnProduzioneGantt.Size = new System.Drawing.Size(187, 39);
+            this.btnProduzioneGantt.Size = new System.Drawing.Size(188, 39);
             this.btnProduzioneGantt.TabIndex = 6;
             this.btnProduzioneGantt.Tag = "1";
             this.btnProduzioneGantt.UseVisualStyleBackColor = false;
@@ -192,10 +191,10 @@
             this.btnTelliProdoti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.btnTelliProdoti.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTelliProdoti.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnTelliProdoti.Location = new System.Drawing.Point(26, 63);
+            this.btnTelliProdoti.Location = new System.Drawing.Point(20, 63);
             this.btnTelliProdoti.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelliProdoti.Name = "btnTelliProdoti";
-            this.btnTelliProdoti.Size = new System.Drawing.Size(187, 39);
+            this.btnTelliProdoti.Size = new System.Drawing.Size(188, 39);
             this.btnTelliProdoti.TabIndex = 5;
             this.btnTelliProdoti.Tag = "1";
             this.btnTelliProdoti.UseVisualStyleBackColor = false;
@@ -213,10 +212,10 @@
             this.btnProgram.Image = ((System.Drawing.Image)(resources.GetObject("btnProgram.Image")));
             this.btnProgram.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProgram.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProgram.Location = new System.Drawing.Point(26, 20);
+            this.btnProgram.Location = new System.Drawing.Point(20, 20);
             this.btnProgram.Margin = new System.Windows.Forms.Padding(2);
             this.btnProgram.Name = "btnProgram";
-            this.btnProgram.Size = new System.Drawing.Size(187, 39);
+            this.btnProgram.Size = new System.Drawing.Size(188, 39);
             this.btnProgram.TabIndex = 10;
             this.btnProgram.Tag = "1";
             this.btnProgram.Text = "Report Rammendo";
@@ -313,6 +312,62 @@
             this.pnNavi.Size = new System.Drawing.Size(1311, 120);
             this.pnNavi.TabIndex = 15;
             // 
+            // button11
+            // 
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button11.Location = new System.Drawing.Point(1233, 54);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 56);
+            this.button11.TabIndex = 57;
+            this.button11.Text = "Print";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(1152, 56);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 56);
+            this.button10.TabIndex = 56;
+            this.button10.Text = "Export";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button9.Location = new System.Drawing.Point(1071, 56);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 55);
+            this.button9.TabIndex = 55;
+            this.button9.Text = "Settings";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button8.Location = new System.Drawing.Point(990, 54);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 56);
+            this.button8.TabIndex = 54;
+            this.button8.Text = "Gant";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Coral;
@@ -398,7 +453,7 @@
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBack.Location = new System.Drawing.Point(236, 79);
+            this.btnBack.Location = new System.Drawing.Point(227, 86);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(68, 24);
@@ -578,6 +633,17 @@
             this.pnTitlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnTitleBar_Paint);
             this.pnTitlebar.DoubleClick += new System.EventHandler(this.PnTitlebar_DoubleClick);
             // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(0, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 65);
+            this.button7.TabIndex = 27;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -654,10 +720,10 @@
             // pnForms
             // 
             this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnForms.Location = new System.Drawing.Point(237, 185);
+            this.pnForms.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnForms.Location = new System.Drawing.Point(228, 185);
             this.pnForms.Name = "pnForms";
-            this.pnForms.Size = new System.Drawing.Size(1074, 542);
+            this.pnForms.Size = new System.Drawing.Size(1083, 542);
             this.pnForms.TabIndex = 1;
             // 
             // pbBottombnd
@@ -698,73 +764,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(126, 65);
-            this.button7.TabIndex = 27;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(990, 54);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 56);
-            this.button8.TabIndex = 54;
-            this.button8.Text = "Gant";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(1071, 56);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 55);
-            this.button9.TabIndex = 55;
-            this.button9.Text = "Settings";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(1152, 56);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 56);
-            this.button10.TabIndex = 56;
-            this.button10.Text = "Export";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(1233, 54);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 56);
-            this.button11.TabIndex = 57;
-            this.button11.Text = "Print";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // Central
             // 

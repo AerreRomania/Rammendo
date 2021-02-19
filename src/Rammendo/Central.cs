@@ -246,7 +246,7 @@ namespace Rammendo
         internal bool _fromNavigation = false;
         private void BtnForward_Click(object sender, EventArgs e) {
             if (listBox1.SelectedIndex == listBox1.Items.Count - 1) {
-                btnForward.Enabled = false;
+              //  btnForward.Enabled = false;
                 return;
             }
             btnBack.Enabled = true;
@@ -263,7 +263,7 @@ namespace Rammendo
                 btnBack.Enabled = false;
                 return;
             }
-            btnForward.Enabled = true;
+           // btnForward.Enabled = true;
             _fromNavigation = true;
 
             if ((TreeNode)listBox1.SelectedItem == FindLastNode(treeMenu.SelectedNode))
