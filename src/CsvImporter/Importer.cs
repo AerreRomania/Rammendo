@@ -2,6 +2,7 @@
 using System.IO;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace CsvImporter
 {
@@ -21,6 +22,7 @@ namespace CsvImporter
 
                     _dataTable = new DataTable();
                     CreateDedicatedColumns(_dataTable);
+                    var commessaInfo = CsvInfo.GetCommessa();
 
                     var maxKey = CsvInfo.GetMaxKeyBasedOnImport(fileName);
 
@@ -31,10 +33,15 @@ namespace CsvImporter
                             if (maxIdentityKey <= maxKey) continue; 
 
                             var newRow = _dataTable.NewRow();
-                            newRow[0] = 0;
-                            for (var i = 1; i <= rows.Length - 1; i++) { newRow[i] = rows[i]; }
-                            newRow[11] = maxIdentityKey;
-                            newRow[12] = fileName;
+                            for (var i = 1; i <= rows.Length - 1; i++) { newRow[i - 1] = rows[i]; }
+                            newRow[10] = maxIdentityKey;
+                            newRow[11] = fileName;
+
+                            var commessa = commessaInfo.FirstOrDefault(x => x.NrCommanda == rows[1] && x.Article == rows[2]);
+                            newRow[12] = commessa != null ? commessa.CommessaId : 0;
+                            newRow[13] = commessa != null ? commessa.ArticleId : 0;
+                            newRow[14] = DateTime.Now;
+
                             _dataTable.Rows.Add(newRow);
                         }
                     }
@@ -62,7 +69,6 @@ namespace CsvImporter
         }
 
         private void CreateDedicatedColumns(DataTable dataTable) {
-            dataTable.Columns.Add("Id", typeof(int));
             dataTable.Columns.Add("Commessa");
             dataTable.Columns.Add("Article");
             dataTable.Columns.Add("Color");
@@ -75,6 +81,9 @@ namespace CsvImporter
             dataTable.Columns.Add("Bad", typeof(int));
             dataTable.Columns.Add("LastKey", typeof(int));
             dataTable.Columns.Add("FileKey");
+            dataTable.Columns.Add("ComenziId", typeof(int));
+            dataTable.Columns.Add("ComeziArticolId", typeof(int));
+            dataTable.Columns.Add("CreatedDate", typeof(DateTime));
         }
     }
 }

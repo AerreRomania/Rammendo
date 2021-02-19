@@ -12,15 +12,22 @@ namespace Rammendo.Behaviors
         private bool IsChildForm { get; set; }
         private Panel ParentPanel { get; set; }
 
+        public CWindow() {
+            InitializeComponent();
+        }
+
         public CWindow(bool isChildForm, Panel parent = null) : base() {
+            InitializeComponent();
             IsChildForm = isChildForm;
             ParentPanel = parent;
             if (isChildForm && parent != null) {
                 GenerateChildForm();
             }
+
         }
 
         private void GenerateChildForm() {
+            WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             ShowInTaskbar = false;
             ControlBox = false;
@@ -31,12 +38,14 @@ namespace Rammendo.Behaviors
             BackColor = Color.WhiteSmoke;
             Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             ParentPanel.Controls.Add(this);
-            Show();
-
             Resize += (s, e) => {
                 Size = ParentPanel.Size;
-                Invalidate();
             };
+            SizeChanged += (s, e) => {
+                Size = ParentPanel.Size;
+            };
+            Show();
+            Size = ParentPanel.Size;
         }
 
         protected override CreateParams CreateParams {
@@ -100,7 +109,7 @@ namespace Rammendo.Behaviors
             // 
             // CWindow
             // 
-            this.ClientSize = new System.Drawing.Size(120, 0);
+            this.ClientSize = new System.Drawing.Size(120, 34);
             this.Name = "CWindow";
             this.ResumeLayout(false);
 

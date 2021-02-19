@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Dapper;
 using Rammendo.Dom.Repositories.Interfaces;
 using Rammendo.Dom.Entities;
-using Rammendo.Dom.Repositories;
 
 namespace Rammendo.Dom.Repositories
 {
