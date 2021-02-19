@@ -12,6 +12,10 @@ namespace Rammendo.Behaviors
         private bool IsChildForm { get; set; }
         private Panel ParentPanel { get; set; }
 
+        public CWindow() {
+            InitializeComponent();
+        }
+
         public CWindow(bool isChildForm, Panel parent = null) : base() {
    
             IsChildForm = isChildForm;
