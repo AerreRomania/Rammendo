@@ -229,18 +229,15 @@ namespace Rammendo
         }
 
         private void ResetMenuCommands() {
-            btnTelliProdoti.Text = "Telli prodoti";
+            btnTelliProdoti.Text = "Telli Prodotti Giornaliero";
             btnTelliProdoti.BackColor = Color.FromArgb(210, 210, 210);
             btnTelliProdoti.ForeColor = Color.FromArgb(113, 113, 113);
-            btnProduzioneGantt.Text = "Report 2";
+            btnProduzioneGantt.Text = "Telli Prodotii per Articolo";
             btnProduzioneGantt.BackColor = Color.FromArgb(210, 210, 210);
             btnProduzioneGantt.ForeColor = Color.FromArgb(113, 113, 113);
-            btnProduzione.Text = "Report 3";
+            btnProduzione.Text = "Rammendo per Persona";
             btnProduzione.BackColor = Color.FromArgb(210, 210, 210);
             btnProduzione.ForeColor = Color.FromArgb(113, 113, 113);
-            btnFatturato.Text = "Report 4";
-            btnFatturato.BackColor = Color.FromArgb(210, 210, 210);
-            btnFatturato.ForeColor = Color.FromArgb(113, 113, 113);
 
         }
 

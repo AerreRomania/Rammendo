@@ -32,9 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.pnDockBar = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnFatturato = new System.Windows.Forms.Button();
             this.btnProduzione = new System.Windows.Forms.Button();
             this.btnProduzioneGantt = new System.Windows.Forms.Button();
             this.btnTelliProdoti = new System.Windows.Forms.Button();
@@ -45,9 +43,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnNavi = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnForward = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.PbNavBarSplit = new System.Windows.Forms.PictureBox();
@@ -63,6 +65,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pnTitlebar = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -72,10 +75,15 @@
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.btnFilters = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.pnDockBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnNavi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).BeginInit();
             this.pnTitlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottombnd)).BeginInit();
@@ -110,9 +118,7 @@
             this.pnDockBar.AutoScroll = true;
             this.pnDockBar.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.pnDockBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.pnDockBar.Controls.Add(this.button3);
             this.pnDockBar.Controls.Add(this.pictureBox2);
-            this.pnDockBar.Controls.Add(this.btnFatturato);
             this.pnDockBar.Controls.Add(this.btnProduzione);
             this.pnDockBar.Controls.Add(this.btnProduzioneGantt);
             this.pnDockBar.Controls.Add(this.btnTelliProdoti);
@@ -120,61 +126,22 @@
             this.pnDockBar.Controls.Add(this.treeMenu);
             this.pnDockBar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnDockBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnDockBar.Location = new System.Drawing.Point(0, 150);
+            this.pnDockBar.Location = new System.Drawing.Point(0, 185);
             this.pnDockBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnDockBar.Name = "pnDockBar";
-            this.pnDockBar.Size = new System.Drawing.Size(287, 577);
+            this.pnDockBar.Size = new System.Drawing.Size(237, 542);
             this.pnDockBar.TabIndex = 13;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(26, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(236, 39);
-            this.button3.TabIndex = 12;
-            this.button3.Tag = "1";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Silver;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(286, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(236, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 577);
+            this.pictureBox2.Size = new System.Drawing.Size(1, 542);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnFatturato
-            // 
-            this.btnFatturato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btnFatturato.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnFatturato.FlatAppearance.BorderSize = 0;
-            this.btnFatturato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFatturato.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnFatturato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.btnFatturato.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFatturato.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnFatturato.Location = new System.Drawing.Point(26, 151);
-            this.btnFatturato.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFatturato.Name = "btnFatturato";
-            this.btnFatturato.Size = new System.Drawing.Size(236, 39);
-            this.btnFatturato.TabIndex = 8;
-            this.btnFatturato.Tag = "1";
-            this.btnFatturato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFatturato.UseVisualStyleBackColor = false;
-            this.btnFatturato.Click += new System.EventHandler(this.BtnFatturato_Click);
-            this.btnFatturato.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
             // 
             // btnProduzione
             // 
@@ -186,12 +153,11 @@
             this.btnProduzione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.btnProduzione.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProduzione.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProduzione.Location = new System.Drawing.Point(26, 195);
+            this.btnProduzione.Location = new System.Drawing.Point(26, 151);
             this.btnProduzione.Name = "btnProduzione";
-            this.btnProduzione.Size = new System.Drawing.Size(236, 39);
+            this.btnProduzione.Size = new System.Drawing.Size(187, 39);
             this.btnProduzione.TabIndex = 9;
             this.btnProduzione.Tag = "1";
-            this.btnProduzione.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduzione.UseVisualStyleBackColor = false;
             this.btnProduzione.Click += new System.EventHandler(this.BtnProduzione_Click);
             this.btnProduzione.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
@@ -209,10 +175,9 @@
             this.btnProduzioneGantt.Location = new System.Drawing.Point(26, 107);
             this.btnProduzioneGantt.Margin = new System.Windows.Forms.Padding(2);
             this.btnProduzioneGantt.Name = "btnProduzioneGantt";
-            this.btnProduzioneGantt.Size = new System.Drawing.Size(236, 39);
+            this.btnProduzioneGantt.Size = new System.Drawing.Size(187, 39);
             this.btnProduzioneGantt.TabIndex = 6;
             this.btnProduzioneGantt.Tag = "1";
-            this.btnProduzioneGantt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduzioneGantt.UseVisualStyleBackColor = false;
             this.btnProduzioneGantt.Click += new System.EventHandler(this.btnProduzioneGantt_Click);
             this.btnProduzioneGantt.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
@@ -230,10 +195,9 @@
             this.btnTelliProdoti.Location = new System.Drawing.Point(26, 63);
             this.btnTelliProdoti.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelliProdoti.Name = "btnTelliProdoti";
-            this.btnTelliProdoti.Size = new System.Drawing.Size(236, 39);
+            this.btnTelliProdoti.Size = new System.Drawing.Size(187, 39);
             this.btnTelliProdoti.TabIndex = 5;
             this.btnTelliProdoti.Tag = "1";
-            this.btnTelliProdoti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTelliProdoti.UseVisualStyleBackColor = false;
             this.btnTelliProdoti.Click += new System.EventHandler(this.BtnTelliProdoti_Click);
             this.btnTelliProdoti.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
@@ -252,11 +216,10 @@
             this.btnProgram.Location = new System.Drawing.Point(26, 20);
             this.btnProgram.Margin = new System.Windows.Forms.Padding(2);
             this.btnProgram.Name = "btnProgram";
-            this.btnProgram.Size = new System.Drawing.Size(236, 39);
+            this.btnProgram.Size = new System.Drawing.Size(187, 39);
             this.btnProgram.TabIndex = 10;
             this.btnProgram.Tag = "1";
-            this.btnProgram.Text = "Reports";
-            this.btnProgram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProgram.Text = "Report Rammendo";
             this.btnProgram.UseVisualStyleBackColor = false;
             this.btnProgram.Click += new System.EventHandler(this.BtnProgram_Click);
             this.btnProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
@@ -273,7 +236,7 @@
             this.treeMenu.Margin = new System.Windows.Forms.Padding(2);
             this.treeMenu.Name = "treeMenu";
             this.treeMenu.ShowLines = false;
-            this.treeMenu.Size = new System.Drawing.Size(1, 577);
+            this.treeMenu.Size = new System.Drawing.Size(1, 542);
             this.treeMenu.TabIndex = 4;
             // 
             // dtpTo
@@ -283,10 +246,10 @@
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
             this.dtpTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(52, 54);
+            this.dtpTo.Location = new System.Drawing.Point(60, 84);
             this.dtpTo.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(146, 23);
+            this.dtpTo.Size = new System.Drawing.Size(103, 23);
             this.dtpTo.TabIndex = 23;
             this.dtpTo.ValueChanged += new System.EventHandler(this.DtpTo_ValueChanged);
             // 
@@ -297,10 +260,10 @@
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(52, 23);
+            this.dtpFrom.Location = new System.Drawing.Point(60, 56);
             this.dtpFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(146, 23);
+            this.dtpFrom.Size = new System.Drawing.Size(103, 23);
             this.dtpFrom.TabIndex = 22;
             this.dtpFrom.ValueChanged += new System.EventHandler(this.DtpFrom_ValueChanged);
             // 
@@ -331,20 +294,99 @@
             // pnNavi
             // 
             this.pnNavi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pnNavi.Controls.Add(this.button11);
+            this.pnNavi.Controls.Add(this.button10);
+            this.pnNavi.Controls.Add(this.button9);
+            this.pnNavi.Controls.Add(this.button8);
+            this.pnNavi.Controls.Add(this.flowLayoutPanel1);
+            this.pnNavi.Controls.Add(this.checkBox1);
             this.pnNavi.Controls.Add(this.btnBack);
-            this.pnNavi.Controls.Add(this.btnForward);
-            this.pnNavi.Controls.Add(this.pictureBox4);
             this.pnNavi.Controls.Add(this.label14);
             this.pnNavi.Controls.Add(this.label13);
             this.pnNavi.Controls.Add(this.dtpTo);
             this.pnNavi.Controls.Add(this.dtpFrom);
             this.pnNavi.Controls.Add(this.PbNavBarSplit);
             this.pnNavi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnNavi.Location = new System.Drawing.Point(0, 46);
+            this.pnNavi.Location = new System.Drawing.Point(0, 65);
             this.pnNavi.Margin = new System.Windows.Forms.Padding(2);
             this.pnNavi.Name = "pnNavi";
-            this.pnNavi.Size = new System.Drawing.Size(1311, 104);
+            this.pnNavi.Size = new System.Drawing.Size(1311, 120);
             this.pnNavi.TabIndex = 15;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Coral;
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1311, 47);
+            this.flowLayoutPanel1.TabIndex = 53;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(3, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 41);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Home";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(84, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(178, 41);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Telli Prodotti Giornaliero";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(268, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(179, 41);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Telli Prodotii per Articolo";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(453, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(179, 41);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Rammendo per Persona";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(168, 54);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(111, 20);
+            this.checkBox1.TabIndex = 52;
+            this.checkBox1.Text = "Mostra attuale";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
@@ -352,51 +394,19 @@
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Bahnschrift", 9F);
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBack.Location = new System.Drawing.Point(236, 18);
+            this.btnBack.Location = new System.Drawing.Point(236, 79);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(63, 63);
+            this.btnBack.Size = new System.Drawing.Size(68, 24);
             this.btnBack.TabIndex = 19;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "<  Back";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
-            // 
-            // btnForward
-            // 
-            this.btnForward.BackColor = System.Drawing.Color.Transparent;
-            this.btnForward.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnForward.FlatAppearance.BorderSize = 0;
-            this.btnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForward.Font = new System.Drawing.Font("Bahnschrift", 9F);
-            this.btnForward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btnForward.Image = ((System.Drawing.Image)(resources.GetObject("btnForward.Image")));
-            this.btnForward.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnForward.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnForward.Location = new System.Drawing.Point(303, 18);
-            this.btnForward.Margin = new System.Windows.Forms.Padding(2);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(63, 63);
-            this.btnForward.TabIndex = 40;
-            this.btnForward.Text = "Forward";
-            this.btnForward.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnForward.UseVisualStyleBackColor = false;
-            this.btnForward.Click += new System.EventHandler(this.BtnForward_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox4.Location = new System.Drawing.Point(225, 6);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1, 85);
-            this.pictureBox4.TabIndex = 51;
-            this.pictureBox4.TabStop = false;
             // 
             // label14
             // 
@@ -404,7 +414,7 @@
             this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(23, 61);
+            this.label14.Location = new System.Drawing.Point(39, 89);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(16, 16);
             this.label14.TabIndex = 49;
@@ -416,7 +426,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label13.Location = new System.Drawing.Point(23, 30);
+            this.label13.Location = new System.Drawing.Point(31, 61);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(24, 16);
             this.label13.TabIndex = 48;
@@ -427,7 +437,7 @@
             this.PbNavBarSplit.BackColor = System.Drawing.Color.Silver;
             this.PbNavBarSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PbNavBarSplit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.PbNavBarSplit.Location = new System.Drawing.Point(0, 103);
+            this.PbNavBarSplit.Location = new System.Drawing.Point(0, 119);
             this.PbNavBarSplit.Name = "PbNavBarSplit";
             this.PbNavBarSplit.Size = new System.Drawing.Size(1311, 1);
             this.PbNavBarSplit.TabIndex = 0;
@@ -555,16 +565,33 @@
             // pnTitlebar
             // 
             this.pnTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(23)))));
+            this.pnTitlebar.Controls.Add(this.button7);
+            this.pnTitlebar.Controls.Add(this.label11);
             this.pnTitlebar.Controls.Add(this.button2);
             this.pnTitlebar.Controls.Add(this.button1);
             this.pnTitlebar.Controls.Add(this.btnClose);
             this.pnTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnTitlebar.Name = "pnTitlebar";
-            this.pnTitlebar.Size = new System.Drawing.Size(1311, 46);
+            this.pnTitlebar.Size = new System.Drawing.Size(1311, 65);
             this.pnTitlebar.TabIndex = 16;
             this.pnTitlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnTitleBar_Paint);
             this.pnTitlebar.DoubleClick += new System.EventHandler(this.PnTitlebar_DoubleClick);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(529, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(237, 25);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Programma Rammendo";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -578,7 +605,7 @@
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button2.Location = new System.Drawing.Point(1173, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 46);
+            this.button2.Size = new System.Drawing.Size(46, 65);
             this.button2.TabIndex = 25;
             this.button2.Tag = "1";
             this.button2.Text = "-";
@@ -597,7 +624,7 @@
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button1.Location = new System.Drawing.Point(1219, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 46);
+            this.button1.Size = new System.Drawing.Size(46, 65);
             this.button1.TabIndex = 24;
             this.button1.Tag = "1";
             this.button1.Text = "□";
@@ -617,7 +644,7 @@
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnClose.Location = new System.Drawing.Point(1265, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 46);
+            this.btnClose.Size = new System.Drawing.Size(46, 65);
             this.btnClose.TabIndex = 21;
             this.btnClose.Tag = "1";
             this.btnClose.Text = "X";
@@ -626,13 +653,11 @@
             // 
             // pnForms
             // 
-            this.pnForms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnForms.Location = new System.Drawing.Point(316, 170);
+            this.pnForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnForms.Location = new System.Drawing.Point(237, 185);
             this.pnForms.Name = "pnForms";
-            this.pnForms.Size = new System.Drawing.Size(966, 530);
+            this.pnForms.Size = new System.Drawing.Size(1074, 542);
             this.pnForms.TabIndex = 1;
             // 
             // pbBottombnd
@@ -674,6 +699,73 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(0, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 65);
+            this.button7.TabIndex = 27;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button8.Location = new System.Drawing.Point(990, 54);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 56);
+            this.button8.TabIndex = 54;
+            this.button8.Text = "Gant";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button9.Location = new System.Drawing.Point(1071, 56);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 55);
+            this.button9.TabIndex = 55;
+            this.button9.Text = "Settings";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(1152, 56);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 56);
+            this.button10.TabIndex = 56;
+            this.button10.Text = "Export";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button11.Location = new System.Drawing.Point(1233, 54);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 56);
+            this.button11.TabIndex = 57;
+            this.button11.Text = "Print";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
             // Central
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,7 +784,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1311, 727);
+            this.MinimumSize = new System.Drawing.Size(1311, 726);
             this.Name = "Central";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.SizeChanged += new System.EventHandler(this.Central_SizeChanged);
@@ -700,9 +792,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnNavi.ResumeLayout(false);
             this.pnNavi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).EndInit();
             this.pnTitlebar.ResumeLayout(false);
+            this.pnTitlebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottombnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
@@ -730,11 +823,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;      
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnFilters;
-        private System.Windows.Forms.Button btnFatturato;
         private System.Windows.Forms.Button btnProduzione;
         private System.Windows.Forms.Button btnProduzioneGantt;
         private System.Windows.Forms.Button btnTelliProdoti;
@@ -750,11 +841,21 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnForms;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pbBottombnd;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
     }
