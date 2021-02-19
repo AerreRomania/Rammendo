@@ -58,6 +58,9 @@
     <Compile Include="Central.designer.cs">
       <DependentUpon>Central.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\Geometry.cs" />
     <Compile Include="Helpers\Resizer.cs" />

@@ -41,7 +41,7 @@ namespace Rammendo
                 if (Path.GetExtension(file) != ".exe") continue;
             }
 
-            SuspendLayout();
+            //SuspendLayout();
 
             treeMenu.Width = 0;
             IdStateArray = new System.Text.StringBuilder();
@@ -55,7 +55,7 @@ namespace Rammendo
 
             CreateMenuTree();
             _fromNavigation = false;
-            ResumeLayout(true);
+            //ResumeLayout(true);
         }
 
         private void CreateMenuTree() {
@@ -64,7 +64,7 @@ namespace Rammendo
             var node2 = root.Nodes.Add("Report 2");
             var node3 = root.Nodes.Add("Report 3");
             var node4 = root.Nodes.Add("Report 4");
-
+           
             treeMenu.BeginUpdate();
             treeMenu.Nodes.Add(root);
             treeMenu.EndUpdate();
@@ -82,9 +82,11 @@ namespace Rammendo
 
                 ResetMenuCommands();
 
+                SuspendLayout();
+
                 if (treeMenu.SelectedNode == node1) {
                     var frm = new TelliProdoti(pnForms);
-                    btnTelliProdoti.BackColor = Color.FromArgb(125, 141, 161);
+                    btnTelliProdoti.BackColor = Color.DarkCyan;
                     btnTelliProdoti.ForeColor = Color.White;
                 }
 
@@ -103,7 +105,7 @@ namespace Rammendo
 
                 btnBack.Enabled = true;
 
-                ResumeLayout(true);
+               ResumeLayout(true);
             };
             treeMenu.BeginUpdate();
             treeMenu.CollapseAll();
