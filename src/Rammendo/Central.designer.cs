@@ -240,7 +240,7 @@
             // 
             // btnProgram
             // 
-            this.btnProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
+            this.btnProgram.BackColor = System.Drawing.Color.DarkCyan;
             this.btnProgram.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnProgram.FlatAppearance.BorderSize = 0;
             this.btnProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -629,7 +629,7 @@
             this.pnForms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnForms.BackColor = System.Drawing.Color.Silver;
             this.pnForms.Location = new System.Drawing.Point(316, 170);
             this.pnForms.Name = "pnForms";
             this.pnForms.Size = new System.Drawing.Size(966, 530);

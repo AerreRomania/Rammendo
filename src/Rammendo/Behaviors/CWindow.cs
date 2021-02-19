@@ -12,21 +12,15 @@ namespace Rammendo.Behaviors
         private bool IsChildForm { get; set; }
         private Panel ParentPanel { get; set; }
 
-        public CWindow() {
-            InitializeComponent();
-        }
-
         public CWindow(bool isChildForm, Panel parent = null) : base() {
-            InitializeComponent();
+   
             IsChildForm = isChildForm;
             ParentPanel = parent;
-            if (isChildForm && parent != null) {
-                GenerateChildForm();
-            }
-
+            InitializeComponent();
         }
 
-        private void GenerateChildForm() {
+        public void GenerateChildForm() {
+            WindowState = FormWindowState.Minimized;
             WindowState = FormWindowState.Maximized;
             FormBorderStyle = FormBorderStyle.None;
             ShowInTaskbar = false;
@@ -35,16 +29,12 @@ namespace Rammendo.Behaviors
             TopLevel = false;
             Visible = true;
             Location = new Point(0, 0);
-            BackColor = Color.WhiteSmoke;
-            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             ParentPanel.Controls.Add(this);
+            Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            Show();
             Resize += (s, e) => {
                 Size = ParentPanel.Size;
             };
-            SizeChanged += (s, e) => {
-                Size = ParentPanel.Size;
-            };
-            Show();
             Size = ParentPanel.Size;
         }
 
