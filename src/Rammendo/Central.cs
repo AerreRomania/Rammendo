@@ -51,10 +51,12 @@ namespace Rammendo
             DateFrom = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day);
             DateTo = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day);
             pnDockBar.BackColor = Color.WhiteSmoke;
-            pnDockBar.Width = 287;
+            //pnDockBar.Width = 287;
 
             CreateMenuTree();
             _fromNavigation = false;
+
+            btnTelliProdoti.PerformClick();
             //ResumeLayout(true);
         }
 

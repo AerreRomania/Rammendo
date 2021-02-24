@@ -44,12 +44,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pnNavi = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnExoport = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnGant = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.pnData = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -86,8 +89,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnNavi.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.pnExoport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.pnData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.flPannel_Orange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).BeginInit();
             this.pnTitlebar.SuspendLayout();
@@ -121,13 +127,9 @@
             // 
             // pnDockBar
             // 
-            this.pnDockBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnDockBar.AutoScroll = true;
             this.pnDockBar.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.pnDockBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.pnDockBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnDockBar.Controls.Add(this.pictureBox2);
             this.pnDockBar.Controls.Add(this.btnProduzione);
             this.pnDockBar.Controls.Add(this.btnProduzioneGantt);
@@ -135,20 +137,20 @@
             this.pnDockBar.Controls.Add(this.btnProgram);
             this.pnDockBar.Controls.Add(this.treeMenu);
             this.pnDockBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnDockBar.Location = new System.Drawing.Point(0, 181);
+            this.pnDockBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnDockBar.Location = new System.Drawing.Point(0, 169);
             this.pnDockBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnDockBar.Name = "pnDockBar";
-            this.pnDockBar.Size = new System.Drawing.Size(228, 546);
+            this.pnDockBar.Size = new System.Drawing.Size(230, 558);
             this.pnDockBar.TabIndex = 13;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(225, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(229, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 544);
+            this.pictureBox2.Size = new System.Drawing.Size(1, 558);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -164,7 +166,7 @@
             this.btnProduzione.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnProduzione.Location = new System.Drawing.Point(20, 151);
             this.btnProduzione.Name = "btnProduzione";
-            this.btnProduzione.Size = new System.Drawing.Size(188, 39);
+            this.btnProduzione.Size = new System.Drawing.Size(189, 39);
             this.btnProduzione.TabIndex = 9;
             this.btnProduzione.Tag = "1";
             this.btnProduzione.UseVisualStyleBackColor = false;
@@ -184,7 +186,7 @@
             this.btnProduzioneGantt.Location = new System.Drawing.Point(20, 107);
             this.btnProduzioneGantt.Margin = new System.Windows.Forms.Padding(2);
             this.btnProduzioneGantt.Name = "btnProduzioneGantt";
-            this.btnProduzioneGantt.Size = new System.Drawing.Size(188, 39);
+            this.btnProduzioneGantt.Size = new System.Drawing.Size(189, 39);
             this.btnProduzioneGantt.TabIndex = 6;
             this.btnProduzioneGantt.Tag = "1";
             this.btnProduzioneGantt.UseVisualStyleBackColor = false;
@@ -204,7 +206,7 @@
             this.btnTelliProdoti.Location = new System.Drawing.Point(20, 63);
             this.btnTelliProdoti.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelliProdoti.Name = "btnTelliProdoti";
-            this.btnTelliProdoti.Size = new System.Drawing.Size(188, 39);
+            this.btnTelliProdoti.Size = new System.Drawing.Size(189, 39);
             this.btnTelliProdoti.TabIndex = 5;
             this.btnTelliProdoti.Tag = "1";
             this.btnTelliProdoti.UseVisualStyleBackColor = false;
@@ -225,7 +227,7 @@
             this.btnProgram.Location = new System.Drawing.Point(20, 20);
             this.btnProgram.Margin = new System.Windows.Forms.Padding(2);
             this.btnProgram.Name = "btnProgram";
-            this.btnProgram.Size = new System.Drawing.Size(188, 39);
+            this.btnProgram.Size = new System.Drawing.Size(189, 39);
             this.btnProgram.TabIndex = 10;
             this.btnProgram.Tag = "1";
             this.btnProgram.Text = "Report Rammendo";
@@ -245,7 +247,7 @@
             this.treeMenu.Margin = new System.Windows.Forms.Padding(2);
             this.treeMenu.Name = "treeMenu";
             this.treeMenu.ShowLines = false;
-            this.treeMenu.Size = new System.Drawing.Size(1, 544);
+            this.treeMenu.Size = new System.Drawing.Size(1, 558);
             this.treeMenu.TabIndex = 4;
             // 
             // dtpTo
@@ -307,10 +309,10 @@
             this.pnNavi.Controls.Add(this.flPannel_Orange);
             this.pnNavi.Controls.Add(this.PbNavBarSplit);
             this.pnNavi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnNavi.Location = new System.Drawing.Point(0, 63);
+            this.pnNavi.Location = new System.Drawing.Point(0, 50);
             this.pnNavi.Margin = new System.Windows.Forms.Padding(2);
             this.pnNavi.Name = "pnNavi";
-            this.pnNavi.Size = new System.Drawing.Size(1311, 119);
+            this.pnNavi.Size = new System.Drawing.Size(1316, 119);
             this.pnNavi.TabIndex = 15;
             // 
             // panel3
@@ -318,24 +320,46 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.pnExoport);
             this.panel3.Controls.Add(this.pnData);
             this.panel3.Location = new System.Drawing.Point(0, 44);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1311, 74);
+            this.panel3.Size = new System.Drawing.Size(1316, 75);
             this.panel3.TabIndex = 60;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox4.Location = new System.Drawing.Point(309, 73);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(544, 2);
+            this.pictureBox4.TabIndex = 60;
+            this.pictureBox4.TabStop = false;
             // 
             // pnExoport
             // 
+            this.pnExoport.Controls.Add(this.pictureBox6);
             this.pnExoport.Controls.Add(this.btnGant);
             this.pnExoport.Controls.Add(this.btnPrint);
             this.pnExoport.Controls.Add(this.btnSettings);
             this.pnExoport.Controls.Add(this.btnExport);
             this.pnExoport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnExoport.Location = new System.Drawing.Point(848, 0);
+            this.pnExoport.Location = new System.Drawing.Point(853, 0);
             this.pnExoport.Name = "pnExoport";
-            this.pnExoport.Size = new System.Drawing.Size(463, 74);
+            this.pnExoport.Size = new System.Drawing.Size(463, 75);
             this.pnExoport.TabIndex = 59;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 73);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(463, 2);
+            this.pictureBox6.TabIndex = 61;
+            this.pictureBox6.TabStop = false;
             // 
             // btnGant
             // 
@@ -396,6 +420,7 @@
             // 
             // pnData
             // 
+            this.pnData.Controls.Add(this.pictureBox5);
             this.pnData.Controls.Add(this.dtpFrom);
             this.pnData.Controls.Add(this.dtpTo);
             this.pnData.Controls.Add(this.label13);
@@ -405,8 +430,18 @@
             this.pnData.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnData.Location = new System.Drawing.Point(0, 0);
             this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(309, 74);
+            this.pnData.Size = new System.Drawing.Size(309, 75);
             this.pnData.TabIndex = 58;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 73);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(309, 2);
+            this.pictureBox5.TabIndex = 61;
+            this.pictureBox5.TabStop = false;
             // 
             // label13
             // 
@@ -475,7 +510,7 @@
             this.flPannel_Orange.Controls.Add(this.btnRammendoPersona);
             this.flPannel_Orange.Location = new System.Drawing.Point(0, 0);
             this.flPannel_Orange.Name = "flPannel_Orange";
-            this.flPannel_Orange.Size = new System.Drawing.Size(1311, 44);
+            this.flPannel_Orange.Size = new System.Drawing.Size(1316, 44);
             this.flPannel_Orange.TabIndex = 53;
             // 
             // btnHome
@@ -541,7 +576,7 @@
             this.PbNavBarSplit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.PbNavBarSplit.Location = new System.Drawing.Point(0, 118);
             this.PbNavBarSplit.Name = "PbNavBarSplit";
-            this.PbNavBarSplit.Size = new System.Drawing.Size(1311, 1);
+            this.PbNavBarSplit.Size = new System.Drawing.Size(1316, 1);
             this.PbNavBarSplit.TabIndex = 0;
             this.PbNavBarSplit.TabStop = false;
             // 
@@ -674,7 +709,7 @@
             this.pnTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnTitlebar.Name = "pnTitlebar";
-            this.pnTitlebar.Size = new System.Drawing.Size(1311, 63);
+            this.pnTitlebar.Size = new System.Drawing.Size(1316, 50);
             this.pnTitlebar.TabIndex = 16;
             this.pnTitlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnTitleBar_Paint);
             this.pnTitlebar.DoubleClick += new System.EventHandler(this.PnTitlebar_DoubleClick);
@@ -686,7 +721,7 @@
             this.pictureBox3.InitialImage = null;
             this.pictureBox3.Location = new System.Drawing.Point(1, 1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(119, 63);
+            this.pictureBox3.Size = new System.Drawing.Size(119, 49);
             this.pictureBox3.TabIndex = 28;
             this.pictureBox3.TabStop = false;
             // 
@@ -700,9 +735,9 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(1173, 0);
+            this.button2.Location = new System.Drawing.Point(1166, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 63);
+            this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 25;
             this.button2.Tag = "1";
             this.button2.Text = "-";
@@ -719,9 +754,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(1219, 0);
+            this.button1.Location = new System.Drawing.Point(1216, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 63);
+            this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 24;
             this.button1.Tag = "1";
             this.button1.Text = "□";
@@ -739,9 +774,9 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClose.Location = new System.Drawing.Point(1265, 0);
+            this.btnClose.Location = new System.Drawing.Point(1266, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 63);
+            this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.TabIndex = 21;
             this.btnClose.Tag = "1";
             this.btnClose.Text = "X";
@@ -754,8 +789,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnForms.Location = new System.Drawing.Point(228, 181);
+            this.pnForms.Location = new System.Drawing.Point(230, 181);
             this.pnForms.Name = "pnForms";
             this.pnForms.Size = new System.Drawing.Size(1083, 546);
             this.pnForms.TabIndex = 1;
@@ -806,7 +840,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnClose;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(1311, 727);
+            this.ClientSize = new System.Drawing.Size(1316, 727);
             this.ControlBox = false;
             this.Controls.Add(this.pnForms);
             this.Controls.Add(this.pnDockBar);
@@ -825,9 +859,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnNavi.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnExoport.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnData.ResumeLayout(false);
             this.pnData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.flPannel_Orange.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).EndInit();
             this.pnTitlebar.ResumeLayout(false);
@@ -876,7 +913,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnForms;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pbBottombnd;
@@ -895,5 +931,9 @@
         private System.Windows.Forms.Panel pnExoport;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
     }

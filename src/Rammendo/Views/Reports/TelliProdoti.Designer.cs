@@ -25,10 +25,16 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.CbCommessa = new System.Windows.Forms.ComboBox();
+            this.CbArticolo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvTelliProdoti
@@ -40,46 +46,107 @@
             this.DgvTelliProdoti.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DgvTelliProdoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvTelliProdoti.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvTelliProdoti.ColumnHeadersHeight = 32;
             this.DgvTelliProdoti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle4;
             this.DgvTelliProdoti.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvTelliProdoti.EnableHeadersVisualStyles = false;
             this.DgvTelliProdoti.GridColor = System.Drawing.Color.Gainsboro;
-            this.DgvTelliProdoti.Location = new System.Drawing.Point(0, 0);
+            this.DgvTelliProdoti.Location = new System.Drawing.Point(0, 46);
             this.DgvTelliProdoti.MultiSelect = false;
             this.DgvTelliProdoti.Name = "DgvTelliProdoti";
             this.DgvTelliProdoti.ReadOnly = true;
             this.DgvTelliProdoti.RowHeadersVisible = false;
             this.DgvTelliProdoti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvTelliProdoti.Size = new System.Drawing.Size(120, 65);
+            this.DgvTelliProdoti.Size = new System.Drawing.Size(569, 347);
             this.DgvTelliProdoti.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.CbArticolo);
+            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.CbCommessa);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(569, 46);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // CbCommessa
+            // 
+            this.CbCommessa.FormattingEnabled = true;
+            this.CbCommessa.Items.AddRange(new object[] {
+            "<Reset>"});
+            this.CbCommessa.Location = new System.Drawing.Point(325, 10);
+            this.CbCommessa.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
+            this.CbCommessa.Name = "CbCommessa";
+            this.CbCommessa.Size = new System.Drawing.Size(155, 25);
+            this.CbCommessa.TabIndex = 0;
+            this.CbCommessa.SelectedIndexChanged += new System.EventHandler(this.CbCommessa_SelectedIndexChanged);
+            // 
+            // CbArticolo
+            // 
+            this.CbArticolo.FormattingEnabled = true;
+            this.CbArticolo.Items.AddRange(new object[] {
+            "<Reset>"});
+            this.CbArticolo.Location = new System.Drawing.Point(78, 10);
+            this.CbArticolo.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
+            this.CbArticolo.Name = "CbArticolo";
+            this.CbArticolo.Size = new System.Drawing.Size(145, 25);
+            this.CbArticolo.TabIndex = 1;
+            this.CbArticolo.SelectedIndexChanged += new System.EventHandler(this.CbArticolo_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(238, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Commessa";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Articolo";
             // 
             // TelliProdoti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(120, 65);
+            this.ClientSize = new System.Drawing.Size(569, 393);
             this.Controls.Add(this.DgvTelliProdoti);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TelliProdoti";
             this.Text = "TelliProdoti";
             ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +154,10 @@
         #endregion
 
         private Controls.CGridView DgvTelliProdoti;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CbArticolo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox CbCommessa;
     }
 }

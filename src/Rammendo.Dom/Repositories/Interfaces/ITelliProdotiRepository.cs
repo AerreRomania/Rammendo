@@ -6,6 +6,6 @@ namespace Rammendo.Dom.Repositories.Interfaces
 {
     public interface ITelliProdotiRepository
     {
-        Task<IEnumerable<TelliProdoti>> GetAll();
+        Task<IEnumerable<TelliProdoti>> GetAll(string article, string commessa);
     }
 }

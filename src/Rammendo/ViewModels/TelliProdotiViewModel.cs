@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,20 +17,26 @@ namespace Rammendo.ViewModels
             _itelliProdotiRepository = new TelliProdotiRepository();
         }
 
-        public async Task<DataTable> Data() {
+        public List<string> ListArticles { get; set; }
+        public List<string> ListCommesse { get; set; }
+
+        public async Task<DataTable> Data(string article, string commessa) {
 
             var dataTable = new DataTable();
-            dataTable.Columns.Add("Article");
+            dataTable.Columns.Add("Articolo");
             dataTable.Columns.Add("Commessa");
             dataTable.Columns.Add("T. Prodoti");
             dataTable.Columns.Add("Rammendare");
 
-            var telliProdoti = await _itelliProdotiRepository.GetAll();
+            var telliProdoti = await _itelliProdotiRepository.GetAll(article, commessa);
 
             if (telliProdoti == null) {
                 MessageBox.Show("No data", nameof(TelliProdoti), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return await Task.FromResult(dataTable);
             }
+
+            ListArticles = new List<string>();
+            ListCommesse = new List<string>();
 
             var totProdoti = 0;
             var totRamendare = 0;
@@ -76,6 +83,13 @@ namespace Rammendo.ViewModels
                 totTotRammendare += totRamendare;
 
                 firstArticle = telliProduct.Article;
+
+                if (!ListArticles.Contains(telliProduct.Article)) {
+                    ListArticles.Add(telliProduct.Article);
+                }
+                if (!ListCommesse.Contains(telliProduct.Commessa)) {
+                    ListCommesse.Add(telliProduct.Commessa);
+                }
             }
             totRow = dataTable.NewRow();
             totRow[0] = $"Totale {firstArticle}";
