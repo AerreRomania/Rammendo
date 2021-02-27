@@ -22,11 +22,17 @@ namespace Rammendo.Controls
             EnableHeadersVisualStyles = false;
             ColumnHeadersHeight = 32;
             CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            //DefaultCellStyle.SelectionForeColor = Color.DimGray;
-            //DefaultCellStyle.SelectionBackColor = Color.LightYellow;
             GridColor = Color.Gainsboro;
             ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 15, FontStyle.Regular);
             ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;
+
+            DataBindingComplete += (s, e) => {
+                if (Columns.Count > 0) {
+                    foreach (DataGridViewColumn c in Columns) {
+                        c.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+                }
+            };
 
             this.DoubleBuffered(true);
         } 

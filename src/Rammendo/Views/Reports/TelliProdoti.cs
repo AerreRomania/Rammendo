@@ -24,6 +24,7 @@ namespace Rammendo.Views.Reports
 
         private async Task LoadData() {
             PbLoader.Visible = true;
+            PbError.Visible = false;
             var article = CbArticolo.SelectedIndex > 0 ? CbArticolo.Text : null;
             var commessa = CbCommessa.SelectedIndex > 0 ? CbCommessa.Text : null;
 
@@ -32,22 +33,13 @@ namespace Rammendo.Views.Reports
             if (CbArticolo.SelectedIndex == -1) article = null;
             if (CbCommessa.SelectedIndex == -1) commessa = null;
 
-            
-            try {
-                var data = await _telliProdotiViewModel.Data(article, commessa);
-                if (data != null) {
-                    DgvTelliProdoti.DataSource = data;
-                }
+            var data = await _telliProdotiViewModel.Data(article, commessa);
 
+            if (data != null) { //do dedicated changes over inherited class
+                DgvTelliProdoti.DataSource = data;
                 DgvTelliProdoti.Rows[0].DefaultCellStyle.ForeColor = Color.OrangeRed;
                 DgvTelliProdoti.Rows[0].DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
                 DgvTelliProdoti.Rows[0].DefaultCellStyle.BackColor = Color.MistyRose;
-
-                if (DgvTelliProdoti.Columns.Count > 0) {
-                    foreach (DataGridViewColumn c in DgvTelliProdoti.Columns) {
-                        c.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    }
-                }
 
                 if (DgvTelliProdoti.Rows.Count > 0) {
                     foreach (DataGridViewRow row in DgvTelliProdoti.Rows) {
@@ -66,15 +58,13 @@ namespace Rammendo.Views.Reports
                         }
                     }
                 }
-            }
-            catch (System.Exception ex) {
                 PbLoader.Visible = false;
-                PbLoader.Refresh();
-                MessageBox.Show(ex.Message);
             }
-            finally {
+            else {
                 PbLoader.Visible = false;
-                PbLoader.Refresh();
+                MessageBox.Show("No data because of wrong URL or VPN connection.",
+                    nameof(TelliProdoti), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PbError.Visible = true;
             }
         }
 

@@ -19,21 +19,16 @@ namespace Rammendo.ViewModels
 
         public async Task<DataTable> Data(string article, string commessa) {
 
-            var dataTable = new DataTable();
-            dataTable.Columns.Add("Articolo");
-            dataTable.Columns.Add("Commessa");
-            dataTable.Columns.Add("T. Prodoti");
-            dataTable.Columns.Add("Rammendare");
-
             try {
+                var dataTable = new DataTable();
+                dataTable.Columns.Add("Articolo");
+                dataTable.Columns.Add("Commessa");
+                dataTable.Columns.Add("T. Prodoti");
+                dataTable.Columns.Add("Rammendare");
+
                 var filter = new[] { article, commessa };
 
                 var telliProdoti = await ApiService.GetAllByFilter<TelliProdoti>(filter);
-
-                if (telliProdoti == null) {
-                    MessageBox.Show("No data", nameof(TelliProdoti), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return await Task.FromResult(dataTable);
-                }
 
                 ListArticles = new List<string>();
                 ListCommesse = new List<string>();
@@ -104,7 +99,7 @@ namespace Rammendo.ViewModels
                 return dataTable;
             }
             catch {
-                return dataTable;
+                return null;
             }
         }
     }

@@ -403,6 +403,7 @@
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnExport
             // 
@@ -856,13 +857,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.SizeChanged += new System.EventHandler(this.Central_SizeChanged);
-            this.Controls.SetChildIndex(this.menuStrip1, 0);
-            this.Controls.SetChildIndex(this.statusStrip, 0);
-            this.Controls.SetChildIndex(this.pbBottombnd, 0);
-            this.Controls.SetChildIndex(this.pnTitlebar, 0);
-            this.Controls.SetChildIndex(this.pnNavi, 0);
-            this.Controls.SetChildIndex(this.pnDockBar, 0);
-            this.Controls.SetChildIndex(this.pnForms, 0);
             this.pnDockBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnNavi.ResumeLayout(false);

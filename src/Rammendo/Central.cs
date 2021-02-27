@@ -7,7 +7,6 @@ using System.Reflection;
 using System.Windows.Forms;
 using Rammendo.Behaviors;
 using Rammendo.Helpers;
-using Rammendo.ViewModels;
 using Rammendo.Views.Reports;
 
 namespace Rammendo
@@ -19,20 +18,17 @@ namespace Rammendo
         public static DateTime DateFrom { get; private set; }
         public static DateTime DateTo { get; private set; }
         public static System.Text.StringBuilder IdStateArray { get; private set; }
-        public string RefreshTitle { get; set; }
 
         public Central() : base(false) {
             InitializeComponent();
             this.DoubleBuffered(true);
             SetStyle(ControlStyles.ResizeRedraw, true);
 
-            Store.Default.Url = "http://192.168.1.102:55432/api/";
+            Store.Default.Url = "http://192.168.96.17:55388/api/";
             Store.Default.Save();
         }
 
         private void Menu_Load(object send, EventArgs args) {
-            RefreshTitle = "Commesse in lavoro/ commesse da programmare";
-
             pnTitlebar.MouseMove += (s, mv) => {
                 if (mv.Button == MouseButtons.Left && WindowState != FormWindowState.Maximized) {
                     Resizer.ReleaseCapture();
@@ -331,5 +327,10 @@ namespace Rammendo
             Application.Exit();
         }
 
+        private void btnSettings_Click(object sender, EventArgs e) {
+            var frm = new Settings();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
     }
 }
