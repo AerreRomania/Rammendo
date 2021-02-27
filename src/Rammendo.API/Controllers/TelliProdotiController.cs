@@ -19,7 +19,7 @@ namespace Rammendo.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<TelliProdoti>> GetComments(string article, string commessa) {
+        public async Task<IEnumerable<TelliProdoti>> GetAllAsync(string article, string commessa) {
             try {
                 var telliProdotis = await _telliProdotiRepository.GetAll(article, commessa);
                 Log.Debug("Successfully loaded telliProdoti " +

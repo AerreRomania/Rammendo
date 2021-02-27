@@ -19,7 +19,7 @@ namespace Rammendo.API.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Login(string codAngajat) {
+		public async Task<IActionResult> LoginAsync(string codAngajat) {
 
 			IActionResult response = Unauthorized();
 			
