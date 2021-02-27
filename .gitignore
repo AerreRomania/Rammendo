@@ -22,3 +22,15 @@
 /src/Rammendo.Dom/obj/Debug
 /src/Rammendo/bin/Debug
 /src/.vs/Rammendo/v16
+/src/.vs/Rammendo/config
+/src/CsvImporter/obj/Release
+/src/packages
+/src/Rammendo/obj/Release
+/src/Rammendo.API/bin
+/src/Rammendo.API/obj
+/src/Rammendo.API/Properties
+/src/Rammendo.Data/bin/Release/netstandard2.0
+*.user
+/src/Rammendo.Dom/bin/Release
+/src/Rammendo.Dom/obj/Release
+/src/RammendoCsvService/obj/Release

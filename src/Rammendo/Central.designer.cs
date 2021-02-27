@@ -141,7 +141,7 @@
             this.pnDockBar.Location = new System.Drawing.Point(0, 169);
             this.pnDockBar.Margin = new System.Windows.Forms.Padding(2);
             this.pnDockBar.Name = "pnDockBar";
-            this.pnDockBar.Size = new System.Drawing.Size(230, 558);
+            this.pnDockBar.Size = new System.Drawing.Size(230, 557);
             this.pnDockBar.TabIndex = 13;
             // 
             // pictureBox2
@@ -150,7 +150,7 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox2.Location = new System.Drawing.Point(229, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 558);
+            this.pictureBox2.Size = new System.Drawing.Size(1, 557);
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -247,7 +247,7 @@
             this.treeMenu.Margin = new System.Windows.Forms.Padding(2);
             this.treeMenu.Name = "treeMenu";
             this.treeMenu.ShowLines = false;
-            this.treeMenu.Size = new System.Drawing.Size(1, 558);
+            this.treeMenu.Size = new System.Drawing.Size(1, 557);
             this.treeMenu.TabIndex = 4;
             // 
             // dtpTo
@@ -312,7 +312,7 @@
             this.pnNavi.Location = new System.Drawing.Point(0, 50);
             this.pnNavi.Margin = new System.Windows.Forms.Padding(2);
             this.pnNavi.Name = "pnNavi";
-            this.pnNavi.Size = new System.Drawing.Size(1316, 119);
+            this.pnNavi.Size = new System.Drawing.Size(1311, 119);
             this.pnNavi.TabIndex = 15;
             // 
             // panel3
@@ -325,7 +325,7 @@
             this.panel3.Controls.Add(this.pnData);
             this.panel3.Location = new System.Drawing.Point(0, 44);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1316, 75);
+            this.panel3.Size = new System.Drawing.Size(1311, 75);
             this.panel3.TabIndex = 60;
             // 
             // pictureBox4
@@ -334,7 +334,7 @@
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox4.Location = new System.Drawing.Point(309, 73);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(544, 2);
+            this.pictureBox4.Size = new System.Drawing.Size(539, 2);
             this.pictureBox4.TabIndex = 60;
             this.pictureBox4.TabStop = false;
             // 
@@ -346,7 +346,7 @@
             this.pnExoport.Controls.Add(this.btnSettings);
             this.pnExoport.Controls.Add(this.btnExport);
             this.pnExoport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnExoport.Location = new System.Drawing.Point(853, 0);
+            this.pnExoport.Location = new System.Drawing.Point(848, 0);
             this.pnExoport.Name = "pnExoport";
             this.pnExoport.Size = new System.Drawing.Size(463, 75);
             this.pnExoport.TabIndex = 59;
@@ -510,7 +510,7 @@
             this.flPannel_Orange.Controls.Add(this.btnRammendoPersona);
             this.flPannel_Orange.Location = new System.Drawing.Point(0, 0);
             this.flPannel_Orange.Name = "flPannel_Orange";
-            this.flPannel_Orange.Size = new System.Drawing.Size(1316, 44);
+            this.flPannel_Orange.Size = new System.Drawing.Size(1311, 44);
             this.flPannel_Orange.TabIndex = 53;
             // 
             // btnHome
@@ -576,7 +576,7 @@
             this.PbNavBarSplit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.PbNavBarSplit.Location = new System.Drawing.Point(0, 118);
             this.PbNavBarSplit.Name = "PbNavBarSplit";
-            this.PbNavBarSplit.Size = new System.Drawing.Size(1316, 1);
+            this.PbNavBarSplit.Size = new System.Drawing.Size(1311, 1);
             this.PbNavBarSplit.TabIndex = 0;
             this.PbNavBarSplit.TabStop = false;
             // 
@@ -709,7 +709,7 @@
             this.pnTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnTitlebar.Name = "pnTitlebar";
-            this.pnTitlebar.Size = new System.Drawing.Size(1316, 50);
+            this.pnTitlebar.Size = new System.Drawing.Size(1311, 50);
             this.pnTitlebar.TabIndex = 16;
             this.pnTitlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnTitleBar_Paint);
             this.pnTitlebar.DoubleClick += new System.EventHandler(this.PnTitlebar_DoubleClick);
@@ -735,7 +735,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(1166, 0);
+            this.button2.Location = new System.Drawing.Point(1161, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 25;
@@ -754,7 +754,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(1216, 0);
+            this.button1.Location = new System.Drawing.Point(1211, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 50);
             this.button1.TabIndex = 24;
@@ -774,7 +774,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClose.Location = new System.Drawing.Point(1266, 0);
+            this.btnClose.Location = new System.Drawing.Point(1261, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.TabIndex = 21;
@@ -791,7 +791,7 @@
             this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnForms.Location = new System.Drawing.Point(230, 181);
             this.pnForms.Name = "pnForms";
-            this.pnForms.Size = new System.Drawing.Size(1083, 546);
+            this.pnForms.Size = new System.Drawing.Size(1078, 545);
             this.pnForms.TabIndex = 1;
             // 
             // pbBottombnd
@@ -840,7 +840,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnClose;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(1316, 727);
+            this.ClientSize = new System.Drawing.Size(1311, 726);
             this.ControlBox = false;
             this.Controls.Add(this.pnForms);
             this.Controls.Add(this.pnDockBar);
@@ -853,8 +853,16 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1311, 726);
             this.Name = "Central";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.SizeChanged += new System.EventHandler(this.Central_SizeChanged);
+            this.Controls.SetChildIndex(this.menuStrip1, 0);
+            this.Controls.SetChildIndex(this.statusStrip, 0);
+            this.Controls.SetChildIndex(this.pbBottombnd, 0);
+            this.Controls.SetChildIndex(this.pnTitlebar, 0);
+            this.Controls.SetChildIndex(this.pnNavi, 0);
+            this.Controls.SetChildIndex(this.pnDockBar, 0);
+            this.Controls.SetChildIndex(this.pnForms, 0);
             this.pnDockBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnNavi.ResumeLayout(false);

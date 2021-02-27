@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Rammendo.Behaviors;
 using Rammendo.Helpers;
+using Rammendo.ViewModels;
 using Rammendo.Views.Reports;
 
 namespace Rammendo
@@ -14,8 +15,7 @@ namespace Rammendo
     public partial class Central : CWindow
     {
         private Geometry _geometry = new Geometry();
-        Resizer _resizer = new Resizer();
-
+        
         public static DateTime DateFrom { get; private set; }
         public static DateTime DateTo { get; private set; }
         public static System.Text.StringBuilder IdStateArray { get; private set; }
@@ -25,6 +25,9 @@ namespace Rammendo
             InitializeComponent();
             this.DoubleBuffered(true);
             SetStyle(ControlStyles.ResizeRedraw, true);
+
+            Store.Default.Url = "http://192.168.1.102:55432/api/";
+            Store.Default.Save();
         }
 
         private void Menu_Load(object send, EventArgs args) {
@@ -41,8 +44,6 @@ namespace Rammendo
                 if (Path.GetExtension(file) != ".exe") continue;
             }
 
-            //SuspendLayout();
-
             treeMenu.Width = 0;
             IdStateArray = new System.Text.StringBuilder();
             var currentDate = DateTime.Now;
@@ -51,13 +52,10 @@ namespace Rammendo
             DateFrom = new DateTime(dtpFrom.Value.Year, dtpFrom.Value.Month, dtpFrom.Value.Day);
             DateTo = new DateTime(dtpTo.Value.Year, dtpTo.Value.Month, dtpTo.Value.Day);
             pnDockBar.BackColor = Color.WhiteSmoke;
-            //pnDockBar.Width = 287;
-
             CreateMenuTree();
             _fromNavigation = false;
 
             btnTelliProdoti.PerformClick();
-            //ResumeLayout(true);
         }
 
         private void CreateMenuTree() {
@@ -248,7 +246,6 @@ namespace Rammendo
         internal bool _fromNavigation = false;
         private void BtnForward_Click(object sender, EventArgs e) {
             if (listBox1.SelectedIndex == listBox1.Items.Count - 1) {
-              //  btnForward.Enabled = false;
                 return;
             }
             btnBack.Enabled = true;
@@ -265,7 +262,6 @@ namespace Rammendo
                 btnBack.Enabled = false;
                 return;
             }
-           // btnForward.Enabled = true;
             _fromNavigation = true;
 
             if ((TreeNode)listBox1.SelectedItem == FindLastNode(treeMenu.SelectedNode))

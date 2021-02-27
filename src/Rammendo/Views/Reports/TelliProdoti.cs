@@ -1,7 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Rammendo.Behaviors;
-using Rammendo.Helpers;
 using Rammendo.ViewModels;
 
 namespace Rammendo.Views.Reports
@@ -13,17 +14,25 @@ namespace Rammendo.Views.Reports
             InitializeComponent();
             GenerateChildForm();
             _telliProdotiViewModel = new TelliProdotiViewModel();
-            LoadData();
             FillComboBoxes();
         }
 
-        private async void LoadData() {
+        protected override async void OnLoad(EventArgs e) {
+            await LoadData();
+            base.OnLoad(e);
+        }
+
+        private async Task LoadData() {
+            PbLoader.Visible = true;
             var article = CbArticolo.SelectedIndex > 0 ? CbArticolo.Text : null;
             var commessa = CbCommessa.SelectedIndex > 0 ? CbCommessa.Text : null;
+
+            await Task.Delay(10);
 
             if (CbArticolo.SelectedIndex == -1) article = null;
             if (CbCommessa.SelectedIndex == -1) commessa = null;
 
+            
             try {
                 var data = await _telliProdotiViewModel.Data(article, commessa);
                 if (data != null) {
@@ -59,7 +68,13 @@ namespace Rammendo.Views.Reports
                 }
             }
             catch (System.Exception ex) {
+                PbLoader.Visible = false;
+                PbLoader.Refresh();
                 MessageBox.Show(ex.Message);
+            }
+            finally {
+                PbLoader.Visible = false;
+                PbLoader.Refresh();
             }
         }
 
@@ -78,13 +93,13 @@ namespace Rammendo.Views.Reports
             }
         }
 
-        private void CbArticolo_SelectedIndexChanged(object sender, System.EventArgs e) {
-            LoadData();
+        private async void CbArticolo_SelectedIndexChanged(object sender, EventArgs e) {
+            await LoadData();
         }
 
-        private void CbCommessa_SelectedIndexChanged(object sender, System.EventArgs e) {
+        private async void CbCommessa_SelectedIndexChanged(object sender, EventArgs e) {
             CbArticolo.SelectedIndex = -1;
-            LoadData();
+            await LoadData();
         }
     }
 }
