@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppRammendoMobile.Views.WorkPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid Padding="10" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout HorizontalOptions="Center">
+                <Label Style="{StaticResource DefaultLabel}" Text="Capi Total" />
+                <Label Style="{StaticResource DefaultLabel}" Text="200" />
+            </StackLayout>
+            <StackLayout Grid.Column="2" HorizontalOptions="Center">
+                <Label Style="{StaticResource DefaultLabel}" Text="Efficienza Totale" />
+                <Label Style="{StaticResource DefaultLabel}" Text="89%" />
+            </StackLayout>
+            <Button
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                BackgroundColor="ForestGreen"
+                CornerRadius="20" />
+            <Label
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Style="{StaticResource DefaultLabel}"
+                Text="23" />
+            <StackLayout
+                Grid.Row="2"
+                HorizontalOptions="End"
+                Spacing="0">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Dipendente:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="Test" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="2"
+                HorizontalOptions="Start">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Tavalo:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="456" />
+            </StackLayout>
+            <StackLayout Grid.Row="3" HorizontalOptions="End">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Commessa:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="763" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="3"
+                Grid.Column="2"
+                HorizontalOptions="Start">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Componente:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="763" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" HorizontalOptions="Center">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Article:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="763" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="4"
+                Grid.Column="1"
+                HorizontalOptions="Center">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Colore:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="Red" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="4"
+                Grid.Column="2"
+                HorizontalOptions="Center">
+                <Label
+                    BackgroundColor="LightGray"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Taglia:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="25" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="6" HorizontalOptions="Center">
+                <Label
+                    FontAttributes="Bold"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="BUONI:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="4" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="6"
+                Grid.Column="2"
+                HorizontalOptions="Start">
+                <Label
+                    FontAttributes="Bold"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="DA RAM:" />
+                <Label Style="{StaticResource DefaultLabel}" Text="4" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="7"
+                Grid.ColumnSpan="3"
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Button
+                    Margin="5"
+                    BackgroundColor="LightSlateGray"
+                    Style="{StaticResource DefaultButton}"
+                    Text="Stop" />
+                <Button
+                    Margin="5"
+                    Style="{StaticResource DefaultButton}"
+                    Text="Scarti" />
+                <Button
+                    Margin="5"
+                    BackgroundColor="LightSlateGray"
+                    Style="{StaticResource DefaultButton}"
+                    Text="Pauza" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

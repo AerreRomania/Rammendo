@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="AppRammendoMobile.Styles.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ResourceDictionary>
+
+        <!--  Colors  -->
+        <Color x:Key="White">White</Color>
+        <Color x:Key="Black">Black</Color>
+        <Color x:Key="Gray">#808080</Color>
+        <Color x:Key="Red">IndianRed</Color>
+        <!--  Controls  -->
+        <Style x:Key="DefaultButton" TargetType="Button">
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="Margin" Value="20,0,20,0" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="TextTransform" Value="None" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Red}" />
+            <Setter Property="TextColor" Value="{StaticResource White}" />
+        </Style>
+
+        <Style x:Key="RepartoButton" TargetType="Button">
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="Margin" Value="20,0,20,0" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="TextTransform" Value="None" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Gray}" />
+            <Setter Property="TextColor" Value="{StaticResource White}" />
+        </Style>
+
+        <Style x:Key="DefaultEntry" TargetType="Entry">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Margin" Value="20,0,20,0" />
+            <Setter Property="TextTransform" Value="None" />
+        </Style>
+
+        <Style x:Key="DefaultLabel" TargetType="Label">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="TextColor" Value="{StaticResource Black}" />
+        </Style>
+    </ResourceDictionary>
+</ResourceDictionary>

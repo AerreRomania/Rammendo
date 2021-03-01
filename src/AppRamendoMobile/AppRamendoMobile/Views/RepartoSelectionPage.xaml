@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppRammendoMobile.Views.RepartoSelectionPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid Padding="40" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                FontSize="30"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource DefaultLabel}"
+                Text="Select Reparto" />
+            <Button
+                x:Name="Confezione"
+                Grid.Row="1"
+                BackgroundColor="Orange"
+                Command="{Binding RepartoSelectionCommand}"
+                CommandParameter="{Binding Source={x:Reference Confezione}, Path=Text}"
+                Style="{StaticResource RepartoButton}"
+                Text="Confezione" />
+            <Button
+                x:Name="Sartoria"
+                Grid.Row="2"
+                BackgroundColor="DodgerBlue"
+                Command="{Binding RepartoSelectionCommand}"
+                CommandParameter="{Binding Source={x:Reference Sartoria}, Path=Text}"
+                Style="{StaticResource RepartoButton}"
+                Text="Sartoria" />
+            <Button
+                x:Name="Tintoria"
+                Grid.Row="3"
+                BackgroundColor="ForestGreen"
+                Command="{Binding RepartoSelectionCommand}"
+                CommandParameter="{Binding Source={x:Reference Tintoria}, Path=Text}"
+                Style="{StaticResource RepartoButton}"
+                Text="Tintoria" />
+            <Button
+                x:Name="Lavanderia"
+                Grid.Row="4"
+                BackgroundColor="Purple"
+                Command="{Binding RepartoSelectionCommand}"
+                CommandParameter="{Binding Source={x:Reference Lavanderia}, Path=Text}"
+                Style="{StaticResource RepartoButton}"
+                Text="Lavanderia" />
+            <Button
+                x:Name="Stireria"
+                Grid.Row="5"
+                BackgroundColor="DarkRed"
+                Command="{Binding RepartoSelectionCommand}"
+                CommandParameter="{Binding Source={x:Reference Stireria}, Path=Text}"
+                Style="{StaticResource RepartoButton}"
+                Text="Stireria" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppRammendoMobile.Views.JobSelectionPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Padding="0">
+                    <Label
+                        HorizontalOptions="End"
+                        Style="{StaticResource DefaultLabel}"
+                        Text="Name:"
+                        VerticalOptions="Start" />
+                    <Label
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource DefaultLabel}"
+                        Text="Test"
+                        VerticalOptions="Start" />
+                </Grid>
+
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Select Tavola" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0"
+                    Style="{StaticResource DefaultButton}"
+                    Text="QR"
+                    VerticalOptions="FillAndExpand" />
+                <Label
+                    Grid.Row="2"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Select Commessa" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="0"
+                    Style="{StaticResource DefaultButton}"
+                    Text="QR"
+                    VerticalOptions="FillAndExpand" />
+            </Grid>
+            <Grid
+                Grid.Row="1"
+                Padding="0,0,0,60"
+                VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label
+                    Grid.Row="1"
+                    Margin="0"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Select" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0"
+                    BackgroundColor="SlateBlue"
+                    Command="{Binding TelliCommand}"
+                    Style="{StaticResource DefaultButton}"
+                    Text="Telli"
+                    VerticalOptions="FillAndExpand" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="0"
+                    BackgroundColor="CadetBlue"
+                    Command="{Binding CapiCommand}"
+                    Style="{StaticResource DefaultButton}"
+                    Text="Capi"
+                    VerticalOptions="FillAndExpand" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

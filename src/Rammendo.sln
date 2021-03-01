@@ -9,9 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvImporter", "CsvImporter\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rammendo", "Rammendo\Rammendo.csproj", "{D97D19F3-012A-4E52-8A6B-AC43BE6E6D9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rammendo.API", "Rammendo.API\Rammendo.API.csproj", "{FED1030E-CABF-428A-95A7-06E711382400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rammendo.API", "Rammendo.API\Rammendo.API.csproj", "{FED1030E-CABF-428A-95A7-06E711382400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rammendo.Data", "Rammendo.Data\Rammendo.Data.csproj", "{F4B71356-DBA6-4BBB-A250-7C97F4B49D2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rammendo.Data", "Rammendo.Data\Rammendo.Data.csproj", "{F4B71356-DBA6-4BBB-A250-7C97F4B49D2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRammendoMobile.Android", "AppRamendoMobile\AppRamendoMobile.Android\AppRammendoMobile.Android.csproj", "{375558A6-485C-4246-898C-3676D21F7734}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppRammendoMobile", "AppRamendoMobile\AppRamendoMobile\AppRammendoMobile.csproj", "{33C6A452-1946-44AF-B2E1-0CF613CE984F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,16 @@ Global
 		{F4B71356-DBA6-4BBB-A250-7C97F4B49D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4B71356-DBA6-4BBB-A250-7C97F4B49D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4B71356-DBA6-4BBB-A250-7C97F4B49D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375558A6-485C-4246-898C-3676D21F7734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375558A6-485C-4246-898C-3676D21F7734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375558A6-485C-4246-898C-3676D21F7734}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{375558A6-485C-4246-898C-3676D21F7734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375558A6-485C-4246-898C-3676D21F7734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375558A6-485C-4246-898C-3676D21F7734}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{33C6A452-1946-44AF-B2E1-0CF613CE984F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C6A452-1946-44AF-B2E1-0CF613CE984F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C6A452-1946-44AF-B2E1-0CF613CE984F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C6A452-1946-44AF-B2E1-0CF613CE984F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
