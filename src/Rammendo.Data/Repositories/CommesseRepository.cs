@@ -9,6 +9,15 @@ namespace Rammendo.Data.Repositories
 {
     public class CommesseRepository : BaseRepository, ICommesseRepository
     {
+        /*
+         
+            SELECT Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, ComenziId, ComeziArticolId, max(lastkey)
+FROM RammendoImport
+WHERE Barcode='3213095' 
+group by  Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, ComenziId, ComeziArticolId
+
+             */
+
         public async Task<Commesse> GetAsync(string barcode) {
             var qry = @"
 SELECT Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, ComenziId, ComeziArticolId

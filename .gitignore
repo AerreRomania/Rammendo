@@ -35,3 +35,7 @@
 /src/Rammendo.Dom/obj/Release
 /src/RammendoCsvService/obj/Release
 src/.vs/Rammendo/DesignTimeBuild/.dtbcache.v2
+/src/AppRamendoMobile/AppRamendoMobile/bin/Debug/netstandard2.0
+/src/AppRamendoMobile/AppRamendoMobile/obj
+/src/AppRamendoMobile/AppRamendoMobile.Android/bin/Debug
+/src/AppRamendoMobile/AppRamendoMobile.Android/obj

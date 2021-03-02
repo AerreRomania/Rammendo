@@ -17,14 +17,15 @@ namespace AppRammendoMobile.ViewModels
             ScanQrCodeCommand = new Command(() => ExecuteScanQRCodeCommand());
         }
 
-        private void ExecuteScanQRCodeCommand()
+        private async void ExecuteScanQRCodeCommand()
         {
-            throw new NotImplementedException();
+            var result =  await CameraScanner.ScanAsync();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());
         }
 
-        private void ExecuteLoginCommand()
+        private async void ExecuteLoginCommand()
         {
-            Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());
         }
 
         private string _CodAngajat = string.Empty;

@@ -1,4 +1,5 @@
-﻿using AppRammendoMobile.Views;
+﻿using AppRammendoMobile.Services;
+using AppRammendoMobile.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,6 +10,9 @@ namespace AppRammendoMobile
     {
         public App()
         {
+            DependencyService.Register<ICameraScanner>();
+
+
             InitializeComponent();
             MainPage = new LoginPage();
         }

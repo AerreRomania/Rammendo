@@ -1,13 +1,17 @@
-﻿using System;
+﻿using AppRammendoMobile.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace AppRammendoMobile.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        public ICameraScanner CameraScanner => DependencyService.Get<ICameraScanner>();
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         //public ILoginDataStore LoginDataStore => DependencyService.Get<ILoginDataStore>();

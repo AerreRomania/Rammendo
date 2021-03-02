@@ -41,6 +41,9 @@ namespace CsvImporter
                             newRow[12] = commessa != null ? commessa.CommessaId : 0;
                             newRow[13] = commessa != null ? commessa.ArticleId : 0;
                             newRow[14] = DateTime.Now;
+                            newRow[15] = 0;
+                            newRow[16] = 0;
+                            newRow[17] = 0;
 
                             _dataTable.Rows.Add(newRow);
                         }
@@ -84,6 +87,9 @@ namespace CsvImporter
             dataTable.Columns.Add("ComenziId", typeof(int));
             dataTable.Columns.Add("ComeziArticolId", typeof(int));
             dataTable.Columns.Add("CreatedDate", typeof(DateTime));
+            dataTable.Columns.Add("GoodGood", typeof(int));
+            dataTable.Columns.Add("BadBad", typeof(int));
+            dataTable.Columns.Add("Diff", typeof(int));
         }
     }
 }
