@@ -16,7 +16,7 @@
         <!--  Controls  -->
         <Style x:Key="DefaultButton" TargetType="Button">
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
-            <Setter Property="Margin" Value="20,0,20,0" />
+
             <Setter Property="CornerRadius" Value="10" />
             <Setter Property="TextTransform" Value="None" />
             <Setter Property="FontSize" Value="18" />

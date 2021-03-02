@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppRammendoMobile.Models
 {
-   public class LoginModel
+   public class Angajati
     {
         public int Id { get; set; }
         public string CodAngajat { get; set; }
