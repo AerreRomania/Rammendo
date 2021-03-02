@@ -12,138 +12,256 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0.3*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackLayout HorizontalOptions="Center">
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
                 <Label Style="{StaticResource DefaultLabel}" Text="Capi Total" />
-                <Label Style="{StaticResource DefaultLabel}" Text="200" />
-            </StackLayout>
-            <StackLayout Grid.Column="2" HorizontalOptions="Center">
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="200" />
+            </Grid>
+            <Grid Grid.Column="2" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
                 <Label Style="{StaticResource DefaultLabel}" Text="Efficienza Totale" />
-                <Label Style="{StaticResource DefaultLabel}" Text="89%" />
-            </StackLayout>
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="89%" />
+            </Grid>
             <Button
                 Grid.Row="1"
                 Grid.ColumnSpan="3"
                 BackgroundColor="ForestGreen"
-                CornerRadius="20" />
-            <Label
-                Grid.Row="1"
-                Grid.ColumnSpan="3"
-                FontSize="30"
-                HorizontalOptions="Center"
-                Style="{StaticResource DefaultLabel}"
+                CornerRadius="20"
+                FontSize="40"
                 Text="23" />
-            <StackLayout
+
+            <Grid
                 Grid.Row="2"
-                HorizontalOptions="End"
-                Spacing="0">
+                Margin="0,10,0,10"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
+                    Margin="0"
+                    Padding="0"
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
                     Text="Dipendente:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="Test" />
-            </StackLayout>
-            <StackLayout
+                <Label
+                    Grid.Row="1"
+                    Margin="0"
+                    Padding="0"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Test" />
+            </Grid>
+            <Grid
                 Grid.Row="2"
                 Grid.Column="2"
-                HorizontalOptions="Start">
+                Margin="0,10,0,10"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
-                    Text="Tavalo:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="456" />
-            </StackLayout>
-            <StackLayout Grid.Row="3" HorizontalOptions="End">
+                    Text="Tavolo:" />
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="456" />
+            </Grid>
+            <Grid
+                Grid.Row="3"
+                Margin="0"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
                     Text="Commessa:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="763" />
-            </StackLayout>
-            <StackLayout
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="763" />
+            </Grid>
+            <Grid
                 Grid.Row="3"
                 Grid.Column="2"
-                HorizontalOptions="Start">
+                Margin="0"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
                     Text="Componente:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="763" />
-            </StackLayout>
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="763" />
+            </Grid>
 
-            <StackLayout Grid.Row="4" HorizontalOptions="Center">
+            <Grid
+                Grid.Row="4"
+                Margin="8,0,0,0"
+                Padding="0"
+                HorizontalOptions="Start"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
                     Text="Article:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="763" />
-            </StackLayout>
-            <StackLayout
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="763" />
+            </Grid>
+            <Grid
                 Grid.Row="4"
                 Grid.Column="1"
-                HorizontalOptions="Center">
+                Margin="0"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
                     Text="Colore:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="Red" />
-            </StackLayout>
-            <StackLayout
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Red" />
+            </Grid>
+            <Grid
                 Grid.Row="4"
                 Grid.Column="2"
-                HorizontalOptions="Center">
+                Margin="0,0,0,8"
+                Padding="0"
+                HorizontalOptions="End"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     BackgroundColor="LightGray"
                     Style="{StaticResource DefaultLabel}"
                     Text="Taglia:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="25" />
-            </StackLayout>
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="25" />
+            </Grid>
 
-            <StackLayout Grid.Row="6" HorizontalOptions="Center">
+            <Grid
+                Grid.Row="5"
+                Margin="0"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     FontAttributes="Bold"
                     Style="{StaticResource DefaultLabel}"
                     Text="BUONI:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="4" />
-            </StackLayout>
-            <StackLayout
-                Grid.Row="6"
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="4" />
+            </Grid>
+            <Grid
+                Grid.Row="5"
                 Grid.Column="2"
-                HorizontalOptions="Start">
+                Margin="0"
+                Padding="0"
+                HorizontalOptions="Center"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Label
                     FontAttributes="Bold"
                     Style="{StaticResource DefaultLabel}"
                     Text="DA RAM:" />
-                <Label Style="{StaticResource DefaultLabel}" Text="4" />
-            </StackLayout>
-            <StackLayout
-                Grid.Row="7"
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="4" />
+            </Grid>
+            <Grid
+                Grid.Row="6"
                 Grid.ColumnSpan="3"
-                HorizontalOptions="Center"
-                Orientation="Horizontal"
-                Spacing="0">
+                Margin="0"
+                Padding="0"
+                ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
                 <Button
                     Margin="5"
                     BackgroundColor="LightSlateGray"
                     Style="{StaticResource DefaultButton}"
                     Text="Stop" />
                 <Button
+                    Grid.Column="1"
                     Margin="5"
                     Style="{StaticResource DefaultButton}"
                     Text="Scarti" />
                 <Button
+                    Grid.Column="2"
                     Margin="5"
                     BackgroundColor="LightSlateGray"
                     Style="{StaticResource DefaultButton}"
                     Text="Pauza" />
-            </StackLayout>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
