@@ -21,33 +21,51 @@
             </Grid.ColumnDefinitions>
             <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
-                <Label Style="{StaticResource DefaultLabel}" Text="Capi Total" />
+                <Label
+                    Margin="0"
+                    Padding="0"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Capi Total" />
                 <Label
                     Grid.Row="1"
+                    Margin="0"
+                    Padding="0"
                     Style="{StaticResource DefaultLabel}"
                     Text="200" />
             </Grid>
-            <Grid Grid.Column="2" HorizontalOptions="CenterAndExpand">
+            <Grid
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="End">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
-                <Label Style="{StaticResource DefaultLabel}" Text="Efficienza Totale" />
+                <Label
+                    Margin="0"
+                    Padding="0"
+                    Style="{StaticResource DefaultLabel}"
+                    Text="Efficienza Totale" />
                 <Label
                     Grid.Row="1"
+                    Margin="0"
+                    Padding="0"
                     Style="{StaticResource DefaultLabel}"
                     Text="89%" />
             </Grid>
             <Button
+                x:Name="ButtonCount"
                 Grid.Row="1"
                 Grid.ColumnSpan="3"
                 BackgroundColor="ForestGreen"
+                Command="{Binding InteractionButtonCommand}"
+                CommandParameter="{Binding Source={x:Reference ButtonCount}, Path=Text}"
                 CornerRadius="20"
                 FontSize="40"
-                Text="23" />
+                Text="{Binding Counter, Mode=TwoWay}" />
 
             <Grid
                 Grid.Row="2"
@@ -246,19 +264,28 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button
+                    x:Name="ButtonStop"
                     Margin="5"
                     BackgroundColor="LightSlateGray"
+                    Command="{Binding InteractionButtonCommand}"
+                    CommandParameter="{Binding Source={x:Reference ButtonStop}, Path=Text}"
                     Style="{StaticResource DefaultButton}"
                     Text="Stop" />
                 <Button
+                    x:Name="ButtonScarti"
                     Grid.Column="1"
                     Margin="5"
+                    Command="{Binding InteractionButtonCommand}"
+                    CommandParameter="{Binding Source={x:Reference ButtonScarti}, Path=Text}"
                     Style="{StaticResource DefaultButton}"
                     Text="Scarti" />
                 <Button
+                    x:Name="ButtonPauza"
                     Grid.Column="2"
                     Margin="5"
                     BackgroundColor="LightSlateGray"
+                    Command="{Binding InteractionButtonCommand}"
+                    CommandParameter="{Binding Source={x:Reference ButtonPauza}, Path=Text}"
                     Style="{StaticResource DefaultButton}"
                     Text="Pauza" />
             </Grid>

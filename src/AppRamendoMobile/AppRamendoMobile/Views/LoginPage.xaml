@@ -2,35 +2,34 @@
 <ContentPage
     x:Class="AppRammendoMobile.Views.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:AppRammendoMobile.ViewModels">
-
-    <Grid Margin="20,0,20,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="60" />
-            <RowDefinition Height="60" />
-            <RowDefinition Height="60" />
-            <RowDefinition Height="2*" />
-        </Grid.RowDefinitions>
-        <Image />
-        <Button
-            Grid.Row="1"
-            Command="{Binding ScanQrCommand}"
-            Style="{StaticResource DefaultButton}"
-            Text="Scan QR Code" />
-        <Entry
-            Grid.Row="2"
-            HorizontalTextAlignment="Center"
-            IsPassword="True"
-            Placeholder="PIN"
-            Style="{StaticResource DefaultEntry}"
-            Text="{Binding CodAngajat}" />
-        <Button
-            Grid.Row="3"
-            Command="{Binding LoginCommand}"
-            Style="{StaticResource DefaultButton}"
-            Text="Log In" />
-    </Grid>
-
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image />
+            <Button
+                Grid.Row="1"
+                Command="{Binding ScanQrCodeCommand}"
+                Style="{StaticResource DefaultButton}"
+                Text="Scan QR Code" />
+            <Entry
+                Grid.Row="2"
+                HorizontalTextAlignment="Center"
+                IsPassword="True"
+                Placeholder="PIN"
+                Style="{StaticResource DefaultEntry}"
+                Text="{Binding CodAngajat}" />
+            <Button
+                Grid.Row="3"
+                Command="{Binding LoginCommand}"
+                Style="{StaticResource DefaultButton}"
+                Text="Log In" />
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

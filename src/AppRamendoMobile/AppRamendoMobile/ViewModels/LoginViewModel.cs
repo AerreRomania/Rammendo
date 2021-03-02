@@ -1,4 +1,5 @@
-﻿using AppRammendoMobile.Views;
+﻿using AppRammendoMobile.Services;
+using AppRammendoMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,10 +20,11 @@ namespace AppRammendoMobile.ViewModels
 
         private async void ExecuteScanQRCodeCommand()
         {
+           
             var result =  await CameraScanner.ScanAsync();
+            await Application.Current.MainPage.DisplayAlert("", result.ToString(), "ok");
             await Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());
         }
-
         private async void ExecuteLoginCommand()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());

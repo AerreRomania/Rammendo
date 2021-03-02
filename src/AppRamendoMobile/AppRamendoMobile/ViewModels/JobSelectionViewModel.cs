@@ -18,14 +18,14 @@ namespace AppRammendoMobile.ViewModels
             TelliCommand = new Command(() => ExecuteTelliCommand());
         }
 
-        private void ExecuteTelliCommand()
+        private async void ExecuteTelliCommand()
         {
-            Application.Current.MainPage.Navigation.PushModalAsync(new WorkPage());
+           await Application.Current.MainPage.Navigation.PushModalAsync(new WorkPage());
         }
 
-        private void ExecuteCapiCommand()
+        private async void ExecuteCapiCommand()
         {
-            Application.Current.MainPage.Navigation.PushModalAsync(new RepartoSelectionPage());
+           await  Application.Current.MainPage.Navigation.PushModalAsync(new RepartoSelectionPage());
         }
     }
 }

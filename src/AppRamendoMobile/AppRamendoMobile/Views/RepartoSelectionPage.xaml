@@ -19,43 +19,43 @@
                 Style="{StaticResource DefaultLabel}"
                 Text="Select Reparto" />
             <Button
-                x:Name="Confezione"
+                x:Name="ButtonConfezione"
                 Grid.Row="1"
                 BackgroundColor="Orange"
                 Command="{Binding RepartoSelectionCommand}"
-                CommandParameter="{Binding Source={x:Reference Confezione}, Path=Text}"
+                CommandParameter="{Binding Source={x:Reference ButtonConfezione}, Path=Text}"
                 Style="{StaticResource RepartoButton}"
                 Text="Confezione" />
             <Button
-                x:Name="Sartoria"
+                x:Name="ButtonSartoria"
                 Grid.Row="2"
                 BackgroundColor="DodgerBlue"
                 Command="{Binding RepartoSelectionCommand}"
-                CommandParameter="{Binding Source={x:Reference Sartoria}, Path=Text}"
+                CommandParameter="{Binding Source={x:Reference ButtonSartoria}, Path=Text}"
                 Style="{StaticResource RepartoButton}"
                 Text="Sartoria" />
             <Button
-                x:Name="Tintoria"
+                x:Name="ButtonTintoria"
                 Grid.Row="3"
                 BackgroundColor="ForestGreen"
                 Command="{Binding RepartoSelectionCommand}"
-                CommandParameter="{Binding Source={x:Reference Tintoria}, Path=Text}"
+                CommandParameter="{Binding Source={x:Reference ButtonTintoria}, Path=Text}"
                 Style="{StaticResource RepartoButton}"
                 Text="Tintoria" />
             <Button
-                x:Name="Lavanderia"
+                x:Name="ButtonLavanderia"
                 Grid.Row="4"
                 BackgroundColor="Purple"
                 Command="{Binding RepartoSelectionCommand}"
-                CommandParameter="{Binding Source={x:Reference Lavanderia}, Path=Text}"
+                CommandParameter="{Binding Source={x:Reference ButtonLavanderia}, Path=Text}"
                 Style="{StaticResource RepartoButton}"
                 Text="Lavanderia" />
             <Button
-                x:Name="Stireria"
+                x:Name="ButtonStireria"
                 Grid.Row="5"
                 BackgroundColor="DarkRed"
                 Command="{Binding RepartoSelectionCommand}"
-                CommandParameter="{Binding Source={x:Reference Stireria}, Path=Text}"
+                CommandParameter="{Binding Source={x:Reference ButtonStireria}, Path=Text}"
                 Style="{StaticResource RepartoButton}"
                 Text="Stireria" />
 

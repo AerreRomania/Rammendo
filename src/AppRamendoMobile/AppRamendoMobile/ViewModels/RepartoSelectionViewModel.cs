@@ -20,10 +20,10 @@ namespace AppRammendoMobile.ViewModels
            
         }
 
-        private void ExecuteRepartoSelectionCommand(string reparto)
+        private  async void ExecuteRepartoSelectionCommand(string reparto)
         {
             //Application.Current.MainPage.DisplayAlert("Reparto","Reparto: " + reparto, "OK");
-            Application.Current.MainPage.Navigation.PushModalAsync(new WorkPage());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new WorkPage());
         }
     }
 }

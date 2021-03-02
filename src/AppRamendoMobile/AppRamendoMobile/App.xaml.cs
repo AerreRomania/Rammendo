@@ -11,8 +11,6 @@ namespace AppRammendoMobile
         public App()
         {
             DependencyService.Register<ICameraScanner>();
-
-
             InitializeComponent();
             MainPage = new LoginPage();
         }
