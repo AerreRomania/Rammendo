@@ -39,7 +39,6 @@ ORDER BY Article;";
             catch (Exception) {
                 throw;
             }
-          
         }
     }
 }

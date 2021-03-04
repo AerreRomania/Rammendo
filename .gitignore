@@ -81,3 +81,5 @@ src/AppRamendoMobile/AppRamendoMobile/obj/Debug/netstandard2.0/Views/WorkPage.xa
 src/AppRamendoMobile/AppRamendoMobile.Android/obj/Debug/100/build.force
 *.jetify
 *.cfg
+/src/AppRamendoMobile/AppRamendoMobile.Android/obj
+/src/AppRamendoMobile/AppRamendoMobile/obj/Release/netstandard2.0

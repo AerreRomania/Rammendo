@@ -1,8 +1,7 @@
 ﻿using AppRammendoMobile.Services;
 using AppRammendoMobile.Views;
-using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppRammendoMobile
 {
@@ -11,7 +10,13 @@ namespace AppRammendoMobile
         public App()
         {
             DependencyService.Register<ICameraScanner>();
+            DependencyService.Register<ApiClient>();
+            DependencyService.Register<LoginClient>();
+
             InitializeComponent();
+
+            Permissions.RequestAsync<Permissions.Camera>();
+
             MainPage = new LoginPage();
         }
 

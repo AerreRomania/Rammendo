@@ -1,9 +1,7 @@
-﻿using AppRammendoMobile.Services;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
+using AppRammendoMobile.Services;
 using Xamarin.Forms;
 
 namespace AppRammendoMobile.ViewModels
@@ -11,11 +9,12 @@ namespace AppRammendoMobile.ViewModels
     public class ViewModelBase : INotifyPropertyChanged
     {
         public ICameraScanner CameraScanner => DependencyService.Get<ICameraScanner>();
+        public IApiClient ApiClient => DependencyService.Get<IApiClient>();
+        public ILoginClient Loginclient => DependencyService.Get<ILoginClient>();
+
+        public string Url => @"http://192.168.96.37:55388/api/";
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        //public ILoginDataStore LoginDataStore => DependencyService.Get<ILoginDataStore>();
-        //public IDataStore DataStore => DependencyService.Get<IDataStore>();
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

@@ -3,22 +3,23 @@ using ZXing.Mobile;
 using AppRammendoMobile.Services;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(LogicTrade.DeliveryAssist.Droid.Services.QrScannerService))]
+[assembly: Dependency(typeof(LogicTrade.DeliveryAssist.Droid.Services.CameraScanner))]
 namespace LogicTrade.DeliveryAssist.Droid.Services
 {
-    public class QrScannerService : ICameraScanner
+    public class CameraScanner : ICameraScanner
     {
         public async Task<string> ScanAsync() {
-            var optionsCustom = new MobileBarcodeScanningOptions();
+            try {
+                var optionsCustom = new MobileBarcodeScanningOptions();
 
-            var scanner = new MobileBarcodeScanner() {
-                UseCustomOverlay = false,
-                TopText = "Scanning...",
-                BottomText = "Please wait...",
-            };
+                var scanner = new MobileBarcodeScanner() {
+                    UseCustomOverlay = false,
+                    TopText = "Scanning...",
+                    BottomText = "Please wait...",
+                };
 
-            optionsCustom.PossibleFormats = new System.Collections.Generic.List<ZXing.BarcodeFormat>()
-            {
+                optionsCustom.PossibleFormats = new System.Collections.Generic.List<ZXing.BarcodeFormat>()
+                {
                 ZXing.BarcodeFormat.QR_CODE,
                 ZXing.BarcodeFormat.CODABAR,
                 ZXing.BarcodeFormat.CODE_39,
@@ -31,9 +32,13 @@ namespace LogicTrade.DeliveryAssist.Droid.Services
                 ZXing.BarcodeFormat.CODE_128,
                 ZXing.BarcodeFormat.CODE_93
             };
-            var scanResult = await scanner.Scan(optionsCustom);
+                var scanResult = await scanner.Scan(optionsCustom);
 
-            return scanResult.Text;
+                return scanResult.Text;
+            }
+            catch {
+                return null;
+            } 
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AppRammendoMobile.Views;
+﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +15,11 @@ namespace AppRammendoMobile.ViewModels
         public ICommand TelliCommand { get; set; }
         public JobSelectionViewModel()
         {
+            CapiCommand = new Command(() => ExecuteCapiCommand());
+            TelliCommand = new Command(() => ExecuteTelliCommand());
+        }
+
+        public JobSelectionViewModel(Angajati angajati) {
             CapiCommand = new Command(() => ExecuteCapiCommand());
             TelliCommand = new Command(() => ExecuteTelliCommand());
         }

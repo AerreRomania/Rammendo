@@ -1,45 +1,69 @@
-﻿using AppRammendoMobile.Services;
-using AppRammendoMobile.Views;
+﻿using AppRammendoMobile.Views;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace AppRammendoMobile.ViewModels
 {
-   public class LoginViewModel:ViewModelBase
+   public class LoginViewModel : ViewModelBase
     {
+        private string _codAngajat = string.Empty;
+
         public ICommand LoginCommand { get; set; }
         public ICommand ScanQrCodeCommand { get; set; }
         public LoginViewModel()
         {
-            LoginCommand = new Command(() => ExecuteLoginCommand());
-            ScanQrCodeCommand = new Command(() => ExecuteScanQRCodeCommand());
+            LoginCommand = new Command(async () => await ExecuteLoginCommand());
+            ScanQrCodeCommand = new Command(async () => await ExecuteScanQRCodeCommand());
         }
 
-        private async void ExecuteScanQRCodeCommand()
+        private async Task ExecuteScanQRCodeCommand()
         {
-           
-            var result =  await CameraScanner.ScanAsync();
-            await Application.Current.MainPage.DisplayAlert("", result.ToString(), "ok");
-            await Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());
-        }
-        private async void ExecuteLoginCommand()
-        {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new JobSelectionPage());
+            try {
+                CodAngajat = await CameraScanner.ScanAsync();
+                await LoginUser(CodAngajat);
+            }
+            catch (Exception ex) {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
+            }     
         }
 
-        private string _CodAngajat = string.Empty;
-        public string CodAngajat
+        private async Task ExecuteLoginCommand()
         {
-            get => _CodAngajat;
-            set
-            {
-                SetProperty(ref _CodAngajat, value);
-                OnPropertyChanged();
+            try {
+                await LoginUser(CodAngajat);
+            }
+            catch (Exception ex) {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
             }
         }
-       
+
+        private async Task LoginUser(string codAngajat) {
+
+            if (codAngajat != null) {
+                var angajati = await Loginclient.LoginUserAsync($"{Url}login=codAngajat={CodAngajat}");
+
+                if (angajati != null) {
+                    await Application.Current.MainPage.DisplayAlert("Success login", angajati.Angajat, "ok");
+                    await Application.Current.MainPage.Navigation.PushAsync(new JobSelectionPage(angajati));
+                }
+                else {
+
+                    await Application.Current.MainPage.DisplayAlert("Login error", $"No access for code {CodAngajat}", "ok");
+                }
+            }
+            else {
+                
+                await Application.Current.MainPage.DisplayAlert("No code", "Please scan again.", "ok");
+            }
+               
+        }
+
+        public string CodAngajat
+        {
+            get => _codAngajat;
+            set => SetProperty(ref _codAngajat, value);
+        }
     }
 }

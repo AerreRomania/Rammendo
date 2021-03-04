@@ -25,12 +25,13 @@ namespace Rammendo.API.Controllers
 			
 			try {
 				var angajatis = await _loginRepository.GetAngajatis(codAngajat);
-				Log.Debug("{UserCount} users found for CodAngajat {CodAngajat}", angajatis.ToList().Count, codAngajat);
+				var angajat = angajatis.FirstOrDefault();
+				Log.Debug("{UserCount} users found for CodAngajat {CodAngajat}", angajatis.ToList().Count, angajat.CodAngajat);
 
 				if (angajatis != null) {
-					var angajat = angajatis.FirstOrDefault();
+					//var angajat = angajatis.FirstOrDefault();
 					var strUserId = angajat.Id.ToString();
-					Log.Debug("User {Angajat} authenticated for CodAngajat {CodAngajat}", angajat.Angajat, codAngajat);
+					Log.Debug("User {Angajat} authenticated for CodAngajat {CodAngajat}", angajat.Angajat, angajat.CodAngajat);
 					response = Ok(new { loggedAngajat = angajat });
 				}
 			}

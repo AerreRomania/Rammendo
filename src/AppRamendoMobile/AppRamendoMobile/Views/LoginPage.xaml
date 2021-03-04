@@ -23,6 +23,7 @@
                 HorizontalTextAlignment="Center"
                 IsPassword="True"
                 Placeholder="PIN"
+                Keyboard="Numeric"
                 Style="{StaticResource DefaultEntry}"
                 Text="{Binding CodAngajat}" />
             <Button

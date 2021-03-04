@@ -25,7 +25,7 @@ namespace CsvImporter
                     var commessaInfo = CsvInfo.GetCommessa();
 
                     var maxKey = CsvInfo.GetMaxKeyBasedOnImport(fileName);
-
+                    
                     using (StreamReader streamReader = new StreamReader(new FileStream(file, FileMode.Open, FileAccess.Read))) { 
                         while (!streamReader.EndOfStream) {
                             string[] rows = streamReader.ReadLine().Split(';');
@@ -44,6 +44,9 @@ namespace CsvImporter
                             newRow[15] = 0;
                             newRow[16] = 0;
                             newRow[17] = 0;
+                            newRow[18] = null; 
+                            newRow[19] = null;
+                            newRow[20] = null;
 
                             _dataTable.Rows.Add(newRow);
                         }
@@ -90,6 +93,9 @@ namespace CsvImporter
             dataTable.Columns.Add("GoodGood", typeof(int));
             dataTable.Columns.Add("BadBad", typeof(int));
             dataTable.Columns.Add("Diff", typeof(int));
+            dataTable.Columns.Add("User");
+            dataTable.Columns.Add("Reparto");
+            dataTable.Columns.Add("TypeOfControl");
         }
     }
 }
