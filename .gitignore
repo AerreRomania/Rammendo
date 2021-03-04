@@ -40,7 +40,6 @@ src/.vs/Rammendo/DesignTimeBuild/.dtbcache.v2
 *.stamp
 *.dll
 *.cache
-*.png
 *.java
 *.txt
 *.jar

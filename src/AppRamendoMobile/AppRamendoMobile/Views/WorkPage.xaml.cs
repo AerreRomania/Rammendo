@@ -1,4 +1,5 @@
-﻿using AppRammendoMobile.ViewModels;
+﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,11 @@ namespace AppRammendoMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WorkPage : ContentPage
     {
-        WorkPageViewModel vm;
-        public WorkPage()
+
+        public WorkPage(Commesse commessa, string Reparto)
         {
             InitializeComponent();
-            BindingContext = vm = new WorkPageViewModel();
+            BindingContext = new WorkPageViewModel(commessa, Reparto);
         }
     }
 }

@@ -2,32 +2,41 @@
 <ContentPage
     x:Class="AppRammendoMobile.Views.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="white">
     <ContentPage.Content>
+
+
         <Grid Margin="20,0,20,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="60" />
                 <RowDefinition Height="60" />
                 <RowDefinition Height="60" />
                 <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
-            <Image />
-            <Button
+            <Image Margin="0,40,0,0" Source="icon" />
+            <ActivityIndicator
                 Grid.Row="1"
+                Margin="20"
+                IsRunning="{Binding IsBusy}"
+                Color="IndianRed" />
+            <Button
+                Grid.Row="2"
                 Command="{Binding ScanQrCodeCommand}"
                 Style="{StaticResource DefaultButton}"
                 Text="Scan QR Code" />
             <Entry
-                Grid.Row="2"
+                Grid.Row="3"
                 HorizontalTextAlignment="Center"
                 IsPassword="True"
-                Placeholder="PIN"
                 Keyboard="Numeric"
+                Placeholder="PIN"
                 Style="{StaticResource DefaultEntry}"
                 Text="{Binding CodAngajat}" />
             <Button
-                Grid.Row="3"
+                Grid.Row="4"
                 Command="{Binding LoginCommand}"
                 Style="{StaticResource DefaultButton}"
                 Text="Log In" />

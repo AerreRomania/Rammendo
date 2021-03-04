@@ -1,4 +1,5 @@
-﻿using AppRammendoMobile.ViewModels;
+﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,11 @@ namespace AppRammendoMobile.Views
     public partial class RepartoSelectionPage : ContentPage
     {
 
-        RepartoSelectionViewModel vm;
-        public RepartoSelectionPage()
+        
+        public RepartoSelectionPage(Commesse Commessa)
         {
             InitializeComponent();
-            BindingContext = vm = new RepartoSelectionViewModel();
+            BindingContext =  new RepartoSelectionViewModel(Commessa);
         }
     }
 }

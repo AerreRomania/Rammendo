@@ -20,6 +20,10 @@ namespace AppRammendoMobile.ViewModels
         {
 
         }
+        public WorkPageViewModel(Commesse commessa, string reparto)
+        {
+            Commessa = commessa;
+        }
         private void ExecuteInterationButtonCommand(string Condition)
         {
             if (int.TryParse(Condition, out var count))
@@ -45,27 +49,7 @@ namespace AppRammendoMobile.ViewModels
             }
         }
 
-        private int _counter = 0;
-        public int Counter
-        {
-            get => _counter;
-            set
-            {
-                SetProperty(ref _counter, value);
-                OnPropertyChanged();
-            }
-        }
-
-        private Commesse _commessa;
-        public Commesse Commessa
-        {
-            get=> _commessa;
-            set
-            {
-                SetProperty(ref _commessa, value);
-                OnPropertyChanged();
-            }
-        }
+      
 
     }
 }

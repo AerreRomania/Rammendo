@@ -8,7 +8,7 @@ namespace AppRammendoMobile.ViewModels
 {
    public class LoginViewModel : ViewModelBase
     {
-        private string _codAngajat = string.Empty;
+       
 
         public ICommand LoginCommand { get; set; }
         public ICommand ScanQrCodeCommand { get; set; }
@@ -20,50 +20,78 @@ namespace AppRammendoMobile.ViewModels
 
         private async Task ExecuteScanQRCodeCommand()
         {
-            try {
+            
+            try 
+            {
+                IsBusy = true;
                 CodAngajat = await CameraScanner.ScanAsync();
                 await LoginUser(CodAngajat);
+                IsBusy = false;
             }
-            catch (Exception ex) {
+            catch (Exception ex) 
+            {
+                if (IsBusy) IsBusy = false;
                 await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
             }     
         }
 
         private async Task ExecuteLoginCommand()
         {
-            try {
+            try
+            {
+                IsBusy = true;
                 await LoginUser(CodAngajat);
+                IsBusy = false;
             }
-            catch (Exception ex) {
+            catch (Exception ex) 
+            {
+                if (IsBusy) IsBusy = false;
                 await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
             }
         }
 
-        private async Task LoginUser(string codAngajat) {
+        private async Task LoginUser(string codAngajat) 
+        {
 
-            if (codAngajat != null) {
+            if (codAngajat != null) 
+            {
                 var angajati = await Loginclient.LoginUserAsync($"{Url}login=codAngajat={CodAngajat}");
 
-                if (angajati != null) {
+                if (angajati != null) 
+                {
                     await Application.Current.MainPage.DisplayAlert("Success login", angajati.Angajat, "ok");
                     await Application.Current.MainPage.Navigation.PushAsync(new JobSelectionPage(angajati));
                 }
-                else {
+                else 
+                {
 
                     await Application.Current.MainPage.DisplayAlert("Login error", $"No access for code {CodAngajat}", "ok");
                 }
             }
-            else {
+            else 
+            {
                 
                 await Application.Current.MainPage.DisplayAlert("No code", "Please scan again.", "ok");
             }
                
         }
-
+        private string _codAngajat = string.Empty;
         public string CodAngajat
         {
             get => _codAngajat;
             set => SetProperty(ref _codAngajat, value);
         }
+
+        private bool _isbusy = false;
+        public bool IsBusy
+        {
+            get => _isbusy;
+            set
+            {
+                SetProperty(ref _isbusy, value);
+                OnPropertyChanged();
+            }
+        }
+
     }
 }
