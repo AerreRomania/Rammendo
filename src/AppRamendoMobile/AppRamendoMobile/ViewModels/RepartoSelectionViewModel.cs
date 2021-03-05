@@ -20,16 +20,17 @@ namespace AppRammendoMobile.ViewModels
         {
            
         }
-        public RepartoSelectionViewModel(Commesse commessa)
+        public RepartoSelectionViewModel(Angajati user,Commesse commessa)
         {
             Commessa = commessa;
+            User = user;
         }
 
         private  async void ExecuteRepartoSelectionCommand(string reparto)
         {
             Reparto = reparto;
             //Application.Current.MainPage.DisplayAlert("Reparto","Reparto: " + reparto, "OK");
-            await Application.Current.MainPage.Navigation.PushModalAsync(new WorkPage(Commessa, reparto));
+            await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(User,Commessa, reparto));
         }
 
        

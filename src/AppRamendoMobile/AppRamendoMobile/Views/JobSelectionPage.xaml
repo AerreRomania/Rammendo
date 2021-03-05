@@ -2,7 +2,9 @@
 <ContentPage
     x:Class="AppRammendoMobile.Views.JobSelectionPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="white">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="white"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid Padding="20">
             <Grid.RowDefinitions>
@@ -30,7 +32,7 @@
                         Grid.Column="1"
                         HorizontalOptions="Start"
                         Style="{StaticResource DefaultLabel}"
-                        Text="{Binding Angajati.Angajat}"
+                        Text="{Binding User.Angajat}"
                         VerticalOptions="Start" />
                 </Grid>
 
@@ -38,12 +40,12 @@
                     x:Name="Tavola"
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="Select Tavola" />
+                    Text="Scan Tavola" />
                 <Button
                     Grid.Row="1"
                     Grid.Column="1"
                     Margin="0"
-                    Command="{Binding QrTavoloCommand}"
+                    Command="{Binding QrTavolaCommand}"
                     Style="{StaticResource DefaultButton}"
                     Text="QR"
                     VerticalOptions="FillAndExpand" />
@@ -51,7 +53,7 @@
                     x:Name="Commessa"
                     Grid.Row="2"
                     Style="{StaticResource DefaultLabel}"
-                    Text="Select Commessa" />
+                    Text="Scan Barcode" />
                 <Button
                     Grid.Row="2"
                     Grid.Column="1"

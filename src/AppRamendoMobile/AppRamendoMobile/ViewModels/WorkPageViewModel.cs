@@ -20,9 +20,10 @@ namespace AppRammendoMobile.ViewModels
         {
 
         }
-        public WorkPageViewModel(Commesse commessa, string reparto)
+        public WorkPageViewModel( Angajati user,Commesse commessa, string reparto)
         {
             Commessa = commessa;
+            User = user;
         }
         private void ExecuteInterationButtonCommand(string Condition)
         {

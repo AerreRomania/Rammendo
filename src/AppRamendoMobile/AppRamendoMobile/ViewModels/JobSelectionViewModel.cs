@@ -29,6 +29,8 @@ namespace AppRammendoMobile.ViewModels
             User = angajati;
             CapiCommand = new Command(() => ExecuteCapiCommand());
             TelliCommand = new Command(() => ExecuteTelliCommand());
+            QrCommessaCommand = new Command(async () => await ExecuteQrCommessaCommand());
+            QrTavolaCommand = new Command(async () => await ExecuteQrTavoloCommand());
         }
 
         private async Task ExecuteQrCommessaCommand()
@@ -37,6 +39,7 @@ namespace AppRammendoMobile.ViewModels
             {
                 CommessaString = await CameraScanner.ScanAsync();
                 Commessa = await ApiClient.GetAsync<Commesse>(Url + "barcode?=" + CommessaString);
+                
             }
             catch (Exception ex)
             {
@@ -58,12 +61,12 @@ namespace AppRammendoMobile.ViewModels
 
         private async void ExecuteTelliCommand()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new WorkPage(Commessa, string.Empty));
+            await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(User ,Commessa, string.Empty));
         }
 
         private async void ExecuteCapiCommand()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new RepartoSelectionPage(Commessa));
+            await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(User,Commessa));
         }
 
         

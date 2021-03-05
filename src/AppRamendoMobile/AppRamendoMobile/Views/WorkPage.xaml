@@ -3,7 +3,8 @@
     x:Class="AppRammendoMobile.Views.WorkPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="white">
+    BackgroundColor="white"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid Padding="10" RowSpacing="0">
             <Grid.RowDefinitions>
@@ -89,7 +90,7 @@
                     Margin="0"
                     Padding="0"
                     Style="{StaticResource DefaultLabel}"
-                    Text="Test" />
+                    Text="{Binding User.Angajat}" />
             </Grid>
             <Grid
                 Grid.Row="2"
@@ -109,7 +110,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="456" />
+                    Text="{Binding TavoloString}" />
             </Grid>
             <Grid
                 Grid.Row="3"
@@ -128,7 +129,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="763" />
+                    Text="{Binding Commessa.Commessa}" />
             </Grid>
             <Grid
                 Grid.Row="3"
@@ -148,7 +149,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="763" />
+                    Text="{Binding Commessa.Component}" />
             </Grid>
 
             <Grid
@@ -168,7 +169,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="763" />
+                    Text="{Binding Commessa.Article}" />
             </Grid>
             <Grid
                 Grid.Row="4"
@@ -188,7 +189,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="Red" />
+                    Text="{Binding Commessa.Color}" />
             </Grid>
             <Grid
                 Grid.Row="4"
@@ -208,7 +209,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="25" />
+                    Text="{Binding Commessa.Size}" />
             </Grid>
 
             <Grid
