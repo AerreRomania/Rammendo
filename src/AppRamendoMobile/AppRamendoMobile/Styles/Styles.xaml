@@ -46,5 +46,52 @@
             <Setter Property="Margin" Value="0" />
             <Setter Property="TextColor" Value="{StaticResource Black}" />
         </Style>
+
+        <Style x:Key="LabelHeaderStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="WhiteSmoke" />
+            <Setter Property="BackgroundColor" Value="{StaticResource Red}" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Start" />
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Start" />
+        </Style>
+
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="BorderColor" Value="{StaticResource Red}" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+
+        <Style x:Key="BoxStyle" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="{StaticResource Red}" />
+            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="HeightRequest" Value="2" />
+        </Style>
+
+        <Style x:Key="EfficiencyLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Start" />
+            <Setter Property="Margin" Value="5,0,0,5" />
+        </Style>
+
+        <Style x:Key="PercentLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Start" />
+            <Setter Property="Margin" Value="0,0,5,5" />
+        </Style>
+
+
+
     </ResourceDictionary>
 </ResourceDictionary>

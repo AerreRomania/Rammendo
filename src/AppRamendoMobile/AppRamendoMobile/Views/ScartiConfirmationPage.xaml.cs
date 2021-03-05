@@ -1,6 +1,4 @@
-﻿using AppRammendoMobile.Models;
-using AppRammendoMobile.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace AppRammendoMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WorkPage : ContentPage
+    public partial class ScartiConfirmationPage : ContentPage
     {
-
-        public WorkPage(Angajati User,Commesse commessa, string Reparto)
+        public ScartiConfirmationPage()
         {
-            BindingContext = new WorkPageViewModel(User, commessa, Reparto);
             InitializeComponent();
-            
         }
     }
 }

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppRammendoMobile.Views.EfficientaPerOra"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+
+        <Grid Margin="20" VerticalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H6LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="6" />
+                    <Label
+                        x:Name="H6Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H6}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H6LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H6P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Column="1" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H7LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="7" />
+                    <Label
+                        x:Name="H7Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H7}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H7LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H7P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Column="2" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H8LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="8" />
+                    <Label
+                        x:Name="H8Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H8}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+
+                        <Label
+                            x:Name="H8LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H8P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="3" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H9LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="9" />
+                    <Label
+                        x:Name="H9Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H9}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H9LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H9P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="4" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H10LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="10" />
+                    <Label
+                        x:Name="H10Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H10}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H10LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H10P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="5" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H11LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="11" />
+                    <Label
+                        x:Name="H11Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H11}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H11LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H11P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="6" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H12LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="12" />
+                    <Label
+                        x:Name="H12Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H12}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H12LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H12P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="7" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H13LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="13" />
+                    <Label
+                        x:Name="H13Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H13}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H13LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H13P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="8" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H14LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="14" />
+                    <Label
+                        x:Name="H14Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H14}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H14LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H14P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="9" Style="{StaticResource FrameStyle}">
+                <StackLayout>
+                    <Label
+                        x:Name="H15LabelHeader"
+                        Style="{StaticResource LabelHeaderStyle}"
+                        Text="15" />
+                    <Label
+                        x:Name="H15Label"
+                        Style="{StaticResource LabelStyle}"
+                        Text="{Binding Eff.H15}" />
+                    <BoxView Style="{StaticResource BoxStyle}" />
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label
+                            x:Name="H15LabelEfficiency"
+                            Style="{StaticResource EfficiencyLabelStyle}"
+                            Text="{Binding Eff.H15P}" />
+                        <Label Style="{StaticResource PercentLabelStyle}" Text="%" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

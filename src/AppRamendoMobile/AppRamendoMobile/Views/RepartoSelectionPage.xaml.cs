@@ -18,8 +18,9 @@ namespace AppRammendoMobile.Views
         
         public RepartoSelectionPage(Angajati user,Commesse Commessa)
         {
+            BindingContext = new RepartoSelectionViewModel(user, Commessa);
             InitializeComponent();
-            BindingContext =  new RepartoSelectionViewModel(user, Commessa);
+            
         }
     }
 }

@@ -18,8 +18,8 @@ namespace AppRammendoMobile.ViewModels
         public ICommand QrTavolaCommand { get; set; }
         public JobSelectionViewModel()
         {
-            CapiCommand = new Command(() => ExecuteCapiCommand());
-            TelliCommand = new Command(() => ExecuteTelliCommand());
+            CapiCommand = new Command(async() => await ExecuteCapiCommand());
+            TelliCommand = new Command(async () => await ExecuteTelliCommand());
             QrCommessaCommand = new Command(async () =>await ExecuteQrCommessaCommand());
             QrTavolaCommand = new Command(async () =>await ExecuteQrTavoloCommand());
         }
@@ -27,8 +27,8 @@ namespace AppRammendoMobile.ViewModels
         public JobSelectionViewModel(Angajati angajati) 
         {
             User = angajati;
-            CapiCommand = new Command(() => ExecuteCapiCommand());
-            TelliCommand = new Command(() => ExecuteTelliCommand());
+            CapiCommand = new Command(async () =>await ExecuteCapiCommand());
+            TelliCommand = new Command(async () => await ExecuteTelliCommand());
             QrCommessaCommand = new Command(async () => await ExecuteQrCommessaCommand());
             QrTavolaCommand = new Command(async () => await ExecuteQrTavoloCommand());
         }
@@ -59,12 +59,12 @@ namespace AppRammendoMobile.ViewModels
             }
         }
 
-        private async void ExecuteTelliCommand()
+        private async Task ExecuteTelliCommand()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(User ,Commessa, string.Empty));
         }
 
-        private async void ExecuteCapiCommand()
+        private async Task ExecuteCapiCommand()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(User,Commessa));
         }

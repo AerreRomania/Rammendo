@@ -103,5 +103,15 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
+        private Efficiency _eff;
+        public Efficiency Eff
+        {
+            get => _eff;
+            set
+            {
+                SetProperty(ref _eff, value);
+                OnPropertyChanged();
+            }
+        }
     }
 }

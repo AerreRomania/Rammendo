@@ -3,6 +3,7 @@ using AppRammendoMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace AppRammendoMobile.ViewModels
         public ICommand RepartoSelectionCommand 
         {
             get
-            { return new Command<string>((reparto) => ExecuteRepartoSelectionCommand(reparto));
+            { return new Command<string>(async(reparto) => await ExecuteRepartoSelectionCommand(reparto));
             } 
         }
         public RepartoSelectionViewModel()
@@ -26,7 +27,7 @@ namespace AppRammendoMobile.ViewModels
             User = user;
         }
 
-        private  async void ExecuteRepartoSelectionCommand(string reparto)
+        private  async Task ExecuteRepartoSelectionCommand(string reparto)
         {
             Reparto = reparto;
             //Application.Current.MainPage.DisplayAlert("Reparto","Reparto: " + reparto, "OK");

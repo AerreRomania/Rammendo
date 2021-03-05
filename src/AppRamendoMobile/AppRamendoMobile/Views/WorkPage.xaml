@@ -46,6 +46,9 @@
                     <RowDefinition Height="30" />
                     <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EfficientaCommand}" />
+                </Grid.GestureRecognizers>
                 <Label
                     Margin="0"
                     Padding="0"

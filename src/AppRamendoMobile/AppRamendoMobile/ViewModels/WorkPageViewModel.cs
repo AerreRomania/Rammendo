@@ -1,7 +1,9 @@
 ﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,19 +15,27 @@ namespace AppRammendoMobile.ViewModels
         {
             get
             {
-                return new Command<string>((Condition) => ExecuteInterationButtonCommand(Condition));
+                return new Command<string>(async (Condition) =>await ExecuteInterationButtonCommand(Condition));
             }
         }
+        public ICommand EfficientaCommand { get; set; }
         public WorkPageViewModel()
         {
-
+            EfficientaCommand = new Command(async () => await ExecuteEfficientaCommand());
         }
         public WorkPageViewModel( Angajati user,Commesse commessa, string reparto)
         {
             Commessa = commessa;
             User = user;
+            EfficientaCommand = new Command(async() => await ExecuteEfficientaCommand());
         }
-        private void ExecuteInterationButtonCommand(string Condition)
+
+        private async Task ExecuteEfficientaCommand()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new EfficientaPerOra());
+        }
+
+        private async Task ExecuteInterationButtonCommand(string Condition)
         {
             if (int.TryParse(Condition, out var count))
             {
@@ -38,13 +48,13 @@ namespace AppRammendoMobile.ViewModels
                 switch (Condition)
                 {
                     case "Stop":
-                        Application.Current.MainPage.DisplayAlert("STOP!", "STOP!", "OK");
+                       await Application.Current.MainPage.DisplayAlert("STOP!", "STOP!", "OK");
                         break;
                     case "Scarti":
-                        Application.Current.MainPage.DisplayAlert("Scarti!", "Scarti!", "OK");
+                        await Application.Current.MainPage.Navigation.PushAsync(new ScartiConfirmationPage());
                         break;
                     case "Pauza":
-                        Application.Current.MainPage.DisplayAlert("Pauza!", "Pauza!", "OK");
+                       await Application.Current.MainPage.DisplayAlert("Pauza!", "Pauza!", "OK");
                         break;
                 }
             }

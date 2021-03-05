@@ -1,5 +1,4 @@
-﻿using AppRammendoMobile.Models;
-using AppRammendoMobile.ViewModels;
+﻿using AppRammendoMobile.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace AppRammendoMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WorkPage : ContentPage
+    public partial class EfficientaPerOra : ContentPage
     {
-
-        public WorkPage(Angajati User,Commesse commessa, string Reparto)
+        public EfficientaPerOra()
         {
-            BindingContext = new WorkPageViewModel(User, commessa, Reparto);
+            BindingContext = new EfficiencyViewModel();
             InitializeComponent();
-            
+           
         }
     }
 }

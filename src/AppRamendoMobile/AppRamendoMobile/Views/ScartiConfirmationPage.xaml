@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppRammendoMobile.Views.ScartiConfirmationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0,.3*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                FontSize="26"
+                HorizontalOptions="Center"
+                Style="{StaticResource DefaultLabel}"
+                Text="Scarti ?"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="1"
+                FontSize="20"
+                Placeholder="Scarti number"
+                VerticalOptions="Center" />
+            <Button
+                Grid.Row="2"
+                FontSize="20"
+                Style="{StaticResource DefaultButton}"
+                Text="Confirm"
+                VerticalOptions="Center" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
