@@ -58,7 +58,7 @@
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
-            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
         </Style>
 
         <Style x:Key="FrameStyle" TargetType="Frame">
@@ -79,16 +79,16 @@
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
-            <Setter Property="VerticalTextAlignment" Value="Start" />
-            <Setter Property="Margin" Value="5,0,0,5" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0" />
         </Style>
 
         <Style x:Key="PercentLabelStyle" TargetType="Label">
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
-            <Setter Property="VerticalTextAlignment" Value="Start" />
-            <Setter Property="Margin" Value="0,0,5,5" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0" />
         </Style>
 
 

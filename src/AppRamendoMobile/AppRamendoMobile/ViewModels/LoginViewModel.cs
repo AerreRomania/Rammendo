@@ -56,7 +56,7 @@ namespace AppRammendoMobile.ViewModels
 
             if (codAngajat != null) 
             {
-                var angajati = await Loginclient.LoginUserAsync($"{Url}login=codAngajat={CodAngajat}");
+                 Angajati angajati = await Loginclient.LoginUserAsync($"{Url}login?codAngajat={CodAngajat}");
                 //var angajati = new Angajati() {CodAngajat="1603", Angajat="Sergiu" };
                 if (angajati != null) 
                 {
