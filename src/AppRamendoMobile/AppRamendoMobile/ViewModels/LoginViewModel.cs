@@ -56,8 +56,8 @@ namespace AppRammendoMobile.ViewModels
 
             if (codAngajat != null) 
             {
-                //var angajati = await Loginclient.LoginUserAsync($"{Url}login=codAngajat={CodAngajat}");
-                var angajati = new Angajati() {CodAngajat="1603", Angajat="Sergiu" };
+                var angajati = await Loginclient.LoginUserAsync($"{Url}login=codAngajat={CodAngajat}");
+                //var angajati = new Angajati() {CodAngajat="1603", Angajat="Sergiu" };
                 if (angajati != null) 
                 {
                     await Application.Current.MainPage.DisplayAlert("Success login", angajati.Angajat, "ok");
