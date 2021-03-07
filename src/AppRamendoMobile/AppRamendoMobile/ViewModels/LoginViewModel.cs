@@ -8,9 +8,7 @@ using Xamarin.Forms;
 namespace AppRammendoMobile.ViewModels
 {
    public class LoginViewModel : ViewModelBase
-    {
-       
-
+    {  
         public ICommand LoginCommand { get; set; }
         public ICommand ScanQrCodeCommand { get; set; }
         public LoginViewModel()
@@ -20,8 +18,7 @@ namespace AppRammendoMobile.ViewModels
         }
 
         private async Task ExecuteScanQRCodeCommand()
-        {
-            
+        {           
             try 
             {
                 IsBusy = true;
@@ -53,11 +50,10 @@ namespace AppRammendoMobile.ViewModels
 
         private async Task LoginUser(string codAngajat) 
         {
-
             if (codAngajat != null) 
             {
-                 Angajati angajati = await Loginclient.LoginUserAsync($"{Url}login?codAngajat={CodAngajat}");
-                //var angajati = new Angajati() {CodAngajat="1603", Angajat="Sergiu" };
+                Angajati angajati = await Loginclient.LoginUserAsync($"{Url}login?codAngajat={CodAngajat}");
+
                 if (angajati != null) 
                 {
                     await Application.Current.MainPage.DisplayAlert("Success login", angajati.Angajat, "ok");
@@ -65,13 +61,11 @@ namespace AppRammendoMobile.ViewModels
                 }
                 else 
                 {
-
                     await Application.Current.MainPage.DisplayAlert("Login error", $"No access for code {CodAngajat}", "ok");
                 }
             }
             else 
-            {
-                
+            {            
                 await Application.Current.MainPage.DisplayAlert("No code", "Please scan again.", "ok");
             }
                
@@ -82,17 +76,5 @@ namespace AppRammendoMobile.ViewModels
             get => _codAngajat;
             set => SetProperty(ref _codAngajat, value);
         }
-
-        private bool _isbusy = false;
-        public bool IsBusy
-        {
-            get => _isbusy;
-            set
-            {
-                SetProperty(ref _isbusy, value);
-                OnPropertyChanged();
-            }
-        }
-
     }
 }

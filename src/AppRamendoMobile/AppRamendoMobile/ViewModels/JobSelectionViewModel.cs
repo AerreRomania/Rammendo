@@ -11,11 +11,11 @@ namespace AppRammendoMobile.ViewModels
 {
     public class JobSelectionViewModel : ViewModelBase
     {
-
         public ICommand CapiCommand { get; set; }
         public ICommand TelliCommand { get; set; }
         public ICommand QrCommessaCommand { get; set; }
         public ICommand QrTavolaCommand { get; set; }
+     
         public JobSelectionViewModel()
         {
             CapiCommand = new Command(async() => await ExecuteCapiCommand());
@@ -38,7 +38,7 @@ namespace AppRammendoMobile.ViewModels
             try
             {
                 CommessaString = await CameraScanner.ScanAsync();
-                Commessa = await ApiClient.GetAsync<Commesse>(Url + "barcode?=" + CommessaString);
+                Commessa = await ApiClient.GetAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
                 
             }
             catch (Exception ex)
@@ -61,16 +61,24 @@ namespace AppRammendoMobile.ViewModels
 
         private async Task ExecuteTelliCommand()
         {
+            if (Commessa == null || TavoloString == null) {
+                await Application.Current.MainPage.DisplayAlert("Error", "Tavolo and barcode must be scanned", "ok");
+                return;
+            }
+
+            Commessa.Tavolo = TavoloString;
+
             await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(User ,Commessa, string.Empty));
         }
 
         private async Task ExecuteCapiCommand()
         {
+            if (Commessa == null || TavoloString == null) {
+                await Application.Current.MainPage.DisplayAlert("Error", "Tavolo and barcode must be scanned", "ok");
+                return;
+            }
+
             await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(User,Commessa));
         }
-
-        
-            
-
     }
 }

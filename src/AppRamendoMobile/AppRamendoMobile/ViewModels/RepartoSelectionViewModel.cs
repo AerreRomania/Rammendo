@@ -21,7 +21,7 @@ namespace AppRammendoMobile.ViewModels
         {
            
         }
-        public RepartoSelectionViewModel(Angajati user,Commesse commessa)
+        public RepartoSelectionViewModel(Angajati user,RammendoImport commessa)
         {
             Commessa = commessa;
             User = user;

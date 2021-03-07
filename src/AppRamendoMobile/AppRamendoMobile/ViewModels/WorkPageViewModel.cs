@@ -23,7 +23,7 @@ namespace AppRammendoMobile.ViewModels
         {
             EfficientaCommand = new Command(async () => await ExecuteEfficientaCommand());
         }
-        public WorkPageViewModel( Angajati user,Commesse commessa, string reparto)
+        public WorkPageViewModel( Angajati user,RammendoImport commessa, string reparto)
         {
             Commessa = commessa;
             User = user;

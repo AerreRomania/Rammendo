@@ -13,7 +13,7 @@ namespace AppRammendoMobile.ViewModels
         public IApiClient ApiClient => DependencyService.Get<IApiClient>();
         public ILoginClient Loginclient => DependencyService.Get<ILoginClient>();
 
-        public string Url => @"http://192.168.96.17:55388/api/";
+        public string Url => @"http://192.168.96.37:55388/api/";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -21,6 +21,7 @@ namespace AppRammendoMobile.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = "")
         {
             if (EqualityComparer<T>.Default.Equals(storage, value))
@@ -40,6 +41,7 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private int _counter = 0;
         public int Counter
         {
@@ -51,8 +53,6 @@ namespace AppRammendoMobile.ViewModels
             }
         }
 
-       
-
         private Angajati _user;
         public Angajati User
         {
@@ -63,6 +63,7 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private string _commessaString;
         public string CommessaString
         {
@@ -73,8 +74,9 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
-        private Commesse _commessa;
-        public Commesse Commessa
+
+        private RammendoImport _commessa;
+        public RammendoImport Commessa
         {
             get => _commessa;
             set
@@ -83,6 +85,7 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private string _telliString;
         public string TavoloString
         {
@@ -93,6 +96,7 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private TelliProdoti _telli;
         public TelliProdoti Telli
         {
@@ -103,6 +107,7 @@ namespace AppRammendoMobile.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private Efficiency _eff;
         public Efficiency Eff
         {
@@ -112,6 +117,12 @@ namespace AppRammendoMobile.ViewModels
                 SetProperty(ref _eff, value);
                 OnPropertyChanged();
             }
+        }
+
+        private bool _isbusy = false;
+        public bool IsBusy {
+            get => _isbusy;
+            set => SetProperty(ref _isbusy, value);
         }
     }
 }

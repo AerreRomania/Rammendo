@@ -15,7 +15,7 @@ namespace AppRammendoMobile.Views
     public partial class WorkPage : ContentPage
     {
 
-        public WorkPage(Angajati User,Commesse commessa, string Reparto)
+        public WorkPage(Angajati User,RammendoImport commessa, string Reparto)
         {
             BindingContext = new WorkPageViewModel(User, commessa, Reparto);
             InitializeComponent();
