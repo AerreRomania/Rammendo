@@ -14,6 +14,7 @@ namespace Rammendo.Behaviors
 
         public CWindow() {
             InitializeComponent();
+            this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
         public CWindow(bool isChildForm, Panel parent = null) : base() {
@@ -21,6 +22,7 @@ namespace Rammendo.Behaviors
             IsChildForm = isChildForm;
             ParentPanel = parent;
             InitializeComponent();
+            this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
         public void GenerateChildForm() {
