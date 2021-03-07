@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Rammendo.Models;
+using Rammendo.Models.Filters;
 
 namespace Rammendo.ViewModels
 {
@@ -26,9 +27,12 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("T. Prodoti");
                 dataTable.Columns.Add("Rammendare");
 
-                var filter = new[] { article, commessa };
+                var reportFilter = new ReportFilter {
+                    Article = article,
+                    Commessa = commessa
+                };
 
-                var telliProdoti = await ApiService.GetAllByFilter<TelliProdoti>(filter);
+                var telliProdoti = await ApiService.GetAllByFilter<TelliProdoti>(reportFilter);
 
                 ListArticles = new List<string>();
                 ListCommesse = new List<string>();
@@ -86,6 +90,7 @@ namespace Rammendo.ViewModels
                         ListCommesse.Add(telliProduct.Commessa);
                     }
                 }
+
                 totRow = dataTable.NewRow();
                 totRow[0] = $"Totale {firstArticle}";
                 totRow[2] = totProdoti;

@@ -24,7 +24,7 @@ namespace Rammendo
             this.DoubleBuffered(true);
             SetStyle(ControlStyles.ResizeRedraw, true);
 
-            Store.Default.Url = "http://192.168.96.17:55388/api/";
+            Store.Default.Url = "http://192.168.1.102:55432/api/"; //"http://192.168.96.37:55388/api/";
             Store.Default.Save();
         }
 
@@ -75,18 +75,25 @@ namespace Rammendo
                 }
 
                 ClearReflectedHandlers();
-
                 ResetMenuCommands();
-
                 SuspendLayout();
 
                 if (treeMenu.SelectedNode == node1) {
+                    var frm = new TelliProdotiArticolo(pnForms);
+                    btnTelliProdoti.BackColor = Color.DarkCyan;
+                    btnTelliProdoti.ForeColor = Color.White;
+                }
+
+                if (treeMenu.SelectedNode == node2) {
                     var frm = new TelliProdoti(pnForms);
                     btnTelliProdoti.BackColor = Color.DarkCyan;
                     btnTelliProdoti.ForeColor = Color.White;
                 }
 
                 if (treeMenu.SelectedNode == node2) {
+                    //var frm = new TelliProdotiPersone(pnForms);
+                    //btnTelliProdoti.BackColor = Color.DarkCyan;
+                    //btnTelliProdoti.ForeColor = Color.White;
                 }
 
                 pnNavi.Enabled = true;

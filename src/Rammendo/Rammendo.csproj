@@ -71,7 +71,9 @@
     <Compile Include="Helpers\Geometry.cs" />
     <Compile Include="Helpers\Resizer.cs" />
     <Compile Include="Models\Commesse.cs" />
+    <Compile Include="Models\Filters\ReportFilter.cs" />
     <Compile Include="Models\TelliProdoti.cs" />
+    <Compile Include="Models\TelliProdotiArticolo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ApiService.cs" />
@@ -88,12 +90,25 @@
       <DependentUpon>Store.settings</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\TelliProdotiArticoloViewModel.cs" />
     <Compile Include="ViewModels\TelliProdotiViewModel.cs" />
     <Compile Include="Views\Reports\TelliProdoti.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Reports\TelliProdoti.Designer.cs">
       <DependentUpon>TelliProdoti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\TelliProdotiArticolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\TelliProdotiArticolo.Designer.cs">
+      <DependentUpon>TelliProdotiArticolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\TelliProdotiPersone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\TelliProdotiPersone.Designer.cs">
+      <DependentUpon>TelliProdotiPersone.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Behaviors\CWindow.resx">
       <DependentUpon>CWindow.cs</DependentUpon>
@@ -116,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\TelliProdoti.resx">
       <DependentUpon>TelliProdoti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\TelliProdotiArticolo.resx">
+      <DependentUpon>TelliProdotiArticolo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

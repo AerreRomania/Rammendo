@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Rammendo.Behaviors;
@@ -62,8 +63,8 @@ namespace Rammendo.Views.Reports
             }
             else {
                 PbLoader.Visible = false;
-                MessageBox.Show("No data because of wrong URL or VPN connection.",
-                    nameof(TelliProdoti), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No data.",
+                    this.GetType().Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PbError.Visible = true;
             }
         }

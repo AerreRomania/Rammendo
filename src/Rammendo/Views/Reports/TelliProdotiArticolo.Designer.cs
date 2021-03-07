@@ -1,6 +1,6 @@
 ﻿namespace Rammendo.Views.Reports
 {
-    partial class TelliProdoti
+    partial class TelliProdotiArticolo
     {
         /// <summary>
         /// Required designer variable.
@@ -25,8 +25,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
             this.PbLoader = new System.Windows.Forms.ProgressBar();
@@ -49,24 +49,24 @@
             this.DgvTelliProdoti.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DgvTelliProdoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvTelliProdoti.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvTelliProdoti.ColumnHeadersHeight = 32;
             this.DgvTelliProdoti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvTelliProdoti.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvTelliProdoti.EnableHeadersVisualStyles = false;
             this.DgvTelliProdoti.GridColor = System.Drawing.Color.Gainsboro;
@@ -76,8 +76,8 @@
             this.DgvTelliProdoti.ReadOnly = true;
             this.DgvTelliProdoti.RowHeadersVisible = false;
             this.DgvTelliProdoti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvTelliProdoti.Size = new System.Drawing.Size(569, 349);
-            this.DgvTelliProdoti.TabIndex = 1;
+            this.DgvTelliProdoti.Size = new System.Drawing.Size(800, 406);
+            this.DgvTelliProdoti.TabIndex = 12;
             // 
             // PnToolBar
             // 
@@ -90,8 +90,8 @@
             this.PnToolBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnToolBar.Location = new System.Drawing.Point(0, 0);
             this.PnToolBar.Name = "PnToolBar";
-            this.PnToolBar.Size = new System.Drawing.Size(569, 44);
-            this.PnToolBar.TabIndex = 8;
+            this.PnToolBar.Size = new System.Drawing.Size(800, 44);
+            this.PnToolBar.TabIndex = 13;
             // 
             // PbLoader
             // 
@@ -100,7 +100,7 @@
             this.PbLoader.Location = new System.Drawing.Point(0, 39);
             this.PbLoader.MarqueeAnimationSpeed = 10;
             this.PbLoader.Name = "PbLoader";
-            this.PbLoader.Size = new System.Drawing.Size(569, 5);
+            this.PbLoader.Size = new System.Drawing.Size(800, 5);
             this.PbLoader.Step = 50;
             this.PbLoader.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.PbLoader.TabIndex = 7;
@@ -127,7 +127,6 @@
             this.CbCommessa.Name = "CbCommessa";
             this.CbCommessa.Size = new System.Drawing.Size(155, 21);
             this.CbCommessa.TabIndex = 0;
-            this.CbCommessa.SelectedIndexChanged += new System.EventHandler(this.CbCommessa_SelectedIndexChanged);
             // 
             // CbArticolo
             // 
@@ -141,7 +140,6 @@
             this.CbArticolo.Name = "CbArticolo";
             this.CbArticolo.Size = new System.Drawing.Size(145, 21);
             this.CbArticolo.TabIndex = 1;
-            this.CbArticolo.SelectedIndexChanged += new System.EventHandler(this.CbArticolo_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -158,24 +156,23 @@
             this.PbError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbError.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PbError.Image = global::Rammendo.Properties.Resources.error;
-            this.PbError.Location = new System.Drawing.Point(220, 132);
+            this.PbError.Location = new System.Drawing.Point(336, 161);
             this.PbError.Name = "PbError";
             this.PbError.Size = new System.Drawing.Size(128, 128);
-            this.PbError.TabIndex = 11;
+            this.PbError.TabIndex = 15;
             this.PbError.TabStop = false;
             this.PbError.Visible = false;
             // 
-            // TelliProdoti
+            // TelliProdotiArticolo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(569, 393);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.PbError);
             this.Controls.Add(this.DgvTelliProdoti);
             this.Controls.Add(this.PnToolBar);
-            this.Name = "TelliProdoti";
-            this.Text = "TelliProdoti";
+            this.Name = "TelliProdotiArticolo";
+            this.Text = "TelliProdotiArticolo";
             ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).EndInit();
             this.PnToolBar.ResumeLayout(false);
             this.PnToolBar.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Rammendo.Models.Filters;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Rammendo.Services.Interfaces
@@ -7,6 +8,6 @@ namespace Rammendo.Services.Interfaces
     {
         Task<IEnumerable<T>> GetAll<T>();
 
-        Task<IEnumerable<T>> GetAllByFilter<T>(string[] filter);
+        Task<IEnumerable<T>> GetAllByFilter<T>(ReportFilter reportFilter);
     }
 }

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Rammendo.Services.Interfaces;
 using Polly;
 using Newtonsoft.Json;
+using Rammendo.Models.Filters;
+using System.Net.Http.Headers;
 
 namespace Rammendo.Services
 {
@@ -34,13 +36,16 @@ namespace Rammendo.Services
             }
         }
 
-        public async Task<IEnumerable<T>> GetAllByFilter<T>(string[] filter) {
+        public async Task<IEnumerable<T>> GetAllByFilter<T>(ReportFilter reportFilter) {
             try {
+                var json = JsonConvert.SerializeObject(reportFilter);
+                HttpContent httpContent = new StringContent(json);
+                httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
                 var responseMessage = await Policy
                     .Handle<Exception>(ex => true)
                     .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
-                    .ExecuteAsync(async () => await _client.GetAsync($"{Store.Default.Url}TelliProdoti?article={filter[0]}&commessa={filter[1]}"));
+                    .ExecuteAsync(async () => await _client.PostAsync($"{Store.Default.Url}{typeof(T).Name}", httpContent));
 
                 var content = await responseMessage.Content.ReadAsStringAsync();
 
