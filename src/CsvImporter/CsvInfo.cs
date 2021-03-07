@@ -49,7 +49,10 @@ WHERE FileKey=@fileName;";
 SELECT COM.Id, 
        COM.NrComanda, 
        COM.IdArticol, 
-       ART.Articol
+       ART.Articol,
+       ART.Centes,
+       ART.IdStagiune,
+       ART.IdFineza
 FROM Comenzi COM
 INNER JOIN Articole ART ON COM.IdArticol = ART.Id
 WHERE COM.IdSector=7;";
@@ -67,11 +70,17 @@ WHERE COM.IdSector=7;";
                             var commessa = dr[1].ToString();
                             int.TryParse(dr[2].ToString(), out var articleId);
                             var article = dr[3].ToString();
+                            double.TryParse(dr[4].ToString(), out var capiH);
+                            int.TryParse(dr[5].ToString(), out var idStagione);
+                            int.TryParse(dr[6].ToString(), out var idFinezze);
                             var commessaItem = new Commessa {
                                 CommessaId = commessaId,
                                 NrCommanda = commessa,
                                 ArticleId = articleId,
-                                Article = article
+                                Article = article,
+                                CapiH = capiH,
+                                IdStagione = idStagione,
+                                IdFinezze = idFinezze
                             };
                             lst.Add(commessaItem);
                         }

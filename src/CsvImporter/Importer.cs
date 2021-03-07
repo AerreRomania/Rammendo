@@ -21,7 +21,9 @@ namespace CsvImporter
                     if (fileName != strNameByDate) continue;
 
                     _dataTable = new DataTable();
-                    CreateDedicatedColumns(_dataTable);
+
+                    CreateClonedColumns(_dataTable);
+
                     var commessaInfo = CsvInfo.GetCommessa();
 
                     var maxKey = CsvInfo.GetMaxKeyBasedOnImport(fileName);
@@ -33,7 +35,10 @@ namespace CsvImporter
                             if (maxIdentityKey <= maxKey) continue; 
 
                             var newRow = _dataTable.NewRow();
-                            for (var i = 1; i <= rows.Length - 1; i++) { newRow[i - 1] = rows[i]; }
+                            for (var i = 1; i <= rows.Length - 1; i++) { 
+                                newRow[i - 1] = rows[i]; 
+                            }
+
                             newRow[10] = maxIdentityKey;
                             newRow[11] = fileName;
 
@@ -47,6 +52,10 @@ namespace CsvImporter
                             newRow[18] = null; 
                             newRow[19] = null;
                             newRow[20] = null;
+                            newRow[21] = null;
+                            newRow[22] = commessa != null ? commessa.CapiH : 0.0;
+                            newRow[23] = commessa != null ? commessa.IdStagione : 0;
+                            newRow[24] = commessa != null ? commessa.IdFinezze : 0;
 
                             _dataTable.Rows.Add(newRow);
                         }
@@ -74,7 +83,7 @@ namespace CsvImporter
             }
         }
 
-        private void CreateDedicatedColumns(DataTable dataTable) {
+        private void CreateClonedColumns(DataTable dataTable) {
             dataTable.Columns.Add("Commessa");
             dataTable.Columns.Add("Article");
             dataTable.Columns.Add("Color");
@@ -88,14 +97,18 @@ namespace CsvImporter
             dataTable.Columns.Add("LastKey", typeof(int));
             dataTable.Columns.Add("FileKey");
             dataTable.Columns.Add("ComenziId", typeof(int));
-            dataTable.Columns.Add("ComeziArticolId", typeof(int));
+            dataTable.Columns.Add("ComenziArticolId", typeof(int));
             dataTable.Columns.Add("CreatedDate", typeof(DateTime));
             dataTable.Columns.Add("GoodGood", typeof(int));
             dataTable.Columns.Add("BadBad", typeof(int));
             dataTable.Columns.Add("Diff", typeof(int));
-            dataTable.Columns.Add("User");
+            dataTable.Columns.Add("Angajat");
             dataTable.Columns.Add("Reparto");
             dataTable.Columns.Add("TypeOfControl");
+            dataTable.Columns.Add("Tavolo");
+            dataTable.Columns.Add("CapiH", typeof(double));
+            dataTable.Columns.Add("IdStagione", typeof(int));
+            dataTable.Columns.Add("IdFinezze", typeof(int));
         }
     }
 }
