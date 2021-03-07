@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Rammendo.Data.Entities;
+using Rammendo.Data.Entities.Filters;
 using Rammendo.Data.Repositories.Interfaces;
 using Serilog;
 
@@ -18,18 +19,18 @@ namespace Rammendo.API.Controllers
             _telliProdotiRepository = telliProdotiRepository;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<TelliProdoti>> GetAllAsync(string article, string commessa) {
+        [HttpPost]
+        public async Task<IEnumerable<TelliProdoti>> GetAllAsync([FromBody] ReportFilter reportFilter) {
             try {
-                var telliProdotis = await _telliProdotiRepository.GetAll(article, commessa);
+                var telliProdotis = await _telliProdotiRepository.GetAll(reportFilter);
                 Log.Debug("Successfully loaded telliProdoti " +
-                    "on article: {article} and commessa {commessa}", article, commessa);
+                    "on article: {article} and commessa {commessa}", reportFilter.Article, reportFilter.Commessa);
 
                 return telliProdotis;
             }
             catch (Exception ex) {
                 Log.Error(ex, "An unexpected error occurred while fetching the telliProdoti " +
-                    "on article: {article} and commessa {commessa}", article, commessa);
+                    "on article: {article} and commessa {commessa}", reportFilter.Article, reportFilter.Commessa);
                 return null;
             }
         }

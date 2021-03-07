@@ -32,7 +32,7 @@ namespace Rammendo.API.Controllers
 					//var angajat = angajatis.FirstOrDefault();
 					var strUserId = angajat.Id.ToString();
 					Log.Debug("User {Angajat} authenticated for CodAngajat {CodAngajat}", angajat.Angajat, angajat.CodAngajat);
-					response = Ok(new { loggedAngajat = angajat });
+					response = Ok(angajat);
 				}
 			}
 			catch (ArgumentException ae) {

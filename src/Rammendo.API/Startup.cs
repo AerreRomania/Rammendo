@@ -28,8 +28,10 @@ namespace Rammendo.API
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             services.AddTransient<ILoginRepository, LoginRepository>();
-            services.AddTransient<ICommesseRepository, CommesseRepository>();
+            services.AddTransient<IRammendoImportRepository, RammendoImportRepository>();
             services.AddTransient<ITelliProdotiRepository, TelliProdotiRepository>();
+            services.AddTransient<ITelliProdotiArticoloRepository, TelliProdotiArticoloRepository>();
+            services.AddTransient<IRammendoClicksRepository, RammendoClicksRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
