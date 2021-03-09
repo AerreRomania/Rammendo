@@ -38,8 +38,8 @@ namespace AppRammendoMobile.ViewModels
             try
             {
                 CommessaString = await CameraScanner.ScanAsync();
-                Commessa = await ApiClient.GetAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
-                
+                Commessa = await ApiClient.PostAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
+                await Application.Current.MainPage.DisplayAlert("Scanned commessa", Commessa.Commessa, "ok");
             }
             catch (Exception ex)
             {

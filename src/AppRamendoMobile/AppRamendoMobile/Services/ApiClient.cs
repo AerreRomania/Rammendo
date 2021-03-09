@@ -49,6 +49,25 @@ namespace AppRammendoMobile.Services
             }
         }
 
+        public async Task<T> PostAsync<T>(string url) {
+            try {
+
+                var responseMessage = await Policy
+                    .Handle<Exception>(ex => true)
+                    .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
+                    .ExecuteAsync(async () => await _client.PostAsync(url, null));
+
+                var content = await responseMessage.Content.ReadAsStringAsync();
+                T result = JsonConvert.DeserializeObject<T>(content);
+                return result;
+                //return JsonConvert.DeserializeObject<IEnumerable<T>>(content);
+            }
+            catch (Exception ex) {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
         public async Task<bool> InsertAsync<T>(T settings, string url) {
             var json = JsonConvert.SerializeObject(settings);
             HttpContent httpContent = new StringContent(json);
