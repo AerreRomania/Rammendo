@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace CsvImporter
 {
@@ -41,17 +42,18 @@ namespace CsvImporter
                             if (lstOfBarcodes.Contains(rows[8].ToString()) || _listOfBarcodesBuffer.Contains(rows[8].ToString())) continue;
 
                             int.TryParse(rows[0].ToString(), out var maxIdentityKey);
-                            if (maxIdentityKey <= maxKey) continue; 
+                            if (maxIdentityKey <= maxKey) continue;
 
-                            var newRow = _dataTable.NewRow();
-                            for (var i = 1; i <= rows.Length - 1; i++) { 
-                                newRow[i - 1] = rows[i]; 
+                            var cr = rows[1].Split('-');    //get commessa array by (-) to get regulation by the protocol of inserting
+                            var regularCommessa = $"{cr[0]}{cr[1]}.{cr[2]}";
+
+                            var newRow = _dataTable.NewRow(); 
+                            for (var i = 1; i <= rows.Length - 1; i++) {
+                                newRow[i - 1] = i == 1 ? regularCommessa : rows[i]; // ? commessa will be inserted regularly by 'onlyou' direction.
                             }
-
                             newRow[10] = maxIdentityKey;
                             newRow[11] = fileName;
-
-                            var commessa = commessaInfo.FirstOrDefault(x => x.NrCommanda == rows[1] && x.Article == rows[2]);
+                            var commessa = commessaInfo.FirstOrDefault(x => x.NrCommanda == regularCommessa && x.Article == rows[2]);
                             newRow[12] = commessa != null ? commessa.CommessaId : 0;
                             newRow[13] = commessa != null ? commessa.ArticleId : 0;
                             newRow[14] = DateTime.Now;
