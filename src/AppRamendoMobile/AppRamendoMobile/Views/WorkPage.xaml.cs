@@ -15,11 +15,15 @@ namespace AppRammendoMobile.Views
     public partial class WorkPage : ContentPage
     {
 
-        public WorkPage(Angajati User,RammendoImport commessa, string Reparto)
+        public WorkPage(RammendoImport commessa)
         {
-            BindingContext = new WorkPageViewModel(User, commessa, Reparto);
+            BindingContext = new WorkPageViewModel(commessa);
             InitializeComponent();
             
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

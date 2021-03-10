@@ -1,4 +1,5 @@
 ﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.Settings;
 using AppRammendoMobile.Views;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,9 @@ namespace AppRammendoMobile.ViewModels
         {
             EfficientaCommand = new Command(async () => await ExecuteEfficientaCommand());
         }
-        public WorkPageViewModel( Angajati user,RammendoImport commessa, string reparto)
+        public WorkPageViewModel(RammendoImport commessa)
         {
-            Commessa = commessa;
-            User = user;
+            Rammendo = commessa;
             EfficientaCommand = new Command(async() => await ExecuteEfficientaCommand());
         }
 
@@ -39,8 +39,17 @@ namespace AppRammendoMobile.ViewModels
         {
             if (int.TryParse(Condition, out var count))
             {
-                count++;
-                Counter = count;
+
+                if (Rammendo.Diff > 0 || (Rammendo.Diff == 0 && Rammendo.GoodGood + Rammendo.BadBad < Rammendo.Bad))
+                {
+                    count++;
+                    Counter = count;
+                    Rammendo.GoodGood = Counter;
+                    TotalQty++;
+                    AppSettings.TotalQty = TotalQty;
+                    await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
+                    await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Work" }, $"{Url}rammendoclicks");
+                }
                 //Application.Current.MainPage.DisplayAlert("Counter!", "Counter: " + Counter.ToString(), "OK");
             }
             else
@@ -48,14 +57,21 @@ namespace AppRammendoMobile.ViewModels
                 switch (Condition)
                 {
                     case "Stop":
-                       await Application.Current.MainPage.DisplayAlert("STOP!", "STOP!", "OK");
+                        {
+                            bool result = await Application.Current.MainPage.DisplayAlert("Change Job?", "", "Yes", "No");
+                            if (result) await Application.Current.MainPage.Navigation.PopAsync();
+                            
+                        }
                         break;
                     case "Scarti":
-                        await Application.Current.MainPage.Navigation.PushAsync(new ScartiConfirmationPage());
+                        await Application.Current.MainPage.Navigation.PushAsync(new ScartiConfirmationPage(Rammendo));
                         break;
                     case "Pauza":
-                       await Application.Current.MainPage.DisplayAlert("Pauza!", "Pauza!", "OK");
-                        break;
+                        
+                            await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Pause" }, $"{Url}rammendoclicks");
+                           
+                        
+                            break;
                 }
             }
         }

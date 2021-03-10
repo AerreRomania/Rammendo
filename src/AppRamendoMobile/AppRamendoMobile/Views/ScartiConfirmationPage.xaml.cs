@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,9 @@ namespace AppRammendoMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScartiConfirmationPage : ContentPage
     {
-        public ScartiConfirmationPage()
+        public ScartiConfirmationPage(RammendoImport rammendo )
         {
+            BindingContext = new ScartiConfrimationViewModel(rammendo);
             InitializeComponent();
         }
     }

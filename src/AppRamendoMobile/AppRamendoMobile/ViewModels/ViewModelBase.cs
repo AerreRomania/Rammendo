@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using AppRammendoMobile.Models;
 using AppRammendoMobile.Services;
+using AppRammendoMobile.Settings;
 using Xamarin.Forms;
 
 namespace AppRammendoMobile.ViewModels
@@ -76,7 +77,7 @@ namespace AppRammendoMobile.ViewModels
         }
 
         private RammendoImport _commessa;
-        public RammendoImport Commessa
+        public RammendoImport Rammendo
         {
             get => _commessa;
             set
@@ -120,9 +121,35 @@ namespace AppRammendoMobile.ViewModels
         }
 
         private bool _isbusy = false;
-        public bool IsBusy {
+        public bool IsBusy
+        {
             get => _isbusy;
-            set => SetProperty(ref _isbusy, value);
+            set
+            {
+                SetProperty(ref _isbusy, value);
+                OnPropertyChanged();
+            }
+        }
+
+        private int _totalQty = AppSettings.TotalQty;
+        public int TotalQty
+        {
+            get => _totalQty;
+            set
+            {
+                SetProperty(ref _totalQty, value);
+                OnPropertyChanged();
+            }
+        }
+        private int _scartiFinal = 0;
+        public int ScartiFinal
+        {   
+            get => _scartiFinal;
+            set
+            {
+                SetProperty(ref _scartiFinal, value);
+                OnPropertyChanged();
+            }
         }
     }
 }

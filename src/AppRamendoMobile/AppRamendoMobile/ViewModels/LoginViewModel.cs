@@ -1,4 +1,5 @@
 ﻿using AppRammendoMobile.Models;
+using AppRammendoMobile.Settings;
 using AppRammendoMobile.Views;
 using System;
 using System.Threading.Tasks;
@@ -54,8 +55,14 @@ namespace AppRammendoMobile.ViewModels
             {
                 Angajati angajati = await Loginclient.LoginUserAsync($"{Url}login?codAngajat={CodAngajat}");
 
-                if (angajati != null) 
-                {
+                if (angajati != null)
+                { 
+                    if(angajati.CodAngajat!=AppSettings.Pin)
+                    {
+                        AppSettings.Pin = angajati.CodAngajat;
+                        AppSettings.TotalQty = 0;
+                    }
+                    TotalQty = AppSettings.TotalQty;
                     await Application.Current.MainPage.DisplayAlert("Success login", angajati.Angajat, "ok");
                     await Application.Current.MainPage.Navigation.PushAsync(new JobSelectionPage(angajati));
                 }

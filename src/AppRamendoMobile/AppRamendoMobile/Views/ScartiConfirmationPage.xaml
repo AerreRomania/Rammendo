@@ -23,9 +23,11 @@
                 Grid.Row="1"
                 FontSize="20"
                 Placeholder="Scarti number"
+                Text="{Binding ScartiFinal}"
                 VerticalOptions="Center" />
             <Button
                 Grid.Row="2"
+                Command="{Binding ConfirmCommand}"
                 FontSize="20"
                 Style="{StaticResource DefaultButton}"
                 Text="Confirm"

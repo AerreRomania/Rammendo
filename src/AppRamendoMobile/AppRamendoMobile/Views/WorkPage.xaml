@@ -36,7 +36,7 @@
                     Margin="0"
                     Padding="0"
                     Style="{StaticResource DefaultLabel}"
-                    Text="200" />
+                    Text="{Binding TotalQty}" />
             </Grid>
             <Grid
                 Grid.Column="1"
@@ -74,9 +74,10 @@
 
             <Grid
                 Grid.Row="2"
+                Grid.ColumnSpan="2"
                 Margin="0,10,0,10"
                 Padding="0"
-                HorizontalOptions="Center"
+                HorizontalOptions="Start"
                 RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -86,6 +87,7 @@
                     Margin="0"
                     Padding="0"
                     BackgroundColor="LightGray"
+                    HorizontalOptions="Start"
                     Style="{StaticResource DefaultLabel}"
                     Text="Dipendente:" />
                 <Label
@@ -93,7 +95,7 @@
                     Margin="0"
                     Padding="0"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding User.Angajat}" />
+                    Text="{Binding Rammendo.Angajat}" />
             </Grid>
             <Grid
                 Grid.Row="2"
@@ -113,7 +115,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding TavoloString}" />
+                    Text="{Binding Rammendo.Tavolo}" />
             </Grid>
             <Grid
                 Grid.Row="3"
@@ -132,7 +134,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding Commessa.Commessa}" />
+                    Text="{Binding Rammendo.Commessa}" />
             </Grid>
             <Grid
                 Grid.Row="3"
@@ -152,7 +154,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding Commessa.Component}" />
+                    Text="{Binding Rammendo.Component}" />
             </Grid>
 
             <Grid
@@ -172,7 +174,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding Commessa.Article}" />
+                    Text="{Binding Rammendo.Article}" />
             </Grid>
             <Grid
                 Grid.Row="4"
@@ -192,14 +194,14 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding Commessa.Color}" />
+                    Text="{Binding Rammendo.Color}" />
             </Grid>
             <Grid
                 Grid.Row="4"
                 Grid.Column="2"
                 Margin="0,0,0,8"
                 Padding="0"
-                HorizontalOptions="End"
+                HorizontalOptions="Center"
                 RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -212,7 +214,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="{Binding Commessa.Size}" />
+                    Text="{Binding Rammendo.Size}" />
             </Grid>
 
             <Grid
@@ -232,7 +234,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="4" />
+                    Text="{Binding Rammendo.Good}" />
             </Grid>
             <Grid
                 Grid.Row="5"
@@ -252,7 +254,7 @@
                 <Label
                     Grid.Row="1"
                     Style="{StaticResource DefaultLabel}"
-                    Text="4" />
+                    Text="{Binding Rammendo.Bad}" />
             </Grid>
             <Grid
                 Grid.Row="6"
