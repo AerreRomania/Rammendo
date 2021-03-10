@@ -33,7 +33,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.pnDockBar = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnProduzione = new System.Windows.Forms.Button();
+            this.btnTelliProdotiPersone = new System.Windows.Forms.Button();
             this.btnTelliProdotiArticolo = new System.Windows.Forms.Button();
             this.btnTelliProdoti = new System.Windows.Forms.Button();
             this.btnProgram = new System.Windows.Forms.Button();
@@ -131,7 +131,7 @@
             this.pnDockBar.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.pnDockBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.pnDockBar.Controls.Add(this.pictureBox2);
-            this.pnDockBar.Controls.Add(this.btnProduzione);
+            this.pnDockBar.Controls.Add(this.btnTelliProdotiPersone);
             this.pnDockBar.Controls.Add(this.btnTelliProdotiArticolo);
             this.pnDockBar.Controls.Add(this.btnTelliProdoti);
             this.pnDockBar.Controls.Add(this.btnProgram);
@@ -154,24 +154,24 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // btnProduzione
+            // btnTelliProdotiPersone
             // 
-            this.btnProduzione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btnProduzione.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnProduzione.FlatAppearance.BorderSize = 0;
-            this.btnProduzione.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduzione.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnProduzione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.btnProduzione.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProduzione.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProduzione.Location = new System.Drawing.Point(20, 151);
-            this.btnProduzione.Name = "btnProduzione";
-            this.btnProduzione.Size = new System.Drawing.Size(189, 39);
-            this.btnProduzione.TabIndex = 9;
-            this.btnProduzione.Tag = "1";
-            this.btnProduzione.UseVisualStyleBackColor = false;
-            this.btnProduzione.Click += new System.EventHandler(this.BtnProduzione_Click);
-            this.btnProduzione.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
+            this.btnTelliProdotiPersone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.btnTelliProdotiPersone.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnTelliProdotiPersone.FlatAppearance.BorderSize = 0;
+            this.btnTelliProdotiPersone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTelliProdotiPersone.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnTelliProdotiPersone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.btnTelliProdotiPersone.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTelliProdotiPersone.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnTelliProdotiPersone.Location = new System.Drawing.Point(20, 151);
+            this.btnTelliProdotiPersone.Name = "btnTelliProdotiPersone";
+            this.btnTelliProdotiPersone.Size = new System.Drawing.Size(189, 39);
+            this.btnTelliProdotiPersone.TabIndex = 9;
+            this.btnTelliProdotiPersone.Tag = "1";
+            this.btnTelliProdotiPersone.UseVisualStyleBackColor = false;
+            this.btnTelliProdotiPersone.Click += new System.EventHandler(this.BtnTelliProdotiPersone_Click);
+            this.btnTelliProdotiPersone.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
             // 
             // btnTelliProdotiArticolo
             // 
@@ -190,7 +190,7 @@
             this.btnTelliProdotiArticolo.TabIndex = 6;
             this.btnTelliProdotiArticolo.Tag = "1";
             this.btnTelliProdotiArticolo.UseVisualStyleBackColor = false;
-            this.btnTelliProdotiArticolo.Click += new System.EventHandler(this.btnProduzioneGantt_Click);
+            this.btnTelliProdotiArticolo.Click += new System.EventHandler(this.BtnTelliProdotiArticolo_Click);
             this.btnTelliProdotiArticolo.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
             // 
             // btnTelliProdoti
@@ -210,7 +210,7 @@
             this.btnTelliProdoti.TabIndex = 5;
             this.btnTelliProdoti.Tag = "1";
             this.btnTelliProdoti.UseVisualStyleBackColor = false;
-            this.btnTelliProdoti.Click += new System.EventHandler(this.BtnTelliProdoti_Click);
+            this.btnTelliProdoti.Click += new System.EventHandler(this.BtnTelliProdotiGiorno_Click);
             this.btnTelliProdoti.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
             // 
             // btnProgram
@@ -902,7 +902,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnFilters;
-        private System.Windows.Forms.Button btnProduzione;
+        private System.Windows.Forms.Button btnTelliProdotiPersone;
         private System.Windows.Forms.Button btnTelliProdotiArticolo;
         private System.Windows.Forms.Button btnTelliProdoti;
         private System.Windows.Forms.Button btnProgram;

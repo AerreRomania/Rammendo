@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rammendo.Behaviors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,11 @@ using System.Windows.Forms;
 
 namespace Rammendo.Views.Reports
 {
-    public partial class TelliProdotiPersone : Form
+    public partial class TelliProdotiPersone : CWindow
     {
-        public TelliProdotiPersone() {
+        public TelliProdotiPersone(Panel parent) : base(true, parent) {
             InitializeComponent();
+            GenerateChildForm();
         }
     }
 }

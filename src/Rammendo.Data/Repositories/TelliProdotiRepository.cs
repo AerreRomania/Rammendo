@@ -27,15 +27,20 @@ SELECT Article, Commessa, SUM(QtyPack) AS Prodoti, SUM(Bad) AS Rammendare, SUM(G
 FROM RammendoImport";
 
             qry += @"
-WHERE Article IS NOT NULL";
+WHERE Article IS NOT NULL AND CreatedDate BETWEEN @StartDate AND @EndDate";
             qry += where;
             qry += @"
 GROUP BY Article, Commessa
 ORDER BY Article;";
 
             try {
+                var dp = new DynamicParameters();
+                dp.Add("@Article", reportFilter.Article);
+                dp.Add("@Commessa", reportFilter.Commessa);
+                dp.Add("@StartDate", reportFilter.StartDate);
+                dp.Add("@EndDate", reportFilter.EndDate);
                 using (var conn = new SqlConnection(ConnectionString)) {
-                    var result = await SqlMapper.QueryAsync<TelliProdoti>(conn, qry, new { Article = reportFilter.Article, Commessa = reportFilter.Commessa });
+                    var result = await SqlMapper.QueryAsync<TelliProdoti>(conn, qry, dp);
                     return result;
                 }
             }

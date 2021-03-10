@@ -135,6 +135,9 @@
     <EmbeddedResource Include="Views\Reports\TelliProdotiArticolo.resx">
       <DependentUpon>TelliProdotiArticolo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\TelliProdotiPersone.resx">
+      <DependentUpon>TelliProdotiPersone.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

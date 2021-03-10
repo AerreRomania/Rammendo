@@ -91,10 +91,10 @@ namespace Rammendo
                     btnTelliProdotiArticolo.ForeColor = Color.White;
                 }
 
-                if (treeMenu.SelectedNode == node2) {
-                    //var frm = new TelliProdotiPersone(pnForms);
-                    //btnTelliProdoti.BackColor = Color.DarkCyan;
-                    //btnTelliProdoti.ForeColor = Color.White;
+                if (treeMenu.SelectedNode == node3) {
+                    var frm = new TelliProdotiPersone(pnForms);
+                    btnTelliProdoti.BackColor = Color.DarkCyan;
+                    btnTelliProdoti.ForeColor = Color.White;
                 }
 
                 pnNavi.Enabled = true;
@@ -109,7 +109,7 @@ namespace Rammendo
 
                 btnBack.Enabled = true;
 
-               ResumeLayout(true);
+              ResumeLayout(true);
             };
             treeMenu.BeginUpdate();
             treeMenu.CollapseAll();
@@ -204,34 +204,29 @@ namespace Rammendo
             }
         }
 
-        private void BtnTelliProdoti_Click(object sender, EventArgs e) {
+        private void BtnTelliProdotiGiorno_Click(object sender, EventArgs e) {
             _fromNavigation = false;
+
+            treeMenu.SelectedNode = null;
             treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[0];
             treeMenu.Select();
+            treeMenu.Refresh();
         }
 
-        private void btnProduzioneGantt_Click(object sender, EventArgs e) {
+        private void BtnTelliProdotiArticolo_Click(object sender, EventArgs e) {
             _fromNavigation = false;
+            treeMenu.SelectedNode = null;
             treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[1];
             treeMenu.Select();
+            treeMenu.Refresh();
         }
 
-        private void BtnProduzione_Click(object sender, EventArgs e) {
+        private void BtnTelliProdotiPersone_Click(object sender, EventArgs e) {
             _fromNavigation = false;
+            treeMenu.SelectedNode = null;
             treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[2];
             treeMenu.Select();
-        }
-
-        private void BtnFatturato_Click(object sender, EventArgs e) {
-            _fromNavigation = false;
-            treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[3];
-            treeMenu.Select();
-        }
-
-        private void BtnDiffetato_Click(object sender, EventArgs e) {
-            _fromNavigation = false;
-            treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[4];
-            treeMenu.Select();
+            treeMenu.Refresh();
         }
 
         private void ResetMenuCommands() {
@@ -241,9 +236,9 @@ namespace Rammendo
             btnTelliProdotiArticolo.Text = "Telli Prodotii per Articolo";
             btnTelliProdotiArticolo.BackColor = Color.FromArgb(210, 210, 210);
             btnTelliProdotiArticolo.ForeColor = Color.FromArgb(113, 113, 113);
-            btnProduzione.Text = "Rammendo per Persona";
-            btnProduzione.BackColor = Color.FromArgb(210, 210, 210);
-            btnProduzione.ForeColor = Color.FromArgb(113, 113, 113);
+            btnTelliProdotiPersone.Text = "Rammendo per Persona";
+            btnTelliProdotiPersone.BackColor = Color.FromArgb(210, 210, 210);
+            btnTelliProdotiPersone.ForeColor = Color.FromArgb(113, 113, 113);
 
         }
 

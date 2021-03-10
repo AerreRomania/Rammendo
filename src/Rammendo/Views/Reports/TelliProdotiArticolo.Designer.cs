@@ -29,16 +29,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CboFinezze = new System.Windows.Forms.ComboBox();
+            this.CboStagione = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.PbLoader = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.CbCommessa = new System.Windows.Forms.ComboBox();
             this.CbArticolo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PbError = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CboFinezze = new System.Windows.Forms.ComboBox();
-            this.CboStagione = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).BeginInit();
             this.PnToolBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbError)).BeginInit();
@@ -61,7 +61,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvTelliProdoti.ColumnHeadersHeight = 32;
+            this.DgvTelliProdoti.ColumnHeadersHeight = 50;
             this.DgvTelliProdoti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -100,6 +100,58 @@
             this.PnToolBar.Name = "PnToolBar";
             this.PnToolBar.Size = new System.Drawing.Size(1178, 44);
             this.PnToolBar.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(470, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Stagione";
+            // 
+            // CboFinezze
+            // 
+            this.CboFinezze.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CboFinezze.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CboFinezze.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboFinezze.ForeColor = System.Drawing.Color.Black;
+            this.CboFinezze.FormattingEnabled = true;
+            this.CboFinezze.Items.AddRange(new object[] {
+            "<Reset>"});
+            this.CboFinezze.Location = new System.Drawing.Point(752, 7);
+            this.CboFinezze.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
+            this.CboFinezze.Name = "CboFinezze";
+            this.CboFinezze.Size = new System.Drawing.Size(155, 25);
+            this.CboFinezze.TabIndex = 8;
+            this.CboFinezze.SelectedIndexChanged += new System.EventHandler(this.CboFinezze_SelectedIndexChanged);
+            // 
+            // CboStagione
+            // 
+            this.CboStagione.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CboStagione.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CboStagione.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboStagione.ForeColor = System.Drawing.Color.Black;
+            this.CboStagione.FormattingEnabled = true;
+            this.CboStagione.Items.AddRange(new object[] {
+            "<Reset>"});
+            this.CboStagione.Location = new System.Drawing.Point(534, 7);
+            this.CboStagione.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
+            this.CboStagione.Name = "CboStagione";
+            this.CboStagione.Size = new System.Drawing.Size(145, 25);
+            this.CboStagione.TabIndex = 9;
+            this.CboStagione.SelectedIndexChanged += new System.EventHandler(this.CboStagione_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(694, 15);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Finezze";
             // 
             // PbLoader
             // 
@@ -176,58 +228,6 @@
             this.PbError.TabIndex = 15;
             this.PbError.TabStop = false;
             this.PbError.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(470, 15);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Stagione";
-            // 
-            // CboFinezze
-            // 
-            this.CboFinezze.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.CboFinezze.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboFinezze.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboFinezze.ForeColor = System.Drawing.Color.Black;
-            this.CboFinezze.FormattingEnabled = true;
-            this.CboFinezze.Items.AddRange(new object[] {
-            "<Reset>"});
-            this.CboFinezze.Location = new System.Drawing.Point(752, 7);
-            this.CboFinezze.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
-            this.CboFinezze.Name = "CboFinezze";
-            this.CboFinezze.Size = new System.Drawing.Size(155, 25);
-            this.CboFinezze.TabIndex = 8;
-            this.CboFinezze.SelectedIndexChanged += new System.EventHandler(this.CboFinezze_SelectedIndexChanged);
-            // 
-            // CboStagione
-            // 
-            this.CboStagione.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.CboStagione.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboStagione.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboStagione.ForeColor = System.Drawing.Color.Black;
-            this.CboStagione.FormattingEnabled = true;
-            this.CboStagione.Items.AddRange(new object[] {
-            "<Reset>"});
-            this.CboStagione.Location = new System.Drawing.Point(534, 7);
-            this.CboStagione.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
-            this.CboStagione.Name = "CboStagione";
-            this.CboStagione.Size = new System.Drawing.Size(145, 25);
-            this.CboStagione.TabIndex = 9;
-            this.CboStagione.SelectedIndexChanged += new System.EventHandler(this.CboStagione_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(694, 15);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Finezze";
             // 
             // TelliProdotiArticolo
             // 

@@ -27,11 +27,13 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("Stagione");
                 dataTable.Columns.Add("Commessa");
                 dataTable.Columns.Add("Finezza");
-                dataTable.Columns.Add("Buoni-DaRammendare");
+                dataTable.Columns.Add("Buoni+\nDaRammendare");
                 dataTable.Columns.Add("Buoni");
                 dataTable.Columns.Add("DaRammendare");
                 dataTable.Columns.Add("Rammendati");
                 dataTable.Columns.Add("Scarti");
+                dataTable.Columns.Add("% Rammendati");
+                dataTable.Columns.Add("% Scarti");
 
                 var sdt = Central.DateFrom;
                 var edt = Central.DateTo;
@@ -64,10 +66,14 @@ namespace Rammendo.ViewModels
                 DataRow totRow;
 
                 totRow = dataTable.NewRow();
+                totRow[0] = "TOTALE";
+                for (var i = 4; i <= 8; i++) {
+                    totRow[i] = 0; //set total default value
+                }
+
                 dataTable.Rows.Add(totRow);
 
                 foreach (var telliProduct in telliProdotiArticolo) {
-
                     var newRow = dataTable.NewRow();
                     newRow[0] = telliProduct.Article;
                     newRow[1] = telliProduct.Stagione;
@@ -78,6 +84,11 @@ namespace Rammendo.ViewModels
                     newRow[6] = telliProduct.DaRammendare;
                     newRow[7] = telliProduct.Rammendati;
                     newRow[8] = telliProduct.Scarti;
+
+                    var rammendatiEff = Math.Round(Convert.ToDouble(telliProduct.Rammendati) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
+                    var scartiEff = Math.Round(Convert.ToDouble(telliProduct.Scarti) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
+                    newRow[9] = $"{rammendatiEff}%";
+                    newRow[10] = $"{scartiEff}%";
 
                     dataTable.Rows.Add(newRow);
 
@@ -93,6 +104,17 @@ namespace Rammendo.ViewModels
                     if (!ListStagione.Contains(telliProduct.Finezza) && telliProduct.Finezza != null) {
                         ListStagione.Add(telliProduct.Finezza);
                     }
+
+                    for (var i = 4; i<=8; i++) {
+                        var total = Convert.ToInt32(totRow[i]);
+                        var rowVal = Convert.ToInt32(newRow[i]);
+                        totRow[i] = total + rowVal;
+                    }
+                }
+
+                if (totRow[9] != null && totRow[10] != null) {
+                    totRow[9] = $"{Math.Round(Convert.ToDouble(totRow[7]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                    totRow[10] = $"{Math.Round(Convert.ToDouble(totRow[8]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
                 }
 
                 return dataTable;

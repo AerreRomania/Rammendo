@@ -19,8 +19,8 @@ namespace Rammendo.Views.Reports
         }
 
         protected override async void OnLoad(EventArgs e) {
-            await LoadData();
             base.OnLoad(e);
+            await LoadData();
         }
 
         private async Task LoadData() {

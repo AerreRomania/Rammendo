@@ -21,8 +21,12 @@ namespace Rammendo.Views.Reports
             InitializeComponent();
             _telliProdotiArticoloViewModel = new TelliProdotiArticoloViewModel();
             GenerateChildForm();
-            LoadData();
             FillComboBoxes();
+        }
+
+        protected async override void OnLoad(EventArgs e) {
+            base.OnLoad(e);
+            await LoadData();
         }
 
         private async Task LoadData() {
@@ -47,6 +51,12 @@ namespace Rammendo.Views.Reports
                 DgvTelliProdoti.Rows[0].DefaultCellStyle.ForeColor = Color.OrangeRed;
                 DgvTelliProdoti.Rows[0].DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
                 DgvTelliProdoti.Rows[0].DefaultCellStyle.BackColor = Color.MistyRose;
+                DgvTelliProdoti.Rows[0].Height = 32;
+
+                if (DgvTelliProdoti.Columns.Count > 8) {
+                    DgvTelliProdoti.Columns[9].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                    DgvTelliProdoti.Columns[10].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                }
 
                 PbLoader.Visible = false;
             }
