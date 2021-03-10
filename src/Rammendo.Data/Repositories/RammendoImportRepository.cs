@@ -11,11 +11,9 @@ namespace Rammendo.Data.Repositories
     {
         public async Task<RammendoImport> GetRammendoAsync(string barcode) {
             var qry = @"
-SELECT Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, MAX(LastKey) AS LastKey 
+SELECT Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, GoodGood, BadBad, Diff, Angajat, Reparto, TypeOfControl, Tavolo, CapiH, LastKey
 FROM RammendoImport
-WHERE Barcode=@Barcode
-GROUP BY Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad
-";
+WHERE Barcode=@Barcode;";
 
             try {
                 using (var conn = new SqlConnection(ConnectionString)) {
@@ -32,14 +30,13 @@ GROUP BY Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, 
             var qry = @"
 UPDATE RammendoImport
 SET GoodGood=@GoodGood, BadBad=@BadBad, Diff=@Diff, Angajat=@Angajat, Reparto=@Reparto, TypeOfControl=@TypeOfControl, Tavolo=@Tavolo
-WHERE Barcode=@Barcode AND LastKey=@LastKey;
-";
+WHERE Barcode=@Barcode;";
 
             try {
                 var dynamicParameters = new DynamicParameters(rammendoImport);
 
                 using (var conn = new SqlConnection(ConnectionString)) {
-                    var result = await SqlMapper.ExecuteAsync(conn, qry, dynamicParameters);
+                    var result = await conn.ExecuteAsync(qry, dynamicParameters);
                     return result;
                 }
             }

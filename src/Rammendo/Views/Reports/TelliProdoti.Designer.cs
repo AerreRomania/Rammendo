@@ -25,8 +25,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
             this.PbLoader = new System.Windows.Forms.ProgressBar();
@@ -49,24 +49,24 @@
             this.DgvTelliProdoti.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DgvTelliProdoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvTelliProdoti.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvTelliProdoti.ColumnHeadersHeight = 32;
             this.DgvTelliProdoti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvTelliProdoti.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvTelliProdoti.EnableHeadersVisualStyles = false;
             this.DgvTelliProdoti.GridColor = System.Drawing.Color.Gainsboro;
@@ -119,13 +119,15 @@
             // 
             this.CbCommessa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CbCommessa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CbCommessa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbCommessa.ForeColor = System.Drawing.Color.Black;
             this.CbCommessa.FormattingEnabled = true;
             this.CbCommessa.Items.AddRange(new object[] {
             "<Reset>"});
-            this.CbCommessa.Location = new System.Drawing.Point(325, 8);
+            this.CbCommessa.Location = new System.Drawing.Point(300, 5);
             this.CbCommessa.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
             this.CbCommessa.Name = "CbCommessa";
-            this.CbCommessa.Size = new System.Drawing.Size(155, 21);
+            this.CbCommessa.Size = new System.Drawing.Size(155, 25);
             this.CbCommessa.TabIndex = 0;
             this.CbCommessa.SelectedIndexChanged += new System.EventHandler(this.CbCommessa_SelectedIndexChanged);
             // 
@@ -133,20 +135,22 @@
             // 
             this.CbArticolo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CbArticolo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CbArticolo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbArticolo.ForeColor = System.Drawing.Color.Black;
             this.CbArticolo.FormattingEnabled = true;
             this.CbArticolo.Items.AddRange(new object[] {
             "<Reset>"});
-            this.CbArticolo.Location = new System.Drawing.Point(78, 8);
+            this.CbArticolo.Location = new System.Drawing.Point(67, 5);
             this.CbArticolo.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
             this.CbArticolo.Name = "CbArticolo";
-            this.CbArticolo.Size = new System.Drawing.Size(145, 21);
+            this.CbArticolo.Size = new System.Drawing.Size(145, 25);
             this.CbArticolo.TabIndex = 1;
             this.CbArticolo.SelectedIndexChanged += new System.EventHandler(this.CbArticolo_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(238, 13);
+            this.label1.Location = new System.Drawing.Point(227, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 15, 5, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);

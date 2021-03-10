@@ -14,10 +14,12 @@ namespace Rammendo.Data.Repositories
         public async Task<IEnumerable<TelliProdoti>> GetAll(ReportFilter reportFilter) {
             var where = string.Empty;
             if (reportFilter.Article != null) {
-                where += @" AND Article=@Article";
+                where += @"
+AND Article=@Article";
             }
             if (reportFilter.Commessa != null) {
-                where += @" AND Commessa=@Commessa";
+                where += @"
+AND Commessa=@Commessa";
             }
 
             var qry = @" 

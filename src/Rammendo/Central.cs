@@ -17,6 +17,7 @@ namespace Rammendo
         
         public static DateTime DateFrom { get; private set; }
         public static DateTime DateTo { get; private set; }
+        public static bool MostraAttuale { get; private set; }
         public static System.Text.StringBuilder IdStateArray { get; private set; }
 
         public Central() : base(false) {
@@ -24,7 +25,7 @@ namespace Rammendo
             this.DoubleBuffered(true);
             SetStyle(ControlStyles.ResizeRedraw, true);
 
-            Store.Default.Url = "http://192.168.1.102:55432/api/"; //"http://192.168.96.37:55388/api/";
+            Store.Default.Url = "http://192.168.96.37:55388/api/";
             Store.Default.Save();
         }
 
@@ -86,8 +87,8 @@ namespace Rammendo
 
                 if (treeMenu.SelectedNode == node2) {
                     var frm = new TelliProdoti(pnForms);
-                    btnTelliProdoti.BackColor = Color.DarkCyan;
-                    btnTelliProdoti.ForeColor = Color.White;
+                    btnTelliProdotiArticolo.BackColor = Color.DarkCyan;
+                    btnTelliProdotiArticolo.ForeColor = Color.White;
                 }
 
                 if (treeMenu.SelectedNode == node2) {
@@ -237,9 +238,9 @@ namespace Rammendo
             btnTelliProdoti.Text = "Telli Prodotti Giornaliero";
             btnTelliProdoti.BackColor = Color.FromArgb(210, 210, 210);
             btnTelliProdoti.ForeColor = Color.FromArgb(113, 113, 113);
-            btnProduzioneGantt.Text = "Telli Prodotii per Articolo";
-            btnProduzioneGantt.BackColor = Color.FromArgb(210, 210, 210);
-            btnProduzioneGantt.ForeColor = Color.FromArgb(113, 113, 113);
+            btnTelliProdotiArticolo.Text = "Telli Prodotii per Articolo";
+            btnTelliProdotiArticolo.BackColor = Color.FromArgb(210, 210, 210);
+            btnTelliProdotiArticolo.ForeColor = Color.FromArgb(113, 113, 113);
             btnProduzione.Text = "Rammendo per Persona";
             btnProduzione.BackColor = Color.FromArgb(210, 210, 210);
             btnProduzione.ForeColor = Color.FromArgb(113, 113, 113);
@@ -338,6 +339,10 @@ namespace Rammendo
             var frm = new Settings();
             frm.ShowDialog();
             frm.Dispose();
+        }
+
+        private void cbMostra_CheckedChanged(object sender, EventArgs e) {
+            MostraAttuale = cbMostra.Checked;
         }
     }
 }

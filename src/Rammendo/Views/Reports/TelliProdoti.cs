@@ -70,7 +70,7 @@ namespace Rammendo.Views.Reports
         }
 
         private async void FillComboBoxes() {
-            var data = await _telliProdotiViewModel.Data(null, null);
+            await _telliProdotiViewModel.Data(null, null);
 
             CbArticolo.Items.Clear();
             CbCommessa.Items.Clear();
@@ -86,11 +86,14 @@ namespace Rammendo.Views.Reports
 
         private async void CbArticolo_SelectedIndexChanged(object sender, EventArgs e) {
             await LoadData();
+            CbCommessa.SelectedIndex = -1;
+           
         }
 
         private async void CbCommessa_SelectedIndexChanged(object sender, EventArgs e) {
-            CbArticolo.SelectedIndex = -1;
             await LoadData();
+            CbArticolo.SelectedIndex = -1;
+          
         }
     }
 }
