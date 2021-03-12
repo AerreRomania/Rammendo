@@ -27,7 +27,7 @@
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
+            this.CGridBig = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.CboFinezze = new System.Windows.Forms.ComboBox();
@@ -39,20 +39,20 @@
             this.CbArticolo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PbError = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CGridBig)).BeginInit();
             this.PnToolBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbError)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvTelliProdoti
+            // CGridBig
             // 
-            this.DgvTelliProdoti.AllowUserToAddRows = false;
-            this.DgvTelliProdoti.AllowUserToDeleteRows = false;
-            this.DgvTelliProdoti.AllowUserToResizeColumns = false;
-            this.DgvTelliProdoti.AllowUserToResizeRows = false;
-            this.DgvTelliProdoti.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DgvTelliProdoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvTelliProdoti.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.CGridBig.AllowUserToAddRows = false;
+            this.CGridBig.AllowUserToDeleteRows = false;
+            this.CGridBig.AllowUserToResizeColumns = false;
+            this.CGridBig.AllowUserToResizeRows = false;
+            this.CGridBig.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.CGridBig.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CGridBig.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,9 +60,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvTelliProdoti.ColumnHeadersHeight = 32;
-            this.DgvTelliProdoti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.CGridBig.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.CGridBig.ColumnHeadersHeight = 32;
+            this.CGridBig.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,18 +70,18 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DgvTelliProdoti.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvTelliProdoti.EnableHeadersVisualStyles = false;
-            this.DgvTelliProdoti.GridColor = System.Drawing.Color.Gainsboro;
-            this.DgvTelliProdoti.Location = new System.Drawing.Point(0, 44);
-            this.DgvTelliProdoti.MultiSelect = false;
-            this.DgvTelliProdoti.Name = "DgvTelliProdoti";
-            this.DgvTelliProdoti.ReadOnly = true;
-            this.DgvTelliProdoti.RowHeadersVisible = false;
-            this.DgvTelliProdoti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvTelliProdoti.Size = new System.Drawing.Size(998, 406);
-            this.DgvTelliProdoti.TabIndex = 14;
+            this.CGridBig.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CGridBig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CGridBig.EnableHeadersVisualStyles = false;
+            this.CGridBig.GridColor = System.Drawing.Color.Gainsboro;
+            this.CGridBig.Location = new System.Drawing.Point(0, 44);
+            this.CGridBig.MultiSelect = false;
+            this.CGridBig.Name = "CGridBig";
+            this.CGridBig.ReadOnly = true;
+            this.CGridBig.RowHeadersVisible = false;
+            this.CGridBig.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CGridBig.Size = new System.Drawing.Size(998, 406);
+            this.CGridBig.TabIndex = 14;
             // 
             // PnToolBar
             // 
@@ -231,11 +231,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 450);
             this.Controls.Add(this.PbError);
-            this.Controls.Add(this.DgvTelliProdoti);
+            this.Controls.Add(this.CGridBig);
             this.Controls.Add(this.PnToolBar);
             this.Name = "TelliProdotiPersone";
             this.Text = "TelliProdotiPersone";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CGridBig)).EndInit();
             this.PnToolBar.ResumeLayout(false);
             this.PnToolBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbError)).EndInit();
@@ -245,7 +245,7 @@
 
         #endregion
 
-        private Controls.CGridView DgvTelliProdoti;
+        private Controls.CGridView CGridBig;
         private System.Windows.Forms.Panel PnToolBar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CboFinezze;

@@ -27,6 +27,7 @@
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelliProdotiArticolo));
             this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             this.DgvTelliProdoti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvTelliProdoti.Size = new System.Drawing.Size(1178, 406);
             this.DgvTelliProdoti.TabIndex = 12;
+            this.DgvTelliProdoti.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTelliProdoti_CellDoubleClick);
             // 
             // PnToolBar
             // 
@@ -221,7 +223,7 @@
             // 
             this.PbError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbError.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PbError.Image = global::Rammendo.Properties.Resources.error;
+            this.PbError.Image = ((System.Drawing.Image)(resources.GetObject("PbError.Image")));
             this.PbError.Location = new System.Drawing.Point(525, 161);
             this.PbError.Name = "PbError";
             this.PbError.Size = new System.Drawing.Size(128, 128);
