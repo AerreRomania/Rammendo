@@ -29,10 +29,11 @@ namespace Rammendo.API
 
             services.AddTransient<ILoginRepository, LoginRepository>();
             services.AddTransient<IRammendoImportRepository, RammendoImportRepository>();
-            services.AddTransient<ITelliProdotiRepository, TelliProdotiRepository>();
-            services.AddTransient<ITelliProdotiArticoloRepository, TelliProdotiArticoloRepository>();
             services.AddTransient<IRammendoClicksRepository, RammendoClicksRepository>();
             services.AddTransient<ICommessaDetailsReporsitory, CommessaDetailsRepository>();
+            services.AddTransient<ITelliProdotiRepository, TelliProdotiRepository>();
+            services.AddTransient<ITelliProdotiArticoloRepository, TelliProdotiArticoloRepository>();
+            services.AddTransient<ITelliProdotiPersoneRepository, TelliProdotiPersoneRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {

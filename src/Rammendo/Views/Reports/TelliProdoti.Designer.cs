@@ -163,10 +163,11 @@
             this.PbError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbError.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PbError.Image = ((System.Drawing.Image)(resources.GetObject("PbError.Image")));
-            this.PbError.Location = new System.Drawing.Point(220, 132);
+            this.PbError.Location = new System.Drawing.Point(184, 96);
             this.PbError.Name = "PbError";
-            this.PbError.Size = new System.Drawing.Size(128, 128);
-            this.PbError.TabIndex = 11;
+            this.PbError.Size = new System.Drawing.Size(200, 200);
+            this.PbError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbError.TabIndex = 18;
             this.PbError.TabStop = false;
             this.PbError.Visible = false;
             // 

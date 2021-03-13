@@ -27,6 +27,7 @@
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelliProdotiPersone));
             this.CGridBig = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.CGridBig.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.CGridBig.ColumnHeadersHeight = 32;
+            this.CGridBig.ColumnHeadersHeight = 50;
             this.CGridBig.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -73,7 +74,7 @@
             this.CGridBig.DefaultCellStyle = dataGridViewCellStyle2;
             this.CGridBig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CGridBig.EnableHeadersVisualStyles = false;
-            this.CGridBig.GridColor = System.Drawing.Color.Gainsboro;
+            this.CGridBig.GridColor = System.Drawing.Color.LightGray;
             this.CGridBig.Location = new System.Drawing.Point(0, 44);
             this.CGridBig.MultiSelect = false;
             this.CGridBig.Name = "CGridBig";
@@ -82,6 +83,9 @@
             this.CGridBig.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CGridBig.Size = new System.Drawing.Size(998, 406);
             this.CGridBig.TabIndex = 14;
+            this.CGridBig.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.CGridBig_CellPainting);
+            this.CGridBig.Scroll += new System.Windows.Forms.ScrollEventHandler(this.CGridBig_Scroll);
+            this.CGridBig.Paint += new System.Windows.Forms.PaintEventHandler(this.CGridBig_Paint);
             // 
             // PnToolBar
             // 
@@ -217,11 +221,12 @@
             // 
             this.PbError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbError.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PbError.Image = global::Rammendo.Properties.Resources.error;
-            this.PbError.Location = new System.Drawing.Point(435, 161);
+            this.PbError.Image = ((System.Drawing.Image)(resources.GetObject("PbError.Image")));
+            this.PbError.Location = new System.Drawing.Point(399, 125);
             this.PbError.Name = "PbError";
-            this.PbError.Size = new System.Drawing.Size(128, 128);
-            this.PbError.TabIndex = 16;
+            this.PbError.Size = new System.Drawing.Size(200, 200);
+            this.PbError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbError.TabIndex = 17;
             this.PbError.TabStop = false;
             this.PbError.Visible = false;
             // 

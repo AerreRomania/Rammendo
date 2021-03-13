@@ -71,7 +71,8 @@ namespace Rammendo.Views.Reports
                 }
             }
             catch {
-
+                PbLoader.Visible = false;
+                PbError.Visible = true;
             }
           
         }

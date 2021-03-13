@@ -224,10 +224,11 @@
             this.PbError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PbError.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PbError.Image = ((System.Drawing.Image)(resources.GetObject("PbError.Image")));
-            this.PbError.Location = new System.Drawing.Point(525, 161);
+            this.PbError.Location = new System.Drawing.Point(489, 125);
             this.PbError.Name = "PbError";
-            this.PbError.Size = new System.Drawing.Size(128, 128);
-            this.PbError.TabIndex = 15;
+            this.PbError.Size = new System.Drawing.Size(200, 200);
+            this.PbError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PbError.TabIndex = 18;
             this.PbError.TabStop = false;
             this.PbError.Visible = false;
             // 
@@ -258,10 +259,10 @@
         private System.Windows.Forms.ComboBox CbCommessa;
         private System.Windows.Forms.ComboBox CbArticolo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox PbError;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CboFinezze;
         private System.Windows.Forms.ComboBox CboStagione;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox PbError;
     }
 }
