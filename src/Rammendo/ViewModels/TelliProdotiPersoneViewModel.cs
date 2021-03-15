@@ -43,10 +43,9 @@ namespace Rammendo.ViewModels
                 var prodotiPersons = await ApiService.GetAllByFilter<TelliProdotiPersone>(reportFilter);
 
                 var totRow1 = dataTable.NewRow();
-                var totRow2 = dataTable.NewRow();
-                var totRow3 = dataTable.NewRow();
-
+ 
                 dataTable.Rows.Add(totRow1);
+                totRow1[1] = "TOTALE";
 
                 var startDateFlag = startDate.Date;
                 var q = 0;
@@ -66,6 +65,11 @@ namespace Rammendo.ViewModels
                 var htbl = new Hashtable();
                 var idx = 1;
 
+                var totTeli = 0;
+                var totCapi = 0;
+                var totTotTeli = 0;
+                var totTotCapi = 0;
+
                 foreach (var prodotiPerson in prodotiPersons) {
                     var hKey = prodotiPerson.Angajat;
 
@@ -74,29 +78,58 @@ namespace Rammendo.ViewModels
 
                         if (prodotiPerson.TypeOfControl == "Telli") {
                             dataTable.Rows[rn][prodotiPerson.CreatedDate + "_" + "Teli"] = prodotiPerson.Rammendati;
+                            totTeli += prodotiPerson.Rammendati;
+                            totTotTeli += prodotiPerson.Rammendati;
+                            dataTable.Rows[rn][2] = totTeli;
                         }
                         else if (prodotiPerson.TypeOfControl == "Capi") {
                             dataTable.Rows[rn][prodotiPerson.CreatedDate + "_" + "Capi"] = prodotiPerson.Rammendati;
+                            totCapi += prodotiPerson.Rammendati;
+                            totTotCapi += prodotiPerson.Rammendati;
+                            dataTable.Rows[rn][3] = totCapi;
                         }
+
+                        dataTable.Rows[rn][5] = totTeli + totCapi;
                     }
                     else {
                         var newRow = dataTable.NewRow();
+                        totTeli = 0;
+                        totCapi = 0;
+
                         newRow[0] = idx;
                         newRow[1] = prodotiPerson.Angajat;
 
                         if (prodotiPerson.TypeOfControl == "Telli") {
                             newRow[prodotiPerson.CreatedDate+"_"+"Teli"] = prodotiPerson.Rammendati;
+                            totTeli = prodotiPerson.Rammendati;
+                            newRow[2] = totTeli;
+                            totTotTeli += prodotiPerson.Rammendati;
                         }
                         else if (prodotiPerson.TypeOfControl == "Capi") {
                             newRow[prodotiPerson.CreatedDate + "_" + "Capi"] = prodotiPerson.Rammendati;
+                            totCapi = prodotiPerson.Rammendati;
+                            newRow[3] = totCapi;
+                            totTotCapi += prodotiPerson.Rammendati;
                         }
+
+                        newRow[prodotiPerson.CreatedDate + "_" + "H lav."] = "0:00";
+                        newRow[prodotiPerson.CreatedDate + "_" + "Pz/H"] = "0:00";
+                      
+                        newRow[4] = "0:00";
+                        newRow[5] = totTeli + totCapi;
+                        newRow[6] = "0:00";
 
                         dataTable.Rows.Add(newRow);
                         htbl.Add(hKey, idx);
                         idx++;
                     }
-
                 }
+
+                totRow1[2] = totTotTeli;
+                totRow1[3] = totTotCapi;
+                totRow1[4] = "0:00";
+                totRow1[5] = totTotTeli + totTotCapi;
+                totRow1[6] = "0:00";
 
                 return dataTable;
             }

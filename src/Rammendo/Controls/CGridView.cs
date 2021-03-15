@@ -34,6 +34,9 @@ namespace Rammendo.Controls
                         }
                     }
                 }
+                foreach (DataGridViewColumn c in Columns) {
+                    c.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             };
 
             this.DoubleBuffered(true);

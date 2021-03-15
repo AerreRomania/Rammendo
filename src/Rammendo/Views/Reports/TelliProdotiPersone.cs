@@ -54,6 +54,10 @@ namespace Rammendo.Views.Reports
 
                     CGridBig.Rows[0].Height = 32;
                     CGridBig.Rows[0].DefaultCellStyle.BackColor = Color.LightYellow;
+                    CGridBig.Rows[0].DefaultCellStyle.BackColor = Color.MistyRose;
+                    CGridBig.Rows[0].DefaultCellStyle.SelectionBackColor = Color.MistyRose;
+                    CGridBig.Rows[0].DefaultCellStyle.ForeColor = Color.OrangeRed;
+                    CGridBig.Rows[0].DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold, GraphicsUnit.Point);
                     PbLoader.Visible = false;
                 }
                 else {
@@ -66,8 +70,7 @@ namespace Rammendo.Views.Reports
             catch {
                 PbLoader.Visible = false;
                 PbError.Visible = true;
-            }
-            
+            }           
         }
 
         private Rectangle _rect = new Rectangle();
@@ -75,14 +78,19 @@ namespace Rammendo.Views.Reports
         private void CGridBig_CellPainting(object sender, DataGridViewCellPaintingEventArgs e) {
             if (e.RowIndex != 0) return;
             if (e.ColumnIndex <= 6) return;
-            e.Graphics.FillRectangle(Brushes.LightYellow, e.CellBounds);
+
+            //e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            e.Graphics.FillRectangle(Brushes.MistyRose, e.CellBounds);
 
             for (var j = 7; j <= CGridBig.ColumnCount - 1;) {
-                e.Graphics.FillRectangle(Brushes.LightYellow, _rect);
+                
 
+                _rect.X = 0;
+                _rect.Y = 0;
                 _rect = CGridBig.GetCellDisplayRectangle(j, 0, true);
                 _rect.Width = e.CellBounds.Width * 4;
-
+                e.Graphics.FillRectangle(Brushes.MistyRose, _rect);
                 string txt = CGridBig.Rows[0].Cells[j].Value.ToString();
                 StringFormat format = new StringFormat {
                     Alignment = StringAlignment.Center,
@@ -101,7 +109,7 @@ namespace Rammendo.Views.Reports
 
                 j += 4;
             }
-   
+
             e.Handled = true;
         }
 
@@ -110,11 +118,8 @@ namespace Rammendo.Views.Reports
         }
 
         private void CGridBig_Scroll(object sender, ScrollEventArgs e) {
-            if (e.NewValue < e.OldValue) {
-                CGridBig.Invalidate();
-            }
+            CGridBig.Invalidate();
             CGridBig.Refresh();
-            CGridBig.Update();
         }
     }
 }

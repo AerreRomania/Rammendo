@@ -140,6 +140,8 @@ namespace Rammendo.Views.Reports
         }
 
         private void DgvTelliProdoti_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex < 1) return;
+
             var article = DgvTelliProdoti.Rows[e.RowIndex].Cells[0].Value.ToString();
             var commessa = DgvTelliProdoti.Rows[e.RowIndex].Cells[2].Value.ToString();
 
