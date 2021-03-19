@@ -3,6 +3,8 @@ using System.IO;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace CsvImporter
 {
@@ -10,39 +12,48 @@ namespace CsvImporter
     {
         private readonly Log _log = new Log();
         private DataTable _dataTable = new DataTable();
+        private string CurrentFileName { get; set; }
+
+        private List<string> _listOfBarcodesBuffer = new List<string>();
 
         public void Import() {
             try {
                 var startImportTime = DateTime.Now;
                 var strNameByDate = DateTime.Now.ToString("dd-MM-yyyy");
 
+                var lstOfBarcodes = CsvInfo.GetInsertedBarcodes(strNameByDate);
+                _listOfBarcodesBuffer = new List<string>();
+
                 foreach (var file in Directory.GetFiles(CsvInfo.CSV_PATH)) {
                     var fileName = Path.GetFileNameWithoutExtension(file);
                     if (fileName != strNameByDate) continue;
-
+                   
                     _dataTable = new DataTable();
 
                     CreateClonedColumns(_dataTable);
 
                     var commessaInfo = CsvInfo.GetCommessa();
-
                     var maxKey = CsvInfo.GetMaxKeyBasedOnImport(fileName);
                     
                     using (StreamReader streamReader = new StreamReader(new FileStream(file, FileMode.Open, FileAccess.Read))) { 
                         while (!streamReader.EndOfStream) {
                             string[] rows = streamReader.ReadLine().Split(';');
+
+                            if (lstOfBarcodes.Contains(rows[8].ToString()) || _listOfBarcodesBuffer.Contains(rows[8].ToString())) continue;
+
                             int.TryParse(rows[0].ToString(), out var maxIdentityKey);
-                            if (maxIdentityKey <= maxKey) continue; 
+                            if (maxIdentityKey <= maxKey) continue;
 
-                            var newRow = _dataTable.NewRow();
-                            for (var i = 1; i <= rows.Length - 1; i++) { 
-                                newRow[i - 1] = rows[i]; 
+                            var cr = rows[1].Split('-');    //get commessa array by (-) to get regulation by the protocol of inserting
+                            var regularCommessa = $"{cr[0]}{cr[1]}.{cr[2]}";
+
+                            var newRow = _dataTable.NewRow(); 
+                            for (var i = 1; i <= rows.Length - 1; i++) {
+                                newRow[i - 1] = i == 1 ? regularCommessa : rows[i]; // ? commessa will be inserted regularly by 'onlyou' direction.
                             }
-
                             newRow[10] = maxIdentityKey;
                             newRow[11] = fileName;
-
-                            var commessa = commessaInfo.FirstOrDefault(x => x.NrCommanda == rows[1] && x.Article == rows[2]);
+                            var commessa = commessaInfo.FirstOrDefault(x => x.NrCommanda == regularCommessa && x.Article == rows[2]);
                             newRow[12] = commessa != null ? commessa.CommessaId : 0;
                             newRow[13] = commessa != null ? commessa.ArticleId : 0;
                             newRow[14] = DateTime.Now;
@@ -58,8 +69,12 @@ namespace CsvImporter
                             newRow[24] = commessa != null ? commessa.IdFinezze : 0;
 
                             _dataTable.Rows.Add(newRow);
+
+                            _listOfBarcodesBuffer.Add(rows[8].ToString());
                         }
                     }
+
+                    CurrentFileName = fileName;
                 }
 
                 if (_dataTable.Rows.Count != 0) {

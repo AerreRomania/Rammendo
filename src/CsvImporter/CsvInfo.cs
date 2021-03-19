@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 
 namespace CsvImporter
 {
@@ -93,6 +94,36 @@ WHERE COM.IdSector=7;";
             catch (System.Exception ex) {
                 _log.WriteLog($"[GETMAXKEY] Error: {ex.Message}");
                 return lst.DefaultIfEmpty<Commessa>();
+            }
+        }
+
+        public static IEnumerable<string> GetInsertedBarcodes(string fileKey) {
+            var qry = @"
+SELECT Barcode 
+FROM RammendoImport 
+WHERE FileKey=@FileKey;";
+
+            try {
+                var lst = new List<string>();
+
+                using (var conn = new SqlConnection(CONNECTION_STRING)) {
+                    var cmd = new SqlCommand(qry, conn);
+                    cmd.Parameters.Add("@FileKey", SqlDbType.NVarChar).Value = fileKey;
+                    conn.Open();
+                    var dr = cmd.ExecuteReader();
+                    if (dr.HasRows) {
+                        while (dr.Read()) {
+                            lst.Add(dr[0].ToString());
+                        }
+                    }
+                    conn.Close();
+                    dr.Close();
+                }
+                return lst;
+            }
+            catch (System.Exception ex) {
+                _log.WriteLog($"Fetching barcodes error: {ex.Message}");
+                return new List<string>();
             }
         }
     }

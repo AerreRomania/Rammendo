@@ -27,9 +27,23 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("T. Prodoti");
                 dataTable.Columns.Add("Rammendare");
 
+                var sdt = Central.DateFrom;
+                var edt = Central.DateTo;
+                var startDate = new DateTime(sdt.Year, sdt.Month, sdt.Day, 0, 0, 0);
+                var endDate = new DateTime(edt.Year, edt.Month, edt.Day, 23, 59, 59);
+
+                var mostraAttuale = Central.MostraAttuale;
+
+                if (mostraAttuale) {
+                    startDate = startDate.AddYears(-10);
+                    endDate = endDate.AddYears(+1);
+                }
+
                 var reportFilter = new ReportFilter {
                     Article = article,
-                    Commessa = commessa
+                    Commessa = commessa,
+                    StartDate = startDate,
+                    EndDate = endDate
                 };
 
                 var telliProdoti = await ApiService.GetAllByFilter<TelliProdoti>(reportFilter);

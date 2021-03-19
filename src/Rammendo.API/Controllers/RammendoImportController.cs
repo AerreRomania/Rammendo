@@ -33,8 +33,8 @@ namespace Rammendo.API.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateRammendoImport([FromBody] RammendoImport rammendoImport) {
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateRammendoImport(RammendoImport rammendoImport) {
             try {
                 var rows = await _rammendoImportRepository.UpdateRammendoAsync(rammendoImport);
                 Log.Debug("Successfully updated rammendo on barcode {barcode} and JobId", rammendoImport.Barcode, rammendoImport.LastKey);

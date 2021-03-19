@@ -16,8 +16,8 @@ namespace Rammendo.Data.Repositories
 
         public async Task<bool> InsertAsync(RammendoClicks rammendoClicks) {
             var insertQuery = @"
-INSERT INTO RammendoClicks (ClickEvent,Angajat,Quantity,IdJob)
-VALUES (@ClickEvent,@Angajat,@Quantity,@IdJob)
+INSERT INTO RammendoClicks (ClickEvent,Angajat,Quantity,IdJob,TypeOfWork)
+VALUES (@ClickEvent,@Angajat,@Quantity,@IdJob,@TypeOfWork)
 ";
             using (var connection = new SqlConnection(ConnectionString)) {
                 var row = await connection.ExecuteAsync(insertQuery, rammendoClicks);

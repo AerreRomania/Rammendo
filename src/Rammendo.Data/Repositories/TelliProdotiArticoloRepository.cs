@@ -14,36 +14,48 @@ namespace Rammendo.Data.Repositories
         public async Task<IEnumerable<TelliProdotiArticolo>> GetAll(ReportFilter reportFilter) {
             var where = string.Empty;
             if (reportFilter.Article != null) {
-                where += @" AND Article=@Article";
+                where += @"
+AND Article=@Article";
             }
             if (reportFilter.Commessa != null) {
-                where += @" AND Commessa=@Commessa";
+                where += @"
+AND Commessa=@Commessa";
             }
             if (reportFilter.Stagione != null) {
-                where += @" AND STAG.Stagiune=@Stagione";
+                where += @"
+AND STAG.Stagiune=@Stagione";
             }
             if (reportFilter.Finezze != null) {
-                where += @" AND FIN.Codice=@Finezze";
+                where += @"
+AND FIN.Codice=@Finezze";
             }
 
             var qry = @" 
 SELECT RAM.Commessa, STAG.Stagiune, RAM.Article, FIN.Codice, 
-(SUM(Good) + SUM(Bad)) AS BuoniDaRammendare, SUM(Good) AS Buoni, SUM(Bad) AS Rammendare, SUM(GoodGood) AS Rammendati, SUM(BadBad) AS Scarti                              
+(SUM(Good) + SUM(Bad)) AS BuoniDaRammendare, SUM(Good) AS Buoni, SUM(Bad) AS DaRammendare, SUM(GoodGood) AS Rammendati, SUM(BadBad) AS Scarti                              
 FROM RammendoImport RAM
 LEFT JOIN Stagiuni STAG ON RAM.IdStagione = STAG.Id
 LEFT JOIN Fineza FIN ON RAM.IdFinezze = FIN.Id";
 
             qry += @"
-WHERE Article IS NOT NULL AND CreatedDate BETWEEN @StartDate AND @EndDate";
+WHERE RAM.Article IS NOT NULL AND RAM.CreatedDate BETWEEN @StartDate AND @EndDate";
+            
             qry += where;
+
             qry += @"
-GROUP BY RAM.Commessa, STAG.Stagiune, RAM.Article, FIN.Codice
-ORDER BY RAM.CreatedDate;";
+GROUP BY RAM.Commessa, STAG.Stagiune, RAM.Article, FIN.Codice;";
 
             try {
+                var dp = new DynamicParameters();
+                dp.Add("@Article", reportFilter.Article);
+                dp.Add("@Commessa", reportFilter.Commessa);
+                dp.Add("@Stagione", reportFilter.Stagione);
+                dp.Add("@Finezze", reportFilter.Finezze);
+                dp.Add("@StartDate", reportFilter.StartDate);
+                dp.Add("@EndDate", reportFilter.EndDate);
+
                 using (var conn = new SqlConnection(ConnectionString)) {
-                    var dynamicParameters = new DynamicParameters(reportFilter);
-                    var result = await SqlMapper.QueryAsync<TelliProdotiArticolo>(conn, qry, dynamicParameters);
+                    var result = await SqlMapper.QueryAsync<TelliProdotiArticolo>(conn, qry, dp);
                     return result;
                 }
             }
