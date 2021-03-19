@@ -38,10 +38,7 @@
                     Style="{StaticResource DefaultLabel}"
                     Text="{Binding TotalQty}" />
             </Grid>
-            <Grid
-                Grid.Column="1"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="End">
+            <Grid Grid.Column="1" HorizontalOptions="End">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
                     <RowDefinition Height="20" />
@@ -53,7 +50,7 @@
                     Margin="0"
                     Padding="0"
                     Style="{StaticResource DefaultLabel}"
-                    Text="Efficienza Totale" />
+                    Text="Efficienza" />
                 <Label
                     Grid.Row="1"
                     Margin="0"
@@ -61,6 +58,16 @@
                     Style="{StaticResource DefaultLabel}"
                     Text="89%" />
             </Grid>
+            <Button
+                Grid.Column="2"
+                Margin="0"
+                Padding="0"
+                Command="{Binding LogOutCommand}"
+                HorizontalOptions="End"
+                Style="{StaticResource DefaultButton}"
+                Text="Log out"
+                VerticalOptions="Start"
+                WidthRequest="60" />
             <Button
                 x:Name="ButtonCount"
                 Grid.Row="1"

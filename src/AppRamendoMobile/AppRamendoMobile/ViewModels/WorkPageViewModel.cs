@@ -20,14 +20,23 @@ namespace AppRammendoMobile.ViewModels
             }
         }
         public ICommand EfficientaCommand { get; set; }
+        public ICommand LogOutCommand { get; set; }
         public WorkPageViewModel()
         {
             EfficientaCommand = new Command(async () => await ExecuteEfficientaCommand());
+            LogOutCommand = new Command(async () => await ExecuteLogOutCommand());
         }
+
+       
         public WorkPageViewModel(RammendoImport commessa)
         {
             Rammendo = commessa;
             EfficientaCommand = new Command(async() => await ExecuteEfficientaCommand());
+            LogOutCommand = new Command(async () => await ExecuteLogOutCommand());
+        }
+        private async Task ExecuteLogOutCommand()
+        {
+            await Application.Current.MainPage.Navigation.PopToRootAsync();
         }
 
         private async Task ExecuteEfficientaCommand()
@@ -60,18 +69,15 @@ namespace AppRammendoMobile.ViewModels
                         {
                             bool result = await Application.Current.MainPage.DisplayAlert("Change Job?", "", "Yes", "No");
                             if (result) await Application.Current.MainPage.Navigation.PopAsync();
-                            
+                            await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Stop" }, $"{Url}rammendoclicks");
                         }
                         break;
                     case "Scarti":
                         await Application.Current.MainPage.Navigation.PushAsync(new ScartiConfirmationPage(Rammendo));
                         break;
                     case "Pauza":
-                        
-                            await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Pause" }, $"{Url}rammendoclicks");
-                           
-                        
-                            break;
+                        await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Pause" }, $"{Url}rammendoclicks");
+                        break;
                 }
             }
         }
