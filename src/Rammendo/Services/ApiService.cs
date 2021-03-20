@@ -18,14 +18,14 @@ namespace Rammendo.Services
             _client = new HttpClient();
         }
 
-        public async Task<IEnumerable<T>> GetAll<T>() {
-
+        public async Task<IEnumerable<T>> GetAll<T>(string query) {
             try {
+                var checkQuery = query != null ? "?" + query : null;
 
                 var responseMessage = await Policy
                     .Handle<Exception>(ex => true)
                     .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
-                    .ExecuteAsync(async () => await _client.GetAsync($"{Store.Default.Url}TelliProdoti"));
+                    .ExecuteAsync(async () => await _client.PostAsync($"{Store.Default.Url}{typeof(T).Name}{checkQuery}", null));
 
                 var content = await responseMessage.Content.ReadAsStringAsync();
 

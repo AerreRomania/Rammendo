@@ -93,8 +93,8 @@ namespace Rammendo
 
                 if (treeMenu.SelectedNode == node3) {
                     var frm = new TelliProdotiPersone(pnForms);
-                    btnTelliProdoti.BackColor = Color.DarkCyan;
-                    btnTelliProdoti.ForeColor = Color.White;
+                    btnTelliProdotiPersone.BackColor = Color.DarkCyan;
+                    btnTelliProdotiPersone.ForeColor = Color.White;
                 }
 
                 pnNavi.Enabled = true;

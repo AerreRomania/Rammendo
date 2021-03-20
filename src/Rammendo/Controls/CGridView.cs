@@ -27,9 +27,20 @@ namespace Rammendo.Controls
             ColumnHeadersDefaultCellStyle.BackColor = Color.DarkGray;
 
             DataBindingComplete += (s, e) => {
-                if (Columns.Count > 0) {
-                    foreach (DataGridViewColumn c in Columns) {
-                        c.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (Name != "CGridBig") {
+                    if (Columns.Count > 0) {
+                        foreach (DataGridViewColumn c in Columns) {
+                            c.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        }
+                    }
+                }
+
+                foreach (DataGridViewColumn c in Columns) {
+                    c.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+                    if (c.ValueType == typeof(int))
+                    {
+                        c.DefaultCellStyle.Format = "#,##0";
                     }
                 }
             };
