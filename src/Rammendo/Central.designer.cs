@@ -791,9 +791,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnForms.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnForms.Location = new System.Drawing.Point(230, 181);
+            this.pnForms.Location = new System.Drawing.Point(230, 168);
             this.pnForms.Name = "pnForms";
-            this.pnForms.Size = new System.Drawing.Size(1078, 545);
+            this.pnForms.Size = new System.Drawing.Size(1078, 558);
             this.pnForms.TabIndex = 1;
             // 
             // pbBottombnd

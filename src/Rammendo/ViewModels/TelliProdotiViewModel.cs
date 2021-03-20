@@ -18,14 +18,14 @@ namespace Rammendo.ViewModels
         public List<string> ListArticles { get; set; }
         public List<string> ListCommesse { get; set; }
 
-        public async Task<DataTable> Data(string article, string commessa) {
+        public async Task<DataView> Data(string article, string commessa) {
 
             try {
                 var dataTable = new DataTable();
                 dataTable.Columns.Add("Articolo");
                 dataTable.Columns.Add("Commessa");
-                dataTable.Columns.Add("T. Prodoti");
-                dataTable.Columns.Add("Rammendare");
+                dataTable.Columns.Add("T. Prodoti", typeof(int));
+                dataTable.Columns.Add("Rammendare", typeof(int));
 
                 var sdt = Central.DateFrom;
                 var edt = Central.DateTo;
@@ -115,7 +115,7 @@ namespace Rammendo.ViewModels
                 dataTable.Rows[0][2] = totTotProdoti;
                 dataTable.Rows[0][3] = totTotRammendare;
 
-                return dataTable;
+                return dataTable.DefaultView;
             }
             catch {
                 return null;

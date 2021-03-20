@@ -11,7 +11,7 @@ namespace Rammendo.ViewModels
 {
     public class TelliProdotiPersoneViewModel : BaseViewModel
     {
-        public async Task<DataTable> Data() {
+        public async Task<DataView> Data() {
 
             try {
                 var dataTable = new DataTable();
@@ -32,7 +32,7 @@ namespace Rammendo.ViewModels
                     MessageBox.Show("Start date is greater end Date.",
                    "Invalid date selection", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    return dataTable;
+                    return dataTable.DefaultView;
                 }
 
                 var reportFilter = new ReportFilter {
@@ -131,7 +131,7 @@ namespace Rammendo.ViewModels
                 totRow1[5] = totTotTeli + totTotCapi;
                 totRow1[6] = "0:00";
 
-                return dataTable;
+                return dataTable.DefaultView;
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);

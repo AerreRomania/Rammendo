@@ -21,6 +21,12 @@ namespace Rammendo.Views.Reports
             InitializeComponent();
             _telliProdotiArticoloViewModel = new TelliProdotiArticoloViewModel();
             GenerateChildForm();
+
+            CbArticolo.MouseWheel += new MouseEventHandler(ComboBox_MouseWheel);
+            CbCommessa.MouseWheel += new MouseEventHandler(ComboBox_MouseWheel); 
+            CboStagione.MouseWheel += new MouseEventHandler(ComboBox_MouseWheel);
+            CboFinezze.MouseWheel += new MouseEventHandler(ComboBox_MouseWheel);
+
             FillComboBoxes();
         }
 
@@ -33,7 +39,6 @@ namespace Rammendo.Views.Reports
             try {
                 PbLoader.Visible = true;
                 PbError.Visible = false;
-                await Task.Delay(300);
 
                 var article = CbArticolo.SelectedIndex > 0 ? CbArticolo.Text : null;
                 var commessa = CbCommessa.SelectedIndex > 0 ? CbCommessa.Text : null;
@@ -45,7 +50,9 @@ namespace Rammendo.Views.Reports
                 if (CboStagione.SelectedIndex == -1) stag = null;
                 if (CboFinezze.SelectedIndex == -1) fin = null;
 
-                var data = await _telliProdotiArticoloViewModel.Data(article, commessa, stag, fin);
+                var includeAll = rbAll.Checked;
+
+                var data = await _telliProdotiArticoloViewModel.Data(article, commessa, stag, fin, includeAll);
 
                 if (data != null) {
                     DgvTelliProdoti.DataSource = data;
@@ -54,28 +61,35 @@ namespace Rammendo.Views.Reports
                     DgvTelliProdoti.Rows[0].DefaultCellStyle.BackColor = Color.MistyRose;
                     DgvTelliProdoti.Rows[0].Height = 32;
 
-                    if (DgvTelliProdoti.Columns.Count > 8) {
-                        DgvTelliProdoti.Columns[9].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                    if (DgvTelliProdoti.Columns.Count > 9) {
+                        DgvTelliProdoti.Columns[9].DefaultCellStyle.BackColor = Color.LavenderBlush;
                         DgvTelliProdoti.Columns[10].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                        DgvTelliProdoti.Columns[11].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                        DgvTelliProdoti.Columns[12].DefaultCellStyle.BackColor = Color.WhiteSmoke;
                     }
 
                     DgvTelliProdoti.Columns[2].DefaultCellStyle.BackColor = Color.WhiteSmoke;
                     DgvTelliProdoti.Columns[2].DefaultCellStyle.SelectionForeColor = Color.Blue;
 
                     foreach (DataGridViewRow row in DgvTelliProdoti.Rows) {
+                        if (row.Index <= 0) continue;
+
                         row.Cells[2].ToolTipText = "Perform double click for commessa details";
                     }
-
-                    PbLoader.Visible = false;
                 }
                 else {
-                    PbLoader.Visible = false;
                     MessageBox.Show("No data.",
                         this.GetType().Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     PbError.Visible = true;
                 }
             }
             catch {
+                PbLoader.Value = 0;
+                PbLoader.Visible = false;
+            }
+            finally
+            {
+                PbLoader.Value = 0;
                 PbLoader.Visible = false;
             }
            
@@ -150,6 +164,21 @@ namespace Rammendo.Views.Reports
                 frm.ShowDialog();
                 frm.Dispose();
             }
+        }
+
+        private async void rbAll_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadData();
+        }
+
+        private async void rbActive_CheckedChanged(object sender, EventArgs e)
+        {
+            await LoadData();
+        }
+
+        void ComboBox_MouseWheel(object sender, MouseEventArgs e)
+        {
+            ((HandledMouseEventArgs)e).Handled = true;
         }
     }
 }

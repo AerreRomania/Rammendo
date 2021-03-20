@@ -67,6 +67,7 @@
     <Compile Include="Controls\CGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\Geometry.cs" />
     <Compile Include="Helpers\Resizer.cs" />

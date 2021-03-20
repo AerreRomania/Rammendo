@@ -34,8 +34,14 @@ namespace Rammendo.Controls
                         }
                     }
                 }
+
                 foreach (DataGridViewColumn c in Columns) {
                     c.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+                    if (c.ValueType == typeof(int))
+                    {
+                        c.DefaultCellStyle.Format = "#,##0";
+                    }
                 }
             };
 

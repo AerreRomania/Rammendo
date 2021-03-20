@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rammendo.ViewModels
 {
@@ -19,7 +20,7 @@ namespace Rammendo.ViewModels
         public List<string> ListStagione { get; set; }
         public List<string> ListFinezze { get; set; }
 
-        public async Task<DataTable> Data(string article, string commessa, string stagione, string finezze) {
+        public async Task<DataView> Data(string article, string commessa, string stagione, string finezze, bool includeAll = true) {
 
             try {
                 var dataTable = new DataTable();
@@ -27,13 +28,15 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("Stagione");
                 dataTable.Columns.Add("Commessa");
                 dataTable.Columns.Add("Finezza");
-                dataTable.Columns.Add("Buoni+\nDaRammendare");
-                dataTable.Columns.Add("Buoni");
-                dataTable.Columns.Add("DaRammendare");
-                dataTable.Columns.Add("Rammendati");
-                dataTable.Columns.Add("Scarti");
+                dataTable.Columns.Add("Buoni+\nDaRammendare",typeof(int));
+                dataTable.Columns.Add("Buoni", typeof(int));
+                dataTable.Columns.Add("DaRammendare", typeof(int));
+                dataTable.Columns.Add("Rammendati", typeof(int));
+                dataTable.Columns.Add("Diff", typeof(int));
+                dataTable.Columns.Add("Scarti", typeof(int));
                 dataTable.Columns.Add("% Rammendati");
                 dataTable.Columns.Add("% Scarti");
+                dataTable.Columns.Add("% Rammendo");
 
                 var sdt = Central.DateFrom;
                 var edt = Central.DateTo;
@@ -67,13 +70,15 @@ namespace Rammendo.ViewModels
 
                 totRow = dataTable.NewRow();
                 totRow[0] = "TOTALE";
-                for (var i = 4; i <= 8; i++) {
+                for (var i = 4; i <= 9; i++) {
                     totRow[i] = 0; //set total default value
                 }
 
                 dataTable.Rows.Add(totRow);
 
                 foreach (var telliProduct in telliProdotiArticolo) {
+                    if (!includeAll && telliProduct.DaRammendare == 0) continue;
+
                     var newRow = dataTable.NewRow();
                     newRow[0] = telliProduct.Article;
                     newRow[1] = telliProduct.Stagione;
@@ -83,12 +88,17 @@ namespace Rammendo.ViewModels
                     newRow[5] = telliProduct.Buoni;
                     newRow[6] = telliProduct.DaRammendare;
                     newRow[7] = telliProduct.Rammendati;
-                    newRow[8] = telliProduct.Scarti;
+                    newRow[8] = telliProduct.DaRammendare - telliProduct.Rammendati;
+                    newRow[9] = telliProduct.Scarti;
 
                     var rammendatiEff = Math.Round(Convert.ToDouble(telliProduct.Rammendati) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
                     var scartiEff = Math.Round(Convert.ToDouble(telliProduct.Scarti) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
-                    newRow[9] = $"{rammendatiEff}%";
-                    newRow[10] = $"{scartiEff}%";
+                    var rammendoEff = Math.Round(Convert.ToDouble(telliProduct.DaRammendare) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
+                    if (double.IsNaN(rammendoEff) || double.IsInfinity(rammendoEff)) rammendoEff = 0;
+
+                    newRow[10] = $"{rammendatiEff}%";
+                    newRow[11] = $"{scartiEff}%";
+                    newRow[12] = $"{rammendoEff}%";
 
                     dataTable.Rows.Add(newRow);
 
@@ -105,21 +115,24 @@ namespace Rammendo.ViewModels
                         ListStagione.Add(telliProduct.Finezza);
                     }
 
-                    for (var i = 4; i<=8; i++) {
+                    for (var i = 4; i <= 9; i++)
+                    {
                         var total = Convert.ToInt32(totRow[i]);
                         var rowVal = Convert.ToInt32(newRow[i]);
                         totRow[i] = total + rowVal;
                     }
                 }
 
-                if (totRow[9] != null && totRow[10] != null) {
-                    totRow[9] = $"{Math.Round(Convert.ToDouble(totRow[7]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
-                    totRow[10] = $"{Math.Round(Convert.ToDouble(totRow[8]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                if (totRow[10] != null && totRow[11] != null && totRow[12] != null)
+                {
+                    totRow[10] = $"{Math.Round(Convert.ToDouble(totRow[7]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                    totRow[11] = $"{Math.Round(Convert.ToDouble(totRow[9]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                    totRow[12] = $"{Math.Round(Convert.ToDouble(totRow[6]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
                 }
 
-                return dataTable;
+                return dataTable.DefaultView;
             }
-            catch {
+            catch (Exception) {
                 return null;
             }
         }
