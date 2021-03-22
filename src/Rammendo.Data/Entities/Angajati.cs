@@ -8,5 +8,6 @@ namespace Rammendo.Data.Entities
         public int Id { get; set; }
         public string CodAngajat { get; set; }
         public string Angajat { get; set; }
+        public string Action { get; set; }
     }
 }

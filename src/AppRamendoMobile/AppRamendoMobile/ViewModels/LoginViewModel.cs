@@ -54,6 +54,8 @@ namespace AppRammendoMobile.ViewModels
             if (codAngajat != null) 
             {
                 Angajati angajati = await Loginclient.LoginUserAsync($"{Url}login?codAngajat={CodAngajat}");
+                angajati.Action = "work";
+                await ApiClient.InsertAsync(angajati, $"{Url}RammendoLog");     //this line is for inserting login or pause time
 
                 if (angajati != null)
                 { 

@@ -35,5 +35,3 @@ ORDER BY CONVERT(NVARCHAR, CreatedDate, 110), Angajat, TypeOfControl;";
         }
     }
 }
-
-
