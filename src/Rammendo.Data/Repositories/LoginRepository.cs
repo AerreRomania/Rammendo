@@ -13,7 +13,7 @@ namespace Rammendo.Data.Repositories
     {
         public async Task<IEnumerable<Angajati>> GetAngajatis(string codAngajat) {
             var qry = @" 
-SELECT Id, CodAngajat, Angajat
+SELECT CodAngajat, Angajat
 FROM Angajati
 WHERE CodAngajat=@CodAngajat AND IdSector=7;";
             //TODO check column [Active] does take an effect
@@ -26,7 +26,6 @@ WHERE CodAngajat=@CodAngajat AND IdSector=7;";
             catch (Exception) {
                 throw;
             }
-
         }
     }
 }

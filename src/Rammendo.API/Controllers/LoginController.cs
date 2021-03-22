@@ -29,8 +29,6 @@ namespace Rammendo.API.Controllers
 				Log.Debug("{UserCount} users found for CodAngajat {CodAngajat}", angajatis.ToList().Count, angajat.CodAngajat);
 
 				if (angajatis != null) {
-					//var angajat = angajatis.FirstOrDefault();
-					var strUserId = angajat.Id.ToString();
 					Log.Debug("User {Angajat} authenticated for CodAngajat {CodAngajat}", angajat.Angajat, angajat.CodAngajat);
 					response = Ok(angajat);
 				}

@@ -67,7 +67,6 @@ namespace AppRammendoMobile.Services
             }
         }
 
-
         public async Task<bool> InsertAsync<T>(T settings, string url) {
             var json = JsonConvert.SerializeObject(settings);
             HttpContent httpContent = new StringContent(json);

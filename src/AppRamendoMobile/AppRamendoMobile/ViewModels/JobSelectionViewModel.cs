@@ -45,7 +45,12 @@ namespace AppRammendoMobile.ViewModels
             try
             {
                 bool result = await Application.Current.MainPage.DisplayAlert("Log-out ?", "Are you sure you want to logout ?", "Yes", "No");
-                if (result) await Application.Current.MainPage.Navigation.PopAsync();
+                if (result)
+                {
+                    User.Action = "work";
+                    await ApiClient.UpdateAsync(User, $"{Url}RammendoLog/1");   // this line is for logout or end pause depends on action
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                }
             }
             catch (Exception ex)
             {

@@ -34,7 +34,7 @@ namespace Rammendo.API
             services.AddTransient<ITelliProdotiRepository, TelliProdotiRepository>();
             services.AddTransient<ITelliProdotiArticoloRepository, TelliProdotiArticoloRepository>();
             services.AddTransient<ITelliProdotiPersoneRepository, TelliProdotiPersoneRepository>();
-            services.AddTransient<IRammendoStartRepository, RammendoStartRepository>();
+            services.AddTransient<IRammendoLogRepository, RammendoLogRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
