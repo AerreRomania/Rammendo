@@ -28,15 +28,30 @@ namespace AppRammendoMobile.ViewModels
         }
 
        
-        public WorkPageViewModel(RammendoImport commessa)
+        public WorkPageViewModel(RammendoImport commessa, Angajati user)
         {
+            User = user;
             Rammendo = commessa;
             EfficientaCommand = new Command(async() => await ExecuteEfficientaCommand());
             LogOutCommand = new Command(async () => await ExecuteLogOutCommand());
         }
         private async Task ExecuteLogOutCommand()
         {
-            await Application.Current.MainPage.Navigation.PopToRootAsync();
+            try
+            {
+                bool result = await Application.Current.MainPage.DisplayAlert("Log-out ?", "Are you sure you want to logout ?", "Yes", "No");
+                if (result)
+                {
+                    User.Action = "work";
+                    await ApiClient.UpdateAsync(User, $"{Url}RammendoLog/1");   // this line is for logout or end pause depends on action
+                    await Application.Current.MainPage.Navigation.PopToRootAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
+            }
+            
         }
 
         private async Task ExecuteEfficientaCommand()
@@ -58,6 +73,11 @@ namespace AppRammendoMobile.ViewModels
                     AppSettings.TotalQty = TotalQty;
                     await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
                     await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Work" }, $"{Url}rammendoclicks");
+                if(Pauza)
+                    {
+                        User.Action = "pause";
+                        await ApiClient.UpdateAsync(User, $"{Url}RammendoLog/1");
+                    }
                 }
                 //Application.Current.MainPage.DisplayAlert("Counter!", "Counter: " + Counter.ToString(), "OK");
             }
@@ -76,8 +96,14 @@ namespace AppRammendoMobile.ViewModels
                         await Application.Current.MainPage.Navigation.PushAsync(new ScartiConfirmationPage(Rammendo));
                         break;
                     case "Pauza":
-                        await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Pause" }, $"{Url}rammendoclicks");
-                        break;
+                        if(!Pauza)
+                        {
+                            Pauza = true;
+                            await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Pause" }, $"{Url}rammendoclicks");
+                            User.Action = "pause";
+                            await ApiClient.InsertAsync(User, $"{Url}RammendoLog");
+                        }
+                            break;
                 }
             }
         }

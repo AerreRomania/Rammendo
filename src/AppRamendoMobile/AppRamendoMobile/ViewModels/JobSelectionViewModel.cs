@@ -116,7 +116,7 @@ namespace AppRammendoMobile.ViewModels
             }
 
             Rammendo.TypeOfControl = "Telli";
-            await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(Rammendo));
+            await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(Rammendo, User));
         }
 
         private async Task ExecuteCapiCommand()
@@ -126,7 +126,7 @@ namespace AppRammendoMobile.ViewModels
                 return;
             }
             Rammendo.TypeOfControl = "Capi";
-            await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(Rammendo));
+            await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(Rammendo, User));
         }
     }
 }

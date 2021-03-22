@@ -31,6 +31,16 @@ namespace AppRammendoMobile.ViewModels
             this.OnPropertyChanged(propertyName);
             return true;
         }
+        private bool _pauza=false;
+        public bool Pauza
+        {
+            get => _pauza;
+            set 
+            { 
+                SetProperty(ref _pauza, value);
+                OnPropertyChanged();
+            }
+        }
 
         private string _reparto = string.Empty;
         public string Reparto
