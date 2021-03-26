@@ -61,8 +61,9 @@ namespace AppRammendoMobile.ViewModels
         {
             try
             {
-                
+                if (CommessaString.Substring(0, 1) == "0") CommessaString = CommessaString.Remove(0, 1); 
                 Rammendo = await ApiClient.PostAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
+                if (Rammendo != null)
                 {
                     Rammendo.Angajat = User.Angajat;
                     Rammendo.Tavolo = TavoloString;
@@ -80,6 +81,7 @@ namespace AppRammendoMobile.ViewModels
             try
             {
                 CommessaString = await CameraScanner.ScanAsync();
+                if (CommessaString.Substring(0, 1) == "0") CommessaString = CommessaString.Remove(0, 1);
                 Rammendo = await ApiClient.PostAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
                 if (Rammendo != null)
                 {
