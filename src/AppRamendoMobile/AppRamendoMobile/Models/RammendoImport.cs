@@ -25,5 +25,7 @@ namespace AppRammendoMobile.Models
         public string Tavolo { get; set; }
         public double CapiH { get; set; }
         public int LastKey { get; set; }
+        public DateTime? StartJob { get; set; }
+        public DateTime? EndJob { get; set; }
     }
 }

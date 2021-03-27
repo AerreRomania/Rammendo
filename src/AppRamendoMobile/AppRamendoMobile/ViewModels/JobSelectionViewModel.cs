@@ -118,6 +118,7 @@ namespace AppRammendoMobile.ViewModels
             }
 
             Rammendo.TypeOfControl = "Telli";
+            Rammendo.StartJob = DateTime.Now;
             await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(Rammendo, User));
         }
 
@@ -128,6 +129,7 @@ namespace AppRammendoMobile.ViewModels
                 return;
             }
             Rammendo.TypeOfControl = "Capi";
+            Rammendo.StartJob = DateTime.Now;
             await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(Rammendo, User));
         }
     }

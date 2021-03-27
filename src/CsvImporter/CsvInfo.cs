@@ -51,7 +51,7 @@ SELECT COM.Id,
        COM.NrComanda, 
        COM.IdArticol, 
        ART.Articol,
-       ART.Centes,
+       ART.CapiRammendo,
        ART.IdStagiune,
        ART.IdFineza
 FROM Comenzi COM

@@ -25,12 +25,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelliProdotiPersone));
             this.CGridBig = new Rammendo.Controls.CGridView();
             this.PbError = new System.Windows.Forms.PictureBox();
-            this.PbLoader = new System.Windows.Forms.ProgressBar();
+            this.PbLoader = new CircularProgressBar.CircularProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.CGridBig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbError)).BeginInit();
             this.SuspendLayout();
@@ -44,24 +44,24 @@
             this.CGridBig.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.CGridBig.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CGridBig.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CGridBig.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CGridBig.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.CGridBig.ColumnHeadersHeight = 50;
             this.CGridBig.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CGridBig.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CGridBig.DefaultCellStyle = dataGridViewCellStyle18;
             this.CGridBig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CGridBig.EnableHeadersVisualStyles = false;
             this.CGridBig.GridColor = System.Drawing.Color.LightGray;
@@ -92,15 +92,36 @@
             // 
             // PbLoader
             // 
-            this.PbLoader.BackColor = System.Drawing.Color.DarkRed;
-            this.PbLoader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PbLoader.Location = new System.Drawing.Point(0, 0);
-            this.PbLoader.MarqueeAnimationSpeed = 10;
+            this.PbLoader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PbLoader.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.QuadraticEaseIn;
+            this.PbLoader.AnimationSpeed = 1;
+            this.PbLoader.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PbLoader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PbLoader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PbLoader.InnerColor = System.Drawing.Color.Transparent;
+            this.PbLoader.InnerMargin = 2;
+            this.PbLoader.InnerWidth = -1;
+            this.PbLoader.Location = new System.Drawing.Point(424, 150);
             this.PbLoader.Name = "PbLoader";
-            this.PbLoader.Size = new System.Drawing.Size(998, 5);
-            this.PbLoader.Step = 50;
+            this.PbLoader.OuterColor = System.Drawing.Color.LightGray;
+            this.PbLoader.OuterMargin = -25;
+            this.PbLoader.OuterWidth = 10;
+            this.PbLoader.ProgressColor = System.Drawing.Color.DarkSlateGray;
+            this.PbLoader.ProgressWidth = 25;
+            this.PbLoader.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PbLoader.Size = new System.Drawing.Size(150, 150);
+            this.PbLoader.StartAngle = 150;
             this.PbLoader.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.PbLoader.TabIndex = 19;
+            this.PbLoader.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.PbLoader.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.PbLoader.SubscriptText = "";
+            this.PbLoader.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.PbLoader.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.PbLoader.SuperscriptText = "";
+            this.PbLoader.TabIndex = 26;
+            this.PbLoader.Text = "Caricamento";
+            this.PbLoader.TextMargin = new System.Windows.Forms.Padding(0);
+            this.PbLoader.Value = 50;
             // 
             // TelliProdotiPersone
             // 
@@ -122,6 +143,6 @@
 
         private Controls.CGridView CGridBig;
         private System.Windows.Forms.PictureBox PbError;
-        private System.Windows.Forms.ProgressBar PbLoader;
+        private CircularProgressBar.CircularProgressBar PbLoader;
     }
 }

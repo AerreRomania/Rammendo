@@ -12,7 +12,6 @@ namespace CsvImporter
     {
         private readonly Log _log = new Log();
         private DataTable _dataTable = new DataTable();
-        private string CurrentFileName { get; set; }
 
         private List<string> _listOfBarcodesBuffer = new List<string>();
 
@@ -67,14 +66,14 @@ namespace CsvImporter
                             newRow[22] = commessa != null ? commessa.CapiH : 0.0;
                             newRow[23] = commessa != null ? commessa.IdStagione : 0;
                             newRow[24] = commessa != null ? commessa.IdFinezze : 0;
+                            newRow[25] = DBNull.Value;
+                            newRow[26] = DBNull.Value;
 
                             _dataTable.Rows.Add(newRow);
 
                             _listOfBarcodesBuffer.Add(rows[8].ToString());
                         }
                     }
-
-                    CurrentFileName = fileName;
                 }
 
                 if (_dataTable.Rows.Count != 0) {
@@ -124,6 +123,8 @@ namespace CsvImporter
             dataTable.Columns.Add("CapiH", typeof(double));
             dataTable.Columns.Add("IdStagione", typeof(int));
             dataTable.Columns.Add("IdFinezze", typeof(int));
+            dataTable.Columns.Add("StartJob", typeof(DateTime));
+            dataTable.Columns.Add("EndJob", typeof(DateTime));
         }
     }
 }

@@ -25,17 +25,17 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelliProdoti));
             this.DgvTelliProdoti = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
-            this.PbLoader = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.CbCommessa = new System.Windows.Forms.ComboBox();
             this.CbArticolo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PbError = new System.Windows.Forms.PictureBox();
+            this.PbLoader = new CircularProgressBar.CircularProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTelliProdoti)).BeginInit();
             this.PnToolBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbError)).BeginInit();
@@ -50,24 +50,24 @@
             this.DgvTelliProdoti.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DgvTelliProdoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvTelliProdoti.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvTelliProdoti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.DgvTelliProdoti.ColumnHeadersHeight = 50;
             this.DgvTelliProdoti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvTelliProdoti.DefaultCellStyle = dataGridViewCellStyle22;
             this.DgvTelliProdoti.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvTelliProdoti.EnableHeadersVisualStyles = false;
             this.DgvTelliProdoti.GridColor = System.Drawing.Color.Gainsboro;
@@ -83,7 +83,6 @@
             // PnToolBar
             // 
             this.PnToolBar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.PnToolBar.Controls.Add(this.PbLoader);
             this.PnToolBar.Controls.Add(this.label2);
             this.PnToolBar.Controls.Add(this.CbCommessa);
             this.PnToolBar.Controls.Add(this.CbArticolo);
@@ -93,18 +92,6 @@
             this.PnToolBar.Name = "PnToolBar";
             this.PnToolBar.Size = new System.Drawing.Size(569, 44);
             this.PnToolBar.TabIndex = 8;
-            // 
-            // PbLoader
-            // 
-            this.PbLoader.BackColor = System.Drawing.Color.DarkRed;
-            this.PbLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PbLoader.Location = new System.Drawing.Point(0, 39);
-            this.PbLoader.MarqueeAnimationSpeed = 10;
-            this.PbLoader.Name = "PbLoader";
-            this.PbLoader.Size = new System.Drawing.Size(569, 5);
-            this.PbLoader.Step = 50;
-            this.PbLoader.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.PbLoader.TabIndex = 7;
             // 
             // label2
             // 
@@ -171,12 +158,46 @@
             this.PbError.TabStop = false;
             this.PbError.Visible = false;
             // 
+            // PbLoader
+            // 
+            this.PbLoader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PbLoader.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.QuadraticEaseIn;
+            this.PbLoader.AnimationSpeed = 1;
+            this.PbLoader.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PbLoader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PbLoader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PbLoader.InnerColor = System.Drawing.Color.Transparent;
+            this.PbLoader.InnerMargin = 2;
+            this.PbLoader.InnerWidth = -1;
+            this.PbLoader.Location = new System.Drawing.Point(209, 121);
+            this.PbLoader.Name = "PbLoader";
+            this.PbLoader.OuterColor = System.Drawing.Color.LightGray;
+            this.PbLoader.OuterMargin = -25;
+            this.PbLoader.OuterWidth = 10;
+            this.PbLoader.ProgressColor = System.Drawing.Color.DarkSlateGray;
+            this.PbLoader.ProgressWidth = 25;
+            this.PbLoader.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PbLoader.Size = new System.Drawing.Size(150, 150);
+            this.PbLoader.StartAngle = 150;
+            this.PbLoader.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.PbLoader.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.PbLoader.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.PbLoader.SubscriptText = "";
+            this.PbLoader.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.PbLoader.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.PbLoader.SuperscriptText = "";
+            this.PbLoader.TabIndex = 26;
+            this.PbLoader.Text = "Caricamento";
+            this.PbLoader.TextMargin = new System.Windows.Forms.Padding(0);
+            this.PbLoader.Value = 50;
+            // 
             // TelliProdoti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(569, 393);
+            this.Controls.Add(this.PbLoader);
             this.Controls.Add(this.PbError);
             this.Controls.Add(this.DgvTelliProdoti);
             this.Controls.Add(this.PnToolBar);
@@ -194,11 +215,11 @@
 
         private Controls.CGridView DgvTelliProdoti;
         private System.Windows.Forms.Panel PnToolBar;
-        private System.Windows.Forms.ProgressBar PbLoader;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CbCommessa;
         private System.Windows.Forms.ComboBox CbArticolo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox PbError;
+        private CircularProgressBar.CircularProgressBar PbLoader;
     }
 }
