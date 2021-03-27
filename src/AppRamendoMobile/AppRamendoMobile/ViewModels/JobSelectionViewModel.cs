@@ -2,6 +2,7 @@
 using AppRammendoMobile.Views;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -18,7 +19,7 @@ namespace AppRammendoMobile.ViewModels
         public ICommand TypeBarcodeCommand { get; set; }
         public ICommand ExitCommand { get; set; }
 
-        private bool CheckBad { get; set; }
+        private bool HasBad { get; set; } = false;
      
         public JobSelectionViewModel()
         {
@@ -65,12 +66,13 @@ namespace AppRammendoMobile.ViewModels
             {
                 if (CommessaString.Substring(0, 1) == "0") CommessaString = CommessaString.Remove(0, 1); 
                 Rammendo = await ApiClient.PostAsync<RammendoImport>($"{Url}rammendoimport?barcode={CommessaString}");
+
                 if (Rammendo != null)
                 {
                     Rammendo.Angajat = User.Angajat;
                     Rammendo.Tavolo = TavoloString;
+                    HasBad = Rammendo.Bad > 0;
                 }
-                CheckBad = Rammendo.Bad == 0;
 
                 await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
             }
@@ -91,6 +93,7 @@ namespace AppRammendoMobile.ViewModels
                 {
                     Rammendo.Angajat = User.Angajat;
                     Rammendo.Tavolo = TavoloString;
+                    HasBad = Rammendo.Bad > 0;
                 }
                 await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
             }
@@ -121,7 +124,7 @@ namespace AppRammendoMobile.ViewModels
                 return;
             }
 
-            if (CheckBad)
+            if (!HasBad)
             {
                 await Application.Current.MainPage.DisplayAlert("Zero", "No bad pieces.", "ok");
                 return;
@@ -140,7 +143,7 @@ namespace AppRammendoMobile.ViewModels
                 return;
             }
             
-            if (CheckBad)
+            if (!HasBad)
             {
                 await Application.Current.MainPage.DisplayAlert("Zero", "No bad pieces.", "ok");
                 return;
