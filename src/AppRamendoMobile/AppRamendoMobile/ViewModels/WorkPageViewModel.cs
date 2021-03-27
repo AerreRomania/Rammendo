@@ -63,7 +63,6 @@ namespace AppRammendoMobile.ViewModels
         {
             if (int.TryParse(Condition, out var count))
             {
-
                 if (Rammendo.Diff > 0 || (Rammendo.Diff == 0 && Rammendo.GoodGood + Rammendo.BadBad < Rammendo.Bad))
                 {
                     count++;
@@ -88,7 +87,13 @@ namespace AppRammendoMobile.ViewModels
                     case "Stop":
                         {
                             bool result = await Application.Current.MainPage.DisplayAlert("Change Job?", "", "Yes", "No");
-                            if (result) await Application.Current.MainPage.Navigation.PopAsync();
+                            if (result)
+                            {
+                                Rammendo.EndJob = DateTime.Now;
+                                await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
+                                await Application.Current.MainPage.Navigation.PopAsync();
+                            }
+                            
                             await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Stop" }, $"{Url}rammendoclicks");
                         }
                         break;

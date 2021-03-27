@@ -1,4 +1,6 @@
-﻿namespace Rammendo.Data.Entities
+﻿using System;
+
+namespace Rammendo.Data.Entities
 {
     public class RammendoImport {
         public string Commessa { get; set; }
@@ -20,5 +22,7 @@
         public string Tavolo { get; set; }
         public double CapiH { get; set; }
         public int LastKey {get; set; }
+        public DateTime? StartJob { get; set; }
+        public DateTime? EndJob { get; set; }
     }
 }

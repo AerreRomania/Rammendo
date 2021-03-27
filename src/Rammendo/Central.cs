@@ -61,7 +61,9 @@ namespace Rammendo
             var node2 = root.Nodes.Add("Report 2");
             var node3 = root.Nodes.Add("Report 3");
             var node4 = root.Nodes.Add("Report 4");
-           
+            var node5 = root.Nodes.Add("Carico lavoro");
+            var node6 = root.Nodes.Add("Produzione gantt");
+
             treeMenu.BeginUpdate();
             treeMenu.Nodes.Add(root);
             treeMenu.EndUpdate();
@@ -95,6 +97,20 @@ namespace Rammendo
                     var frm = new TelliProdotiPersone(pnForms);
                     btnTelliProdotiPersone.BackColor = Color.DarkCyan;
                     btnTelliProdotiPersone.ForeColor = Color.White;
+                }
+
+                if (treeMenu.SelectedNode == node4)
+                {
+                    var frm = new CaricoLavoro(pnForms);
+                    btnCaricoLavoro.BackColor = Color.DarkCyan;
+                    btnCaricoLavoro.ForeColor = Color.White;
+                }
+
+                if (treeMenu.SelectedNode == node5)
+                {
+                    var frm = new ProduzioneGantt(pnForms);
+                    btnProduzioneGantt.BackColor = Color.DarkCyan;
+                    btnProduzioneGantt.ForeColor = Color.White;
                 }
 
                 pnNavi.Enabled = true;
@@ -229,6 +245,24 @@ namespace Rammendo
             treeMenu.Refresh();
         }
 
+        private void btnCaricoLavoro_Click(object sender, EventArgs e)
+        {
+            _fromNavigation = false;
+            treeMenu.SelectedNode = null;
+            treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[3];
+            treeMenu.Select();
+            treeMenu.Refresh();
+        }
+
+        private void btnProduzioneGantt_Click(object sender, EventArgs e)
+        {
+            _fromNavigation = false;
+            treeMenu.SelectedNode = null;
+            treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[4];
+            treeMenu.Select();
+            treeMenu.Refresh();
+        }
+
         private void ResetMenuCommands() {
             btnTelliProdoti.Text = "Telli Prodotti Giornaliero";
             btnTelliProdoti.BackColor = Color.FromArgb(210, 210, 210);
@@ -239,7 +273,12 @@ namespace Rammendo
             btnTelliProdotiPersone.Text = "Rammendo per Persona";
             btnTelliProdotiPersone.BackColor = Color.FromArgb(210, 210, 210);
             btnTelliProdotiPersone.ForeColor = Color.FromArgb(113, 113, 113);
-
+            btnCaricoLavoro.Text = "Carico Lavoro";
+            btnCaricoLavoro.BackColor = Color.FromArgb(210, 210, 210);
+            btnCaricoLavoro.ForeColor = Color.FromArgb(113, 113, 113);
+            btnProduzioneGantt.Text = "Produzione Gantt";
+            btnProduzioneGantt.BackColor = Color.FromArgb(210, 210, 210);
+            btnProduzioneGantt.ForeColor = Color.FromArgb(113, 113, 113);
         }
 
         internal bool _fromNavigation = false;

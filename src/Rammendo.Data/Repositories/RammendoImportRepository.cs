@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Rammendo.Data.Entities;
 using Rammendo.Data.Repositories.Interfaces;
 using Dapper;
+using System.Globalization;
 
 namespace Rammendo.Data.Repositories
 {
@@ -27,9 +28,14 @@ WHERE Barcode=@Barcode;";
         }
 
         public async Task<int> UpdateRammendoAsync(RammendoImport rammendoImport) {
+            if (rammendoImport.StartJob != null) rammendoImport.StartJob = DateTime.Now;
+            if (rammendoImport.EndJob != null) rammendoImport.StartJob = DateTime.Now;
+
             var qry = @"
 UPDATE RammendoImport
-SET GoodGood=@GoodGood, BadBad=@BadBad, Diff=@Diff, Angajat=@Angajat, Reparto=@Reparto, TypeOfControl=@TypeOfControl, Tavolo=@Tavolo
+SET GoodGood=@GoodGood, BadBad=@BadBad, Diff=@Diff, Angajat=@Angajat, Reparto=@Reparto, TypeOfControl=@TypeOfControl, Tavolo=@Tavolo,
+StartJob=CASE WHEN StartJob IS NULL THEN @StartJob ELSE StartJob END, 
+EndJob=CASE WHEN EndJob IS NULL THEN @EndJob ELSE EndJob END
 WHERE Barcode=@Barcode;";
 
             try {

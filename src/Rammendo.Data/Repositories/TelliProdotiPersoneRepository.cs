@@ -13,11 +13,12 @@ namespace Rammendo.Data.Repositories
     {
         public async Task<IEnumerable<TelliProdotiPersone>> GetAll(ReportFilter reportFilter) {
             var qry = @" 
-SELECT CONVERT(NVARCHAR, CreatedDate, 110) AS CreatedDate, Angajat, TypeOfControl, SUM(GoodGood + BadBad) as Rammendati
+SELECT CONVERT(NVARCHAR, StartJob, 110) AS CreatedDate, Angajat, TypeOfControl, SUM(GoodGood) as Rammendati,
+SUM(DATEDIFF(second, StartJob, EndJob)) AS Duration , SUM(CapiH) / Count(1) AS PezziH
 FROM RammendoImport
-WHERE Angajat IS NOT NULL AND TypeOfControl IS NOT NULL AND CreatedDate BETWEEN @StartDate AND @EndDate
-GROUP BY CONVERT(NVARCHAR, CreatedDate, 110), Angajat, TypeOfControl
-ORDER BY CONVERT(NVARCHAR, CreatedDate, 110), Angajat, TypeOfControl;";
+WHERE Angajat IS NOT NULL AND TypeOfControl IS NOT NULL AND StartJob BETWEEN @StartDate AND @EndDate
+GROUP BY CONVERT(NVARCHAR, StartJob, 110), Angajat, TypeOfControl
+ORDER BY CONVERT(NVARCHAR, StartJob, 110), Angajat, TypeOfControl;";
 
             try {
                 var dp = new DynamicParameters();
