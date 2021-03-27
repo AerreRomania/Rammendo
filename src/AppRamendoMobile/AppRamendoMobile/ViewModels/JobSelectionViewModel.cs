@@ -17,6 +17,8 @@ namespace AppRammendoMobile.ViewModels
         public ICommand QrTavolaCommand { get; set; }
         public ICommand TypeBarcodeCommand { get; set; }
         public ICommand ExitCommand { get; set; }
+
+        private bool CheckBad { get; set; }
      
         public JobSelectionViewModel()
         {
@@ -28,8 +30,6 @@ namespace AppRammendoMobile.ViewModels
             ExitCommand = new Command(async () => await ExecuteExitCommand());
         }
 
-       
-
         public JobSelectionViewModel(Angajati angajati) 
         {
             User = angajati;
@@ -40,6 +40,7 @@ namespace AppRammendoMobile.ViewModels
             TypeBarcodeCommand = new Command(async () => await ExecuteTypeBarcodeCommand());
             ExitCommand = new Command(async () => await ExecuteExitCommand());
         }
+
         private async Task ExecuteExitCommand()
         {
             try
@@ -57,17 +58,20 @@ namespace AppRammendoMobile.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
             }
         }
+
         private async Task ExecuteTypeBarcodeCommand()
         {
             try
             {
                 if (CommessaString.Substring(0, 1) == "0") CommessaString = CommessaString.Remove(0, 1); 
-                Rammendo = await ApiClient.PostAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
+                Rammendo = await ApiClient.PostAsync<RammendoImport>($"{Url}rammendoimport?barcode={CommessaString}");
                 if (Rammendo != null)
                 {
                     Rammendo.Angajat = User.Angajat;
                     Rammendo.Tavolo = TavoloString;
                 }
+                CheckBad = Rammendo.Bad == 0;
+
                 await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
             }
             catch (Exception ex)
@@ -82,7 +86,7 @@ namespace AppRammendoMobile.ViewModels
             {
                 CommessaString = await CameraScanner.ScanAsync();
                 if (CommessaString.Substring(0, 1) == "0") CommessaString = CommessaString.Remove(0, 1);
-                Rammendo = await ApiClient.PostAsync<RammendoImport>(Url + "rammendoimport?barcode=" + CommessaString);
+                Rammendo = await ApiClient.PostAsync<RammendoImport>($"{Url}rammendoimport?barcode={CommessaString}");
                 if (Rammendo != null)
                 {
                     Rammendo.Angajat = User.Angajat;
@@ -117,6 +121,12 @@ namespace AppRammendoMobile.ViewModels
                 return;
             }
 
+            if (CheckBad)
+            {
+                await Application.Current.MainPage.DisplayAlert("Zero", "No bad pieces.", "ok");
+                return;
+            }
+
             Rammendo.TypeOfControl = "Telli";
             Rammendo.StartJob = DateTime.Now;
             await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
@@ -129,6 +139,13 @@ namespace AppRammendoMobile.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", "Tavolo and barcode must be scanned", "ok");
                 return;
             }
+            
+            if (CheckBad)
+            {
+                await Application.Current.MainPage.DisplayAlert("Zero", "No bad pieces.", "ok");
+                return;
+            }
+
             Rammendo.TypeOfControl = "Capi";
             Rammendo.StartJob = DateTime.Now;
             await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
