@@ -119,6 +119,7 @@ namespace AppRammendoMobile.ViewModels
 
             Rammendo.TypeOfControl = "Telli";
             Rammendo.StartJob = DateTime.Now;
+            await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
             await Application.Current.MainPage.Navigation.PushAsync(new WorkPage(Rammendo, User));
         }
 
@@ -130,6 +131,7 @@ namespace AppRammendoMobile.ViewModels
             }
             Rammendo.TypeOfControl = "Capi";
             Rammendo.StartJob = DateTime.Now;
+            await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
             await Application.Current.MainPage.Navigation.PushAsync(new RepartoSelectionPage(Rammendo, User));
         }
     }

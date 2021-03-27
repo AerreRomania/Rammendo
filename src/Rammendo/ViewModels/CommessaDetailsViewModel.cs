@@ -28,13 +28,13 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("Color");
                 dataTable.Columns.Add("Taglia");
                 dataTable.Columns.Add("Componente");
-                dataTable.Columns.Add("Pacchi");
+                dataTable.Columns.Add("Pacchi", typeof(int));
                 dataTable.Columns.Add("Barcode");
                 dataTable.Columns.Add("Data I lett");
-                dataTable.Columns.Add("Buoni");
-                dataTable.Columns.Add("Tot.Teli al ram");
-                dataTable.Columns.Add("T.Teli scar.tes");
-                dataTable.Columns.Add("Tot.Teli Ramm");
+                dataTable.Columns.Add("Buoni", typeof(int));
+                dataTable.Columns.Add("Tot.Teli al ram", typeof(int));
+                dataTable.Columns.Add("T.Teli scar.tes", typeof(int));
+                dataTable.Columns.Add("Tot.Teli Ramm", typeof(int));
 
                 var commessaDetails = await ApiService.GetAll<CommessaDetails>("commessa="+commessa);
 
@@ -52,8 +52,10 @@ namespace Rammendo.ViewModels
 
                 var totQtyPack = 0;
                 var totBarcodes = 0;
-                var totTelliRam = 0.0;
-                var totTelliScart = 0.0;
+                var totGood = 0;
+                var totBad = 0;
+                var totBadBad = 0;
+                var totGoodGood = 0;
 
                 foreach (var detail in commessaDetails) {
 
@@ -73,20 +75,21 @@ namespace Rammendo.ViewModels
 
                     totQtyPack += detail.QtyPack;
                     totBarcodes++;
-                    totTelliRam += Convert.ToDouble(detail.Bad);
-                    totTelliScart += Convert.ToDouble(detail.BadBad);
+                    totGood += detail.Good;
+                    totBad += detail.Bad;
+                    totBadBad += detail.BadBad;
+                    totGoodGood += detail.GoodGood;
                 }
 
                 var dbQtyPack = Convert.ToDouble(totQtyPack);
 
-                var totRam = Math.Round(totTelliRam / dbQtyPack * 100,2);
-                var totScart = Math.Round(totTelliScart / dbQtyPack * 100, 2);
-
                 dataTable.Rows[1][3] = totQtyPack;
                 dataTable.Rows[1][4] = totBarcodes;
-                dataTable.Rows[1][7] = totRam + "%";
-                dataTable.Rows[1][8] = totScart + "%";
 
+                dataTable.Rows[1][6] = totGood;
+                dataTable.Rows[1][7] = totBad;
+                dataTable.Rows[1][8] = totBadBad;
+                dataTable.Rows[1][9] = totGoodGood;
 
                 return dataTable;
             }

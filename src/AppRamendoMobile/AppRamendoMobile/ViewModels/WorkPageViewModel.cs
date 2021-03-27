@@ -10,13 +10,13 @@ using Xamarin.Forms;
 
 namespace AppRammendoMobile.ViewModels
 {
-   public class WorkPageViewModel:ViewModelBase
+    public class WorkPageViewModel : ViewModelBase
     {
         public ICommand InteractionButtonCommand
         {
             get
             {
-                return new Command<string>(async (Condition) =>await ExecuteInterationButtonCommand(Condition));
+                return new Command<string>(async (Condition) => await ExecuteInterationButtonCommand(Condition));
             }
         }
         public ICommand EfficientaCommand { get; set; }
@@ -27,14 +27,14 @@ namespace AppRammendoMobile.ViewModels
             LogOutCommand = new Command(async () => await ExecuteLogOutCommand());
         }
 
-       
         public WorkPageViewModel(RammendoImport commessa, Angajati user)
         {
             User = user;
             Rammendo = commessa;
-            EfficientaCommand = new Command(async() => await ExecuteEfficientaCommand());
+            EfficientaCommand = new Command(async () => await ExecuteEfficientaCommand());
             LogOutCommand = new Command(async () => await ExecuteLogOutCommand());
         }
+
         private async Task ExecuteLogOutCommand()
         {
             try
@@ -43,7 +43,7 @@ namespace AppRammendoMobile.ViewModels
                 if (result)
                 {
                     User.Action = "work";
-                    await ApiClient.UpdateAsync(User, $"{Url}RammendoLog/1");   // this line is for logout or end pause depends on action
+                    await ApiClient.UpdateAsync(User, $"{Url}RammendoLog/1");
                     await Application.Current.MainPage.Navigation.PopToRootAsync();
                 }
             }
@@ -51,7 +51,7 @@ namespace AppRammendoMobile.ViewModels
             {
                 await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "ok");
             }
-            
+
         }
 
         private async Task ExecuteEfficientaCommand()
@@ -72,13 +72,12 @@ namespace AppRammendoMobile.ViewModels
                     AppSettings.TotalQty = TotalQty;
                     await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
                     await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Work" }, $"{Url}rammendoclicks");
-                if(Pauza)
+                    if (Pauza)
                     {
                         User.Action = "pause";
                         await ApiClient.UpdateAsync(User, $"{Url}RammendoLog/1");
                     }
                 }
-                //Application.Current.MainPage.DisplayAlert("Counter!", "Counter: " + Counter.ToString(), "OK");
             }
             else
             {
@@ -93,7 +92,7 @@ namespace AppRammendoMobile.ViewModels
                                 await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
                                 await Application.Current.MainPage.Navigation.PopAsync();
                             }
-                            
+
                             await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Stop" }, $"{Url}rammendoclicks");
                         }
                         break;
@@ -101,19 +100,19 @@ namespace AppRammendoMobile.ViewModels
                         await Application.Current.MainPage.Navigation.PushAsync(new ScartiConfirmationPage(Rammendo));
                         break;
                     case "Pauza":
-                        if(!Pauza)
+                        if (!Pauza)
                         {
                             Pauza = true;
                             await ApiClient.InsertAsync<RammendoClicks>(new RammendoClicks() { Angajat = Rammendo.Angajat, ClickEvent = DateTime.Now, IdJob = Rammendo.Barcode, Quantity = 1, TypeOfWork = "Pause" }, $"{Url}rammendoclicks");
                             User.Action = "pause";
                             await ApiClient.InsertAsync(User, $"{Url}RammendoLog");
                         }
-                            break;
+                        break;
                 }
             }
         }
 
-      
+
 
     }
 }
