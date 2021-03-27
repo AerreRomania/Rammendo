@@ -46,14 +46,25 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pnForms = new System.Windows.Forms.Panel();
             this.pnDockBar = new System.Windows.Forms.Panel();
+            this.btnProduzioneGantt = new System.Windows.Forms.Button();
+            this.btnCaricoLavoro = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnTelliProdotiPersone = new System.Windows.Forms.Button();
             this.btnTelliProdotiArticolo = new System.Windows.Forms.Button();
             this.btnTelliProdoti = new System.Windows.Forms.Button();
+            this.btnProgram = new System.Windows.Forms.Button();
             this.treeMenu = new System.Windows.Forms.TreeView();
             this.pnNavi = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnExoport = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnGant = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.pnData = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -65,40 +76,29 @@
             this.btnTPGiornaliero = new System.Windows.Forms.Button();
             this.btnTPArticolo = new System.Windows.Forms.Button();
             this.btnRammendoPersona = new System.Windows.Forms.Button();
+            this.PbNavBarSplit = new System.Windows.Forms.PictureBox();
             this.pnTitlebar = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnProduzioneGantt = new System.Windows.Forms.Button();
-            this.btnCaricoLavoro = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnProgram = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnGant = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.PbNavBarSplit = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbBottombnd = new System.Windows.Forms.PictureBox();
             this.pbPrint = new System.Windows.Forms.PictureBox();
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnDockBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnNavi.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.pnExoport.SuspendLayout();
-            this.pnData.SuspendLayout();
-            this.flPannel_Orange.SuspendLayout();
-            this.pnTitlebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnExoport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.pnData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.flPannel_Orange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).BeginInit();
+            this.pnTitlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottombnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
@@ -308,6 +308,57 @@
             this.pnDockBar.Size = new System.Drawing.Size(230, 557);
             this.pnDockBar.TabIndex = 13;
             // 
+            // btnProduzioneGantt
+            // 
+            this.btnProduzioneGantt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.btnProduzioneGantt.Enabled = false;
+            this.btnProduzioneGantt.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnProduzioneGantt.FlatAppearance.BorderSize = 0;
+            this.btnProduzioneGantt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduzioneGantt.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnProduzioneGantt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.btnProduzioneGantt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProduzioneGantt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnProduzioneGantt.Location = new System.Drawing.Point(20, 239);
+            this.btnProduzioneGantt.Name = "btnProduzioneGantt";
+            this.btnProduzioneGantt.Size = new System.Drawing.Size(189, 39);
+            this.btnProduzioneGantt.TabIndex = 13;
+            this.btnProduzioneGantt.Tag = "1";
+            this.btnProduzioneGantt.UseVisualStyleBackColor = false;
+            this.btnProduzioneGantt.Click += new System.EventHandler(this.btnProduzioneGantt_Click);
+            this.btnProduzioneGantt.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButtons_Paint);
+            // 
+            // btnCaricoLavoro
+            // 
+            this.btnCaricoLavoro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.btnCaricoLavoro.Enabled = false;
+            this.btnCaricoLavoro.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnCaricoLavoro.FlatAppearance.BorderSize = 0;
+            this.btnCaricoLavoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCaricoLavoro.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCaricoLavoro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.btnCaricoLavoro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCaricoLavoro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCaricoLavoro.Location = new System.Drawing.Point(20, 195);
+            this.btnCaricoLavoro.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCaricoLavoro.Name = "btnCaricoLavoro";
+            this.btnCaricoLavoro.Size = new System.Drawing.Size(189, 39);
+            this.btnCaricoLavoro.TabIndex = 12;
+            this.btnCaricoLavoro.Tag = "1";
+            this.btnCaricoLavoro.UseVisualStyleBackColor = false;
+            this.btnCaricoLavoro.Click += new System.EventHandler(this.btnCaricoLavoro_Click);
+            this.btnCaricoLavoro.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButtons_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Location = new System.Drawing.Point(229, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1, 557);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnTelliProdotiPersone
             // 
             this.btnTelliProdotiPersone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
@@ -325,7 +376,7 @@
             this.btnTelliProdotiPersone.Tag = "1";
             this.btnTelliProdotiPersone.UseVisualStyleBackColor = false;
             this.btnTelliProdotiPersone.Click += new System.EventHandler(this.BtnTelliProdotiPersone_Click);
-            this.btnTelliProdotiPersone.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
+            this.btnTelliProdotiPersone.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButtons_Paint);
             // 
             // btnTelliProdotiArticolo
             // 
@@ -345,7 +396,7 @@
             this.btnTelliProdotiArticolo.Tag = "1";
             this.btnTelliProdotiArticolo.UseVisualStyleBackColor = false;
             this.btnTelliProdotiArticolo.Click += new System.EventHandler(this.BtnTelliProdotiArticolo_Click);
-            this.btnTelliProdotiArticolo.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
+            this.btnTelliProdotiArticolo.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButtons_Paint);
             // 
             // btnTelliProdoti
             // 
@@ -365,7 +416,29 @@
             this.btnTelliProdoti.Tag = "1";
             this.btnTelliProdoti.UseVisualStyleBackColor = false;
             this.btnTelliProdoti.Click += new System.EventHandler(this.BtnTelliProdotiGiorno_Click);
-            this.btnTelliProdoti.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
+            this.btnTelliProdoti.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButtons_Paint);
+            // 
+            // btnProgram
+            // 
+            this.btnProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
+            this.btnProgram.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnProgram.FlatAppearance.BorderSize = 0;
+            this.btnProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProgram.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnProgram.ForeColor = System.Drawing.Color.White;
+            this.btnProgram.Image = ((System.Drawing.Image)(resources.GetObject("btnProgram.Image")));
+            this.btnProgram.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProgram.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnProgram.Location = new System.Drawing.Point(20, 20);
+            this.btnProgram.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProgram.Name = "btnProgram";
+            this.btnProgram.Size = new System.Drawing.Size(189, 39);
+            this.btnProgram.TabIndex = 10;
+            this.btnProgram.Tag = "1";
+            this.btnProgram.Text = "Report Rammendo";
+            this.btnProgram.UseVisualStyleBackColor = false;
+            this.btnProgram.Click += new System.EventHandler(this.BtnProgram_Click);
+            this.btnProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuButtons_Paint);
             // 
             // treeMenu
             // 
@@ -408,6 +481,16 @@
             this.panel3.Size = new System.Drawing.Size(1311, 75);
             this.panel3.TabIndex = 60;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox4.Location = new System.Drawing.Point(309, 73);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(539, 2);
+            this.pictureBox4.TabIndex = 60;
+            this.pictureBox4.TabStop = false;
+            // 
             // pnExoport
             // 
             this.pnExoport.Controls.Add(this.pictureBox6);
@@ -420,6 +503,74 @@
             this.pnExoport.Name = "pnExoport";
             this.pnExoport.Size = new System.Drawing.Size(463, 75);
             this.pnExoport.TabIndex = 59;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 73);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(463, 2);
+            this.pictureBox6.TabIndex = 61;
+            this.pictureBox6.TabStop = false;
+            // 
+            // btnGant
+            // 
+            this.btnGant.FlatAppearance.BorderSize = 0;
+            this.btnGant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGant.Image = ((System.Drawing.Image)(resources.GetObject("btnGant.Image")));
+            this.btnGant.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGant.Location = new System.Drawing.Point(134, 10);
+            this.btnGant.Name = "btnGant";
+            this.btnGant.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGant.Size = new System.Drawing.Size(75, 56);
+            this.btnGant.TabIndex = 54;
+            this.btnGant.Text = "Gant";
+            this.btnGant.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGant.UseVisualStyleBackColor = true;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPrint.Location = new System.Drawing.Point(377, 10);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 56);
+            this.btnPrint.TabIndex = 57;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSettings.Location = new System.Drawing.Point(215, 10);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(75, 55);
+            this.btnSettings.TabIndex = 55;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExport.Location = new System.Drawing.Point(296, 10);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 56);
+            this.btnExport.TabIndex = 56;
+            this.btnExport.Text = "Export";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
             // pnData
             // 
@@ -435,6 +586,16 @@
             this.pnData.Name = "pnData";
             this.pnData.Size = new System.Drawing.Size(309, 75);
             this.pnData.TabIndex = 58;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 73);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(309, 2);
+            this.pictureBox5.TabIndex = 61;
+            this.pictureBox5.TabStop = false;
             // 
             // dtpFrom
             // 
@@ -591,6 +752,17 @@
             this.btnRammendoPersona.Text = "Rammendo per Persona";
             this.btnRammendoPersona.UseVisualStyleBackColor = true;
             // 
+            // PbNavBarSplit
+            // 
+            this.PbNavBarSplit.BackColor = System.Drawing.Color.Silver;
+            this.PbNavBarSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PbNavBarSplit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.PbNavBarSplit.Location = new System.Drawing.Point(0, 118);
+            this.PbNavBarSplit.Name = "PbNavBarSplit";
+            this.PbNavBarSplit.Size = new System.Drawing.Size(1311, 1);
+            this.PbNavBarSplit.TabIndex = 0;
+            this.PbNavBarSplit.TabStop = false;
+            // 
             // pnTitlebar
             // 
             this.pnTitlebar.BackColor = System.Drawing.Color.Black;
@@ -605,6 +777,17 @@
             this.pnTitlebar.TabIndex = 16;
             this.pnTitlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnTitleBar_Paint);
             this.pnTitlebar.DoubleClick += new System.EventHandler(this.PnTitlebar_DoubleClick);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(119, 49);
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
             // 
             // button2
             // 
@@ -665,185 +848,6 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
             // 
-            // btnProduzioneGantt
-            // 
-            this.btnProduzioneGantt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btnProduzioneGantt.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnProduzioneGantt.FlatAppearance.BorderSize = 0;
-            this.btnProduzioneGantt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduzioneGantt.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnProduzioneGantt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.btnProduzioneGantt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProduzioneGantt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProduzioneGantt.Location = new System.Drawing.Point(20, 239);
-            this.btnProduzioneGantt.Name = "btnProduzioneGantt";
-            this.btnProduzioneGantt.Size = new System.Drawing.Size(189, 39);
-            this.btnProduzioneGantt.TabIndex = 13;
-            this.btnProduzioneGantt.Tag = "1";
-            this.btnProduzioneGantt.UseVisualStyleBackColor = false;
-            this.btnProduzioneGantt.Click += new System.EventHandler(this.btnProduzioneGantt_Click);
-            // 
-            // btnCaricoLavoro
-            // 
-            this.btnCaricoLavoro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btnCaricoLavoro.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnCaricoLavoro.FlatAppearance.BorderSize = 0;
-            this.btnCaricoLavoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaricoLavoro.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCaricoLavoro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.btnCaricoLavoro.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCaricoLavoro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCaricoLavoro.Location = new System.Drawing.Point(20, 195);
-            this.btnCaricoLavoro.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCaricoLavoro.Name = "btnCaricoLavoro";
-            this.btnCaricoLavoro.Size = new System.Drawing.Size(189, 39);
-            this.btnCaricoLavoro.TabIndex = 12;
-            this.btnCaricoLavoro.Tag = "1";
-            this.btnCaricoLavoro.UseVisualStyleBackColor = false;
-            this.btnCaricoLavoro.Click += new System.EventHandler(this.btnCaricoLavoro_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(229, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 557);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnProgram
-            // 
-            this.btnProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(141)))), ((int)(((byte)(161)))));
-            this.btnProgram.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnProgram.FlatAppearance.BorderSize = 0;
-            this.btnProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProgram.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnProgram.ForeColor = System.Drawing.Color.White;
-            this.btnProgram.Image = ((System.Drawing.Image)(resources.GetObject("btnProgram.Image")));
-            this.btnProgram.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProgram.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnProgram.Location = new System.Drawing.Point(20, 20);
-            this.btnProgram.Margin = new System.Windows.Forms.Padding(2);
-            this.btnProgram.Name = "btnProgram";
-            this.btnProgram.Size = new System.Drawing.Size(189, 39);
-            this.btnProgram.TabIndex = 10;
-            this.btnProgram.Tag = "1";
-            this.btnProgram.Text = "Report Rammendo";
-            this.btnProgram.UseVisualStyleBackColor = false;
-            this.btnProgram.Click += new System.EventHandler(this.BtnProgram_Click);
-            this.btnProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.BtnFatturatoLinea_Paint);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox4.Location = new System.Drawing.Point(309, 73);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(539, 2);
-            this.pictureBox4.TabIndex = 60;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 73);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(463, 2);
-            this.pictureBox6.TabIndex = 61;
-            this.pictureBox6.TabStop = false;
-            // 
-            // btnGant
-            // 
-            this.btnGant.FlatAppearance.BorderSize = 0;
-            this.btnGant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGant.Image = ((System.Drawing.Image)(resources.GetObject("btnGant.Image")));
-            this.btnGant.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGant.Location = new System.Drawing.Point(134, 10);
-            this.btnGant.Name = "btnGant";
-            this.btnGant.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnGant.Size = new System.Drawing.Size(75, 56);
-            this.btnGant.TabIndex = 54;
-            this.btnGant.Text = "Gant";
-            this.btnGant.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGant.UseVisualStyleBackColor = true;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(377, 10);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 56);
-            this.btnPrint.TabIndex = 57;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSettings.Location = new System.Drawing.Point(215, 10);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(75, 55);
-            this.btnSettings.TabIndex = 55;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
-            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExport.Location = new System.Drawing.Point(296, 10);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 56);
-            this.btnExport.TabIndex = 56;
-            this.btnExport.Text = "Export";
-            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 73);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(309, 2);
-            this.pictureBox5.TabIndex = 61;
-            this.pictureBox5.TabStop = false;
-            // 
-            // PbNavBarSplit
-            // 
-            this.PbNavBarSplit.BackColor = System.Drawing.Color.Silver;
-            this.PbNavBarSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PbNavBarSplit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.PbNavBarSplit.Location = new System.Drawing.Point(0, 118);
-            this.PbNavBarSplit.Name = "PbNavBarSplit";
-            this.PbNavBarSplit.Size = new System.Drawing.Size(1311, 1);
-            this.PbNavBarSplit.TabIndex = 0;
-            this.PbNavBarSplit.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(119, 49);
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
-            // 
             // pbBottombnd
             // 
             this.pbBottombnd.Location = new System.Drawing.Point(0, 0);
@@ -900,18 +904,18 @@
             this.Load += new System.EventHandler(this.Menu_Load);
             this.SizeChanged += new System.EventHandler(this.Central_SizeChanged);
             this.pnDockBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnNavi.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnExoport.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnData.ResumeLayout(false);
             this.pnData.PerformLayout();
-            this.flPannel_Orange.ResumeLayout(false);
-            this.pnTitlebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.flPannel_Orange.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbNavBarSplit)).EndInit();
+            this.pnTitlebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBottombnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).EndInit();

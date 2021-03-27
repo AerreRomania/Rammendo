@@ -39,6 +39,14 @@ namespace Rammendo.Views.Reports
                     CGridBig.DataSource = data;
                     if (CGridBig.Columns.Count > 6) CGridBig.Columns[6].Frozen = true;
 
+                    for (var i = 11; i <= CGridBig.ColumnCount - 1; i += 8)
+                    {
+                        for (var j = i; j <= i + 3; j++)
+                        {
+                            CGridBig.Columns[j].DefaultCellStyle.BackColor = Color.FromArgb(240,244,248);
+                        }
+                    }
+
                     foreach (DataGridViewColumn c in CGridBig.Columns) {
                         if (c.Index > 6) {
                             c.HeaderText = c.HeaderText.Split('_')[1];
@@ -48,7 +56,7 @@ namespace Rammendo.Views.Reports
                         else {
                             c.Width = c.Index == 0 ? 40 : c.Index == 1 ? 150 : 70;
                             c.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-                            c.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+                            c.DefaultCellStyle.SelectionBackColor = Color.MistyRose;
                         }
                     }
 

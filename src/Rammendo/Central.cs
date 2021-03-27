@@ -314,7 +314,7 @@ namespace Rammendo
             return x;
         }
 
-        private void BtnFatturatoLinea_Paint(object sender, PaintEventArgs e) {
+        private void MenuButtons_Paint(object sender, PaintEventArgs e) {
             var btn = (Button)sender;
 
             using (GraphicsPath path = _geometry.RoundedRectanglePath(new Rectangle(-1, -1, btn.Width - 1, btn.Height - 1), 4)) {

@@ -16,7 +16,7 @@ namespace Rammendo.Views.Reports
         
         public CommessaDetails(string commessa, string article = null) : base(false) {
             InitializeComponent();
-            _commessaDetailsViewModel = new CommessaDetailsViewModel(commessa, article);
+            _commessaDetailsViewModel = new CommessaDetailsViewModel(article);
             this.DoubleBuffered(true);
             SetStyle(ControlStyles.ResizeRedraw, true);
 
@@ -63,6 +63,5 @@ namespace Rammendo.Views.Reports
                 PbError.Visible = true;
             }
         }
-
     }
 }
