@@ -9,15 +9,9 @@ namespace Rammendo.ViewModels
 {
     public class CommessaDetailsViewModel : BaseViewModel
     {
-        private string Commessa { get; set; }
         private string Article { get; set; }
         
-        public CommessaDetailsViewModel(string commessa) {
-            Commessa = commessa;
-        }
-
-        public CommessaDetailsViewModel(string commessa, string article) {
-            Commessa = commessa;
+        public CommessaDetailsViewModel(string article) {
             Article = article;
         }
 
