@@ -54,6 +54,11 @@ namespace Rammendo.Views.Reports
                     DgvTelliProdoti.Rows[i].Height = i == 0 ? 20 : 32;
                 }
 
+                if (DgvTelliProdoti.Rows.Count >= 1)
+                {
+                    DgvTelliProdoti.Rows[1].Frozen = true;
+                }
+
                 PbLoader.Visible = false;
             }
             else {
