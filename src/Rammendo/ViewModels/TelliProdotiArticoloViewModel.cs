@@ -30,10 +30,10 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("Finezza");
                 dataTable.Columns.Add("Buoni+\nDaRammendare",typeof(int));
                 dataTable.Columns.Add("Buoni", typeof(int));
-                dataTable.Columns.Add("DaRammendare", typeof(int));
+                dataTable.Columns.Add("Da\nRammendare", typeof(int));
                 dataTable.Columns.Add("Rammendati", typeof(int));
                 dataTable.Columns.Add("Diff", typeof(int));
-                dataTable.Columns.Add("TeamRammendo", typeof(int));
+                dataTable.Columns.Add("TIM\nRammendo", typeof(int));
                 dataTable.Columns.Add("Scarti", typeof(int));
                 dataTable.Columns.Add("% Rammendati");
                 dataTable.Columns.Add("% Scarti");

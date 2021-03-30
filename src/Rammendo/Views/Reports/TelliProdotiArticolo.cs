@@ -62,6 +62,7 @@ namespace Rammendo.Views.Reports
                     DgvTelliProdoti.Rows[0].Height = 32;
 
                     if (DgvTelliProdoti.Columns.Count > 9) {
+                        DgvTelliProdoti.Columns[3].Width = 70;
                         DgvTelliProdoti.Columns[9].DefaultCellStyle.BackColor = Color.LavenderBlush;
                         DgvTelliProdoti.Columns[10].DefaultCellStyle.BackColor = Color.WhiteSmoke;
                         DgvTelliProdoti.Columns[11].DefaultCellStyle.BackColor = Color.WhiteSmoke;
