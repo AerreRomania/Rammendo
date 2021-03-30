@@ -29,7 +29,7 @@ WHERE Barcode=@Barcode;";
 
         public async Task<int> UpdateRammendoAsync(RammendoImport rammendoImport) {
             if (rammendoImport.StartJob != null) rammendoImport.StartJob = DateTime.Now;
-            if (rammendoImport.EndJob != null) rammendoImport.StartJob = DateTime.Now;
+            if (rammendoImport.EndJob != null) rammendoImport.EndJob = DateTime.Now;
 
             var qry = @"
 UPDATE RammendoImport
