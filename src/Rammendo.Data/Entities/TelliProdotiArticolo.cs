@@ -13,5 +13,6 @@ namespace Rammendo.Data.Entities
         public int DaRammendare { get; set; }
         public int Rammendati { get; set; }
         public int Scarti { get; set; }
+        public int TeamRammendo { get; set; }
     }
 }
