@@ -126,5 +126,26 @@ WHERE FileKey=@FileKey;";
                 return new List<string>();
             }
         }
+
+        public static void UpdateBarcode(string barcode, int teamRammendo)
+        {
+            if (teamRammendo == 0) return;
+
+            var qry = @"
+UPDATE RammendoImport SET TeamRammendo=@TeamRammendo
+WHERE Barcode=@Barcode;
+";
+
+            using (var conn = new SqlConnection(CONNECTION_STRING))
+            {
+                var cmd = new SqlCommand(qry, conn);
+                cmd.Parameters.Add("@Barcode", SqlDbType.NVarChar).Value = barcode;
+                cmd.Parameters.Add("@TeamRammendo", SqlDbType.Int).Value = teamRammendo;
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                cmd = null;
+            }
+        }
     }
 }

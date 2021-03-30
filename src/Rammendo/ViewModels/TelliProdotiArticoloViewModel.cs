@@ -30,9 +30,10 @@ namespace Rammendo.ViewModels
                 dataTable.Columns.Add("Finezza");
                 dataTable.Columns.Add("Buoni+\nDaRammendare",typeof(int));
                 dataTable.Columns.Add("Buoni", typeof(int));
-                dataTable.Columns.Add("DaRammendare", typeof(int));
+                dataTable.Columns.Add("Da\nRammendare", typeof(int));
                 dataTable.Columns.Add("Rammendati", typeof(int));
                 dataTable.Columns.Add("Diff", typeof(int));
+                dataTable.Columns.Add("TIM\nRammendo", typeof(int));
                 dataTable.Columns.Add("Scarti", typeof(int));
                 dataTable.Columns.Add("% Rammendati");
                 dataTable.Columns.Add("% Scarti");
@@ -70,7 +71,7 @@ namespace Rammendo.ViewModels
 
                 totRow = dataTable.NewRow();
                 totRow[0] = "TOTALE";
-                for (var i = 4; i <= 9; i++) {
+                for (var i = 4; i <= 10; i++) {
                     totRow[i] = 0; //set total default value
                 }
 
@@ -89,16 +90,17 @@ namespace Rammendo.ViewModels
                     newRow[6] = telliProduct.DaRammendare;
                     newRow[7] = telliProduct.Rammendati;
                     newRow[8] = telliProduct.DaRammendare - telliProduct.Rammendati;
-                    newRow[9] = telliProduct.Scarti;
+                    newRow[9] = telliProduct.TeamRammendo;
+                    newRow[10] = telliProduct.Scarti;
 
                     var rammendatiEff = Math.Round(Convert.ToDouble(telliProduct.Rammendati) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
                     var scartiEff = Math.Round(Convert.ToDouble(telliProduct.Scarti) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
                     var rammendoEff = Math.Round(Convert.ToDouble(telliProduct.DaRammendare) / Convert.ToDouble(telliProduct.BuoniDaRammendare) * 100.0, 2);
                     if (double.IsNaN(rammendoEff) || double.IsInfinity(rammendoEff)) rammendoEff = 0;
 
-                    newRow[10] = $"{rammendatiEff}%";
-                    newRow[11] = $"{scartiEff}%";
-                    newRow[12] = $"{rammendoEff}%";
+                    newRow[11] = $"{rammendatiEff}%";
+                    newRow[12] = $"{scartiEff}%";
+                    newRow[13] = $"{rammendoEff}%";
 
                     dataTable.Rows.Add(newRow);
 
@@ -115,7 +117,7 @@ namespace Rammendo.ViewModels
                         ListStagione.Add(telliProduct.Finezza);
                     }
 
-                    for (var i = 4; i <= 9; i++)
+                    for (var i = 4; i <= 10; i++)
                     {
                         var total = Convert.ToInt32(totRow[i]);
                         var rowVal = Convert.ToInt32(newRow[i]);
@@ -123,11 +125,11 @@ namespace Rammendo.ViewModels
                     }
                 }
 
-                if (totRow[10] != null && totRow[11] != null && totRow[12] != null)
+                if (totRow[11] != null && totRow[12] != null && totRow[13] != null)
                 {
-                    totRow[10] = $"{Math.Round(Convert.ToDouble(totRow[7]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
-                    totRow[11] = $"{Math.Round(Convert.ToDouble(totRow[9]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
-                    totRow[12] = $"{Math.Round(Convert.ToDouble(totRow[6]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                    totRow[11] = $"{Math.Round(Convert.ToDouble(totRow[7]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                    totRow[12] = $"{Math.Round(Convert.ToDouble(totRow[10]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
+                    totRow[13] = $"{Math.Round(Convert.ToDouble(totRow[6]) / Convert.ToDouble(totRow[4]) * 100.0, 2)}%";
                 }
 
                 return dataTable.DefaultView;

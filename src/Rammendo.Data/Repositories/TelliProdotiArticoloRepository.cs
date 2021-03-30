@@ -32,7 +32,7 @@ AND FIN.Codice=@Finezze";
 
             var qry = @" 
 SELECT RAM.Commessa, STAG.Stagiune, RAM.Article, FIN.Codice, 
-(SUM(Good) + SUM(Bad)) AS BuoniDaRammendare, SUM(Good) AS Buoni, SUM(Bad) AS DaRammendare, SUM(GoodGood) AS Rammendati, SUM(BadBad) AS Scarti                              
+(SUM(Good) + SUM(Bad)) AS BuoniDaRammendare, SUM(Good) AS Buoni, SUM(Bad) AS DaRammendare, SUM(GoodGood) AS Rammendati, SUM(BadBad) AS Scarti, SUM(TeamRammendo) AS TeamRammendo                              
 FROM RammendoImport RAM
 LEFT JOIN Stagiuni STAG ON RAM.IdStagione = STAG.Id
 LEFT JOIN Fineza FIN ON RAM.IdFinezze = FIN.Id";
