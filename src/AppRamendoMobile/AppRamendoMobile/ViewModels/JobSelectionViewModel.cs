@@ -72,9 +72,13 @@ namespace AppRammendoMobile.ViewModels
                     Rammendo.Angajat = User.Angajat;
                     Rammendo.Tavolo = TavoloString;
                     HasBad = Rammendo.Bad > 0;
+                    await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
                 }
-
-                await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Scanned commessa", "The Barcode is incorrect or missing from database.", "ok");
+                }
+                
             }
             catch (Exception ex)
             {
@@ -94,8 +98,13 @@ namespace AppRammendoMobile.ViewModels
                     Rammendo.Angajat = User.Angajat;
                     Rammendo.Tavolo = TavoloString;
                     HasBad = Rammendo.Bad > 0;
+                    await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
                 }
-                await Application.Current.MainPage.DisplayAlert("Scanned commessa", Rammendo.Commessa, "ok");
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Scanned commessa", "The Barcode is incorrect or missing from database.", "ok");
+                }
+               
             }
             catch (Exception ex)
             {
