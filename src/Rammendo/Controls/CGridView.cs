@@ -43,6 +43,11 @@ namespace Rammendo.Controls
                         c.DefaultCellStyle.Format = "#,##0";
                     }
                 }
+
+                if (Rows.Count > 0)
+                {
+                    Rows[0].Frozen = true;
+                }
             };
 
             this.DoubleBuffered(true);
