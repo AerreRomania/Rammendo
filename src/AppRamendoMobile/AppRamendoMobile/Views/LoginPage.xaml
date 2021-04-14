@@ -6,8 +6,6 @@
     BackgroundColor="white"
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-
-
         <Grid Margin="20,0,20,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -22,7 +20,7 @@
                 Grid.Row="1"
                 Margin="20"
                 IsRunning="{Binding IsBusy}"
-                Color="IndianRed" />
+                Color="{StaticResource Red}" />
             <Button
                 Grid.Row="2"
                 Command="{Binding ScanQrCodeCommand}"
