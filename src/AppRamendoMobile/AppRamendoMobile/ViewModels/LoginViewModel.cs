@@ -51,6 +51,7 @@ namespace AppRammendoMobile.ViewModels
 
         private async Task LoginUser(string codAngajat) 
         {
+
             if (codAngajat != null) 
             {
                 Angajati angajati = await Loginclient.LoginUserAsync($"{Url}login?codAngajat={CodAngajat}");
@@ -59,9 +60,9 @@ namespace AppRammendoMobile.ViewModels
 
                 if (angajati != null)
                 { 
-                    if(angajati.CodAngajat!=AppSettings.Pin)
+                    if(_currentDay.Date!=AppSettings.CurrentDay.Date)
                     {
-                        AppSettings.Pin = angajati.CodAngajat;
+                        AppSettings.CurrentDay = _currentDay;
                         AppSettings.TotalQty = 0;
                     }
                     TotalQty = AppSettings.TotalQty;
@@ -85,5 +86,7 @@ namespace AppRammendoMobile.ViewModels
             get => _codAngajat;
             set => SetProperty(ref _codAngajat, value);
         }
+        private DateTime _currentDay = DateTime.Now;
+        
     }
 }
