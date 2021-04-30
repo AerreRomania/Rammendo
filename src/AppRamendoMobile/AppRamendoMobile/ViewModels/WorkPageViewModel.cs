@@ -31,6 +31,7 @@ namespace AppRammendoMobile.ViewModels
         {
             User = user;
             Rammendo = commessa;
+            Counter = Rammendo.GoodGood;
             EfficientaCommand = new Command(async () => await ExecuteEfficientaCommand());
             LogOutCommand = new Command(async () => await ExecuteLogOutCommand());
         }
@@ -67,7 +68,7 @@ namespace AppRammendoMobile.ViewModels
                 {
                     count++;
                     Counter = count;
-                    Rammendo.GoodGood = Counter;
+                    Rammendo.GoodGood +=1;
                     TotalQty++;
                     AppSettings.TotalQty = TotalQty;
                     await ApiClient.UpdateAsync<RammendoImport>(Rammendo, $"{Url}rammendoimport/1");
