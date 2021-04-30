@@ -12,7 +12,7 @@ namespace Rammendo.Data.Repositories
     public class TelliProdotiPersoneRepository : BaseRepository, ITelliProdotiPersoneRepository
     {
         public async Task<IEnumerable<TelliProdotiPersone>> GetAll(ReportFilter reportFilter) {
-            var qry = @" 
+            var qry = @"
 SELECT CONVERT(NVARCHAR, StartJob, 110) AS CreatedDate, 
 Angajat, 
 TypeOfControl, 
@@ -25,6 +25,7 @@ WHERE Angajat IS NOT NULL
     AND TypeOfControl IS NOT NULL 
     AND StartJob BETWEEN @StartDate 
     AND @EndDate
+    AND StartJob <= EndJob
 GROUP BY CONVERT(NVARCHAR, StartJob, 110), Angajat, TypeOfControl
 ORDER BY CONVERT(NVARCHAR, StartJob, 110), Angajat, TypeOfControl;";
 

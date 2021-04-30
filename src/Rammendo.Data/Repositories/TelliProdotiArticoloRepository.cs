@@ -46,14 +46,8 @@ WHERE RAM.Article IS NOT NULL AND RAM.CreatedDate BETWEEN @StartDate AND @EndDat
 GROUP BY RAM.Commessa, STAG.Stagiune, RAM.Article, FIN.Codice;";
 
             try {
-                var dp = new DynamicParameters();
-                dp.Add("@Article", reportFilter.Article);
-                dp.Add("@Commessa", reportFilter.Commessa);
-                dp.Add("@Stagione", reportFilter.Stagione);
-                dp.Add("@Finezze", reportFilter.Finezze);
-                dp.Add("@StartDate", reportFilter.StartDate);
-                dp.Add("@EndDate", reportFilter.EndDate);
-
+                var dp = new DynamicParameters(reportFilter);
+                
                 using (var conn = new SqlConnection(ConnectionString)) {
                     var result = await SqlMapper.QueryAsync<TelliProdotiArticolo>(conn, qry, dp);
                     return result;

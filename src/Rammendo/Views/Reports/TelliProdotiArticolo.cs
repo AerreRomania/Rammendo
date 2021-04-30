@@ -57,6 +57,7 @@ namespace Rammendo.Views.Reports
                 if (data != null) {
                     DgvTelliProdoti.DataSource = data;
                     DgvTelliProdoti.Rows[0].DefaultCellStyle.ForeColor = Color.OrangeRed;
+                    DgvTelliProdoti.Rows[0].DefaultCellStyle.SelectionForeColor = Color.OrangeRed;
                     DgvTelliProdoti.Rows[0].DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold, GraphicsUnit.Point);
                     DgvTelliProdoti.Rows[0].DefaultCellStyle.BackColor = Color.MistyRose;
                     DgvTelliProdoti.Rows[0].Height = 32;

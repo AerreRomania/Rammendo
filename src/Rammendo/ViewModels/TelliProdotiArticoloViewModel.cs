@@ -113,8 +113,8 @@ namespace Rammendo.ViewModels
                     if (!ListStagione.Contains(telliProduct.Stagione) && telliProduct.Stagione != null) {
                         ListStagione.Add(telliProduct.Stagione);
                     }
-                    if (!ListStagione.Contains(telliProduct.Finezza) && telliProduct.Finezza != null) {
-                        ListStagione.Add(telliProduct.Finezza);
+                    if (!ListFinezze.Contains(telliProduct.Finezza) && telliProduct.Finezza != null) {
+                        ListFinezze.Add(telliProduct.Finezza);
                     }
 
                     for (var i = 4; i <= 10; i++)

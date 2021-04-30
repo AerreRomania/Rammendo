@@ -44,6 +44,7 @@ namespace CsvImporter
             dataTable.Columns.Add("StartJob", typeof(DateTime));
             dataTable.Columns.Add("EndJob", typeof(DateTime));
             dataTable.Columns.Add("TeamRammendo", typeof(int));
+            dataTable.Columns.Add("QtyProgram", typeof(int));
         }
 
         public void Import() {
@@ -107,6 +108,7 @@ namespace CsvImporter
                             newRow[25] = DBNull.Value;
                             newRow[26] = DBNull.Value;
                             newRow[27] = teamRammendo;
+                            newRow[28] = 0;
 
                             _dataTable.Rows.Add(newRow);
 

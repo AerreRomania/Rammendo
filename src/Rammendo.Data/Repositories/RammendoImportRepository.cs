@@ -12,7 +12,8 @@ namespace Rammendo.Data.Repositories
     {
         public async Task<RammendoImport> GetRammendoAsync(string barcode) {
             var qry = @"
-SELECT Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, GoodGood, BadBad, Diff, Angajat, Reparto, TypeOfControl, Tavolo, CapiH, LastKey
+SELECT Commessa, Article, Color, Gradient, Size, Component, QtyPack, Barcode, Good, Bad, 
+GoodGood, BadBad, Diff, Angajat, Reparto, TypeOfControl, Tavolo, CapiH, LastKey
 FROM RammendoImport
 WHERE Barcode=@Barcode;";
 
@@ -39,6 +40,8 @@ EndJob=CASE WHEN EndJob IS NULL THEN @EndJob ELSE EndJob END
 WHERE Barcode=@Barcode;";
 
             try {
+                await InsertProductionAsync(rammendoImport.Angajat, rammendoImport.Barcode);
+
                 var dynamicParameters = new DynamicParameters(rammendoImport);
 
                 using (var conn = new SqlConnection(ConnectionString)) {
@@ -48,6 +51,23 @@ WHERE Barcode=@Barcode;";
             }
             catch (Exception) {
                 throw;
+            }
+        }
+
+        public async Task<bool> InsertProductionAsync(string operat, string barcode)
+        {
+            var insertQuery = @"
+INSERT INTO RammendoProduction
+(Operator, ProductionDate, Barcode, Qty) VALUES (@Operator, GETDATE(), @Barcode, 1);
+";
+            var dynamicParameters = new DynamicParameters();
+            dynamicParameters.Add("@Operator", operat);
+            dynamicParameters.Add("@Barcode", barcode);
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var row = await connection.ExecuteAsync(insertQuery, dynamicParameters);
+                return row > 0;
             }
         }
     }

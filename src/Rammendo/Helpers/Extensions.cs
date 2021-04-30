@@ -25,6 +25,13 @@
             pi.SetValue(ctl, setting, null);
         }
 
+        public static void DoubleBuffered(this UserControl ctl, bool setting)
+        {
+            Type pnType = ctl.GetType();
+            PropertyInfo pi = pnType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(ctl, setting, null);
+        }
+
         [DllImport("user32.dll")]
         private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 

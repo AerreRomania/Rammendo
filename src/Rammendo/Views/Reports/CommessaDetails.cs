@@ -1,6 +1,7 @@
 ﻿using Rammendo.Behaviors;
 using Rammendo.Helpers;
 using Rammendo.ViewModels;
+using Rammendo.Views.Dialogs;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -67,6 +68,16 @@ namespace Rammendo.Views.Reports
                     this.GetType().Name, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PbError.Visible = true;
             }
+        }
+
+        private void DgvTelliProdoti_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 2) return;
+
+            var barcode = DgvTelliProdoti.Rows[e.RowIndex].Cells[4].Value.ToString();
+            var scheduleForm = new ScheduleControl(barcode);
+            scheduleForm.ShowDialog();
+            scheduleForm.Dispose();
         }
     }
 }

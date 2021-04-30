@@ -311,7 +311,6 @@
             // btnProduzioneGantt
             // 
             this.btnProduzioneGantt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btnProduzioneGantt.Enabled = false;
             this.btnProduzioneGantt.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnProduzioneGantt.FlatAppearance.BorderSize = 0;
             this.btnProduzioneGantt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -331,7 +330,6 @@
             // btnCaricoLavoro
             // 
             this.btnCaricoLavoro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btnCaricoLavoro.Enabled = false;
             this.btnCaricoLavoro.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnCaricoLavoro.FlatAppearance.BorderSize = 0;
             this.btnCaricoLavoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

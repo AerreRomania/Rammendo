@@ -13,18 +13,19 @@ namespace Rammendo
 {
     public partial class Central : CWindow
     {
-        private Geometry _geometry = new Geometry();
-        
+        private Geometry _geometry = new Geometry();        
         public static DateTime DateFrom { get; private set; }
         public static DateTime DateTo { get; private set; }
         public static bool MostraAttuale { get; private set; }
         public static System.Text.StringBuilder IdStateArray { get; private set; }
+        public static string CONNECTION_STRING = "data source=192.168.96.37;initial catalog=ONLYOU; User ID=nicu; password=onlyouolimpias;";
 
         public Central() : base(false) {
             InitializeComponent();
             this.DoubleBuffered(true);
             SetStyle(ControlStyles.ResizeRedraw, true);
 
+            //Store.Default.Url = "http://192.168.1.102:55432/api/";
             Store.Default.Url = "http://192.168.96.37:55388/api/";
             Store.Default.Save();
         }

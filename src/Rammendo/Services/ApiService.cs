@@ -18,6 +18,25 @@ namespace Rammendo.Services
             _client = new HttpClient();
         }
 
+        public async Task<IEnumerable<T>> GetAll<T>()
+        {
+            try
+            {
+                var responseMessage = await Policy
+                    .Handle<Exception>(ex => true)
+                    .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
+                    .ExecuteAsync(async () => await _client.GetAsync($"{Store.Default.Url}{typeof(T).Name}"));
+
+                var content = await responseMessage.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<IEnumerable<T>>(content);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<IEnumerable<T>> GetAll<T>(string query) {
             try {
                 var checkQuery = query != null ? "?" + query : null;
