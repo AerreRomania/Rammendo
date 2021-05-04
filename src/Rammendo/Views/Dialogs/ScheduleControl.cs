@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.Utils.Extensions;
+using DevExpress.XtraEditors.Controls;
 using Rammendo.Behaviors;
 using Rammendo.Helpers;
 using System;
@@ -43,6 +44,11 @@ namespace Rammendo.Views.Dialogs
             base.OnLoad(e);
             LoadOperators();
             GetInfoBybarcode();
+
+            if (comboBox1.Items.Count > 0)
+            {
+                comboBox1.SelectedIndex = 0;
+            }
 
             foreach (DataGridViewColumn c in dgvInfo.Columns)
             {
@@ -135,6 +141,7 @@ namespace Rammendo.Views.Dialogs
             int.TryParse(dgvInfo.Rows[0].Cells[9].Value.ToString(), out var badQty);
             int.TryParse(dgvInfo.Rows[0].Cells[28].Value.ToString(), out var programmedQty);
             var qtyMax = badQty - programmedQty;
+            var idx = Globals.GetNextIndex(operat, null);
 
             capiH = 30.5;
 
@@ -155,8 +162,8 @@ namespace Rammendo.Views.Dialogs
 
             var endDate = startDate.AddTicks(fd);
 
-            var qry = "INSERT INTO RammendoSchedule (Operator,Barcode,StartTime,EndTime,ProductionStartTime,ProductionEndTime,DelayStartTime,DelayEndTime,Qty,CapiH,Line) " +
-                "VALUES (@p1,@p2,@p3,@p4,null,null,null,null,@p9,@p10,@p11)";
+            var qry = "INSERT INTO RammendoSchedule (Operator,Barcode,StartTime,EndTime,ProductionStartTime,ProductionEndTime,DelayStartTime,DelayEndTime,Qty,CapiH,Line,Idx) " +
+                "VALUES (@p1,@p2,@p3,@p4,null,null,null,null,@p9,@p10,@p11,@p12)";
 
             var updateQuery = "UPDATE RammendoImport SET QtyProgram=@QtyProgram WHERE Barcode=@Barcode";
             try
@@ -172,6 +179,8 @@ namespace Rammendo.Views.Dialogs
                     cmd.Parameters.Add("@p9", SqlDbType.Int).Value = insertedQty;
                     cmd.Parameters.Add("@p10", SqlDbType.Float).Value = capiH;
                     cmd.Parameters.Add("@p11", SqlDbType.NVarChar).Value = line;
+                    cmd.Parameters.Add("@p12", SqlDbType.Int).Value = idx;
+
                     var dr = cmd.ExecuteNonQuery();
                     cmd = new SqlCommand(updateQuery, c);
                     cmd.Parameters.Add("@QtyProgram", SqlDbType.Int).Value = insertedQty;
@@ -205,6 +214,24 @@ namespace Rammendo.Views.Dialogs
         private void btnInsert_Click(object sender, EventArgs e)
         {
             InsertRecord();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var operat = comboBox1.Text;
+            
+            var startDateTime = Globals.GetNextStartTime(operat);
+
+            if (startDateTime > DateTime.MinValue)
+            {
+                dateTimePicker1.Value = startDateTime;
+                dateTimePicker1.Enabled = false;
+            }
+            else
+            {
+                dateTimePicker1.Enabled = true;
+                dateTimePicker1.Value = DateTime.Now;
+            }
         }
     }
 }

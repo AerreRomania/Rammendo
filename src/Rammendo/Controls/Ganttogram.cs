@@ -349,7 +349,18 @@
                         gfx.DrawLine(pen, startPos, 10, startPos, HeaderHeight);
                         gfx.DrawLine(pen, startPos, 10, startPos + 5, 10);
 
-                        gfx.DrawString(month + " " + day, new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
+                        var m = string.Empty;
+
+                        if (header.HeaderText == string.Empty)
+                        {
+                            m = month;
+                        }
+                        else
+                        {
+                            m = string.Join(" ", new string[] { month, day });
+                        }
+
+                        gfx.DrawString(m, new Font("Microsoft Sans Serif", 10, FontStyle.Regular),
                             textColor, startPos + 5, HeaderHeight - hgHText - 36);
 
                         curMonth = month;
@@ -357,12 +368,22 @@
                         break;
                     }
 
-                    //gfx.DrawString(day, DateFont, Brushes.Black, startPos + 6, HeaderHeight - hgHText - 2);
+                    if (header.HeaderText == string.Empty)
+                    {
+                        gfx.DrawString(day, DateFont, Brushes.Black, startPos + 6, HeaderHeight - hgHText - 2);
+                    }
 
                     gfx.DrawString(header.HeaderText,
                         TimeFont,
                         Brushes.Black,
-                        startPos + 6, HeaderHeight - hgHText - 2);
+                        startPos, HeaderHeight - hgHText - 2);
+
+                    //if (header.HeaderTextInsteadOfTime != string.Empty)
+                    //{
+                    //}
+                    //else
+                    //{
+                    //}
 
                     index += 1;
                 }
@@ -554,31 +575,28 @@
 
                 var barRect = new Rectangle(x, y, w, h + 1);
                 var delayBarRect = new Rectangle(dx, dy, dw, dh + 1);
-                var prodBarRect = new Rectangle(px, py, pw, ph + 2);
+                var prodBarRect = new Rectangle(px, py, pw, ph + 5);
                 
                 if (((index >= scrollPos) & (index < _barsViewable + scrollPos)) |
                          ignoreScrollAndMousePosition)
                 {
                     var borderPen = new Pen(Brushes.Gainsboro, 1);
 
-                    grfx.FillPath(new SolidBrush(barColor), geo.RoundedRectanglePath(barRect, 2));
-                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(barRect, 2));
-                    grfx.FillPath(new SolidBrush(Color.Crimson), geo.RoundedRectanglePath(delayBarRect, 2));
-                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(delayBarRect, 2));
-                    grfx.FillPath(new SolidBrush(Color.SeaGreen), geo.RoundedRectanglePath(prodBarRect, 2));
-                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(prodBarRect, 2));
-
-
-                    var barTextWidth = grfx.MeasureString(bar.RowText, _barFont).Width;
+                    grfx.FillPath(new SolidBrush(barColor), geo.RoundedRectanglePath(barRect, 9));
+                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(barRect, 9));
+                    grfx.FillPath(new SolidBrush(Color.Crimson), geo.RoundedRectanglePath(delayBarRect, 9));
+                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(delayBarRect, 9));
+                    grfx.FillPath(new SolidBrush(Color.SeaGreen), geo.RoundedRectanglePath(prodBarRect, 7));
+                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(prodBarRect, 7));
 
                     var brshProdText = bar.ProdColor == Color.FromArgb(175, 175, 175) ? Brushes.DimGray : Brushes.WhiteSmoke;
 
-                    if (w > 25) grfx.DrawString(bar.EndValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, (x + w) - 34, y + 2);
-                    if (w > 60) grfx.DrawString(bar.StartValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, x, y + 2);
-                    if (dw > 25) grfx.DrawString(bar.DelayEndValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, (dx + dw) - 34, dy + 2);
-                    if (dw > 60) grfx.DrawString(bar.DelayStartValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, dx, dy + 2);
-                    if (pw > 25) grfx.DrawString(bar.ProdEndValue.ToString("dd/MM"), _barFont, brshProdText, (px + pw) - 34, findCenterByY);
-                    if (pw > 60) grfx.DrawString(bar.ProdStartValue.ToString("dd/MM"), _barFont, brshProdText, px, findCenterByY);
+                    if (w > 25) grfx.DrawString(bar.EndValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, (x + w) - 34, y + 4);
+                    if (w > 60) grfx.DrawString(bar.StartValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, x, y + 4);
+                    if (dw > 25) grfx.DrawString(bar.DelayEndValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, (dx + dw) - 34, dy + 4);
+                    if (dw > 60) grfx.DrawString(bar.DelayStartValue.ToString("dd/MM"), _barFont, Brushes.WhiteSmoke, dx, dy + 4);
+                    if (pw > 25) grfx.DrawString(bar.ProdEndValue.ToString("dd/MM"), _barFont, brshProdText, (px + pw) - 34, findCenterByY + 1);
+                    if (pw > 60) grfx.DrawString(bar.ProdStartValue.ToString("dd/MM"), _barFont, brshProdText, px, findCenterByY + 1);
 
                     var lineRect = new Rectangle(new Point(-1, BarStartTop + _barHeight * (index - scrollPos) + 
                         _barSpace * (index - scrollPos) + 1), new Size(201, _barHeight + 7));

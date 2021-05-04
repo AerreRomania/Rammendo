@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,6 +38,7 @@ namespace Rammendo.Views.Reports
             DgvCaricoLavoro.CellDoubleClick += DgvCaricoLavoro_CellDoubleClick;
 
             FillComboBoxes();
+            AddGanttContextMenu();
 
             _gntChart.Dock = DockStyle.Fill;
             splitContainer1.Panel1.Controls.Add(_gntChart);
@@ -56,7 +56,6 @@ namespace Rammendo.Views.Reports
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
             LoadScheduleTasks();
         }
 
@@ -85,7 +84,10 @@ ON A.Barcode = B.barcode
 ORDER BY 
 	LEN(A.Line), 
 	A.Line,
-	A.Operator;";
+	A.Operator,
+    -- use idx value for sorting tasks by operator and line
+    -- each operator and line combination will starts with 1 and then ++
+    A.Idx;";
 
             try
             {
@@ -122,20 +124,40 @@ ORDER BY
 
                 var name = _lstSchedule.Select(x => x.Operator).First();
                 var index = 0;
+                var indexBefore = 0;
                 foreach (var item in _lstSchedule)
                 {
-                    if (name != item.Operator) index++;
+                    if (name != item.Operator)
+                    {
+                        index++;
+                        indexBefore = 0;
+                    }
 
-                    //create delay if production endDate is greater programmed endDate 
+                    var ticks = item.EndTime.Subtract(item.StartTime).Ticks;
+
+                    if (indexBefore > 0)
+                    {
+                        //check if there is a gap and remove it
+                        var itemBefore = _lstSchedule[indexBefore - 1];
+                        var endTime = itemBefore.DelayEndTime > DateTime.MinValue ? itemBefore.DelayEndTime : itemBefore.EndTime;
+                        item.StartTime = endTime;
+                        item.EndTime = item.StartTime.AddTicks(ticks);
+                    }
+
                     if (item.ProductionEndTime > item.EndTime)
                     {
+                        //create delay if production endDate is greater programmed endDate
                         item.DelayStartTime = item.EndTime;
                         item.DelayEndTime = item.ProductionEndTime;
                     }
 
-                    //check if productionStartDate start before programmed StartDate
-                    if (item.ProductionStartTime < item.StartTime) item.ProductionStartTime = item.StartTime;
-                    
+                    if (item.ProductionStartTime > DateTime.MinValue &&
+                        item.ProductionStartTime < item.StartTime)
+                    {
+                        //check if productionStartDate start before programmed StartDate
+                        item.ProductionStartTime = item.StartTime;
+                    }
+
                     _gntChartBarsList.Add(new Bar(item.Operator,
                         item.StartTime,
                         item.EndTime,
@@ -151,6 +173,7 @@ ORDER BY
                         item.FixedQty, item.ProdQty));
 
                     name = item.Operator;
+                    indexBefore++;
                 }
 
                 foreach (var gntChartbar in _gntChartBarsList)
@@ -179,7 +202,7 @@ ORDER BY
 
             var canManage = !(val.ProdFromTime > DateTime.MinValue && val.ProdToTime > DateTime.MinValue);
 
-            var scheduleOrganizer = new ScheduleOrganizer(val.RowText, val.Department, 0, val.FixedQty, val.ProductionQty, canManage);
+            var scheduleOrganizer = new ScheduleOrganizer(val.RowText, val.Department, val.FromTime, val.ToTime, 0, val.FixedQty, val.ProductionQty, canManage);
             scheduleOrganizer.ShowDialog();
             scheduleOrganizer.Dispose();
 
@@ -201,7 +224,6 @@ ORDER BY
             }
             else
             {
-
                 splitContainer1.Panel2Collapsed = true;
                 button1.Text = "Carico Lavoro";
                 button1.BackColor = Color.DarkCyan;
@@ -371,6 +393,63 @@ ORDER BY
             _gntChart.Refresh();
         }
 
+        private void AddGanttContextMenu()
+        {
+            var ctxMenuStrip = new ContextMenuStrip();
+            ctxMenuStrip.RenderMode = ToolStripRenderMode.System;
+            ctxMenuStrip.ImageScalingSize = new Size(20, 20);
+            ctxMenuStrip.Font = new Font("Segoe UI", 9, FontStyle.Regular);
+
+            ToolStripMenuItem tsmi0 = new ToolStripMenuItem();
+            
+            tsmi0.Text = "Program";
+            tsmi0.Click += (s, e) =>
+            {
+                if (splitContainer1.Panel2Collapsed)
+                {
+                    button1.PerformClick();
+                }
+            };
+
+            ctxMenuStrip.Items.Add(tsmi0);
+
+            _gntChart.ContextMenuStrip = ctxMenuStrip;
+        }
+
         #endregion
+
+        private void btn_ZoomIn_Click(object sender, EventArgs e)
+        {
+            if (_gntChart.ToDate.Subtract(_gntChart.FromDate).TotalDays == 1) return;
+
+            _gntChart.FromDate = _gntChart.FromDate.AddDays(+1);
+            _gntChart.ToDate = _gntChart.ToDate.AddDays(-1);
+            _gntChart.Refresh();
+        }
+
+        private void btn_ZoomOut_Click(object sender, EventArgs e)
+        {
+            if (_gntChart.ToDate.Subtract(_gntChart.FromDate).TotalDays > 15)
+            {
+                return;
+            }
+
+            _gntChart.FromDate = _gntChart.FromDate.AddDays(-1);
+            _gntChart.ToDate = _gntChart.ToDate.AddDays(+1);
+            _gntChart.Refresh();
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            try
+            {
+                _gntChart.ScrollPosition = vScrollBar1.Value;
+                _gntChart.Refresh();
+                _gntChart.Invalidate();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

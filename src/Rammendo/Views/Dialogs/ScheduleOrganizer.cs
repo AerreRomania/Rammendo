@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
+using System.Net.Configuration;
 using System.Windows.Forms;
 
 namespace Rammendo.Views.Dialogs
@@ -11,6 +13,9 @@ namespace Rammendo.Views.Dialogs
         private string Operator { get; set; }
         private string Key { get; set; }
         private int Qty { get; set; }
+
+        private DateTime StartTime { get; set; }
+        private DateTime EndTime { get; set; }
         private bool CanManage { get; set; }
 
         private List<ScheduleControl.Operators> _lstOperators = new List<ScheduleControl.Operators>();
@@ -20,13 +25,15 @@ namespace Rammendo.Views.Dialogs
             InitializeComponent();
         }
 
-        public ScheduleOrganizer(string name, string key,int dailyQty = 0, int fixedQty = 0, int prodQty = 0, bool canManage = true)
+        public ScheduleOrganizer(string name, string key, DateTime startTime, DateTime endTime, int dailyQty = 0, int fixedQty = 0, int prodQty = 0, bool canManage = true)
         {
             InitializeComponent();
 
             Operator = name;
             Key = key;
             Qty = fixedQty;
+            StartTime = startTime;
+            EndTime = endTime;
             CanManage = canManage;
 
             lblOperator.Text = Operator;
@@ -34,9 +41,73 @@ namespace Rammendo.Views.Dialogs
             lblTargetQty.Text = fixedQty.ToString();
             lblProdQty.Text = prodQty.ToString();
             lblDiff.Text = (fixedQty - prodQty).ToString();
-            
+            lblProgrammedDate.Text = startTime.ToString("dd-MM-yyyy HH:mm") + "  -  " + endTime.ToString("dd-MM-yyyy HH:mm");
+
             LoadOperators();
+            LoadCommessaDetails();
             LoadProductionTable();
+
+            if (comboBox1.Items.Count > 0)
+            {
+                comboBox1.SelectedIndex = 0;
+            }
+
+            if (!canManage)
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+                lblAlert.Visible = true;
+            }
+        }
+
+        private void LoadCommessaDetails()
+        {
+            var qry = @"
+SELECT A.Commessa,A.Article,B.Cantitate,A.QtyPack,A.CreatedDate,A.StartJob FROM RammendoImport A 
+LEFT JOIN Comenzi B ON A.Commessa = B.NrComanda AND B.IdSector = 7 AND IsDeleted = 0
+WHERE A.Barcode=@Barcode;";
+
+            try
+            {
+                using (var c = new SqlConnection(Central.CONNECTION_STRING))
+                {
+                    var cmd = new SqlCommand(qry, c);
+                    cmd.Parameters.Add("@Barcode", System.Data.SqlDbType.NVarChar).Value = Key.Split('_')[1];
+                    c.Open();
+                    var dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                        while (dr.Read())
+                        {
+                            lblCommessa.Text = dr[0].ToString();
+                            lblArticle.Text = dr[1].ToString();
+                            lblQtyPack.Text = dr[3].ToString();
+                            DateTime.TryParse(dr[4].ToString(), out var readedDate);
+                            DateTime.TryParse(dr[5].ToString(), out var startWork);
+                            lblReadedDate.Text = readedDate.ToString("dd-MM-yyyy HH:mm");
+                            if (string.IsNullOrEmpty(dr[2].ToString()))
+                            {
+                                lblTotalQty.Text = "Not linked";
+                                lblTotalQty.ForeColor = Color.Crimson;
+                            }
+                            else
+                            {
+                                lblTotalQty.Text = dr[2].ToString();
+                            }
+                            if (string.IsNullOrEmpty(dr[5].ToString()))
+                            {
+                                lblWorkStart.Text = string.Empty;
+                            }
+                            else
+                            {
+                                lblWorkStart.Text = startWork.ToString("dd-MM-yyyy HH:mm");
+                            }
+                        }
+                    c.Close();
+                }
+            }
+            catch (Exception)
+            {
+            }     
         }
 
         private void LoadOperators()
@@ -170,30 +241,22 @@ GROUP BY operator,barcode,
                 return;
             }
 
-            var qry = "UPDATE RammendoSchedule SET Operator=@Operator, Line=@Line WHERE CONCAT(Id,'_',Barcode) = '" + Key + "'";
+            //get operator definitions
+            var operat = comboBox1.Text;
+            var key = ((KeyValuePair<int, string>)comboBox1.SelectedItem).Key;
+            var line = _lstOperators.Where(x => x.Id == key).FirstOrDefault().Line;
 
+            // move task
             try
             {
-                var operat = comboBox1.Text;
-                var key = ((KeyValuePair<int, string>)comboBox1.SelectedItem).Key;
-                var line = _lstOperators.Where(x => x.Id == key).FirstOrDefault().Line;
-
-                using (var c = new SqlConnection(Central.CONNECTION_STRING))
-                {
-                    var cmd = new SqlCommand(qry, c);
-                    cmd.Parameters.Add("@Operator", System.Data.SqlDbType.NVarChar).Value = operat;
-                    cmd.Parameters.Add("@Line", System.Data.SqlDbType.NVarChar).Value = line;
-
-                    c.Open();
-                    var dr = cmd.ExecuteNonQuery();
-                    c.Close();
-                }
+                var organizer = new Helpers.ScheduleOrganizer.Organize();
+                organizer.MoveTask(dateTimePicker1.Value, StartTime, EndTime, operat, line, Key);
 
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Organizer - Move task", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

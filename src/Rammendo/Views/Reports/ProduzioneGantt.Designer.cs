@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.DgvCaricoLavoro = new Rammendo.Controls.CGridView();
             this.PnToolBar = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.CboFinezze = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,21 +42,20 @@
             this.CbArticolo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.DgvCaricoLavoro = new Rammendo.Controls.CGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_ZoomIn = new System.Windows.Forms.Button();
+            this.btn_ZoomOut = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.PnToolBar.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCaricoLavoro)).BeginInit();
+            this.PnToolBar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.PnToolBar);
             this.splitContainer1.Panel2Collapsed = true;
             this.splitContainer1.Size = new System.Drawing.Size(1066, 499);
-            this.splitContainer1.SplitterDistance = 224;
+            this.splitContainer1.SplitterDistance = 223;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 36;
             // 
@@ -88,6 +89,47 @@
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(21, 499);
             this.vScrollBar1.TabIndex = 36;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            // 
+            // DgvCaricoLavoro
+            // 
+            this.DgvCaricoLavoro.AllowUserToAddRows = false;
+            this.DgvCaricoLavoro.AllowUserToDeleteRows = false;
+            this.DgvCaricoLavoro.AllowUserToResizeColumns = false;
+            this.DgvCaricoLavoro.AllowUserToResizeRows = false;
+            this.DgvCaricoLavoro.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.DgvCaricoLavoro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgvCaricoLavoro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCaricoLavoro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvCaricoLavoro.ColumnHeadersHeight = 50;
+            this.DgvCaricoLavoro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCaricoLavoro.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvCaricoLavoro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvCaricoLavoro.EnableHeadersVisualStyles = false;
+            this.DgvCaricoLavoro.GridColor = System.Drawing.Color.Gainsboro;
+            this.DgvCaricoLavoro.Location = new System.Drawing.Point(0, 44);
+            this.DgvCaricoLavoro.Margin = new System.Windows.Forms.Padding(2);
+            this.DgvCaricoLavoro.MultiSelect = false;
+            this.DgvCaricoLavoro.Name = "DgvCaricoLavoro";
+            this.DgvCaricoLavoro.ReadOnly = true;
+            this.DgvCaricoLavoro.RowHeadersVisible = false;
+            this.DgvCaricoLavoro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvCaricoLavoro.Size = new System.Drawing.Size(1066, 227);
+            this.DgvCaricoLavoro.TabIndex = 30;
             // 
             // PnToolBar
             // 
@@ -104,6 +146,21 @@
             this.PnToolBar.Name = "PnToolBar";
             this.PnToolBar.Size = new System.Drawing.Size(1066, 44);
             this.PnToolBar.TabIndex = 31;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(715, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(175, 29);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Refresh list";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // CboFinezze
             // 
@@ -183,15 +240,102 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 543);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1066, 44);
             this.panel1.TabIndex = 37;
+            // 
+            // btn_ZoomIn
+            // 
+            this.btn_ZoomIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ZoomIn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_ZoomIn.FlatAppearance.BorderSize = 0;
+            this.btn_ZoomIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ZoomIn.Image = global::Rammendo.Properties.Resources.zoom_in;
+            this.btn_ZoomIn.Location = new System.Drawing.Point(512, 3);
+            this.btn_ZoomIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ZoomIn.Name = "btn_ZoomIn";
+            this.btn_ZoomIn.Size = new System.Drawing.Size(37, 40);
+            this.btn_ZoomIn.TabIndex = 87;
+            this.btn_ZoomIn.UseVisualStyleBackColor = false;
+            this.btn_ZoomIn.Click += new System.EventHandler(this.btn_ZoomIn_Click);
+            // 
+            // btn_ZoomOut
+            // 
+            this.btn_ZoomOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ZoomOut.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_ZoomOut.FlatAppearance.BorderSize = 0;
+            this.btn_ZoomOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ZoomOut.Image = global::Rammendo.Properties.Resources.zoom_out;
+            this.btn_ZoomOut.Location = new System.Drawing.Point(561, 3);
+            this.btn_ZoomOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_ZoomOut.Name = "btn_ZoomOut";
+            this.btn_ZoomOut.Size = new System.Drawing.Size(37, 40);
+            this.btn_ZoomOut.TabIndex = 88;
+            this.btn_ZoomOut.UseVisualStyleBackColor = false;
+            this.btn_ZoomOut.Click += new System.EventHandler(this.btn_ZoomOut_Click);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = global::Rammendo.Properties.Resources.fast_forward;
+            this.button8.Location = new System.Drawing.Point(420, 3);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(37, 40);
+            this.button8.TabIndex = 85;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::Rammendo.Properties.Resources.arrow_left;
+            this.button5.Location = new System.Drawing.Point(323, 3);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(37, 40);
+            this.button5.TabIndex = 83;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = global::Rammendo.Properties.Resources.arrow_right;
+            this.button7.Location = new System.Drawing.Point(469, 3);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(37, 40);
+            this.button7.TabIndex = 86;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = global::Rammendo.Properties.Resources.fast_rewind;
+            this.button6.Location = new System.Drawing.Point(372, 3);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(37, 40);
+            this.button6.TabIndex = 84;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
@@ -208,132 +352,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // DgvCaricoLavoro
-            // 
-            this.DgvCaricoLavoro.AllowUserToAddRows = false;
-            this.DgvCaricoLavoro.AllowUserToDeleteRows = false;
-            this.DgvCaricoLavoro.AllowUserToResizeColumns = false;
-            this.DgvCaricoLavoro.AllowUserToResizeRows = false;
-            this.DgvCaricoLavoro.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.DgvCaricoLavoro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DgvCaricoLavoro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCaricoLavoro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.DgvCaricoLavoro.ColumnHeadersHeight = 50;
-            this.DgvCaricoLavoro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvCaricoLavoro.DefaultCellStyle = dataGridViewCellStyle16;
-            this.DgvCaricoLavoro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvCaricoLavoro.EnableHeadersVisualStyles = false;
-            this.DgvCaricoLavoro.GridColor = System.Drawing.Color.Gainsboro;
-            this.DgvCaricoLavoro.Location = new System.Drawing.Point(0, 44);
-            this.DgvCaricoLavoro.Margin = new System.Windows.Forms.Padding(2);
-            this.DgvCaricoLavoro.MultiSelect = false;
-            this.DgvCaricoLavoro.Name = "DgvCaricoLavoro";
-            this.DgvCaricoLavoro.ReadOnly = true;
-            this.DgvCaricoLavoro.RowHeadersVisible = false;
-            this.DgvCaricoLavoro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvCaricoLavoro.Size = new System.Drawing.Size(1066, 270);
-            this.DgvCaricoLavoro.TabIndex = 30;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(891, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 44);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.btn_ZoomIn);
             this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btn_ZoomOut);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.button7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1066, 44);
             this.panel2.TabIndex = 38;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::Rammendo.Properties.Resources.arrow_left;
-            this.button5.Location = new System.Drawing.Point(339, 2);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(37, 40);
-            this.button5.TabIndex = 83;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Rammendo.Properties.Resources.fast_rewind;
-            this.button6.Location = new System.Drawing.Point(388, 2);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 40);
-            this.button6.TabIndex = 84;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Rammendo.Properties.Resources.arrow_right;
-            this.button7.Location = new System.Drawing.Point(485, 2);
-            this.button7.Margin = new System.Windows.Forms.Padding(2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(37, 40);
-            this.button7.TabIndex = 86;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::Rammendo.Properties.Resources.fast_forward;
-            this.button8.Location = new System.Drawing.Point(436, 2);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(37, 40);
-            this.button8.TabIndex = 85;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // ProduzioneGantt
             // 
@@ -349,10 +382,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCaricoLavoro)).EndInit();
             this.PnToolBar.ResumeLayout(false);
             this.PnToolBar.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvCaricoLavoro)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -372,11 +404,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_ZoomIn;
+        private System.Windows.Forms.Button btn_ZoomOut;
+        private System.Windows.Forms.Button button2;
     }
 }
