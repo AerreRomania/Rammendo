@@ -1,4 +1,5 @@
-﻿using Rammendo.Behaviors;
+﻿using DevExpress.XtraBars.Ribbon;
+using Rammendo.Behaviors;
 using Rammendo.Controls;
 using Rammendo.Helpers;
 using Rammendo.Models.ProduzioneGantt;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,7 +23,7 @@ namespace Rammendo.Views.Reports
         private readonly Ganttogram _gntChart = new Ganttogram();
         private List<Bar> _gntChartBarsList = new List<Bar>();
         private List<Schedule> _lstSchedule = new List<Schedule>();
-
+        
         public ProduzioneGantt(Panel parent) : base(true, parent)
         {
             InitializeComponent();
@@ -46,6 +48,7 @@ namespace Rammendo.Views.Reports
             _gntChart.DoubleBuffered(true);
             _gntChart.MouseMove += _gntChart.Chart_MouseMove;
             _gntChart.DoubleClick += Gantt_DoubleClick;
+            _gntChart.MouseClick += Gantt_MouseClick;
 
             _gntChart.FromDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(-1);
             _gntChart.ToDate = _gntChart.FromDate.AddDays(+1);
@@ -77,7 +80,7 @@ A.Id, A.Operator, A.Barcode,
 A.StartTime, A.EndTime,
 B.startDate as ProductionStartTime,B.endDate ProductionEndTime,
 A.DelayStartTime, A.DelayEndTime,
-A.Qty as FixedQty, B.qty as ProdQty, A.CapiH, A.Line 
+A.Qty as FixedQty, B.qty as ProdQty, A.CapiH, A.Line, A.Idx
 FROM RammendoSchedule A
 LEFT JOIN cte_rammendo_production B 
 ON A.Barcode = B.barcode
@@ -110,10 +113,11 @@ ORDER BY
                             int.TryParse(dr[10].ToString(), out var prodQty);
 
                             double.TryParse(dr[11].ToString(), out var capiH);
+                            int.TryParse(dr[13].ToString(), out var idx);
 
                             _lstSchedule.Add(new Schedule(id, dr[1].ToString(), dr[2].ToString(),
                                 start, end, prodStart, prodEnd, delayStart, delayEnd, fixedQty, prodQty, capiH,
-                                dr[12].ToString()));
+                                dr[12].ToString(), idx));
                         }
                     c.Close();
                 }
@@ -122,23 +126,23 @@ ORDER BY
                 _gntChart.HeaderList = new List<Header>();
                 _gntChartBarsList = new List<Bar>();
 
-                var name = _lstSchedule.Select(x => x.Operator).First();
+                var name = _lstSchedule.Select(x => x.Operator).FirstOrDefault();
+                var line = _lstSchedule.Select(x => x.Line).FirstOrDefault();
                 var index = 0;
-                var indexBefore = 0;
                 foreach (var item in _lstSchedule)
                 {
-                    if (name != item.Operator)
+                    if (name != item.Operator || line != item.Line)
                     {
                         index++;
-                        indexBefore = 0;
                     }
+                    
+                    //check if there is a gap and remove it     
+                    var itemBefore = _lstSchedule.Where(x => x.Operator == item.Operator 
+                        && x.Line == item.Line && x.Idx < item.Idx).LastOrDefault();
 
-                    var ticks = item.EndTime.Subtract(item.StartTime).Ticks;
-
-                    if (indexBefore > 0)
+                    if (itemBefore != null )
                     {
-                        //check if there is a gap and remove it
-                        var itemBefore = _lstSchedule[indexBefore - 1];
+                        var ticks = item.EndTime.Subtract(item.StartTime).Ticks;
                         var endTime = itemBefore.DelayEndTime > DateTime.MinValue ? itemBefore.DelayEndTime : itemBefore.EndTime;
                         item.StartTime = endTime;
                         item.EndTime = item.StartTime.AddTicks(ticks);
@@ -173,7 +177,7 @@ ORDER BY
                         item.FixedQty, item.ProdQty));
 
                     name = item.Operator;
-                    indexBefore++;
+                    line = item.Line;
                 }
 
                 foreach (var gntChartbar in _gntChartBarsList)
@@ -195,8 +199,10 @@ ORDER BY
             }
         }
 
+        private bool _isDoubleClick;
         private void Gantt_DoubleClick(object sender, EventArgs e)
         {
+            _isDoubleClick = true;
             if (_gntChart.MouseOverRowValue == null) return;
             var val = (Bar)_gntChart.MouseOverRowValue;
 
@@ -205,8 +211,8 @@ ORDER BY
             var scheduleOrganizer = new ScheduleOrganizer(val.RowText, val.Department, val.FromTime, val.ToTime, 0, val.FixedQty, val.ProductionQty, canManage);
             scheduleOrganizer.ShowDialog();
             scheduleOrganizer.Dispose();
-
             LoadScheduleTasks();
+            _isDoubleClick = false;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -416,8 +422,6 @@ ORDER BY
             _gntChart.ContextMenuStrip = ctxMenuStrip;
         }
 
-        #endregion
-
         private void btn_ZoomIn_Click(object sender, EventArgs e)
         {
             if (_gntChart.ToDate.Subtract(_gntChart.FromDate).TotalDays == 1) return;
@@ -450,6 +454,63 @@ ORDER BY
             catch (Exception)
             {
             }
+        }
+
+        private async void Gantt_MouseClick(object sender, MouseEventArgs eventArgs)
+        {
+            await Task.Delay(500);
+
+            if (_isDoubleClick) return;
+
+            if (_gntChart.MouseOverRowValue != null)
+            {
+                pnToolTip.Visible = false;
+
+                var val = (Bar)_gntChart.MouseOverRowValue;
+
+                var sb = new System.Text.StringBuilder();
+                sb.AppendLine(val.Tag);
+                sb.AppendLine();
+                sb.AppendLine("Start time: " + val.FromTime.ToString("dd-MM-yyyy HH:mm") + "   ");
+                sb.AppendLine("End time: " + val.ToTime.ToString("dd-MM-yyyy HH:mm") + "   ");
+
+                if (val.ProdFromTime > DateTime.MinValue)
+                {
+                    sb.AppendLine("Production start time: " + val.ProdFromTime.ToString("dd-MM-yyyy HH:mm"));
+                }
+
+                if (val.ProdToTime > DateTime.MinValue)
+                {
+                    sb.AppendLine("Production end time: " + val.ProdToTime.ToString("dd-MM-yyyy HH:mm"));
+                }
+
+                lblOperatorTip.Text = val.RowText;
+                lblDetailsTip.Text = sb.ToString();
+
+                pnToolTip.Location = _gntChart.PointToClient(new Point(Cursor.Position.X, (Cursor.Position.Y + pnToolTip.Height / 2) - 20));
+                if (pnToolTip.Location.X + pnToolTip.Width > _gntChart.Width)
+                {
+                    var x = pnToolTip.Location.X + pnToolTip.Width - _gntChart.Width; 
+                    pnToolTip.Location = _gntChart.PointToClient(new Point(Cursor.Position.X - x, (Cursor.Position.Y + pnToolTip.Height / 2) - 20));
+                }
+                
+                pnToolTip.Visible = true;
+                pnToolTip.Refresh();
+            }
+            else
+            {
+                if (pnToolTip.Visible)
+                {
+                    pnToolTip.Visible = false;
+                }
+            }
+        }
+
+        #endregion
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pnToolTip.Visible = false;
         }
     }
 }

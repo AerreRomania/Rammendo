@@ -50,6 +50,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnToolTip = new System.Windows.Forms.Panel();
+            this.lblDetailsTip = new System.Windows.Forms.Label();
+            this.lblOperatorTip = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvCaricoLavoro)).BeginInit();
             this.PnToolBar.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnToolTip.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -368,11 +373,64 @@
             this.panel2.Size = new System.Drawing.Size(1066, 44);
             this.panel2.TabIndex = 38;
             // 
+            // pnToolTip
+            // 
+            this.pnToolTip.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnToolTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnToolTip.Controls.Add(this.lblDetailsTip);
+            this.pnToolTip.Controls.Add(this.button3);
+            this.pnToolTip.Controls.Add(this.lblOperatorTip);
+            this.pnToolTip.Location = new System.Drawing.Point(692, 398);
+            this.pnToolTip.Name = "pnToolTip";
+            this.pnToolTip.Size = new System.Drawing.Size(352, 144);
+            this.pnToolTip.TabIndex = 42;
+            this.pnToolTip.Visible = false;
+            // 
+            // lblDetailsTip
+            // 
+            this.lblDetailsTip.BackColor = System.Drawing.Color.LightYellow;
+            this.lblDetailsTip.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDetailsTip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetailsTip.ForeColor = System.Drawing.Color.Black;
+            this.lblDetailsTip.Location = new System.Drawing.Point(0, 34);
+            this.lblDetailsTip.Margin = new System.Windows.Forms.Padding(3);
+            this.lblDetailsTip.Name = "lblDetailsTip";
+            this.lblDetailsTip.Size = new System.Drawing.Size(350, 108);
+            this.lblDetailsTip.TabIndex = 42;
+            // 
+            // lblOperatorTip
+            // 
+            this.lblOperatorTip.BackColor = System.Drawing.Color.LightYellow;
+            this.lblOperatorTip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblOperatorTip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatorTip.ForeColor = System.Drawing.Color.Black;
+            this.lblOperatorTip.Location = new System.Drawing.Point(0, 0);
+            this.lblOperatorTip.Margin = new System.Windows.Forms.Padding(3);
+            this.lblOperatorTip.Name = "lblOperatorTip";
+            this.lblOperatorTip.Size = new System.Drawing.Size(350, 34);
+            this.lblOperatorTip.TabIndex = 43;
+            this.lblOperatorTip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightYellow;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(319, 1);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(32, 23);
+            this.button3.TabIndex = 45;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ProduzioneGantt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 587);
+            this.Controls.Add(this.pnToolTip);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -386,6 +444,7 @@
             this.PnToolBar.ResumeLayout(false);
             this.PnToolBar.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pnToolTip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -412,5 +471,9 @@
         private System.Windows.Forms.Button btn_ZoomIn;
         private System.Windows.Forms.Button btn_ZoomOut;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnToolTip;
+        private System.Windows.Forms.Label lblOperatorTip;
+        private System.Windows.Forms.Label lblDetailsTip;
+        private System.Windows.Forms.Button button3;
     }
 }

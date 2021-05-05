@@ -803,9 +803,7 @@
                         IsMouseOverProductionBar = false;
                         if ((_mouseHover != MouseOver.BarLeftSide) &
                             (_mouseHover != MouseOver.BarRightSide)) _mouseHover = MouseOver.Bar;
-
                     }
-
                 }
 
                 index += 1;

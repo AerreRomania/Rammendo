@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTitlebar = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -45,6 +45,7 @@
             this.lblMaxQty = new System.Windows.Forms.Label();
             this.lblCommessa = new System.Windows.Forms.Label();
             this.lblQtyH = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pnTitlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
@@ -59,7 +60,7 @@
             this.pnTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnTitlebar.Name = "pnTitlebar";
-            this.pnTitlebar.Size = new System.Drawing.Size(402, 50);
+            this.pnTitlebar.Size = new System.Drawing.Size(379, 50);
             this.pnTitlebar.TabIndex = 18;
             // 
             // label4
@@ -95,7 +96,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnClose.Location = new System.Drawing.Point(352, 0);
+            this.btnClose.Location = new System.Drawing.Point(329, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(50, 50);
             this.btnClose.TabIndex = 21;
@@ -109,11 +110,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsert.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(36, 310);
+            this.btnInsert.Location = new System.Drawing.Point(36, 326);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(323, 33);
+            this.btnInsert.Size = new System.Drawing.Size(300, 33);
             this.btnInsert.TabIndex = 19;
-            this.btnInsert.Text = "Create";
+            this.btnInsert.Text = "Insert task";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
@@ -127,7 +128,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(36, 139);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(323, 25);
+            this.comboBox1.Size = new System.Drawing.Size(300, 25);
             this.comboBox1.TabIndex = 20;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -135,10 +136,11 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(36, 255);
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.textBox1.Location = new System.Drawing.Point(36, 270);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 25);
+            this.textBox1.Size = new System.Drawing.Size(134, 29);
             this.textBox1.TabIndex = 21;
             // 
             // dateTimePicker1
@@ -150,7 +152,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(36, 197);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(323, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(300, 25);
             this.dateTimePicker1.TabIndex = 22;
             // 
             // label1
@@ -177,7 +179,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 235);
+            this.label3.Location = new System.Drawing.Point(33, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 17);
             this.label3.TabIndex = 25;
@@ -193,14 +195,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInfo.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInfo.EnableHeadersVisualStyles = false;
             this.dgvInfo.GridColor = System.Drawing.Color.Gainsboro;
@@ -210,7 +212,7 @@
             this.dgvInfo.ReadOnly = true;
             this.dgvInfo.RowHeadersVisible = false;
             this.dgvInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInfo.Size = new System.Drawing.Size(72, 77);
+            this.dgvInfo.Size = new System.Drawing.Size(49, 77);
             this.dgvInfo.TabIndex = 26;
             this.dgvInfo.Visible = false;
             // 
@@ -220,7 +222,7 @@
             this.lblMaxQty.AutoSize = true;
             this.lblMaxQty.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaxQty.ForeColor = System.Drawing.Color.DimGray;
-            this.lblMaxQty.Location = new System.Drawing.Point(207, 262);
+            this.lblMaxQty.Location = new System.Drawing.Point(184, 262);
             this.lblMaxQty.Name = "lblMaxQty";
             this.lblMaxQty.Size = new System.Drawing.Size(0, 13);
             this.lblMaxQty.TabIndex = 27;
@@ -245,11 +247,25 @@
             this.lblQtyH.Size = new System.Drawing.Size(0, 13);
             this.lblQtyH.TabIndex = 29;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkCyan;
+            this.linkLabel1.Location = new System.Drawing.Point(222, 228);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(114, 13);
+            this.linkLabel1.TabIndex = 30;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Use proposed date";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // ScheduleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 385);
+            this.ClientSize = new System.Drawing.Size(379, 400);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblQtyH);
             this.Controls.Add(this.lblCommessa);
             this.Controls.Add(this.lblMaxQty);
@@ -291,5 +307,6 @@
         private System.Windows.Forms.Label lblMaxQty;
         private System.Windows.Forms.Label lblCommessa;
         private System.Windows.Forms.Label lblQtyH;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

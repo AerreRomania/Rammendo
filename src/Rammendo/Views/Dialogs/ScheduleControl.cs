@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors.Controls;
 using Rammendo.Behaviors;
 using Rammendo.Helpers;
+using Rammendo.Helpers.ScheduleOrganizer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -162,39 +163,46 @@ namespace Rammendo.Views.Dialogs
 
             var endDate = startDate.AddTicks(fd);
 
-            var qry = "INSERT INTO RammendoSchedule (Operator,Barcode,StartTime,EndTime,ProductionStartTime,ProductionEndTime,DelayStartTime,DelayEndTime,Qty,CapiH,Line,Idx) " +
-                "VALUES (@p1,@p2,@p3,@p4,null,null,null,null,@p9,@p10,@p11,@p12)";
+            //var qry = "INSERT INTO RammendoSchedule (Operator,Barcode,StartTime,EndTime,ProductionStartTime,ProductionEndTime,DelayStartTime,DelayEndTime,Qty,CapiH,Line,Idx) " +
+            //    "VALUES (@p1,@p2,@p3,@p4,null,null,null,null,@p9,@p10,@p11,@p12)";
 
-            var updateQuery = "UPDATE RammendoImport SET QtyProgram=@QtyProgram WHERE Barcode=@Barcode";
+            //var updateQuery = "UPDATE RammendoImport SET QtyProgram=@QtyProgram WHERE Barcode=@Barcode";
+            //try
+            //{
+            //    using (var c = new SqlConnection(Central.CONNECTION_STRING))
+            //    {
+            //        c.Open();
+            //        var cmd = new SqlCommand(qry, c);
+            //        cmd.Parameters.Add("@p1", SqlDbType.NVarChar).Value = operat;
+            //        cmd.Parameters.Add("@p2", SqlDbType.NVarChar).Value = Barcode;
+            //        cmd.Parameters.Add("@p3", SqlDbType.DateTime).Value = startDate;
+            //        cmd.Parameters.Add("@p4", SqlDbType.DateTime).Value = endDate;
+            //        cmd.Parameters.Add("@p9", SqlDbType.Int).Value = insertedQty;
+            //        cmd.Parameters.Add("@p10", SqlDbType.Float).Value = capiH;
+            //        cmd.Parameters.Add("@p11", SqlDbType.NVarChar).Value = line;
+            //        cmd.Parameters.Add("@p12", SqlDbType.Int).Value = idx;
+
+            //        var dr = cmd.ExecuteNonQuery();
+            //        cmd = new SqlCommand(updateQuery, c);
+            //        cmd.Parameters.Add("@QtyProgram", SqlDbType.Int).Value = insertedQty;
+            //        cmd.Parameters.Add("@Barcode", SqlDbType.NVarChar).Value = Barcode;
+            //        var dr1 = cmd.ExecuteNonQuery(); 
+            //        c.Close();
+            //    }
+
             try
             {
-                using (var c = new SqlConnection(Central.CONNECTION_STRING))
-                {
-                    c.Open();
-                    var cmd = new SqlCommand(qry, c);
-                    cmd.Parameters.Add("@p1", SqlDbType.NVarChar).Value = operat;
-                    cmd.Parameters.Add("@p2", SqlDbType.NVarChar).Value = Barcode;
-                    cmd.Parameters.Add("@p3", SqlDbType.DateTime).Value = startDate;
-                    cmd.Parameters.Add("@p4", SqlDbType.DateTime).Value = endDate;
-                    cmd.Parameters.Add("@p9", SqlDbType.Int).Value = insertedQty;
-                    cmd.Parameters.Add("@p10", SqlDbType.Float).Value = capiH;
-                    cmd.Parameters.Add("@p11", SqlDbType.NVarChar).Value = line;
-                    cmd.Parameters.Add("@p12", SqlDbType.Int).Value = idx;
+                var organize = new Organize();
+                organize.InsertTask(dateTimePicker1.Value, startDate, endDate, operat, line, insertedQty, capiH, Barcode);
 
-                    var dr = cmd.ExecuteNonQuery();
-                    cmd = new SqlCommand(updateQuery, c);
-                    cmd.Parameters.Add("@QtyProgram", SqlDbType.Int).Value = insertedQty;
-                    cmd.Parameters.Add("@Barcode", SqlDbType.NVarChar).Value = Barcode;
-                    var dr1 = cmd.ExecuteNonQuery(); 
-                    c.Close();
-                }
-
-                Close();
+                MessageBox.Show("Task successfully inserted", "Insert task", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            
+            Close();
         }
 
         internal class Operators
@@ -213,25 +221,30 @@ namespace Rammendo.Views.Dialogs
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            InsertRecord();
+            InsertRecord(); 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var operat = comboBox1.Text;
-            
+            var operat = comboBox1.Text;  
             var startDateTime = Globals.GetNextStartTime(operat);
 
             if (startDateTime > DateTime.MinValue)
             {
                 dateTimePicker1.Value = startDateTime;
-                dateTimePicker1.Enabled = false;
             }
             else
             {
-                dateTimePicker1.Enabled = true;
                 dateTimePicker1.Value = DateTime.Now;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var operat = comboBox1.Text;
+            var startDateTime = Globals.GetNextStartTime(operat);
+
+            dateTimePicker1.Value = startDateTime;
         }
     }
 }

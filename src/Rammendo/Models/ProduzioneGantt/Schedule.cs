@@ -23,9 +23,10 @@ namespace Rammendo.Models.ProduzioneGantt
         public int ProdQty { get; set; }
         public double QtyH { get; set; }
         public string Line { get; set; }
+        public int Idx { get; set; }
 
         public Schedule(int id, string op, string barcode,DateTime startTime, DateTime endTime, DateTime prodstart, DateTime prodEnd, DateTime delStart,
-            DateTime delEnd, int fixedQty, int prodQty, double qtyH, string line)
+            DateTime delEnd, int fixedQty, int prodQty, double qtyH, string line, int idx)
         {
             Id = id;
             Operator = op;
@@ -40,6 +41,7 @@ namespace Rammendo.Models.ProduzioneGantt
             ProdQty = prodQty;
             QtyH = qtyH;
             Line = line;
+            Idx = idx;
         }
     }
 }
