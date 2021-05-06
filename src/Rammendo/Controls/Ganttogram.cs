@@ -1,5 +1,6 @@
 ﻿namespace Rammendo.Controls
 {
+    using DevExpress.DirectX.Common;
     using Rammendo.Helpers;
     using System;
     using System.Collections;
@@ -378,13 +379,6 @@
                         Brushes.Black,
                         startPos, HeaderHeight - hgHText - 2);
 
-                    //if (header.HeaderTextInsteadOfTime != string.Empty)
-                    //{
-                    //}
-                    //else
-                    //{
-                    //}
-
                     index += 1;
                 }
 
@@ -582,12 +576,12 @@
                 {
                     var borderPen = new Pen(Brushes.Gainsboro, 1);
 
-                    grfx.FillPath(new SolidBrush(barColor), geo.RoundedRectanglePath(barRect, 9));
-                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(barRect, 9));
-                    grfx.FillPath(new SolidBrush(Color.Crimson), geo.RoundedRectanglePath(delayBarRect, 9));
-                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(delayBarRect, 9));
-                    grfx.FillPath(new SolidBrush(Color.SeaGreen), geo.RoundedRectanglePath(prodBarRect, 7));
-                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(prodBarRect, 7));
+                    grfx.FillPath(new SolidBrush(barColor), geo.RoundedRectanglePath(barRect, 8));
+                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(barRect, 8));
+                    grfx.FillPath(new SolidBrush(Color.Crimson), geo.RoundedRectanglePath(delayBarRect, 8));
+                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(delayBarRect, 8));
+                    grfx.FillPath(new SolidBrush(Color.SeaGreen), geo.RoundedRectanglePath(prodBarRect, 6));
+                    grfx.DrawPath(borderPen, geo.RoundedRectanglePath(prodBarRect, 6));
 
                     var brshProdText = bar.ProdColor == Color.FromArgb(175, 175, 175) ? Brushes.DimGray : Brushes.WhiteSmoke;
 

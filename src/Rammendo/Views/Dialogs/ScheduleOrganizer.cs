@@ -201,7 +201,7 @@ GROUP BY operator,barcode,
             }
 
             var qry = "DELETE FROM RammendoSchedule WHERE CONCAT(Id,'_',Barcode) = '" + Key + "'";
-            var updateQuery = "UPDATE RammendoImport SET QtyProgram=@QtyProgram WHERE Barcode=@Barcode";
+            var updateQuery = "UPDATE RammendoImport SET QtyProgram=QtyProgram+@QtyProgram WHERE Barcode=@Barcode";
             var barcode = Key.Split('_')[1];
 
             try

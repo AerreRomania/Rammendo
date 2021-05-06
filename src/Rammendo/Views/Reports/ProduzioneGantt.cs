@@ -71,8 +71,7 @@ WITH cte_rammendo_production (operator, barcode, startDate, endDate, qty) AS (
 		MIN(productionDate), 
 		MAX(productionDate), 
 		SUM(qty) FROM rammendoproduction
-   GROUP BY operator,barcode, 	
-		CONVERT(NVARCHAR, productionDate, 110)
+   GROUP BY operator,barcode
 )
 
 SELECT 
@@ -83,7 +82,7 @@ A.DelayStartTime, A.DelayEndTime,
 A.Qty as FixedQty, B.qty as ProdQty, A.CapiH, A.Line, A.Idx
 FROM RammendoSchedule A
 LEFT JOIN cte_rammendo_production B 
-ON A.Barcode = B.barcode
+ON A.Barcode = B.barcode AND A.Operator = B.Operator
 ORDER BY 
 	LEN(A.Line), 
 	A.Line,
