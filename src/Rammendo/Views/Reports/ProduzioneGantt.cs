@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraBars.Ribbon;
-using Rammendo.Behaviors;
+﻿using Rammendo.Behaviors;
 using Rammendo.Controls;
 using Rammendo.Helpers;
 using Rammendo.Models.ProduzioneGantt;
@@ -10,7 +9,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -221,6 +219,7 @@ ORDER BY
                 splitContainer1.Panel2Collapsed = false;
                 button1.Text = "Close Carico Lavoro";
                 button1.BackColor = Color.Crimson;
+                CommessaDetails.CanProgram = true;
 
                 if (DgvCaricoLavoro.DataSource == null)
                 {

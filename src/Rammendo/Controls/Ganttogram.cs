@@ -1,6 +1,5 @@
 ﻿namespace Rammendo.Controls
 {
-    using DevExpress.DirectX.Common;
     using Rammendo.Helpers;
     using System;
     using System.Collections;

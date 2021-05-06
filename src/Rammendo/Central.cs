@@ -251,6 +251,7 @@ namespace Rammendo
             _fromNavigation = false;
             treeMenu.SelectedNode = null;
             treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[3];
+            CommessaDetails.CanProgram = false;
             treeMenu.Select();
             treeMenu.Refresh();
         }

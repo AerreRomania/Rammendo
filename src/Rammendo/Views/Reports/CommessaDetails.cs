@@ -14,7 +14,8 @@ namespace Rammendo.Views.Reports
         private readonly CommessaDetailsViewModel _commessaDetailsViewModel;
 
         private string Commessa { get; set; }
-        
+        public static bool CanProgram { get; set; } = false;
+
         public CommessaDetails(string commessa, string article = null) : base(false) {
             InitializeComponent();
             _commessaDetailsViewModel = new CommessaDetailsViewModel(article);
@@ -70,14 +71,23 @@ namespace Rammendo.Views.Reports
             }
         }
 
-        private void DgvTelliProdoti_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void DgvTelliProdoti_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 2) return;
+            if (!CanProgram)
+            {
+                return;
+            }
+            var oldColor = DgvTelliProdoti.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor;
+            DgvTelliProdoti.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = Color.LightCyan;
+
+            await Task.Delay(50);
 
             var barcode = DgvTelliProdoti.Rows[e.RowIndex].Cells[4].Value.ToString();
             var scheduleForm = new ScheduleControl(barcode);
             scheduleForm.ShowDialog();
             scheduleForm.Dispose();
+            DgvTelliProdoti.Rows[e.RowIndex].DefaultCellStyle.SelectionBackColor = oldColor;
         }
     }
 }
