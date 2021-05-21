@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAlert = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTargetQty = new System.Windows.Forms.Label();
             this.lblProdQty = new System.Windows.Forms.Label();
@@ -46,20 +48,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DgvCaricoLavoro = new Rammendo.Controls.CGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblCommessa = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblArticle = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblTotalQty = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtArticle = new System.Windows.Forms.TextBox();
+            this.txtCommessa = new System.Windows.Forms.TextBox();
+            this.lblWorkStart = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.lblQtyPack = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lblReadedDate = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.lblWorkStart = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblAlert = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblTotalQty = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblProgrammedDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -118,6 +120,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manage";
             // 
+            // lblAlert
+            // 
+            this.lblAlert.AutoSize = true;
+            this.lblAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAlert.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblAlert.Location = new System.Drawing.Point(15, 161);
+            this.lblAlert.Name = "lblAlert";
+            this.lblAlert.Size = new System.Drawing.Size(332, 13);
+            this.lblAlert.TabIndex = 25;
+            this.lblAlert.Text = "! Cannot operate with this task because it has production";
+            this.lblAlert.Visible = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(18, 64);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(307, 25);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -132,23 +158,21 @@
             // lblTargetQty
             // 
             this.lblTargetQty.AutoSize = true;
-            this.lblTargetQty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTargetQty.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTargetQty.ForeColor = System.Drawing.Color.Goldenrod;
             this.lblTargetQty.Location = new System.Drawing.Point(135, 60);
             this.lblTargetQty.Name = "lblTargetQty";
-            this.lblTargetQty.Size = new System.Drawing.Size(2, 32);
+            this.lblTargetQty.Size = new System.Drawing.Size(0, 30);
             this.lblTargetQty.TabIndex = 30;
             // 
             // lblProdQty
             // 
             this.lblProdQty.AutoSize = true;
-            this.lblProdQty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblProdQty.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProdQty.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblProdQty.Location = new System.Drawing.Point(135, 106);
             this.lblProdQty.Name = "lblProdQty";
-            this.lblProdQty.Size = new System.Drawing.Size(2, 32);
+            this.lblProdQty.Size = new System.Drawing.Size(0, 30);
             this.lblProdQty.TabIndex = 32;
             // 
             // label5
@@ -165,12 +189,11 @@
             // lblDiff
             // 
             this.lblDiff.AutoSize = true;
-            this.lblDiff.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDiff.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiff.ForeColor = System.Drawing.Color.Crimson;
             this.lblDiff.Location = new System.Drawing.Point(135, 152);
             this.lblDiff.Name = "lblDiff";
-            this.lblDiff.Size = new System.Drawing.Size(2, 32);
+            this.lblDiff.Size = new System.Drawing.Size(0, 30);
             this.lblDiff.TabIndex = 34;
             // 
             // label7
@@ -198,23 +221,21 @@
             // lblOperator
             // 
             this.lblOperator.AutoSize = true;
-            this.lblOperator.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOperator.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperator.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblOperator.Location = new System.Drawing.Point(135, 22);
             this.lblOperator.Name = "lblOperator";
-            this.lblOperator.Size = new System.Drawing.Size(2, 23);
+            this.lblOperator.Size = new System.Drawing.Size(0, 21);
             this.lblOperator.TabIndex = 36;
             // 
             // lblNorm
             // 
             this.lblNorm.AutoSize = true;
-            this.lblNorm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblNorm.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNorm.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblNorm.Location = new System.Drawing.Point(135, 60);
             this.lblNorm.Name = "lblNorm";
-            this.lblNorm.Size = new System.Drawing.Size(2, 32);
+            this.lblNorm.Size = new System.Drawing.Size(0, 30);
             this.lblNorm.TabIndex = 38;
             this.lblNorm.Visible = false;
             // 
@@ -239,24 +260,24 @@
             this.DgvCaricoLavoro.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DgvCaricoLavoro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvCaricoLavoro.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Coral;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCaricoLavoro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Coral;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCaricoLavoro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvCaricoLavoro.ColumnHeadersHeight = 50;
             this.DgvCaricoLavoro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MistyRose;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvCaricoLavoro.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MistyRose;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCaricoLavoro.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvCaricoLavoro.EnableHeadersVisualStyles = false;
             this.DgvCaricoLavoro.GridColor = System.Drawing.Color.Gainsboro;
             this.DgvCaricoLavoro.Location = new System.Drawing.Point(400, 24);
@@ -271,6 +292,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.linkLabel2);
+            this.groupBox2.Controls.Add(this.linkLabel1);
+            this.groupBox2.Controls.Add(this.txtArticle);
+            this.groupBox2.Controls.Add(this.txtCommessa);
             this.groupBox2.Controls.Add(this.lblWorkStart);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.lblQtyPack);
@@ -279,9 +304,7 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.lblTotalQty);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.lblArticle);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.lblCommessa);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(400, 262);
             this.groupBox2.Name = "groupBox2";
@@ -290,75 +313,85 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Commesa details";
             // 
-            // lblCommessa
+            // linkLabel2
             // 
-            this.lblCommessa.AutoSize = true;
-            this.lblCommessa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCommessa.ForeColor = System.Drawing.Color.Black;
-            this.lblCommessa.Location = new System.Drawing.Point(113, 36);
-            this.lblCommessa.Name = "lblCommessa";
-            this.lblCommessa.Size = new System.Drawing.Size(0, 21);
-            this.lblCommessa.TabIndex = 40;
+            this.linkLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.SystemColors.ControlText;
+            this.linkLabel2.Location = new System.Drawing.Point(304, 67);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(37, 29);
+            this.linkLabel2.TabIndex = 54;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Copy";
+            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // label4
+            // linkLabel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(29, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 17);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Commessa:";
+            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlText;
+            this.linkLabel1.Location = new System.Drawing.Point(304, 35);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(37, 29);
+            this.linkLabel1.TabIndex = 53;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Copy";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // lblArticle
+            // txtArticle
             // 
-            this.lblArticle.AutoSize = true;
-            this.lblArticle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblArticle.ForeColor = System.Drawing.Color.Black;
-            this.lblArticle.Location = new System.Drawing.Point(113, 65);
-            this.lblArticle.Name = "lblArticle";
-            this.lblArticle.Size = new System.Drawing.Size(0, 21);
-            this.lblArticle.TabIndex = 42;
+            this.txtArticle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtArticle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtArticle.ForeColor = System.Drawing.Color.Black;
+            this.txtArticle.Location = new System.Drawing.Point(119, 67);
+            this.txtArticle.Name = "txtArticle";
+            this.txtArticle.ReadOnly = true;
+            this.txtArticle.Size = new System.Drawing.Size(222, 29);
+            this.txtArticle.TabIndex = 52;
             // 
-            // label9
+            // txtCommessa
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label9.Location = new System.Drawing.Point(29, 98);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 17);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Total qty:";
+            this.txtCommessa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCommessa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.txtCommessa.ForeColor = System.Drawing.Color.Black;
+            this.txtCommessa.Location = new System.Drawing.Point(119, 35);
+            this.txtCommessa.Name = "txtCommessa";
+            this.txtCommessa.ReadOnly = true;
+            this.txtCommessa.Size = new System.Drawing.Size(222, 29);
+            this.txtCommessa.TabIndex = 51;
             // 
-            // lblTotalQty
+            // lblWorkStart
             // 
-            this.lblTotalQty.AutoSize = true;
-            this.lblTotalQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalQty.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalQty.Location = new System.Drawing.Point(113, 95);
-            this.lblTotalQty.Name = "lblTotalQty";
-            this.lblTotalQty.Size = new System.Drawing.Size(0, 21);
-            this.lblTotalQty.TabIndex = 44;
+            this.lblWorkStart.AutoSize = true;
+            this.lblWorkStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblWorkStart.ForeColor = System.Drawing.Color.Black;
+            this.lblWorkStart.Location = new System.Drawing.Point(495, 65);
+            this.lblWorkStart.Name = "lblWorkStart";
+            this.lblWorkStart.Size = new System.Drawing.Size(0, 21);
+            this.lblWorkStart.TabIndex = 50;
             // 
-            // label11
+            // label13
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label11.Location = new System.Drawing.Point(29, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 17);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "Article:";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label13.Location = new System.Drawing.Point(401, 68);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 17);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "Work start:";
             // 
             // lblQtyPack
             // 
             this.lblQtyPack.AutoSize = true;
             this.lblQtyPack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblQtyPack.ForeColor = System.Drawing.Color.Black;
-            this.lblQtyPack.Location = new System.Drawing.Point(113, 126);
+            this.lblQtyPack.Location = new System.Drawing.Point(113, 140);
             this.lblQtyPack.Name = "lblQtyPack";
             this.lblQtyPack.Size = new System.Drawing.Size(0, 21);
             this.lblQtyPack.TabIndex = 48;
@@ -368,7 +401,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label15.Location = new System.Drawing.Point(29, 128);
+            this.label15.Location = new System.Drawing.Point(29, 144);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 17);
             this.label15.TabIndex = 47;
@@ -395,50 +428,48 @@
             this.label17.TabIndex = 45;
             this.label17.Text = "Readed date:";
             // 
-            // lblWorkStart
+            // lblTotalQty
             // 
-            this.lblWorkStart.AutoSize = true;
-            this.lblWorkStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblWorkStart.ForeColor = System.Drawing.Color.Black;
-            this.lblWorkStart.Location = new System.Drawing.Point(495, 65);
-            this.lblWorkStart.Name = "lblWorkStart";
-            this.lblWorkStart.Size = new System.Drawing.Size(0, 21);
-            this.lblWorkStart.TabIndex = 50;
+            this.lblTotalQty.AutoSize = true;
+            this.lblTotalQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalQty.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalQty.Location = new System.Drawing.Point(113, 110);
+            this.lblTotalQty.Name = "lblTotalQty";
+            this.lblTotalQty.Size = new System.Drawing.Size(0, 21);
+            this.lblTotalQty.TabIndex = 44;
             // 
-            // label13
+            // label11
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label13.Location = new System.Drawing.Point(401, 68);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 17);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Work start:";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label11.Location = new System.Drawing.Point(29, 72);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 17);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Article:";
             // 
-            // lblAlert
+            // label9
             // 
-            this.lblAlert.AutoSize = true;
-            this.lblAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblAlert.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblAlert.Location = new System.Drawing.Point(15, 161);
-            this.lblAlert.Name = "lblAlert";
-            this.lblAlert.Size = new System.Drawing.Size(332, 13);
-            this.lblAlert.TabIndex = 25;
-            this.lblAlert.Text = "! Cannot operate with this task because it has production";
-            this.lblAlert.Visible = false;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label9.Location = new System.Drawing.Point(29, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 17);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Total qty:";
             // 
-            // dateTimePicker1
+            // label4
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(18, 64);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(307, 25);
-            this.dateTimePicker1.TabIndex = 23;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label4.Location = new System.Drawing.Point(29, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Commessa:";
             // 
             // lblProgrammedDate
             // 
@@ -521,9 +552,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblTotalQty;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblArticle;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblCommessa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblWorkStart;
         private System.Windows.Forms.Label label13;
@@ -531,5 +560,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblProgrammedDate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtArticle;
+        private System.Windows.Forms.TextBox txtCommessa;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

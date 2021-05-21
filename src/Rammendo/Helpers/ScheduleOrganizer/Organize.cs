@@ -13,7 +13,7 @@ namespace Rammendo.Helpers.ScheduleOrganizer
             var lst = new List<JobParams>();
             
             var qry = @"
-SELECT Idx,EndTime FROM RammendoSchedule WHERE Operator=@Operator AND Line=@Line AND CONVERT(NVARCHAR, EndTime, 110) <= @EndTime
+SELECT Idx,EndTime FROM RammendoSchedule WHERE Operator=@Operator AND Line=@Line AND EndTime <= @EndTime
 ORDER BY EndTime;";
 
             using (var c = new SqlConnection(Central.CONNECTION_STRING))
@@ -21,7 +21,7 @@ ORDER BY EndTime;";
                 var cmd = new SqlCommand(qry, c);
                 cmd.Parameters.Add("@Operator", System.Data.SqlDbType.NVarChar).Value = operat;
                 cmd.Parameters.Add("@Line", System.Data.SqlDbType.NVarChar).Value = line;
-                cmd.Parameters.Add("@EndTime", System.Data.SqlDbType.NVarChar).Value = targetDateTime.ToString("dd-MM-yyyy");
+                cmd.Parameters.Add("@EndTime", System.Data.SqlDbType.DateTime).Value = targetDateTime;
 
                 c.Open();
                 var dr = cmd.ExecuteReader();
@@ -124,8 +124,8 @@ ORDER BY EndTime;";
                 cmd.Parameters.Add("@Operator", System.Data.SqlDbType.NVarChar).Value = operat;
                 cmd.Parameters.Add("@Line", System.Data.SqlDbType.NVarChar).Value = line;
                 cmd.Parameters.Add("@Idx", System.Data.SqlDbType.Int).Value = idx;
-                cmd.Parameters.Add("@StartTime", System.Data.SqlDbType.NVarChar).Value = start;
-                cmd.Parameters.Add("@EndTime", System.Data.SqlDbType.NVarChar).Value = end;
+                cmd.Parameters.Add("@StartTime", System.Data.SqlDbType.DateTime).Value = start;
+                cmd.Parameters.Add("@EndTime", System.Data.SqlDbType.DateTime).Value = end;
 
                 var dr1 = cmd.ExecuteNonQuery();
                 c.Close();

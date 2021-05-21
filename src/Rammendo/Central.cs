@@ -30,15 +30,20 @@ namespace Rammendo
             Store.Default.Save();
         }
 
-        private void Menu_Load(object send, EventArgs args) {
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
             pnTitlebar.MouseMove += (s, mv) => {
-                if (mv.Button == MouseButtons.Left && WindowState != FormWindowState.Maximized) {
+                if (mv.Button == MouseButtons.Left && WindowState != FormWindowState.Maximized)
+                {
                     Resizer.ReleaseCapture();
                     Resizer.SendMessage(Handle, Resizer.WM_NCLBUTTONDOWN, Resizer.HT_CAPTION, 0);
                 }
             };
 
-            foreach (var file in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory)) {
+            foreach (var file in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory))
+            {
                 if (Path.GetExtension(file) != ".exe") continue;
             }
 
@@ -221,9 +226,9 @@ namespace Rammendo
             }
         }
 
-        private void BtnTelliProdotiGiorno_Click(object sender, EventArgs e) {
+        private void BtnTelliProdotiGiorno_Click(object sender, EventArgs e) 
+        {
             _fromNavigation = false;
-
             treeMenu.SelectedNode = null;
             treeMenu.SelectedNode = treeMenu.Nodes[0].Nodes[0];
             treeMenu.Select();

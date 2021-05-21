@@ -149,7 +149,7 @@ namespace Rammendo.Views.Reports
 
             var commessa = DgvCaricoLavoro.Rows[e.RowIndex].Cells[0].Value.ToString();
             var article = DgvCaricoLavoro.Rows[e.RowIndex].Cells[1].Value.ToString();
-          
+
             if (e.ColumnIndex == 0)
             {
                 var frm = new CommessaDetails(commessa, article);

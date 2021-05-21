@@ -97,18 +97,18 @@ WHERE COM.IdSector=7;";
             }
         }
 
-        public static IEnumerable<string> GetInsertedBarcodes(string fileKey) {
+        public static IEnumerable<string> GetInsertedBarcodes(string barcode) {
             var qry = @"
 SELECT Barcode 
 FROM RammendoImport 
-WHERE FileKey=@FileKey;";
+WHERE Barcode=@Barcode;";
 
             try {
                 var lst = new List<string>();
 
                 using (var conn = new SqlConnection(CONNECTION_STRING)) {
                     var cmd = new SqlCommand(qry, conn);
-                    cmd.Parameters.Add("@FileKey", SqlDbType.NVarChar).Value = fileKey;
+                    cmd.Parameters.Add("@Barcode", SqlDbType.NVarChar).Value = barcode;
                     conn.Open();
                     var dr = cmd.ExecuteReader();
                     if (dr.HasRows) {
@@ -127,12 +127,12 @@ WHERE FileKey=@FileKey;";
             }
         }
 
-        public static void UpdateBarcode(string barcode, int teamRammendo)
+        public static void UpdateBarcode(string barcode, int teamRammendo, int qtyPack, int good, int bad)
         {
             if (teamRammendo == 0) return;
 
             var qry = @"
-UPDATE RammendoImport SET TeamRammendo=@TeamRammendo
+UPDATE RammendoImport SET TeamRammendo=@TeamRammendo, QtyPack=@QtyPack, Good=@Good, Bad=@Bad
 WHERE Barcode=@Barcode;
 ";
 
@@ -141,6 +141,9 @@ WHERE Barcode=@Barcode;
                 var cmd = new SqlCommand(qry, conn);
                 cmd.Parameters.Add("@Barcode", SqlDbType.NVarChar).Value = barcode;
                 cmd.Parameters.Add("@TeamRammendo", SqlDbType.Int).Value = teamRammendo;
+                cmd.Parameters.Add("@QtyPack", SqlDbType.Int).Value = qtyPack;
+                cmd.Parameters.Add("@Good", SqlDbType.Int).Value = good;
+                cmd.Parameters.Add("@Bad", SqlDbType.Int).Value = bad;
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();

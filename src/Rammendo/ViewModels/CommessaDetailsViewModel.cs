@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rammendo.Helpers;
 using Rammendo.Models;
+
 namespace Rammendo.ViewModels
 {
     public class CommessaDetailsViewModel : BaseViewModel
@@ -52,6 +54,11 @@ namespace Rammendo.ViewModels
                 var totGoodGood = 0;
 
                 foreach (var detail in commessaDetails) {
+
+                    if (Views.Reports.CommessaDetails.CanProgram && detail.Bad == 0)
+                    {
+                        continue;
+                    }
 
                     DataRow newRow = dataTable.NewRow();
                     newRow[0] = detail.Color;

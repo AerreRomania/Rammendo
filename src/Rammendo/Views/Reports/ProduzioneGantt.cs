@@ -1,4 +1,5 @@
-﻿using Rammendo.Behaviors;
+﻿using Microsoft.Win32;
+using Rammendo.Behaviors;
 using Rammendo.Controls;
 using Rammendo.Helpers;
 using Rammendo.Models.ProduzioneGantt;
@@ -132,12 +133,12 @@ ORDER BY
                     {
                         index++;
                     }
-                    
+
                     //check if there is a gap and remove it     
-                    var itemBefore = _lstSchedule.Where(x => x.Operator == item.Operator 
+                    var itemBefore = _lstSchedule.Where(x => x.Operator == item.Operator
                         && x.Line == item.Line && x.Idx < item.Idx).LastOrDefault();
 
-                    if (itemBefore != null )
+                    if (itemBefore != null)
                     {
                         var ticks = item.EndTime.Subtract(item.StartTime).Ticks;
                         var endTime = itemBefore.DelayEndTime > DateTime.MinValue ? itemBefore.DelayEndTime : itemBefore.EndTime;
@@ -158,6 +159,8 @@ ORDER BY
                         //check if productionStartDate start before programmed StartDate
                         item.ProductionStartTime = item.StartTime;
                     }
+
+                    //check if endTime is not in the shift
 
                     _gntChartBarsList.Add(new Bar(item.Operator,
                         item.StartTime,
@@ -345,7 +348,7 @@ ORDER BY
             var commessa = DgvCaricoLavoro.Rows[e.RowIndex].Cells[0].Value.ToString();
             var article = DgvCaricoLavoro.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex > -1)
             {
                 var frm = new CommessaDetails(commessa, article);
                 frm.ShowDialog();

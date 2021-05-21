@@ -72,15 +72,24 @@ namespace CsvImporter
 
                             int.TryParse(rows[0].ToString(), out var maxIdentityKey);
                             var barcode = rows[8].ToString();
+                            
+                            int.TryParse(rows[7].ToString(), out var qtyPack);
+                            int.TryParse(rows[9].ToString(), out var good);
+                            int.TryParse(rows[10].ToString(), out var bad);
                             int.TryParse(rows[11].ToString(), out var teamRammendo);
 
-                            if (lstOfBarcodes.Contains(barcode) || _listOfBarcodesBuffer.Contains(barcode)) //update factory
+                            if (CsvInfo.GetInsertedBarcodes(barcode).Count() > 0)
                             {
-                                CsvInfo.UpdateBarcode(barcode, teamRammendo);
+                                CsvInfo.UpdateBarcode(barcode, teamRammendo, qtyPack, good, bad);
                                 continue;
                             }
 
-                            if (maxIdentityKey <= maxKey) continue; //check only for new data
+                            //if (lstOfBarcodes.Contains(barcode) || _listOfBarcodesBuffer.Contains(barcode)) //update factory
+                            //{
+                            //    continue;
+                            //}
+
+                            //if (maxIdentityKey <= maxKey) continue; //check only for new data
 
                             var cr = rows[1].Split('-');    //get commessa array by (-) to get regulation by the protocol of inserting
                             var regularCommessa = $"{cr[0]}{cr[1]}.{cr[2]}";

@@ -83,3 +83,4 @@ src/AppRamendoMobile/AppRamendoMobile.Android/obj/Debug/100/build.force
 /src/AppRamendoMobile/AppRamendoMobile.Android/obj
 /src/AppRamendoMobile/AppRamendoMobile/obj/Release/netstandard2.0
 /src/Rammendo/bin/Release
+/src/RammendoCsvService/bin/Release

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.SymbolStore;
 using System.Drawing;
 using System.Linq;
 using System.Net.Configuration;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rammendo.Views.Dialogs
@@ -78,8 +80,8 @@ WHERE A.Barcode=@Barcode;";
                     if (dr.HasRows)
                         while (dr.Read())
                         {
-                            lblCommessa.Text = dr[0].ToString();
-                            lblArticle.Text = dr[1].ToString();
+                            txtCommessa.Text = dr[0].ToString();
+                            txtArticle.Text = dr[1].ToString();
                             lblQtyPack.Text = dr[3].ToString();
                             DateTime.TryParse(dr[4].ToString(), out var readedDate);
                             DateTime.TryParse(dr[5].ToString(), out var startWork);
@@ -201,7 +203,7 @@ GROUP BY operator,barcode,
             }
 
             var qry = "DELETE FROM RammendoSchedule WHERE CONCAT(Id,'_',Barcode) = '" + Key + "'";
-            var updateQuery = "UPDATE RammendoImport SET QtyProgram=QtyProgram+@QtyProgram WHERE Barcode=@Barcode";
+            var updateQuery = "UPDATE RammendoImport SET QtyProgram=QtyProgram-@QtyProgram WHERE Barcode=@Barcode";
             var barcode = Key.Split('_')[1];
 
             try
@@ -264,6 +266,29 @@ GROUP BY operator,barcode,
         {
             var operat = comboBox1.Text;
             button2.Text = "Move to " + operat;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var check = Clipboard.GetText();
+            if (check == txtCommessa.Text)
+            {
+                MessageBox.Show("Already copied");
+            }
+
+            Clipboard.SetText(txtCommessa.Text);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var check = Clipboard.GetText();
+            if (check == txtArticle.Text)
+            {
+                MessageBox.Show("Already copied");
+                return;
+            }
+
+            Clipboard.SetText(txtArticle.Text);
         }
     }
 }

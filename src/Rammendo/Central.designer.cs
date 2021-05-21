@@ -899,7 +899,6 @@
             this.MinimumSize = new System.Drawing.Size(1311, 726);
             this.Name = "Central";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.SizeChanged += new System.EventHandler(this.Central_SizeChanged);
             this.pnDockBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

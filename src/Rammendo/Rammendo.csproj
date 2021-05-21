@@ -96,6 +96,7 @@
     <Compile Include="Helpers\Geometry.cs" />
     <Compile Include="Helpers\Resizer.cs" />
     <Compile Include="Helpers\ScheduleOrganizer\Organize.cs" />
+    <Compile Include="Helpers\XLicense.cs" />
     <Compile Include="Models\CaricoLavoro.cs" />
     <Compile Include="Models\CommessaDetails.cs" />
     <Compile Include="Models\Commesse.cs" />

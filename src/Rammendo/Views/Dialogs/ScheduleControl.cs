@@ -158,6 +158,29 @@ namespace Rammendo.Views.Dialogs
 
             var endDate = startDate.AddTicks(fd);
 
+            var startShift = new DateTime(endDate.Year, endDate.Month, endDate.Day, 7, 0, 0, 0);
+            var endShift = new DateTime(endDate.Year, endDate.Month, endDate.Day, 15, 0, 0, 0);
+
+            //check if endtime starts before startShift
+            if (endDate < startShift)
+            {
+                var diff = startShift.Subtract(endDate);
+                endDate = new DateTime(endDate.Year, endDate.Month, endDate.Day, 7 + diff.Hours, endDate.Minute, endDate.Second, endDate.Millisecond);
+            }
+
+            //check if endtime ends after endShift
+            if (endDate > endShift)
+            {
+                var diff = endDate.Subtract(endShift);
+                endDate = new DateTime(endDate.Year, endDate.Month, endDate.Day + 1, 7 + diff.Hours, endDate.Minute, endDate.Second, endDate.Millisecond);
+            }
+
+            //check if endtime is going over the weekend
+            if (endDate.DayOfWeek == DayOfWeek.Saturday || endDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                endDate = endDate.AddDays(+2);
+            }
+
             try
             {
                 var organize = new Organize();
